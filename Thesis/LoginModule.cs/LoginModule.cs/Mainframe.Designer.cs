@@ -39,7 +39,6 @@
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton6 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -488,7 +487,6 @@
             this.groupBox3.Controls.Add(this.materialFlatButton1);
             this.groupBox3.Controls.Add(this.materialFlatButton2);
             this.groupBox3.Controls.Add(this.materialFlatButton4);
-            this.groupBox3.Controls.Add(this.materialFlatButton6);
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(13, 26);
             this.groupBox3.Name = "groupBox3";
@@ -558,27 +556,6 @@
             this.materialFlatButton4.TabIndex = 52;
             this.materialFlatButton4.Text = "Archive Product";
             this.materialFlatButton4.UseVisualStyleBackColor = false;
-            // 
-            // materialFlatButton6
-            // 
-            this.materialFlatButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton6.AutoSize = true;
-            this.materialFlatButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton6.BackColor = System.Drawing.Color.White;
-            this.materialFlatButton6.Depth = 0;
-            this.materialFlatButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialFlatButton6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.materialFlatButton6.Icon = null;
-            this.materialFlatButton6.Location = new System.Drawing.Point(482, 39);
-            this.materialFlatButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton6.Name = "materialFlatButton6";
-            this.materialFlatButton6.Primary = false;
-            this.materialFlatButton6.Size = new System.Drawing.Size(128, 36);
-            this.materialFlatButton6.TabIndex = 51;
-            this.materialFlatButton6.Text = "Update Stocks";
-            this.materialFlatButton6.UseVisualStyleBackColor = false;
-            this.materialFlatButton6.Click += new System.EventHandler(this.materialFlatButton6_Click_1);
             // 
             // groupBox2
             // 
@@ -3883,7 +3860,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.ColumnHeader columnHeader43;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton6;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialListView materialListView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
