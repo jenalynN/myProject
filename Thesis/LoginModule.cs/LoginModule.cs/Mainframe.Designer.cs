@@ -315,7 +315,6 @@
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.Settings = new System.Windows.Forms.TabPage();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -505,7 +504,7 @@
             this.materialFlatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.materialFlatButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(324, 39);
+            this.materialFlatButton1.Location = new System.Drawing.Point(460, 39);
             this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton1.Name = "materialFlatButton1";
@@ -3660,7 +3659,6 @@
             // 
             this.Settings.AutoScroll = true;
             this.Settings.Controls.Add(this.materialRaisedButton4);
-            this.Settings.Controls.Add(this.materialRaisedButton1);
             this.Settings.Location = new System.Drawing.Point(4, 22);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(1222, 611);
@@ -3682,23 +3680,6 @@
             this.materialRaisedButton4.TabIndex = 22;
             this.materialRaisedButton4.Text = "View Admin Account ";
             this.materialRaisedButton4.UseVisualStyleBackColor = true;
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(443, 57);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(74, 36);
-            this.materialRaisedButton1.TabIndex = 3;
-            this.materialRaisedButton1.Text = "Logout";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
             // 
             // materialTabSelector1
             // 
@@ -3875,7 +3856,6 @@
         private System.Windows.Forms.TabPage Settings;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
