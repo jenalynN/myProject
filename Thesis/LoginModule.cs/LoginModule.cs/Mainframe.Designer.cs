@@ -316,6 +316,7 @@
             this.Settings = new System.Windows.Forms.TabPage();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -3658,6 +3659,7 @@
             // Settings
             // 
             this.Settings.AutoScroll = true;
+            this.Settings.Controls.Add(this.materialRaisedButton1);
             this.Settings.Controls.Add(this.materialRaisedButton4);
             this.Settings.Location = new System.Drawing.Point(4, 22);
             this.Settings.Name = "Settings";
@@ -3696,6 +3698,21 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.AutoSize = true;
+            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Icon = null;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(443, 57);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(77, 36);
+            this.materialRaisedButton1.TabIndex = 23;
+            this.materialRaisedButton1.Text = "Log out";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
             // 
             // Mainframe
             // 
@@ -4086,5 +4103,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.ColumnHeader columnHeader73;
         private System.Windows.Forms.ColumnHeader columnHeader74;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
     }
 }
