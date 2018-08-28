@@ -16,25 +16,20 @@ namespace LoginModule.cs
     {
 
         string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password="; 
-        public TransactionModule()
+        public TransactionModule(string cashier)
         {
             InitializeComponent();
             displayDate();
-            displayTransaction();
+            TransactionOutput();
+            textBox3.Text = cashier;
 
         }
-        public void displayTransaction() 
-        {
-        
-        
-        
-        }
+      
         public void displayDate() 
         {
 
             timer1.Start();
             label6.Text = DateTime.Now.ToLongDateString();
-
             label7.Text = DateTime.Now.ToLongTimeString();
         
         }
@@ -48,7 +43,6 @@ namespace LoginModule.cs
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            //string query = "select P.col_productid,P.col_productcode, B.col_brandname,  C.col_categoryname,  P.col_productprice from tbl_product P LEFT JOIN tbl_branduser B ON B.col_brandid = P.col_brandid LEFT JOIN tbl_category C ON C.col_categoryid = P.col_categoryid where P.col_status='unarchived' and P.col_productid='"+textBox4.Text+"'";
             string query = "select P.col_productid,P.col_productcode, P.col_productname ," +
                 "B.col_brandname,  C.col_categoryname,  P.col_productprice from tbl_product P " +
                 "LEFT JOIN tbl_brandpartner B ON B.col_useraccountsid = P.col_useraccountsid " +
@@ -103,11 +97,41 @@ namespace LoginModule.cs
                 double total = Double.Parse(label2.Text);
                 label3.Text = (money - total).ToString();
             }
+        }public void TransactionOutput()
+        {
+            MySqlConnection connection = new MySqlConnection(myConnection);
+            connection.Open();
+            MySqlCommand command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from tbl_transaction";
+            MySqlDataReader read = command.ExecuteReader();
+
+            while (read.Read())
+            {
+                MySqlConnection con = new MySqlConnection(myConnection);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select MAX(col_transactionid) as ayD from tbl_transaction";
+                MySqlDataReader basa = cmd.ExecuteReader();
+                while (basa.Read())
+                {
+                    string ayd = basa["ayD"].ToString();
+                    int plus1 = Int32.Parse(ayd);
+                    int total = plus1 + 1;
+                    label15.Text = "PCS01" + total;
+                }
+
+
+                con.Close();
+            }
+
+
+
+
         }
         public void InsertOrder() 
         {
-
-            {
                 MySqlConnection conn = new MySqlConnection(myConnection);
                 MySqlConnection conn2 = new MySqlConnection(myConnection);
                 MySqlCommand command = conn.CreateCommand();
@@ -126,11 +150,9 @@ namespace LoginModule.cs
                     command2.ExecuteScalar();
                     conn.Close();
                 }
-            }
         }
         public void InsertTransaction()
         {
-
             {
                 MySqlConnection conn = new MySqlConnection(myConnection);
                 MySqlConnection conn2 = new MySqlConnection(myConnection);
@@ -146,7 +168,7 @@ namespace LoginModule.cs
                     conn.Close();
                     conn.Open();
                     MySqlCommand command2 = conn.CreateCommand();
-                    command2.CommandText = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_status) values ((SELECT col_transactionid from tbl_transaction where col_transactionid='" + label15.Text + "'),(SELECT col_productid from tbl_product where col_productname='" + textBox4.Text + "'),'" + textBox1.Text + "','" + textBox10.Text + "','unfinished')";
+                    command2.CommandText = "insert into tbl_transaction(col_transactioncode,col_dateofpurchase) values ('" + label15.Text + "',now())";
                     command2.ExecuteScalar();
                     conn.Close();
                 }
@@ -227,14 +249,16 @@ namespace LoginModule.cs
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
+            InsertTransaction();
             if (textBox1.Text == "" || textBox4.Text == "" || textBox6.Text == "" || textBox7.Text == "" || textBox8.Text == "" )
             {
                 MessageBox.Show("Please complete the form");
             }
             else 
             {
+                InsertOrder();
+                InsertTransaction();
                 subtotal();
-                Insert();
                 total();
                 clear();
             }

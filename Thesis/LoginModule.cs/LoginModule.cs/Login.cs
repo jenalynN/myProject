@@ -104,12 +104,14 @@ namespace LoginModule.cs
                         MySqlDataReader copro2 = copro5.ExecuteReader();
                         while (copro2.Read())
                         {
+                            string userid = (copro2["col_useraccountsid"].ToString());
                             string user = (copro2["col_user"].ToString());
                             string pass = (copro2["col_password"].ToString());
                             if (user == textBox1.Text && pass == textBox2.Text)
                             {
                                 MessageBox.Show("Successfully Logged in!");
-                                TransactionModule a = new TransactionModule();
+                                TransactionModule a = new TransactionModule(userid);
+                                
                                 a.Show();
                                 this.Hide();
                                 break;
