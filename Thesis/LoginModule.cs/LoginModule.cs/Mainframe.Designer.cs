@@ -39,6 +39,7 @@
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialFlatButton6 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -315,8 +316,8 @@
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.Settings = new System.Windows.Forms.TabPage();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -487,6 +488,7 @@
             this.groupBox3.Controls.Add(this.materialFlatButton1);
             this.groupBox3.Controls.Add(this.materialFlatButton2);
             this.groupBox3.Controls.Add(this.materialFlatButton4);
+            this.groupBox3.Controls.Add(this.materialFlatButton6);
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(13, 26);
             this.groupBox3.Name = "groupBox3";
@@ -505,7 +507,7 @@
             this.materialFlatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.materialFlatButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(460, 39);
+            this.materialFlatButton1.Location = new System.Drawing.Point(324, 39);
             this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton1.Name = "materialFlatButton1";
@@ -556,6 +558,27 @@
             this.materialFlatButton4.TabIndex = 52;
             this.materialFlatButton4.Text = "Archive Product";
             this.materialFlatButton4.UseVisualStyleBackColor = false;
+            // 
+            // materialFlatButton6
+            // 
+            this.materialFlatButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialFlatButton6.AutoSize = true;
+            this.materialFlatButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton6.BackColor = System.Drawing.Color.White;
+            this.materialFlatButton6.Depth = 0;
+            this.materialFlatButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialFlatButton6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.materialFlatButton6.Icon = null;
+            this.materialFlatButton6.Location = new System.Drawing.Point(482, 39);
+            this.materialFlatButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton6.Name = "materialFlatButton6";
+            this.materialFlatButton6.Primary = false;
+            this.materialFlatButton6.Size = new System.Drawing.Size(128, 36);
+            this.materialFlatButton6.TabIndex = 51;
+            this.materialFlatButton6.Text = "Update Stocks";
+            this.materialFlatButton6.UseVisualStyleBackColor = false;
+            this.materialFlatButton6.Click += new System.EventHandler(this.materialFlatButton6_Click_1);
             // 
             // groupBox2
             // 
@@ -3659,8 +3682,8 @@
             // Settings
             // 
             this.Settings.AutoScroll = true;
-            this.Settings.Controls.Add(this.materialRaisedButton1);
             this.Settings.Controls.Add(this.materialRaisedButton4);
+            this.Settings.Controls.Add(this.materialRaisedButton1);
             this.Settings.Location = new System.Drawing.Point(4, 22);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(1222, 611);
@@ -3683,6 +3706,23 @@
             this.materialRaisedButton4.Text = "View Admin Account ";
             this.materialRaisedButton4.UseVisualStyleBackColor = true;
             // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialRaisedButton1.AutoSize = true;
+            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.materialRaisedButton1.Icon = null;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(443, 57);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(74, 36);
+            this.materialRaisedButton1.TabIndex = 3;
+            this.materialRaisedButton1.Text = "Logout";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            // 
             // materialTabSelector1
             // 
             this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3698,21 +3738,6 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(443, 57);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(77, 36);
-            this.materialRaisedButton1.TabIndex = 23;
-            this.materialRaisedButton1.Text = "Log out";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
             // 
             // Mainframe
             // 
@@ -3858,6 +3883,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.ColumnHeader columnHeader43;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton6;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialListView materialListView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -3873,6 +3899,7 @@
         private System.Windows.Forms.TabPage Settings;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
@@ -4103,6 +4130,5 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.ColumnHeader columnHeader73;
         private System.Windows.Forms.ColumnHeader columnHeader74;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
     }
 }
