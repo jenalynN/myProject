@@ -16,7 +16,7 @@ namespace LoginModule.cs
     {
         
 
-        string myConnection = "Server=localhost;Database=db_poshandfabconceptstore;Uid=root;Password="; 
+        string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password="; 
         public Login()
         {
             InitializeComponent();
@@ -26,8 +26,6 @@ namespace LoginModule.cs
 
         public void log()
         {
-            try
-            {
                 MySqlConnection connection = new MySqlConnection(myConnection);
 
                 try
@@ -47,8 +45,8 @@ namespace LoginModule.cs
                 {
                     MySqlCommand Command = connection.CreateCommand();
                     Command.Connection = connection;
-                    Command.CommandText = "select * from tbl_adminuser where col_adminusername = '" +
-                        textBox1.Text + "' and col_adminpassword= '" + textBox2.Text + "'";
+                    Command.CommandText = "select * from tbl_useraccounts where col_user = '" +
+                        textBox1.Text + "' and col_password= '" + textBox2.Text + "'";
                     MySqlDataReader read = Command.ExecuteReader();
                     int count1 = 0;
                     while (read.Read())
@@ -61,13 +59,13 @@ namespace LoginModule.cs
                         MySqlCommand copro3 = new MySqlCommand();
                         connection.Open();
                         copro3.Connection = connection;
-                        copro3.CommandText = "select * from tbl_adminuser where col_adminusername = '" +
-                            textBox1.Text + "' and col_adminpassword= '" + textBox2.Text + "'";
+                        copro3.CommandText = "select * from tbl_useraccounts where col_user = '" +
+                            textBox1.Text + "' and col_password= '" + textBox2.Text + "'";
                         MySqlDataReader copro = copro3.ExecuteReader();
                         while (copro.Read())
                         {
-                            string user = (copro["col_adminusername"].ToString());
-                            string pass = (copro["col_adminpassword"].ToString());
+                            string user = (copro["col_user"].ToString());
+                            string pass = (copro["col_password"].ToString());
                             if (user == textBox1.Text && pass == textBox2.Text)
                             {
                                 DialogSuccessfulyLogin a = new DialogSuccessfulyLogin();
@@ -87,8 +85,7 @@ namespace LoginModule.cs
                 {
                     MySqlCommand Command2 = connection.CreateCommand();
                     Command2.Connection = connection;
-                    Command2.CommandText = "select * from tbl_cashieruser where col_cashierusername = '" +
-                        textBox1.Text + "' and col_cashierpassword= '" + textBox2.Text + "'";
+                    Command2.CommandText = "select * from tbl_useraccounts where col_user = '" + textBox1.Text + "' and col_password= '" + textBox2.Text + "' and col_status='unarchived'";
                     MySqlDataReader read2 = Command2.ExecuteReader();
                     int count2 = 0;
                     while (read2.Read())
@@ -102,14 +99,13 @@ namespace LoginModule.cs
                         MySqlCommand copro5 = new MySqlCommand();
                         connection.Open();
                         copro5.Connection = connection;
-                        copro5.CommandText = "select * from tbl_cashieruser where col_cashierusername = '"
-                            + textBox1.Text + "' and col_cashierpassword= '"
-                            + textBox2.Text + "'";
+                        copro5.CommandText = "select * from tbl_useraccounts where col_user = '" +
+                        textBox1.Text + "' and col_password= '" + textBox2.Text + "' and col_usertypeid='2'"; 
                         MySqlDataReader copro2 = copro5.ExecuteReader();
                         while (copro2.Read())
                         {
-                            string user = (copro2["col_cashierusername"].ToString());
-                            string pass = (copro2["col_cashierpassword"].ToString());
+                            string user = (copro2["col_user"].ToString());
+                            string pass = (copro2["col_password"].ToString());
                             if (user == textBox1.Text && pass == textBox2.Text)
                             {
                                 MessageBox.Show("Successfully Logged in!");
@@ -128,13 +124,7 @@ namespace LoginModule.cs
                     }
                 }
 
-            }
 
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to Login \n Error" + ex);
-
-            }
         }
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {

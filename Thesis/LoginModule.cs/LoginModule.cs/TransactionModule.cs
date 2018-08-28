@@ -15,12 +15,19 @@ namespace LoginModule.cs
     public partial class TransactionModule : MaterialSkin.Controls.MaterialForm
     {
 
-        string myConnection = "Server=localhost;Database=db_poshandfabconceptstore;Uid=root;Password="; 
+        string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password="; 
         public TransactionModule()
         {
             InitializeComponent();
             displayDate();
+            displayTransaction();
 
+        }
+        public void displayTransaction() 
+        {
+        
+        
+        
         }
         public void displayDate() 
         {
@@ -41,15 +48,20 @@ namespace LoginModule.cs
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            string query = "select P.col_productid,P.col_productcode, B.col_brandname,  C.col_categoryname,  P.col_productprice from tbl_product P LEFT JOIN tbl_branduser B ON B.col_brandid = P.col_brandid LEFT JOIN tbl_category C ON C.col_categoryid = P.col_categoryid where P.col_status='unarchived' and P.col_productid='"+textBox4.Text+"'";
+            //string query = "select P.col_productid,P.col_productcode, B.col_brandname,  C.col_categoryname,  P.col_productprice from tbl_product P LEFT JOIN tbl_branduser B ON B.col_brandid = P.col_brandid LEFT JOIN tbl_category C ON C.col_categoryid = P.col_categoryid where P.col_status='unarchived' and P.col_productid='"+textBox4.Text+"'";
+            string query = "select P.col_productid,P.col_productcode, P.col_productname ," +
+                "B.col_brandname,  C.col_categoryname,  P.col_productprice from tbl_product P " +
+                "LEFT JOIN tbl_brandpartner B ON B.col_useraccountsid = P.col_useraccountsid " +
+                "LEFT JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
+                "where P.col_status='unarchived' and P.col_productcode='" + textBox4.Text + "'";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
             while (read.Read())
             {
 
                 ListViewItem items = new ListViewItem(read["col_productid"].ToString());
-                textBox4.Text = (read["col_productid"].ToString());
-                textBox5.Text = (read["col_productcode"].ToString());
+                textBox4.Text = (read["col_productcode"].ToString());
+                textBox10.Text = (read["col_productname"].ToString());
                 textBox6.Text=(read["col_brandname"].ToString());
                 textBox7.Text=(read["col_categoryname"].ToString());
 
@@ -72,8 +84,8 @@ namespace LoginModule.cs
             while (read.Read())
             {
 
-                ListViewItem items = new ListViewItem(read["col_productid"].ToString());
-                items.SubItems.Add(read["col_productcode"].ToString());
+                ListViewItem items = new ListViewItem(read["col_productcode"].ToString());
+                items.SubItems.Add(read["col_productname"].ToString());
 
 
                 materialListView2.Items.Add(items);
@@ -92,15 +104,55 @@ namespace LoginModule.cs
                 label3.Text = (money - total).ToString();
             }
         }
-        public void Insert() 
+        public void InsertOrder() 
         {
 
-            string[] row = { textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox1.Text, textBox8.Text, textBox9.Text };
-            var listViewItem = new ListViewItem(row);
-            materialListView1.Items.Add(listViewItem);
-            materialListView1.FullRowSelect = true;
+            {
+                MySqlConnection conn = new MySqlConnection(myConnection);
+                MySqlConnection conn2 = new MySqlConnection(myConnection);
+                MySqlCommand command = conn.CreateCommand();
+                conn.Close();
+                conn.Open();
+                if (label1.Text == "")
+                {
+                    MessageBox.Show("Please Complete the Form");
+                }
+                else
+                {
+                    conn.Close();
+                    conn.Open();
+                    MySqlCommand command2 = conn.CreateCommand();
+                    command2.CommandText = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_status) values ((SELECT col_transactionid from tbl_transaction where col_transactionid='" + label15.Text + "'),(SELECT col_productid from tbl_product where col_productname='" + textBox4.Text +"'),'" + textBox1.Text + "','" + textBox10.Text +"','unfinished')";
+                    command2.ExecuteScalar();
+                    conn.Close();
+                }
+            }
         }
-        public void clear() 
+        public void InsertTransaction()
+        {
+
+            {
+                MySqlConnection conn = new MySqlConnection(myConnection);
+                MySqlConnection conn2 = new MySqlConnection(myConnection);
+                MySqlCommand command = conn.CreateCommand();
+                conn.Close();
+                conn.Open();
+                if (label1.Text == "")
+                {
+                    MessageBox.Show("Please Complete the Form");
+                }
+                else
+                {
+                    conn.Close();
+                    conn.Open();
+                    MySqlCommand command2 = conn.CreateCommand();
+                    command2.CommandText = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_status) values ((SELECT col_transactionid from tbl_transaction where col_transactionid='" + label15.Text + "'),(SELECT col_productid from tbl_product where col_productname='" + textBox4.Text + "'),'" + textBox1.Text + "','" + textBox10.Text + "','unfinished')";
+                    command2.ExecuteScalar();
+                    conn.Close();
+                }
+            }
+        }
+        public void clear()  
         {
             textBox3.Clear();
             textBox1.Clear();
@@ -175,7 +227,7 @@ namespace LoginModule.cs
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "" || textBox8.Text == "" )
+            if (textBox1.Text == "" || textBox4.Text == "" || textBox6.Text == "" || textBox7.Text == "" || textBox8.Text == "" )
             {
                 MessageBox.Show("Please complete the form");
             }
