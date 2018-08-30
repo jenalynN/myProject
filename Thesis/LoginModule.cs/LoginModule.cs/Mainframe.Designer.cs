@@ -3682,6 +3682,7 @@
             this.materialRaisedButton1.TabIndex = 23;
             this.materialRaisedButton1.Text = "Log out";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click_2);
             // 
             // materialRaisedButton4
             // 

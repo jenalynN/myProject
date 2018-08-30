@@ -15,7 +15,7 @@ namespace LoginModule.cs
     {
 
 
-        string myConnection = "Server=localhost;Database=db_poshandfabconceptstore;Uid=root;Password=";
+        string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password=";
         public NewProduct()
         {
             InitializeComponent();
@@ -26,7 +26,6 @@ namespace LoginModule.cs
         {
             MySqlConnection conn = new MySqlConnection(myConnection);
             comboBox2.Items.Clear();
-            conn.Close();
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -40,15 +39,14 @@ namespace LoginModule.cs
             }
             conn.Close();
         }
-        public void viewbrand() 
+        public void viewbrand()
         {
             MySqlConnection conn = new MySqlConnection(myConnection);
             comboBox1.Items.Clear();
-            conn.Close();
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_branduser";
+            string query = "select * from tbl_brandpartner";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
 
@@ -57,24 +55,22 @@ namespace LoginModule.cs
                 comboBox1.Items.Add(read["col_brandname"].ToString());
             }
             conn.Close();
-        
+
         }
-        public void additem() 
+        public void additem()
         {
             MySqlConnection conn = new MySqlConnection(myConnection);
-            MySqlCommand command = conn.CreateCommand();
-            conn.Close();
-            conn.Open();
             if (label1.Text == "")
             {
                 MessageBox.Show("Please Complete the Form");
             }
             else
             {
-                conn.Close();
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = "insert into tbl_product (col_brandid,col_categoryid,col_productcode,col_productprice,col_status) values  ((SELECT col_brandid from tbl_branduser where col_brandname='" + comboBox1.Text + "'),(SELECT col_categoryid from tbl_category where col_categoryname='" + comboBox2.Text + "'),'" + textBox1.Text + "','"+textBox2.Text+ "','unarchived')";
+                command2.CommandText = "insert into tbl_product (col_useraccountsid, col_categoryid, col_productcode, col_productprice, col_status) " +
+                    "values  ((SELECT col_useraccountsid from tbl_brandpartner where col_brandname='" + comboBox1.Text + "')," +
+                    "(SELECT col_categoryid from tbl_category where col_categoryname='" + comboBox2.Text + "'),'" + textBox1.Text + "','" + textBox2.Text + "','unarchived')";
                 command2.ExecuteScalar();
                 conn.Close();
                 MessageBox.Show("Successfully Added!");

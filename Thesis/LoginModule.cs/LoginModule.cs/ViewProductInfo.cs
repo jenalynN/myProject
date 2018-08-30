@@ -14,7 +14,7 @@ namespace LoginModule.cs
     public partial class ViewProductInfo : MaterialSkin.Controls.MaterialForm
     {
 
-        string myConnection = "Server=localhost;Database=db_poshandfabconceptstore;Uid=root;Password="; 
+        string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password="; 
         public ViewProductInfo(string materialSingleLineTextField5)
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace LoginModule.cs
             {
                 label4.Text = read["col_productid"].ToString();
                 textBox1.Text = read["col_productcode"].ToString();
-                comboBox1.Text = read["col_brandid"].ToString();
+                comboBox1.Text = read["p.col_useraccountsid "].ToString();
                 comboBox2.Text = read["col_categoryid"].ToString();
                 textBox2.Text = read["col_productprice"].ToString();
                 textBox4.Text = read["col_status"].ToString();

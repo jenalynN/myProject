@@ -13,7 +13,7 @@ namespace LoginModule.cs
     public partial class ViewProductStockInfo : MaterialSkin.Controls.MaterialForm
     {
 
-        string myConnection = "Server=localhost;Database=db_poshandfabconceptstore;Uid=root;Password=";
+        string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password=";
         public ViewProductStockInfo(string materialSingleLineTextField5)
         {
             InitializeComponent();

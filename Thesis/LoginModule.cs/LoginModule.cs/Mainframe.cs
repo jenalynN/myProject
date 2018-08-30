@@ -141,8 +141,8 @@ namespace LoginModule.cs
             MySqlCommand command = conn.CreateCommand();
             string query = "select P.col_productid,P.col_productcode, B.col_brandname,  C.col_categoryname,  P.col_productprice " +
                 "from tbl_product P " +
-                "LEFT JOIN tbl_brandpartner B ON P.col_useraccountsid = B.col_useraccountsid " +
-                "LEFT JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
+                "INNER JOIN tbl_brandpartner B ON P.col_useraccountsid = B.col_useraccountsid " +
+                "INNER JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
                 "where P.col_status='unarchived'";
 
             command.CommandText = query;
@@ -316,7 +316,7 @@ namespace LoginModule.cs
             
             NewProduct a = new NewProduct();
             a.Show();
-            this.Close();
+            this.Hide();
         
         }
 
@@ -380,6 +380,18 @@ namespace LoginModule.cs
 
         }
 
-        
+        private void materialFlatButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        private void materialRaisedButton1_Click_2(object sender, EventArgs e)
+        {
+            Login a = new Login();
+            a.Show();
+            this.Hide();
+        }
     }
 }
