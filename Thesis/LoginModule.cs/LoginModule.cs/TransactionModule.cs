@@ -24,7 +24,7 @@ namespace LoginModule.cs
             label17.Text = cashier;
             displayDate();
             TransactionOutput();
-
+            
         }
         public void displayDate() 
         {
@@ -143,21 +143,20 @@ namespace LoginModule.cs
                     string ayd = basa["ayD"].ToString();
                     int plus1 = Int32.Parse(ayd);
                     int total = plus1 + 1;
-                    labelTransactionCode.Text = "PCS01" + total;
+                    labelTransactionCode.Text = "PCS0" + total;
                 }
                 con.Close();
-            }
+                InsertTransaction();
+        }
 
 
 
 
         public void InsertOrder() 
         {
-            try
+            //try
             {
                 MySqlConnection conn = new MySqlConnection(myConnection);
-                MySqlCommand command = conn.CreateCommand();
-                conn.Close();
                 conn.Open();
                 if (tbProductCode.Text == "" || tbProductName.Text == "")
                 {
@@ -165,15 +164,16 @@ namespace LoginModule.cs
                 }
                 else
                 {
-                    conn.Close();
-                    conn.Open();
                     MySqlCommand command2 = conn.CreateCommand();
-                    command2.CommandText = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_status) values ((Select col_transactionid from tbl_transaction where col_transactioncode ='" + labelTransactionCode.Text + "'), (Select col_productid from tbl_product where col_productcode='" + tbProductCode.Text + "'),'" + tbQuantity.Text + "','" + tbSubtotal.Text + "','unfinished')";
+                    command2.CommandText = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_status) " +
+                        "values ((Select col_transactionid from tbl_transaction where col_transactioncode ='" + labelTransactionCode.Text + "'), " +
+                        "(Select col_productid from tbl_product where col_productcode='" + tbProductCode.Text + "'),'" + tbQuantity.Text + "','" + 
+                        tbSubtotal.Text + "','unfinished')";
                     command2.ExecuteNonQuery();
                     conn.Close();
                 }
             }
-            catch (Exception e)
+            //catch (Exception e)
             {
 
 
@@ -305,7 +305,6 @@ namespace LoginModule.cs
             }
             else 
             {
-                InsertTransaction();
                 InsertOrder();
                 viewOrder();
             }
