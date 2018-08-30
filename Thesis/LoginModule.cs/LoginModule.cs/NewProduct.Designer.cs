@@ -77,6 +77,7 @@
             this.materialFlatButton2.TabIndex = 4;
             this.materialFlatButton2.Text = "Back";
             this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
             // 
             // groupBox1
             // 

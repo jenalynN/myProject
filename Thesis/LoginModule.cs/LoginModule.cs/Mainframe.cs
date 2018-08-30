@@ -15,7 +15,7 @@ namespace LoginModule.cs
     public partial class Mainframe : MaterialSkin.Controls.MaterialForm
     {
 
-        string myConnection = "Server=localhost;Database=db_poshandfabconceptstore;Uid=root;Password="; 
+        string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password="; 
         public Mainframe()
         {
             InitializeComponent();
@@ -39,7 +39,12 @@ namespace LoginModule.cs
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_product where col_productid = '" + label6.Text + "'";
+            string query = "select * from tbl_product p " +
+                "inner join tbl_brandpartner b " +
+                "on p.col_useraccountsid = b.col_useraccountsid " +
+                "inner join tbl_category c " +
+                "on c.col_categoryid = p.col_categoryid " +
+                "where p.col_productid = '" + label6.Text + "'";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
 
@@ -96,18 +101,21 @@ namespace LoginModule.cs
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
 
-            string query = "select * from tbl_branduser where col_status='unarchived'";
+            string query = "select * from tbl_brandpartner b " +
+                "inner join tbl_useraccounts u " +
+                "on b.col_useraccountsid = u.col_useraccountsid " +
+                "where u.col_status='unarchived'";
             command.CommandText = query;
 
             MySqlDataReader read = command.ExecuteReader();
 
             while (read.Read())
             {
-                ListViewItem items = new ListViewItem(read["col_brandid"].ToString());
+                ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
 
                 items.SubItems.Add(read["col_brandname"].ToString());
-                items.SubItems.Add(read["col_branduser"].ToString());
-                items.SubItems.Add(read["col_brandpassword"].ToString());
+                items.SubItems.Add(read["col_user"].ToString());
+                items.SubItems.Add(read["col_password"].ToString());
                 items.SubItems.Add(read["col_lastname"].ToString());
                 items.SubItems.Add(read["col_firstname"].ToString());   
                 items.SubItems.Add(read["col_middlename"].ToString());;
@@ -131,7 +139,12 @@ namespace LoginModule.cs
             
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            string query = "select P.col_productid,P.col_productcode, B.col_brandname,  C.col_categoryname,  P.col_productprice from tbl_product P LEFT JOIN tbl_branduser B ON B.col_brandid = P.col_brandid LEFT JOIN tbl_category C ON C.col_categoryid = P.col_categoryid where P.col_status='unarchived'"   ;
+            string query = "select P.col_productid,P.col_productcode, B.col_brandname,  C.col_categoryname,  P.col_productprice " +
+                "from tbl_product P " +
+                "LEFT JOIN tbl_brandpartner B ON P.col_useraccountsid = B.col_useraccountsid " +
+                "LEFT JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
+                "where P.col_status='unarchived'";
+
             command.CommandText = query;
 
             MySqlDataReader read = command.ExecuteReader();

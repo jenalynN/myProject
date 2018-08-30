@@ -51,9 +51,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ProductId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ProductBrand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -102,16 +102,16 @@
             this.label27 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.materialListView3 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BrandPartnerId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BrandName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Username = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Lastname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Firstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Middlename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DateofBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.materialFlatButton7 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton9 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -314,9 +314,9 @@
             this.columnHeader60 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.Settings = new System.Windows.Forms.TabPage();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -691,9 +691,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader11,
-            this.columnHeader21,
+            this.ProductId,
+            this.ProductBrand,
+            this.Category,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader5});
@@ -713,22 +713,22 @@
             this.materialListView1.View = System.Windows.Forms.View.Details;
             this.materialListView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView1_MouseDoubleClick);
             // 
-            // columnHeader1
+            // ProductId
             // 
-            this.columnHeader1.Text = "Product Id";
-            this.columnHeader1.Width = 125;
+            this.ProductId.Text = "Product Id";
+            this.ProductId.Width = 125;
             // 
-            // columnHeader11
+            // ProductBrand
             // 
-            this.columnHeader11.Text = "Product Brand";
-            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader11.Width = 230;
+            this.ProductBrand.Text = "Product Brand";
+            this.ProductBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ProductBrand.Width = 230;
             // 
-            // columnHeader21
+            // Category
             // 
-            this.columnHeader21.Text = "Category";
-            this.columnHeader21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader21.Width = 150;
+            this.Category.Text = "Category";
+            this.Category.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Category.Width = 150;
             // 
             // columnHeader2
             // 
@@ -1308,16 +1308,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.materialListView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15,
-            this.columnHeader44,
-            this.columnHeader45,
-            this.columnHeader46,
-            this.columnHeader47,
-            this.columnHeader48});
+            this.BrandPartnerId,
+            this.BrandName,
+            this.Username,
+            this.Password,
+            this.Lastname,
+            this.Firstname,
+            this.Middlename,
+            this.Address,
+            this.DateofBirth,
+            this.Gender});
             this.materialListView3.Depth = 0;
             this.materialListView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.materialListView3.FullRowSelect = true;
@@ -1333,51 +1333,51 @@
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader4
+            // BrandPartnerId
             // 
-            this.columnHeader4.Text = "Brand Partner Id";
-            this.columnHeader4.Width = 125;
+            this.BrandPartnerId.Text = "Brand Partner Id";
+            this.BrandPartnerId.Width = 125;
             // 
-            // columnHeader12
+            // BrandName
             // 
-            this.columnHeader12.Text = "Brand Name";
-            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader12.Width = 230;
+            this.BrandName.Text = "Brand Name";
+            this.BrandName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BrandName.Width = 230;
             // 
-            // columnHeader13
+            // Username
             // 
-            this.columnHeader13.Text = "Username";
-            this.columnHeader13.Width = 310;
+            this.Username.Text = "Username";
+            this.Username.Width = 310;
             // 
-            // columnHeader14
+            // Password
             // 
-            this.columnHeader14.Text = "Password";
-            this.columnHeader14.Width = 180;
+            this.Password.Text = "Password";
+            this.Password.Width = 180;
             // 
-            // columnHeader15
+            // Lastname
             // 
-            this.columnHeader15.Text = "Lastname";
-            this.columnHeader15.Width = 180;
+            this.Lastname.Text = "Lastname";
+            this.Lastname.Width = 180;
             // 
-            // columnHeader44
+            // Firstname
             // 
-            this.columnHeader44.Text = "Firstname";
+            this.Firstname.Text = "Firstname";
             // 
-            // columnHeader45
+            // Middlename
             // 
-            this.columnHeader45.Text = "Middlename";
+            this.Middlename.Text = "Middlename";
             // 
-            // columnHeader46
+            // Address
             // 
-            this.columnHeader46.Text = "Address";
+            this.Address.Text = "Address";
             // 
-            // columnHeader47
+            // DateofBirth
             // 
-            this.columnHeader47.Text = "Date of Birth";
+            this.DateofBirth.Text = "Date of Birth";
             // 
-            // columnHeader48
+            // Gender
             // 
-            this.columnHeader48.Text = "Gender";
+            this.Gender.Text = "Gender";
             // 
             // groupBox11
             // 
@@ -3668,6 +3668,21 @@
             this.Settings.Text = "Settings";
             this.Settings.UseVisualStyleBackColor = true;
             // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.AutoSize = true;
+            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Icon = null;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(443, 57);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(77, 36);
+            this.materialRaisedButton1.TabIndex = 23;
+            this.materialRaisedButton1.Text = "Log out";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            // 
             // materialRaisedButton4
             // 
             this.materialRaisedButton4.AutoSize = true;
@@ -3698,21 +3713,6 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(443, 57);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(77, 36);
-            this.materialRaisedButton1.TabIndex = 23;
-            this.materialRaisedButton1.Text = "Log out";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
             // 
             // Mainframe
             // 
@@ -3860,12 +3860,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader43;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialListView materialListView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader ProductId;
+        private System.Windows.Forms.ColumnHeader ProductBrand;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader Category;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton4;
@@ -3919,16 +3919,16 @@
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton9;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton23;
         private MaterialSkin.Controls.MaterialListView materialListView3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
-        private System.Windows.Forms.ColumnHeader columnHeader15;
-        private System.Windows.Forms.ColumnHeader columnHeader44;
-        private System.Windows.Forms.ColumnHeader columnHeader45;
-        private System.Windows.Forms.ColumnHeader columnHeader46;
-        private System.Windows.Forms.ColumnHeader columnHeader47;
-        private System.Windows.Forms.ColumnHeader columnHeader48;
+        private System.Windows.Forms.ColumnHeader BrandPartnerId;
+        private System.Windows.Forms.ColumnHeader BrandName;
+        private System.Windows.Forms.ColumnHeader Username;
+        private System.Windows.Forms.ColumnHeader Password;
+        private System.Windows.Forms.ColumnHeader Lastname;
+        private System.Windows.Forms.ColumnHeader Firstname;
+        private System.Windows.Forms.ColumnHeader Middlename;
+        private System.Windows.Forms.ColumnHeader Address;
+        private System.Windows.Forms.ColumnHeader DateofBirth;
+        private System.Windows.Forms.ColumnHeader Gender;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
