@@ -17,14 +17,12 @@ namespace LoginModule.cs
 
         string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password="; 
         public TransactionModule(string cashier)
-
         {
             InitializeComponent();
             TodaysSales();
             label17.Text = cashier;
             displayDate();
-            TransactionOutput();
-            
+            TransactionOutput();            
         }
         public void displayDate() 
         {
@@ -209,12 +207,14 @@ namespace LoginModule.cs
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            string query = "Select * from tbl_order where col_status='unfinished'";
+            string query = "Select * from tbl_order o " +
+                "inner join tbl_transaction t " +
+                "on o.col_transactionid = t.col_transactionid " +
+                "where t.col_transactioncode = '" + labelTransactionCode.Text + "'";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
             while (read.Read())
             {
-
                 ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
                 items.SubItems.Add(read["col_transactionid"].ToString());
                 items.SubItems.Add(read["col_productid"].ToString());
@@ -223,6 +223,7 @@ namespace LoginModule.cs
                 materialListView1.Items.Add(items);
             }
             conn.Close();
+            MessageBox.Show(query);
 
             subtotal();
             total();
