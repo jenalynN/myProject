@@ -109,9 +109,7 @@ namespace LoginModule.cs
                             string pass = (copro2["col_password"].ToString());
                             if (user == textBox1.Text && pass == textBox2.Text)
                             {
-                                MessageBox.Show("Successfully Logged in!");
-                                TransactionModule a = new TransactionModule(userid);
-                                
+                                TransactionModule a = new TransactionModule(userid);                                
                                 a.Show();
                                 this.Hide();
                                 break;

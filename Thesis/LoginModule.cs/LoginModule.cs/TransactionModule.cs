@@ -17,14 +17,15 @@ namespace LoginModule.cs
 
         string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password="; 
         public TransactionModule(string cashier)
+
         {
             InitializeComponent();
+            TodaysSales();
+            label17.Text = cashier;
             displayDate();
             TransactionOutput();
-            textBox3.Text = cashier;
 
         }
-      
         public void displayDate() 
         {
 
@@ -33,12 +34,24 @@ namespace LoginModule.cs
             label7.Text = DateTime.Now.ToLongTimeString();
         
         }
+        public void TransactionDelete()
+        {
+
+            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlCommand command = conn.CreateCommand();
+            
+                conn.Open();
+                command.CommandText = "Delete from tbl_order where col_status='unfinished'";
+                command.ExecuteScalar();
+                conn.Close();
+            
+        }
         public void printitemdetails() 
         {
             int data = 0;
             ListViewItem list = materialListView2.SelectedItems[data];
             String id = list.SubItems[0].Text;
-            textBox4.Text = id.ToString();
+            tbProductCode.Text = id.ToString();
             MySqlConnection conn = new MySqlConnection(myConnection);
 
             conn.Open();
@@ -47,41 +60,44 @@ namespace LoginModule.cs
                 "B.col_brandname,  C.col_categoryname,  P.col_productprice from tbl_product P " +
                 "LEFT JOIN tbl_brandpartner B ON B.col_useraccountsid = P.col_useraccountsid " +
                 "LEFT JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
-                "where P.col_status='unarchived' and P.col_productcode='" + textBox4.Text + "'";
+                "where P.col_status='unarchived' and P.col_productcode='" + tbProductCode.Text + "'";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
             while (read.Read())
             {
 
                 ListViewItem items = new ListViewItem(read["col_productid"].ToString());
-                textBox4.Text = (read["col_productcode"].ToString());
-                textBox10.Text = (read["col_productname"].ToString());
-                textBox6.Text=(read["col_brandname"].ToString());
-                textBox7.Text=(read["col_categoryname"].ToString());
+                tbProductCode.Text = (read["col_productcode"].ToString());
+                tbProductName.Text = (read["col_productname"].ToString());
+                tbBrand.Text=(read["col_brandname"].ToString());
+                tbCategory.Text=(read["col_categoryname"].ToString());
 
-                textBox8.Text=(read["col_productprice"].ToString());
+                tbPrice.Text=(read["col_productprice"].ToString());
             }
             conn.Close();
-            conn.Close();
         
+        }
+      public void  printorderid()
+        {
+            int data = 0;
+            ListViewItem list = materialListView1.SelectedItems[data];
+            String id = list.SubItems[0].Text;
+            tbOrderId.Text = id.ToString();
         }
         public void searchProduct() 
         {
             MySqlConnection conn = new MySqlConnection(myConnection);
             materialListView2.Items.Clear();
             conn.Open();
-            string query1 = "select * from tbl_product  where col_productcode like  '" + textBox3.Text + "%'  and col_status='unarchived'";
+            string query1 = "select * from tbl_product  where col_productcode like  '" + tbSearchItem.Text + "%'  and col_status='unarchived'";
 
             MySqlCommand command2 = conn.CreateCommand();
             command2.CommandText = query1;
             MySqlDataReader read = command2.ExecuteReader();
             while (read.Read())
             {
-
                 ListViewItem items = new ListViewItem(read["col_productcode"].ToString());
                 items.SubItems.Add(read["col_productname"].ToString());
-
-
                 materialListView2.Items.Add(items);
                 materialListView2.FullRowSelect = true;
             }
@@ -90,24 +106,32 @@ namespace LoginModule.cs
         }
         public void Change() 
         {
-            
-            if (!string.IsNullOrWhiteSpace(textBox2.Text))
+            if (!string.IsNullOrWhiteSpace(tbAmount.Text))
             {
-                double money = Double.Parse(textBox2.Text);
-                double total = Double.Parse(label2.Text);
-                label3.Text = (money - total).ToString();
+                double money = Double.Parse(tbAmount.Text);
+                double total = Double.Parse(labelTotalSales.Text);
+                labelChange.Text = (money - total).ToString();
             }
-        }public void TransactionOutput()
+        }
+        public void TodaysSales() 
         {
-            MySqlConnection connection = new MySqlConnection(myConnection);
-            connection.Open();
-            MySqlCommand command = new MySqlCommand();
-            command.Connection = connection;
-            command.CommandText = "select * from tbl_transaction";
-            MySqlDataReader read = command.ExecuteReader();
 
-            while (read.Read())
+            MySqlConnection con = new MySqlConnection(myConnection);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select SUM(col_totalprice) as price from tbl_transaction";
+            MySqlDataReader basa = cmd.ExecuteReader();
+            while (basa.Read())
             {
+                label5.Text = basa["price"].ToString();
+            }
+            con.Close();
+        
+        
+        }
+        public void TransactionOutput()
+        {
                 MySqlConnection con = new MySqlConnection(myConnection);
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand();
@@ -119,43 +143,46 @@ namespace LoginModule.cs
                     string ayd = basa["ayD"].ToString();
                     int plus1 = Int32.Parse(ayd);
                     int total = plus1 + 1;
-                    label15.Text = "PCS01" + total;
+                    labelTransactionCode.Text = "PCS01" + total;
                 }
-
-
                 con.Close();
             }
 
 
 
 
-        }
         public void InsertOrder() 
         {
+            try
+            {
                 MySqlConnection conn = new MySqlConnection(myConnection);
-                MySqlConnection conn2 = new MySqlConnection(myConnection);
                 MySqlCommand command = conn.CreateCommand();
                 conn.Close();
                 conn.Open();
-                if (label1.Text == "")
+                if (tbProductCode.Text == "" || tbProductName.Text == "")
                 {
-                    MessageBox.Show("Please Complete the Form");
+                    MessageBox.Show("Please select an item you wish to add");
                 }
                 else
                 {
                     conn.Close();
                     conn.Open();
                     MySqlCommand command2 = conn.CreateCommand();
-                    command2.CommandText = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_status) values ((SELECT col_transactionid from tbl_transaction where col_transactionid='" + label15.Text + "'),(SELECT col_productid from tbl_product where col_productname='" + textBox4.Text +"'),'" + textBox1.Text + "','" + textBox10.Text +"','unfinished')";
-                    command2.ExecuteScalar();
+                    command2.CommandText = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_status) values ((Select col_transactionid from tbl_transaction where col_transactioncode ='" + labelTransactionCode.Text + "'), (Select col_productid from tbl_product where col_productcode='" + tbProductCode.Text + "'),'" + tbQuantity.Text + "','" + tbSubtotal.Text + "','unfinished')";
+                    command2.ExecuteNonQuery();
                     conn.Close();
                 }
+            }
+            catch (Exception e)
+            {
+
+
+            }
+        
         }
         public void InsertTransaction()
         {
-            {
                 MySqlConnection conn = new MySqlConnection(myConnection);
-                MySqlConnection conn2 = new MySqlConnection(myConnection);
                 MySqlCommand command = conn.CreateCommand();
                 conn.Close();
                 conn.Open();
@@ -168,41 +195,82 @@ namespace LoginModule.cs
                     conn.Close();
                     conn.Open();
                     MySqlCommand command2 = conn.CreateCommand();
-                    command2.CommandText = "insert into tbl_transaction(col_transactioncode,col_dateofpurchase) values ('" + label15.Text + "',now())";
+                    command2.CommandText = "insert into tbl_transaction(col_transactioncode,col_useraccountsid,col_totalprice,col_dateofpurchase) values ('" + labelTransactionCode.Text + "','" + label17.Text + "','" + labelTotalSales.Text + "',now())";
                     command2.ExecuteScalar();
                     conn.Close();
                 }
-            }
+            
         }
-        public void clear()  
+        public void viewOrder() 
         {
-            textBox3.Clear();
-            textBox1.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox6.Clear();
-            textBox7.Clear();
-            textBox8.Clear();
-            textBox9.Clear();
-            searchProduct();
-        
+
+            materialListView1.Items.Clear();
+            MySqlConnection conn = new MySqlConnection(myConnection);
+
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "Select * from tbl_order where col_status='unfinished'";
+            command.CommandText = query;
+            MySqlDataReader read = command.ExecuteReader();
+            while (read.Read())
+            {
+
+                ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
+                items.SubItems.Add(read["col_transactionid"].ToString());
+                items.SubItems.Add(read["col_productid"].ToString());
+                items.SubItems.Add(read["col_quantitybought"].ToString());
+                items.SubItems.Add(read["col_subtotal"].ToString());
+                materialListView1.Items.Add(items);
+            }
+            conn.Close();
+
+            subtotal();
+            total();
+
+            materialListView2.Items.Clear();
+
+            tbSubtotal.Clear();
+            tbSearchItem.Clear();
+            tbQuantity.Clear();
+            tbPrice.Clear();
+            tbOrderId.Clear();
+            tbProductName.Clear();
+            tbProductCode.Clear();
+            tbBrand.Clear();
+            tbCategory.Clear();
+           
         }
         public void remove() 
         {
-
-            for (int i = materialListView1.Items.Count - 1; i >= 0; i--)
+            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlCommand command = conn.CreateCommand();
+            conn.Close();
+            conn.Open();
+            if (tbOrderId.Text == "") 
             {
-                if (materialListView1.Items[i].Selected)
-                {
-                    materialListView1.Items[i].Remove();
-                }
+            MessageBox.Show("Please select an item from the item list");
+            }
+            else
+            {
+                conn.Close();
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = "Delete from tbl_order where col_orderid='"+tbOrderId.Text+"'";
+                command2.ExecuteScalar();
+                conn.Close();
             }
         }
-        public void subtotal() 
+        public void subtotal()
         {
-            double itemsold = Double.Parse(textBox1.Text);
-            double price = Double.Parse(textBox8.Text);
-            textBox9.Text = (price * itemsold).ToString();
+            try
+            {
+                double itemsold = Double.Parse(tbQuantity.Text);
+                double price = Double.Parse(tbPrice.Text);
+                tbSubtotal.Text = (price * itemsold).ToString();
+            }catch(Exception e)
+            {
+            
+            }
         }
         public void total()
         {
@@ -210,35 +278,18 @@ namespace LoginModule.cs
 
             for (int i = 0; i < materialListView1.Items.Count; i++)
             {
-                value += float.Parse(materialListView1.Items[i].SubItems[6].Text);
+                value += float.Parse(materialListView1.Items[i].SubItems[4].Text);
             }
 
-           label2.Text = Convert.ToString(value);
+           labelTotalSales.Text = Convert.ToString(value);
         
         }
-
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             Mainframe a = new Mainframe();
             a.Show();
                 this.Close();
         }
-
-        private void materialSingleLineTextField2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialFlatButton4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
 
@@ -246,27 +297,22 @@ namespace LoginModule.cs
             label6.Text = DateTime.Now.ToLongDateString();
             timer1.Start();
         }
-
         private void materialFlatButton2_Click(object sender, EventArgs e)
-        {
-            InsertTransaction();
-            if (textBox1.Text == "" || textBox4.Text == "" || textBox6.Text == "" || textBox7.Text == "" || textBox8.Text == "" )
+        {  
+            if (tbQuantity.Text == "" || tbProductCode.Text == "" || tbBrand.Text == "" || tbCategory.Text == "" || tbPrice.Text == "" )
             {
                 MessageBox.Show("Please complete the form");
             }
             else 
             {
-                InsertOrder();
                 InsertTransaction();
-                subtotal();
-                total();
-                clear();
+                InsertOrder();
+                viewOrder();
             }
         }
-
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            if (textBox3.Text == "")
+            if (tbSearchItem.Text == "")
             {
                 materialListView2.Items.Clear();
             }
@@ -275,25 +321,20 @@ namespace LoginModule.cs
                 searchProduct();
             }
         }
-
         private void materialListView2_DoubleClick(object sender, EventArgs e)
         {
             printitemdetails();
         }
-
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
             remove();
-
             total();
+            viewOrder();
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
             Change();
         }
-
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
@@ -306,15 +347,31 @@ namespace LoginModule.cs
                 e.Handled = true;
             }
         }
-
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
 
         }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            TransactionDelete();
+            Login a = new Login();
+            a.Show();
+            this.Hide();
+        }
+        private void tbQuantity_TextChanged(object sender, EventArgs e)
+        {
+            subtotal();
+        }
+        private void materialListView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            printorderid();
+        }
+
+
+
     }
 }
