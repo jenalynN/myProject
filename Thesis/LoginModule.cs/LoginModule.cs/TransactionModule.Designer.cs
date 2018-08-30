@@ -165,7 +165,7 @@
             this.btnPurchase.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnPurchase.Depth = 0;
             this.btnPurchase.Icon = null;
-            this.btnPurchase.Location = new System.Drawing.Point(999, 597);
+            this.btnPurchase.Location = new System.Drawing.Point(880, 597);
             this.btnPurchase.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnPurchase.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPurchase.Name = "btnPurchase";
@@ -174,6 +174,7 @@
             this.btnPurchase.TabIndex = 4;
             this.btnPurchase.Text = "Purchase";
             this.btnPurchase.UseVisualStyleBackColor = true;
+            this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
             // 
             // btnAddtoCart
             // 
@@ -661,14 +662,14 @@
             this.btnBack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBack.Depth = 0;
             this.btnBack.Icon = null;
-            this.btnBack.Location = new System.Drawing.Point(1098, 597);
+            this.btnBack.Location = new System.Drawing.Point(979, 597);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnBack.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBack.Name = "btnBack";
             this.btnBack.Primary = false;
-            this.btnBack.Size = new System.Drawing.Size(56, 36);
+            this.btnBack.Size = new System.Drawing.Size(170, 36);
             this.btnBack.TabIndex = 76;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "Cancel Transaction";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 

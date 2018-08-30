@@ -22,7 +22,7 @@ namespace LoginModule.cs
             TodaysSales();
             label17.Text = cashier;
             displayDate();
-            TransactionOutput();            
+            TransactionOutput();
         }
         public void displayDate() 
         {
@@ -163,12 +163,15 @@ namespace LoginModule.cs
                 else
                 {
                     MySqlCommand command2 = conn.CreateCommand();
-                    command2.CommandText = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_status) " +
+
+                    string query = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_status) " +
                         "values ((Select col_transactionid from tbl_transaction where col_transactioncode ='" + labelTransactionCode.Text + "'), " +
                         "(Select col_productid from tbl_product where col_productcode='" + tbProductCode.Text + "'),'" + tbQuantity.Text + "','" + 
                         tbSubtotal.Text + "','unfinished')";
+                    command2.CommandText = query;
                     command2.ExecuteNonQuery();
                     conn.Close();
+                    //MessageBox.Show(query);
                 }
             }
             //catch (Exception e)
@@ -181,16 +184,12 @@ namespace LoginModule.cs
         public void InsertTransaction()
         {
                 MySqlConnection conn = new MySqlConnection(myConnection);
-                MySqlCommand command = conn.CreateCommand();
-                conn.Close();
-                conn.Open();
                 if (label1.Text == "")
                 {
                     MessageBox.Show("Please Complete the Form");
                 }
                 else
                 {
-                    conn.Close();
                     conn.Open();
                     MySqlCommand command2 = conn.CreateCommand();
                     command2.CommandText = "insert into tbl_transaction(col_transactioncode,col_useraccountsid,col_totalprice,col_dateofpurchase) values ('" + labelTransactionCode.Text + "','" + label17.Text + "','" + labelTotalSales.Text + "',now())";
@@ -199,6 +198,35 @@ namespace LoginModule.cs
                 }
             
         }
+
+        public void InsertTransactionTotalAmount()
+        {
+            MySqlConnection conn = new MySqlConnection(myConnection);
+            double TotalSales = Double.Parse(labelTotalSales.Text);
+            double tenderAmount = Double.Parse(tbAmount.Text);
+            double change = Double.Parse(labelChange.Text);
+            
+
+            if (tbAmount.Text == "")
+            {
+                MessageBox.Show("Please enter tender amount");
+            }
+            else
+            {
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+                string query = "UPDATE tbl_transaction SET " +
+                    "col_totalprice= " + TotalSales +
+                    ", col_tenderamount= " + tenderAmount +
+                    ", col_change= " + change +
+                    " WHERE col_transactioncode='" + labelTransactionCode.Text + "'";
+                command2.CommandText = query;
+                command2.ExecuteScalar();
+                conn.Close();
+            }
+
+        }
+
         public void viewOrder() 
         {
 
@@ -210,20 +238,30 @@ namespace LoginModule.cs
             string query = "Select * from tbl_order o " +
                 "inner join tbl_transaction t " +
                 "on o.col_transactionid = t.col_transactionid " +
+                "inner join tbl_product p " +
+                "on o.col_productid = p.col_productid " +
+                "inner join tbl_brandpartner b " +
+                "on p.col_useraccountsid = b.col_useraccountsid " +
+                "inner join tbl_category c " +
+                "on c.col_categoryid = p.col_categoryid " +
                 "where t.col_transactioncode = '" + labelTransactionCode.Text + "'";
+
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
             while (read.Read())
             {
                 ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
-                items.SubItems.Add(read["col_transactionid"].ToString());
-                items.SubItems.Add(read["col_productid"].ToString());
+                items.SubItems.Add(read["col_productcode"].ToString());
+                items.SubItems.Add(read["col_productname"].ToString());
+                items.SubItems.Add(read["col_brandname"].ToString());
+                items.SubItems.Add(read["col_categoryname"].ToString());
+                items.SubItems.Add(read["col_productprice"].ToString());
                 items.SubItems.Add(read["col_quantitybought"].ToString());
                 items.SubItems.Add(read["col_subtotal"].ToString());
                 materialListView1.Items.Add(items);
             }
             conn.Close();
-            MessageBox.Show(query);
+            //MessageBox.Show(query);
 
             subtotal();
             total();
@@ -279,7 +317,7 @@ namespace LoginModule.cs
 
             for (int i = 0; i < materialListView1.Items.Count; i++)
             {
-                value += float.Parse(materialListView1.Items[i].SubItems[4].Text);
+                value += float.Parse(materialListView1.Items[i].SubItems[5].Text);
             }
 
            labelTotalSales.Text = Convert.ToString(value);
@@ -371,7 +409,10 @@ namespace LoginModule.cs
             printorderid();
         }
 
-
-
+        private void btnPurchase_Click(object sender, EventArgs e)
+        {
+            InsertTransactionTotalAmount();
+            MessageBox.Show("Thank You Come AGAIN!!!");
+        }
     }
 }
