@@ -16,7 +16,7 @@ namespace LoginModule.cs
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Mainframe());
+            Application.Run(new Login());
         }
     }
 }

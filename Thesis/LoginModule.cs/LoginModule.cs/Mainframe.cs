@@ -359,21 +359,6 @@ namespace LoginModule.cs
         }
 
 
-        private void materialFlatButton6_Click_1(object sender, EventArgs e)
-        {
-            if (label6.Text == "SI")
-            {
-                DialogSelectRecordBelow a = new DialogSelectRecordBelow();
-                a.Show();
-
-            }
-            else
-            {
-                ViewProductStockInfo a = new ViewProductStockInfo(label6.Text);
-                a.Show();
-                this.Hide();
-            }
-        }
 
         private void groupBox28_Enter(object sender, EventArgs e)
         {

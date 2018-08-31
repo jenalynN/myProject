@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogQuantityError.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,12 +108,9 @@
     <Compile Include="ViewProductInfo.Designer.cs">
       <DependentUpon>ViewProductInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewProductStockInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewProductStockInfo.Designer.cs">
-      <DependentUpon>ViewProductStockInfo.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DialogQuantityError.resx">
       <DependentUpon>DialogQuantityError.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewProductInfo.resx">
       <DependentUpon>ViewProductInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewProductStockInfo.resx">
-      <DependentUpon>ViewProductStockInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

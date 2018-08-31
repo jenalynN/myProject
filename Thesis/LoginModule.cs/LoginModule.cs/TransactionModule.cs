@@ -414,5 +414,11 @@ namespace LoginModule.cs
             InsertTransactionTotalAmount();
             MessageBox.Show("Thank You Come AGAIN!!!");
         }
+
+        private void materialFlatButton4_Click(object sender, EventArgs e)
+        {
+            ChangePassword a = new ChangePassword(label17.Text);
+            a.Show();
+        }
     }
 }

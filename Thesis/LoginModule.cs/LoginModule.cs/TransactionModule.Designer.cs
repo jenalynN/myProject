@@ -543,6 +543,7 @@
             this.materialFlatButton4.TabIndex = 24;
             this.materialFlatButton4.Text = "Change password";
             this.materialFlatButton4.UseVisualStyleBackColor = true;
+            this.materialFlatButton4.Click += new System.EventHandler(this.materialFlatButton4_Click);
             // 
             // materialFlatButton5
             // 
