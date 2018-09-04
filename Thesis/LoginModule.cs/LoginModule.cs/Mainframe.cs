@@ -103,7 +103,11 @@ namespace LoginModule.cs
             string query = "select * from tbl_brandpartner b " +
                 "inner join tbl_useraccounts u " +
                 "on b.col_useraccountsid = u.col_useraccountsid " +
-                "where u.col_status='unarchived'";
+                "inner join tbl_usertype t " +
+                "on t.col_usertypeid = u.col_usertypeid " +
+                "where u.col_status='unarchived' and t.col_usertypeid=3";
+
+            MessageBox.Show(query);
             command.CommandText = query;
 
             MySqlDataReader read = command.ExecuteReader();

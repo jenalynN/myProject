@@ -316,6 +316,7 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -1309,7 +1310,8 @@
             this.Middlename,
             this.Address,
             this.DateofBirth,
-            this.Gender});
+            this.Gender,
+            this.columnHeader1});
             this.materialListView3.Depth = 0;
             this.materialListView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.materialListView3.FullRowSelect = true;
@@ -1328,7 +1330,7 @@
             // BrandPartnerId
             // 
             this.BrandPartnerId.Text = "Brand Partner Id";
-            this.BrandPartnerId.Width = 125;
+            this.BrandPartnerId.Width = 300;
             // 
             // BrandName
             // 
@@ -1339,37 +1341,45 @@
             // Username
             // 
             this.Username.Text = "Username";
+            this.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Username.Width = 310;
             // 
             // Password
             // 
             this.Password.Text = "Password";
+            this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Password.Width = 180;
             // 
             // Lastname
             // 
             this.Lastname.Text = "Lastname";
+            this.Lastname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Lastname.Width = 180;
             // 
             // Firstname
             // 
             this.Firstname.Text = "Firstname";
+            this.Firstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Middlename
             // 
             this.Middlename.Text = "Middlename";
+            this.Middlename.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Address
             // 
             this.Address.Text = "Address";
+            this.Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DateofBirth
             // 
             this.DateofBirth.Text = "Date of Birth";
+            this.DateofBirth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Gender
             // 
             this.Gender.Text = "Gender";
+            this.Gender.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox11
             // 
@@ -3708,6 +3718,10 @@
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Contact Number";
+            // 
             // Mainframe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4097,5 +4111,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader73;
         private System.Windows.Forms.ColumnHeader columnHeader74;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
