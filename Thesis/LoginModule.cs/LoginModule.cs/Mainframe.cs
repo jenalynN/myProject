@@ -155,7 +155,7 @@ namespace LoginModule.cs
 
                 items.SubItems.Add(read["col_brandname"].ToString());
                 items.SubItems.Add(read["col_categoryname"].ToString());
-
+                
                 items.SubItems.Add(read["col_productcode"].ToString());
                 items.SubItems.Add(read["col_productprice"].ToString());
 
@@ -175,8 +175,11 @@ namespace LoginModule.cs
             conn.Close();
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-
-            string query = "select * from tbl_product where col_status='archived'";
+            string query = "select * from tbl_product P " +
+                "INNER JOIN tbl_brandpartner B ON P.col_useraccountsid = B.col_useraccountsid " +
+                "INNER JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
+                "where P.col_status='archived'";
+            //string query = "select * from tbl_product where col_status='archived'";
             command.CommandText = query;
 
             MySqlDataReader read = command.ExecuteReader();
@@ -187,7 +190,6 @@ namespace LoginModule.cs
 
                 items.SubItems.Add(read["col_brandid"].ToString());
                 items.SubItems.Add(read["col_productcode"].ToString());
-                items.SubItems.Add(read["col_productquantity"].ToString());
                 items.SubItems.Add(read["col_productprice"].ToString());
 
 

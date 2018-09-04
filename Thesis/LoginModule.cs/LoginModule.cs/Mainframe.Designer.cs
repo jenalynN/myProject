@@ -51,12 +51,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
-            this.ProductId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ProductBrand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ActiveProductId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.activeProductBrand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.activeCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.activeProductCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.activeProductPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -470,7 +469,7 @@
             this.materialFlatButton19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.materialFlatButton19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.materialFlatButton19.Icon = null;
-            this.materialFlatButton19.Location = new System.Drawing.Point(67, 39);
+            this.materialFlatButton19.Location = new System.Drawing.Point(64, 39);
             this.materialFlatButton19.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton19.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton19.Name = "materialFlatButton19";
@@ -691,12 +690,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ProductId,
-            this.ProductBrand,
-            this.Category,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader5});
+            this.ActiveProductId,
+            this.activeProductBrand,
+            this.activeCategory,
+            this.activeProductCode,
+            this.activeProductPrice});
             this.materialListView1.Depth = 0;
             this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.materialListView1.FullRowSelect = true;
@@ -713,40 +711,34 @@
             this.materialListView1.View = System.Windows.Forms.View.Details;
             this.materialListView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView1_MouseDoubleClick);
             // 
-            // ProductId
+            // ActiveProductId
             // 
-            this.ProductId.Text = "Product Id";
-            this.ProductId.Width = 125;
+            this.ActiveProductId.Text = "Product Id";
+            this.ActiveProductId.Width = 125;
             // 
-            // ProductBrand
+            // activeProductBrand
             // 
-            this.ProductBrand.Text = "Product Brand";
-            this.ProductBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ProductBrand.Width = 230;
+            this.activeProductBrand.Text = "Product Brand";
+            this.activeProductBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.activeProductBrand.Width = 230;
             // 
-            // Category
+            // activeCategory
             // 
-            this.Category.Text = "Category";
-            this.Category.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Category.Width = 150;
+            this.activeCategory.Text = "Category";
+            this.activeCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.activeCategory.Width = 150;
             // 
-            // columnHeader2
+            // activeProductCode
             // 
-            this.columnHeader2.Text = "Product Code";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 310;
+            this.activeProductCode.Text = "Product Code";
+            this.activeProductCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.activeProductCode.Width = 310;
             // 
-            // columnHeader3
+            // activeProductPrice
             // 
-            this.columnHeader3.Text = "Quantity Left";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 180;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Product Price";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 180;
+            this.activeProductPrice.Text = "Product Price";
+            this.activeProductPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.activeProductPrice.Width = 180;
             // 
             // tabPage5
             // 
@@ -3861,12 +3853,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader43;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialListView materialListView1;
-        private System.Windows.Forms.ColumnHeader ProductId;
-        private System.Windows.Forms.ColumnHeader ProductBrand;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader Category;
+        private System.Windows.Forms.ColumnHeader ActiveProductId;
+        private System.Windows.Forms.ColumnHeader activeProductBrand;
+        private System.Windows.Forms.ColumnHeader activeProductCode;
+        private System.Windows.Forms.ColumnHeader activeProductPrice;
+        private System.Windows.Forms.ColumnHeader activeCategory;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton4;
