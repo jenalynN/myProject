@@ -9,7 +9,7 @@ namespace LoginModule.cs
 {
     public static class ConnectionString
     {
-        public const string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password=";
+        public const string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password=;Convert Zero Datetime=True;Allow Zero Datetime=True";
         
     }
 }

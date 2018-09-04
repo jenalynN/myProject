@@ -15,7 +15,6 @@ namespace LoginModule.cs
     public partial class Mainframe : MaterialSkin.Controls.MaterialForm
     {
 
-        string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password="; 
         public Mainframe()
         {
             InitializeComponent();
@@ -35,7 +34,7 @@ namespace LoginModule.cs
             ListViewItem list = materialListView1.SelectedItems[data];
             String id = list.SubItems[0].Text;
             label6.Text = id.ToString();
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -54,7 +53,7 @@ namespace LoginModule.cs
         public void countunarchiveditems()
         {
 
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -75,7 +74,7 @@ namespace LoginModule.cs
         public void countarchiveditems()
         {
 
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -95,7 +94,7 @@ namespace LoginModule.cs
         }
         public void databrandpartneraccountunarchived()
         {
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
             conn.Close();
             conn.Open();
@@ -135,7 +134,7 @@ namespace LoginModule.cs
         }
         public void dataproductunarchived() 
         {
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -170,7 +169,7 @@ namespace LoginModule.cs
         }
         public void dataproductarchived()
         {
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
             conn.Close();
             conn.Open();
@@ -203,7 +202,7 @@ namespace LoginModule.cs
         }
         public void searchunarchived() 
         {
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             materialListView1.Items.Clear();
             conn.Open();
             string query1 = "select * from tbl_product  where col_productcode like  '" + textBox1.Text + "%'  and col_status='unarchived'";
@@ -377,6 +376,13 @@ namespace LoginModule.cs
         private void materialRaisedButton1_Click_2(object sender, EventArgs e)
         {
             Login a = new Login();
+            a.Show();
+            this.Hide();
+        }
+
+        private void materialFlatButton7_Click(object sender, EventArgs e)
+        {
+            NewBrandPartnerAccount a = new NewBrandPartnerAccount();
             a.Show();
             this.Hide();
         }

@@ -52,19 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionString.cs" />
     <Compile Include="ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="DialogQuantityError.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DialogQuantityError.Designer.cs">
-      <DependentUpon>DialogQuantityError.cs</DependentUpon>
-    </Compile>
+    <Compile Include="ConnectionString.cs" />
     <Compile Include="DialogSelectRecordBelow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +83,12 @@
     <Compile Include="Mainframe.Designer.cs">
       <DependentUpon>Mainframe.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewBrandPartnerAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewBrandPartnerAccount.Designer.cs">
+      <DependentUpon>NewBrandPartnerAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,9 +112,6 @@
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DialogQuantityError.resx">
-      <DependentUpon>DialogQuantityError.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DialogSelectRecordBelow.resx">
       <DependentUpon>DialogSelectRecordBelow.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mainframe.resx">
       <DependentUpon>Mainframe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewBrandPartnerAccount.resx">
+      <DependentUpon>NewBrandPartnerAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewProduct.resx">
       <DependentUpon>NewProduct.cs</DependentUpon>

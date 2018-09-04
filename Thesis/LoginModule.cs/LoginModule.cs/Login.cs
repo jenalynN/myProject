@@ -14,9 +14,7 @@ namespace LoginModule.cs
 {
     public partial class Login : MaterialSkin.Controls.MaterialForm
     {
-        
-
-        string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password="; 
+     
         public Login()
         {
             InitializeComponent();
@@ -26,7 +24,7 @@ namespace LoginModule.cs
 
         public void log()
         {
-                MySqlConnection connection = new MySqlConnection(myConnection);
+                MySqlConnection connection = new MySqlConnection(ConnectionString.myConnection);
 
                 try
                 {

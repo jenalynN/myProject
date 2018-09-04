@@ -1405,6 +1405,7 @@
             this.materialFlatButton7.TabIndex = 13;
             this.materialFlatButton7.Text = "add acount";
             this.materialFlatButton7.UseVisualStyleBackColor = false;
+            this.materialFlatButton7.Click += new System.EventHandler(this.materialFlatButton7_Click);
             // 
             // materialFlatButton9
             // 
