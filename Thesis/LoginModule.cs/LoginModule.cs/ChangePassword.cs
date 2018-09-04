@@ -40,7 +40,7 @@ namespace LoginModule.cs
         public void Update()
         {
             MySqlConnection conn2 =new MySqlConnection(myConnection);
-            conn2.Close();
+            
             MySqlCommand command2 = conn2.CreateCommand();
 
             conn2.Open();
@@ -50,12 +50,16 @@ namespace LoginModule.cs
             command2.CommandText = query;
             command2.ExecuteScalar();
             MessageBox.Show("oks");
+            conn2.Close();
+
+            this.Hide();
+
 
         }
 
         public void checkPassword()
         {
-            if (tboldpass.Text == tbnewpass.Text)
+            if (tbnewpass.Text == tbconfirmnewpass.Text)
             {
                 MySqlConnection conn = new MySqlConnection(myConnection);
                 MySqlCommand Command2 = conn.CreateCommand();

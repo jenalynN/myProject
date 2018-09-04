@@ -15,7 +15,7 @@ namespace LoginModule.cs
     {
 
 
-        string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password=";
+        
         public NewProduct()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace LoginModule.cs
         }
         public void viewcategory()
         {
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             comboBox2.Items.Clear();
 
             conn.Open();
@@ -41,7 +41,7 @@ namespace LoginModule.cs
         }
         public void viewbrand()
         {
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             comboBox1.Items.Clear();
 
             conn.Open();
@@ -59,7 +59,7 @@ namespace LoginModule.cs
         }
         public void additem()
         {
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             if (label1.Text == "")
             {
                 MessageBox.Show("Please Complete the Form");
