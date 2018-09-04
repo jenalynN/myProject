@@ -106,8 +106,6 @@ namespace LoginModule.cs
                 "inner join tbl_usertype t " +
                 "on t.col_usertypeid = u.col_usertypeid " +
                 "where u.col_status='unarchived' and t.col_usertypeid=3";
-
-            MessageBox.Show(query);
             command.CommandText = query;
 
             MySqlDataReader read = command.ExecuteReader();
@@ -191,7 +189,7 @@ namespace LoginModule.cs
             {
                 ListViewItem items = new ListViewItem(read["col_productid"].ToString());
 
-                items.SubItems.Add(read["col_brandid"].ToString());
+                items.SubItems.Add(read["col_useraccountsid"].ToString());
                 items.SubItems.Add(read["col_productcode"].ToString());
                 items.SubItems.Add(read["col_productprice"].ToString());
 
@@ -230,47 +228,7 @@ namespace LoginModule.cs
             conn.Close();
         
         }
-        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-  
-        private void materialSingleLineTextField1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialSingleLineTextField1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialRadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Mainframe_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTabSelector1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
@@ -278,35 +236,26 @@ namespace LoginModule.cs
             a.Show();
             this.Close();
         }
-
-        private void materialTabSelector4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTabSelector5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialRaisedButton4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialContextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
+        
 
         private void materialFlatButton4_Click(object sender, EventArgs e)
         {
-            searchunarchived();
+            //searchunarchived();
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "UPDATE tbl_product p SET " +
+            "col_status = 'archived' " +
+            "where p.col_productid = '" + label6.Text + "'";
+            command.CommandText = query;
+            command.ExecuteScalar();
+            conn.Close();
+
+            materialListView1.Items.Clear();
+            materialListView2.Items.Clear();
+
+            dataproductunarchived();
+            dataproductarchived();
         }
 
         private void materialFlatButton6_Click(object sender, EventArgs e)
@@ -357,23 +306,7 @@ namespace LoginModule.cs
         {
             searchunarchived();
         }
-
-        private void label29_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void groupBox28_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialFlatButton3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
        
 
@@ -390,5 +323,6 @@ namespace LoginModule.cs
             a.Show();
             this.Hide();
         }
+        
     }
 }

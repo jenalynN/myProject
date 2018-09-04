@@ -111,6 +111,7 @@
             this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateofBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.materialFlatButton7 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton9 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -316,7 +317,6 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -446,7 +446,6 @@
             this.tabPage4.Size = new System.Drawing.Size(1211, 552);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Unarchived";
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // groupBox4
             // 
@@ -547,7 +546,7 @@
             this.materialFlatButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.materialFlatButton4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.materialFlatButton4.Icon = null;
-            this.materialFlatButton4.Location = new System.Drawing.Point(764, 39);
+            this.materialFlatButton4.Location = new System.Drawing.Point(765, 39);
             this.materialFlatButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton4.Name = "materialFlatButton4";
@@ -556,6 +555,7 @@
             this.materialFlatButton4.TabIndex = 52;
             this.materialFlatButton4.Text = "Archive Product";
             this.materialFlatButton4.UseVisualStyleBackColor = false;
+            this.materialFlatButton4.Click += new System.EventHandler(this.materialFlatButton4_Click);
             // 
             // groupBox2
             // 
@@ -1137,7 +1137,6 @@
             this.materialTabSelector4.Size = new System.Drawing.Size(1985, 19);
             this.materialTabSelector4.TabIndex = 16;
             this.materialTabSelector4.Text = "materialTabSelector4";
-            this.materialTabSelector4.Click += new System.EventHandler(this.materialTabSelector4_Click);
             // 
             // materialTabControl4
             // 
@@ -1380,6 +1379,10 @@
             // 
             this.Gender.Text = "Gender";
             this.Gender.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Contact Number";
             // 
             // groupBox11
             // 
@@ -1763,7 +1766,6 @@
             this.tabPage7.Size = new System.Drawing.Size(1208, 557);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Cashier";
-            this.tabPage7.Click += new System.EventHandler(this.tabPage7_Click);
             // 
             // materialTabSelector5
             // 
@@ -1778,7 +1780,6 @@
             this.materialTabSelector5.Size = new System.Drawing.Size(1986, 19);
             this.materialTabSelector5.TabIndex = 18;
             this.materialTabSelector5.Text = "materialTabSelector5";
-            this.materialTabSelector5.Click += new System.EventHandler(this.materialTabSelector5_Click);
             // 
             // materialTabControl5
             // 
@@ -2765,7 +2766,6 @@
             this.label29.Size = new System.Drawing.Size(85, 23);
             this.label29.TabIndex = 60;
             this.label29.Text = "Search by";
-            this.label29.Click += new System.EventHandler(this.label29_Click);
             // 
             // comboBox7
             // 
@@ -2933,7 +2933,6 @@
             this.groupBox28.TabIndex = 86;
             this.groupBox28.TabStop = false;
             this.groupBox28.Text = "Table Information";
-            this.groupBox28.Enter += new System.EventHandler(this.groupBox28_Enter);
             // 
             // label67
             // 
@@ -3716,11 +3715,6 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1230, 44);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Contact Number";
             // 
             // Mainframe
             // 
@@ -3734,7 +3728,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mainframe";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Mainframe_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.materialTabControl2.ResumeLayout(false);
