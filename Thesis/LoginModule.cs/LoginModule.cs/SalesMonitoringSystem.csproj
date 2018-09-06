@@ -103,6 +103,12 @@
     <Compile Include="TransactionModule.Designer.cs">
       <DependentUpon>TransactionModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewBrandPartnerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewBrandPartnerInfo.Designer.cs">
+      <DependentUpon>ViewBrandPartnerInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewProductInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="TransactionModule.resx">
       <DependentUpon>TransactionModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBrandPartnerInfo.resx">
+      <DependentUpon>ViewBrandPartnerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewProductInfo.resx">
       <DependentUpon>ViewProductInfo.cs</DependentUpon>

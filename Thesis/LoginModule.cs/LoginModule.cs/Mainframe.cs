@@ -426,6 +426,28 @@ namespace LoginModule.cs
             searchunarchived();
         }
 
+        private void materialFlatButton23_Click(object sender, EventArgs e)
+        {
+            ViewBrandPartnerInfo a = new ViewBrandPartnerInfo(label15.Text);
+            a.Show();
+            this.Hide();
+
+        }
+        public void printbrandpartnerunarchived() 
+        {
+            int data = 0;
+            ListViewItem list = materialListView3.SelectedItems[data];
+            String id = list.SubItems[0].Text;
+            label15.Text = id.ToString();
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+          
+            conn.Close();
+        }
+        private void materialListView3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            printbrandpartnerunarchived();
+        }
+
         
     }
 }
