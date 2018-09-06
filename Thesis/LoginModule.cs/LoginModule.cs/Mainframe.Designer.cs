@@ -191,6 +191,15 @@
             this.materialDivider35 = new MaterialSkin.Controls.MaterialDivider();
             this.materialDivider34 = new MaterialSkin.Controls.MaterialDivider();
             this.Logs = new System.Windows.Forms.TabPage();
+            this.groupBox31 = new System.Windows.Forms.GroupBox();
+            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.materialListView14 = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader78 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader79 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader80 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader81 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader82 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.materialListView13 = new MaterialSkin.Controls.MaterialListView();
@@ -198,6 +207,15 @@
             this.columnHeader76 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader77 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.groupBox27 = new System.Windows.Forms.GroupBox();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.materialListView12 = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader70 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader71 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader72 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader73 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader74 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.materialListView11 = new MaterialSkin.Controls.MaterialListView();
@@ -217,6 +235,7 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.activeProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -253,7 +272,9 @@
             this.groupBox20.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.Logs.SuspendLayout();
+            this.groupBox31.SuspendLayout();
             this.groupBox30.SuspendLayout();
+            this.groupBox27.SuspendLayout();
             this.groupBox26.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.Settings.SuspendLayout();
@@ -525,10 +546,17 @@
             this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Product Code",
+            "Product Brand",
+            "Product Name",
+            "Category",
+            ""});
             this.comboBox1.Location = new System.Drawing.Point(97, 42);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(223, 37);
             this.comboBox1.TabIndex = 55;
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // textBox1
             // 
@@ -559,6 +587,8 @@
             this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ActiveProductId,
+            this.activeProductCode,
+            this.activeProductName,
             this.activeProductBrand,
             this.activeCategory,
             this.activeProductCode,
@@ -587,12 +617,14 @@
             // 
             // activeProductBrand
             // 
+            this.activeProductBrand.DisplayIndex = 1;
             this.activeProductBrand.Text = "Product Brand";
             this.activeProductBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.activeProductBrand.Width = 230;
             // 
             // activeCategory
             // 
+            this.activeCategory.DisplayIndex = 2;
             this.activeCategory.Text = "Category";
             this.activeCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.activeCategory.Width = 150;
@@ -605,6 +637,7 @@
             // 
             // activeProductPrice
             // 
+            this.activeProductPrice.DisplayIndex = 4;
             this.activeProductPrice.Text = "Product Price";
             this.activeProductPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.activeProductPrice.Width = 180;
@@ -2171,7 +2204,9 @@
             // Logs
             // 
             this.Logs.BackColor = System.Drawing.Color.White;
+            this.Logs.Controls.Add(this.groupBox31);
             this.Logs.Controls.Add(this.groupBox30);
+            this.Logs.Controls.Add(this.groupBox27);
             this.Logs.Controls.Add(this.groupBox26);
             this.Logs.Controls.Add(this.groupBox5);
             this.Logs.Location = new System.Drawing.Point(4, 25);
@@ -2180,6 +2215,103 @@
             this.Logs.Size = new System.Drawing.Size(1222, 608);
             this.Logs.TabIndex = 3;
             this.Logs.Text = "Logs";
+            // 
+            // groupBox31
+            // 
+            this.groupBox31.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox31.Controls.Add(this.comboBox12);
+            this.groupBox31.Controls.Add(this.materialListView14);
+            this.groupBox31.Controls.Add(this.materialLabel4);
+            this.groupBox31.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox31.Location = new System.Drawing.Point(842, 302);
+            this.groupBox31.Name = "groupBox31";
+            this.groupBox31.Size = new System.Drawing.Size(373, 294);
+            this.groupBox31.TabIndex = 62;
+            this.groupBox31.TabStop = false;
+            this.groupBox31.Text = "Account Logs - Logout";
+            // 
+            // comboBox12
+            // 
+            this.comboBox12.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.comboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox12.FormattingEnabled = true;
+            this.comboBox12.Items.AddRange(new object[] {
+            "ID",
+            "Code",
+            "Category",
+            "Brandname"});
+            this.comboBox12.Location = new System.Drawing.Point(123, 47);
+            this.comboBox12.Name = "comboBox12";
+            this.comboBox12.Size = new System.Drawing.Size(111, 31);
+            this.comboBox12.TabIndex = 46;
+            // 
+            // materialListView14
+            // 
+            this.materialListView14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialListView14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.materialListView14.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader78,
+            this.columnHeader79,
+            this.columnHeader80,
+            this.columnHeader81,
+            this.columnHeader82});
+            this.materialListView14.Depth = 0;
+            this.materialListView14.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.materialListView14.FullRowSelect = true;
+            this.materialListView14.GridLines = true;
+            this.materialListView14.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.materialListView14.Location = new System.Drawing.Point(6, 85);
+            this.materialListView14.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView14.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView14.Name = "materialListView14";
+            this.materialListView14.OwnerDraw = true;
+            this.materialListView14.Size = new System.Drawing.Size(361, 203);
+            this.materialListView14.TabIndex = 42;
+            this.materialListView14.UseCompatibleStateImageBehavior = false;
+            this.materialListView14.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader78
+            // 
+            this.columnHeader78.Text = "Log Id";
+            this.columnHeader78.Width = 200;
+            // 
+            // columnHeader79
+            // 
+            this.columnHeader79.Text = "Username";
+            this.columnHeader79.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader79.Width = 230;
+            // 
+            // columnHeader80
+            // 
+            this.columnHeader80.Text = "Password";
+            this.columnHeader80.Width = 114;
+            // 
+            // columnHeader81
+            // 
+            this.columnHeader81.Text = "Date";
+            // 
+            // columnHeader82
+            // 
+            this.columnHeader82.Text = "Logged in from";
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(6, 53);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(111, 19);
+            this.materialLabel4.TabIndex = 32;
+            this.materialLabel4.Text = "Search Options";
             // 
             // groupBox30
             // 
@@ -2267,6 +2399,103 @@
             this.materialLabel3.Size = new System.Drawing.Size(111, 19);
             this.materialLabel3.TabIndex = 32;
             this.materialLabel3.Text = "Search Options";
+            // 
+            // groupBox27
+            // 
+            this.groupBox27.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox27.Controls.Add(this.comboBox10);
+            this.groupBox27.Controls.Add(this.materialListView12);
+            this.groupBox27.Controls.Add(this.materialLabel2);
+            this.groupBox27.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox27.Location = new System.Drawing.Point(466, 302);
+            this.groupBox27.Name = "groupBox27";
+            this.groupBox27.Size = new System.Drawing.Size(347, 294);
+            this.groupBox27.TabIndex = 61;
+            this.groupBox27.TabStop = false;
+            this.groupBox27.Text = "Account Logs - Login";
+            // 
+            // comboBox10
+            // 
+            this.comboBox10.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Items.AddRange(new object[] {
+            "ID",
+            "Code",
+            "Category",
+            "Brandname"});
+            this.comboBox10.Location = new System.Drawing.Point(123, 47);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.Size = new System.Drawing.Size(85, 31);
+            this.comboBox10.TabIndex = 46;
+            // 
+            // materialListView12
+            // 
+            this.materialListView12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialListView12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.materialListView12.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader70,
+            this.columnHeader71,
+            this.columnHeader72,
+            this.columnHeader73,
+            this.columnHeader74});
+            this.materialListView12.Depth = 0;
+            this.materialListView12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.materialListView12.FullRowSelect = true;
+            this.materialListView12.GridLines = true;
+            this.materialListView12.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.materialListView12.Location = new System.Drawing.Point(6, 85);
+            this.materialListView12.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView12.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView12.Name = "materialListView12";
+            this.materialListView12.OwnerDraw = true;
+            this.materialListView12.Size = new System.Drawing.Size(335, 203);
+            this.materialListView12.TabIndex = 42;
+            this.materialListView12.UseCompatibleStateImageBehavior = false;
+            this.materialListView12.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader70
+            // 
+            this.columnHeader70.Text = "Log Id";
+            this.columnHeader70.Width = 200;
+            // 
+            // columnHeader71
+            // 
+            this.columnHeader71.Text = "Username";
+            this.columnHeader71.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader71.Width = 230;
+            // 
+            // columnHeader72
+            // 
+            this.columnHeader72.Text = "Password";
+            this.columnHeader72.Width = 114;
+            // 
+            // columnHeader73
+            // 
+            this.columnHeader73.Text = "Date";
+            // 
+            // columnHeader74
+            // 
+            this.columnHeader74.Text = "Logged in from";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(6, 53);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(111, 19);
+            this.materialLabel2.TabIndex = 32;
+            this.materialLabel2.Text = "Search Options";
             // 
             // groupBox26
             // 
@@ -2504,6 +2733,10 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
+            // activeProductName
+            // 
+            this.activeProductName.Text = "Product Name";
+            // 
             // Mainframe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2572,8 +2805,12 @@
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
             this.Logs.ResumeLayout(false);
+            this.groupBox31.ResumeLayout(false);
+            this.groupBox31.PerformLayout();
             this.groupBox30.ResumeLayout(false);
             this.groupBox30.PerformLayout();
+            this.groupBox27.ResumeLayout(false);
+            this.groupBox27.PerformLayout();
             this.groupBox26.ResumeLayout(false);
             this.groupBox26.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -2748,6 +2985,13 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.GroupBox groupBox27;
+        private System.Windows.Forms.ComboBox comboBox10;
+        private MaterialSkin.Controls.MaterialListView materialListView12;
+        private System.Windows.Forms.ColumnHeader columnHeader70;
+        private System.Windows.Forms.ColumnHeader columnHeader71;
+        private System.Windows.Forms.ColumnHeader columnHeader72;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.GroupBox groupBox26;
         private System.Windows.Forms.ComboBox comboBox9;
         private MaterialSkin.Controls.MaterialListView materialListView11;
@@ -2755,6 +2999,15 @@
         private System.Windows.Forms.ColumnHeader columnHeader68;
         private System.Windows.Forms.ColumnHeader columnHeader69;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.GroupBox groupBox31;
+        private System.Windows.Forms.ComboBox comboBox12;
+        private MaterialSkin.Controls.MaterialListView materialListView14;
+        private System.Windows.Forms.ColumnHeader columnHeader78;
+        private System.Windows.Forms.ColumnHeader columnHeader79;
+        private System.Windows.Forms.ColumnHeader columnHeader80;
+        private System.Windows.Forms.ColumnHeader columnHeader81;
+        private System.Windows.Forms.ColumnHeader columnHeader82;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.GroupBox groupBox30;
         private System.Windows.Forms.ComboBox comboBox11;
         private MaterialSkin.Controls.MaterialListView materialListView13;
@@ -2762,6 +3015,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader76;
         private System.Windows.Forms.ColumnHeader columnHeader77;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private System.Windows.Forms.ColumnHeader columnHeader73;
+        private System.Windows.Forms.ColumnHeader columnHeader74;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
         private System.Windows.Forms.GroupBox groupBox10;
@@ -2775,5 +3030,6 @@
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton5;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ColumnHeader activeProductName;
     }
 }

@@ -165,8 +165,7 @@ namespace LoginModule.cs
             
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            string query = "select P.col_productid,P.col_productcode, B.col_brandname,  C.col_categoryname,  P.col_productprice " +
-                "from tbl_product P " +
+            string query = "select * from tbl_product P " +
                 "INNER JOIN tbl_brandpartner B ON P.col_useraccountsid = B.col_useraccountsid " +
                 "INNER JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
                 "where P.col_status='unarchived'";
@@ -178,14 +177,11 @@ namespace LoginModule.cs
             while (read.Read())
             {
                 ListViewItem items = new ListViewItem(read["col_productid"].ToString());
-
+                items.SubItems.Add(read["col_productcode"].ToString());
+                items.SubItems.Add(read["col_productname"].ToString());
                 items.SubItems.Add(read["col_brandname"].ToString());
                 items.SubItems.Add(read["col_categoryname"].ToString());
-                
-                items.SubItems.Add(read["col_productcode"].ToString());
                 items.SubItems.Add(read["col_productprice"].ToString());
-
-              
 
                 materialListView1.Items.Add(items);
                 materialListView1.FullRowSelect = true;
@@ -229,57 +225,64 @@ namespace LoginModule.cs
         }
         public void searchunarchived()
         {
-            if (comboBox3.SelectedText == "Product Code")
-            {
-                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                materialListView1.Items.Clear();
-                conn.Open();
-                string query1 = "select * from tbl_product  where col_productcode like  '" + textBox2.Text + "%'  and col_status='unarchived'";
-
-                MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = query1;
-                MySqlDataReader read = command2.ExecuteReader();
-                while (read.Read())
-                {
-
-                    ListViewItem items = new ListViewItem(read["col_productid"].ToString());
-                    items.SubItems.Add(read["col_brandid"].ToString());
-                    items.SubItems.Add(read["col_productcode"].ToString());
-                    items.SubItems.Add(read["col_productquantity"].ToString());
-                    items.SubItems.Add(read["col_productprice"].ToString());
-
-
-                    materialListView1.Items.Add(items);
-                    materialListView1.FullRowSelect = true;
-                }
-                conn.Close();
+            string search = "col_productcode";
+            string searchby = null;
+            try {
+                searchby = comboBox1.SelectedItem.ToString();
             }
-            else if (comboBox3.SelectedText == "Product Id")
-            {
-                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                materialListView1.Items.Clear();
-                conn.Open();
-                string query1 = "select * from tbl_product  where col_productid like  '" + textBox2.Text + "%'  and col_status='unarchived'";
+            catch (Exception e) { }
 
-                MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = query1;
-                MySqlDataReader read = command2.ExecuteReader();
-                while (read.Read())
+            if (searchby != null)
                 {
-
-                    ListViewItem items = new ListViewItem(read["col_productid"].ToString());
-                    items.SubItems.Add(read["col_brandid"].ToString());
-                    items.SubItems.Add(read["col_productcode"].ToString());
-                    items.SubItems.Add(read["col_productquantity"].ToString());
-                    items.SubItems.Add(read["col_productprice"].ToString());
-
-
-                    materialListView1.Items.Add(items);
-                    materialListView1.FullRowSelect = true;
+                    if (searchby == "Product Code")
+                    {
+                        search = "col_productcode";
+                    }
+                    else if (searchby == "Product Brand")
+                    {
+                        search = "col_brandname";
+                    }
+                    else if (searchby == "Product Name")
+                    {
+                        search = "col_productname";
+                    }
+                    else if (searchby == "Category")
+                    {
+                        search = "col_categoryname";
+                    }
                 }
-                conn.Close();
 
+            string query = "select * from tbl_product P " +
+                "INNER JOIN tbl_brandpartner B ON P.col_useraccountsid = B.col_useraccountsid " +
+                "INNER JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
+                "where P.col_productcode like  '" + textBox1.Text + "%' and P.col_status='unarchived'";
+
+            if (searchby != null)
+            {
+                query = "select * from tbl_product P " +
+                "INNER JOIN tbl_brandpartner B ON P.col_useraccountsid = B.col_useraccountsid " +
+                "INNER JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
+                "where " + search + " like  '" + textBox1.Text + "%' and P.col_status='unarchived'";
             }
+
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            materialListView1.Items.Clear();
+            conn.Open();
+            MySqlCommand command2 = conn.CreateCommand();
+            command2.CommandText = query;
+            MySqlDataReader read = command2.ExecuteReader();
+            while (read.Read())
+            {
+                ListViewItem items = new ListViewItem(read["col_productid"].ToString());
+                items.SubItems.Add(read["col_productcode"].ToString());
+                items.SubItems.Add(read["col_productname"].ToString());
+                items.SubItems.Add(read["col_brandname"].ToString());
+                items.SubItems.Add(read["col_categoryname"].ToString());
+                items.SubItems.Add(read["col_productprice"].ToString());
+                materialListView1.Items.Add(items);
+                materialListView1.FullRowSelect = true;
+            }
+            conn.Close();
         }
         
 
@@ -424,6 +427,12 @@ namespace LoginModule.cs
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             searchunarchived();
+        }
+
+		private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            searchunarchived();
+            
         }
 
         private void materialFlatButton23_Click(object sender, EventArgs e)
