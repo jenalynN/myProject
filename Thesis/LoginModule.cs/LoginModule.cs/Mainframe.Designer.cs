@@ -591,7 +591,6 @@
             this.activeProductName,
             this.activeProductBrand,
             this.activeCategory,
-            this.activeProductCode,
             this.activeProductPrice});
             this.materialListView1.Depth = 0;
             this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
