@@ -112,7 +112,7 @@
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(460, 394);
+            this.materialListView1.Size = new System.Drawing.Size(454, 394);
             this.materialListView1.TabIndex = 2;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
@@ -337,9 +337,9 @@
             // 
             this.tbOrderId.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.tbOrderId.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbOrderId.Location = new System.Drawing.Point(544, 207);
+            this.tbOrderId.Location = new System.Drawing.Point(643, 207);
             this.tbOrderId.Name = "tbOrderId";
-            this.tbOrderId.Size = new System.Drawing.Size(45, 26);
+            this.tbOrderId.Size = new System.Drawing.Size(142, 26);
             this.tbOrderId.TabIndex = 75;
             // 
             // labelTransactionCode
@@ -348,7 +348,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTransactionCode.AutoSize = true;
             this.labelTransactionCode.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTransactionCode.Location = new System.Drawing.Point(642, 27);
+            this.labelTransactionCode.Location = new System.Drawing.Point(584, 27);
             this.labelTransactionCode.Name = "labelTransactionCode";
             this.labelTransactionCode.Size = new System.Drawing.Size(20, 23);
             this.labelTransactionCode.TabIndex = 71;
@@ -360,7 +360,7 @@
             this.tbProductName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbProductName.Location = new System.Drawing.Point(493, 368);
             this.tbProductName.Name = "tbProductName";
-            this.tbProductName.Size = new System.Drawing.Size(45, 26);
+            this.tbProductName.Size = new System.Drawing.Size(142, 26);
             this.tbProductName.TabIndex = 74;
             // 
             // label14
@@ -369,7 +369,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(489, 27);
+            this.label14.Location = new System.Drawing.Point(466, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 23);
             this.label14.TabIndex = 70;
@@ -381,7 +381,7 @@
             this.tbSubtotal.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSubtotal.Location = new System.Drawing.Point(493, 335);
             this.tbSubtotal.Name = "tbSubtotal";
-            this.tbSubtotal.Size = new System.Drawing.Size(45, 26);
+            this.tbSubtotal.Size = new System.Drawing.Size(142, 26);
             this.tbSubtotal.TabIndex = 73;
             // 
             // label13
@@ -390,7 +390,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(485, 165);
+            this.label13.Location = new System.Drawing.Point(466, 165);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 23);
             this.label13.TabIndex = 69;
@@ -402,7 +402,7 @@
             this.tbPrice.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPrice.Location = new System.Drawing.Point(493, 303);
             this.tbPrice.Name = "tbPrice";
-            this.tbPrice.Size = new System.Drawing.Size(45, 26);
+            this.tbPrice.Size = new System.Drawing.Size(142, 26);
             this.tbPrice.TabIndex = 72;
             // 
             // label12
@@ -411,7 +411,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(489, 104);
+            this.label12.Location = new System.Drawing.Point(466, 104);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 23);
             this.label12.TabIndex = 68;
@@ -423,7 +423,7 @@
             this.tbCategory.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCategory.Location = new System.Drawing.Point(493, 271);
             this.tbCategory.Name = "tbCategory";
-            this.tbCategory.Size = new System.Drawing.Size(45, 26);
+            this.tbCategory.Size = new System.Drawing.Size(142, 26);
             this.tbCategory.TabIndex = 71;
             // 
             // label11
@@ -432,7 +432,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(489, 64);
+            this.label11.Location = new System.Drawing.Point(466, 64);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 23);
             this.label11.TabIndex = 67;
@@ -444,7 +444,7 @@
             this.tbBrand.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbBrand.Location = new System.Drawing.Point(493, 239);
             this.tbBrand.Name = "tbBrand";
-            this.tbBrand.Size = new System.Drawing.Size(45, 26);
+            this.tbBrand.Size = new System.Drawing.Size(142, 26);
             this.tbBrand.TabIndex = 70;
             // 
             // labelChange
@@ -453,7 +453,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelChange.AutoSize = true;
             this.labelChange.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChange.Location = new System.Drawing.Point(691, 165);
+            this.labelChange.Location = new System.Drawing.Point(639, 165);
             this.labelChange.Name = "labelChange";
             this.labelChange.Size = new System.Drawing.Size(45, 23);
             this.labelChange.TabIndex = 36;
@@ -465,7 +465,7 @@
             this.tbProductCode.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbProductCode.Location = new System.Drawing.Point(493, 207);
             this.tbProductCode.Name = "tbProductCode";
-            this.tbProductCode.Size = new System.Drawing.Size(45, 26);
+            this.tbProductCode.Size = new System.Drawing.Size(142, 26);
             this.tbProductCode.TabIndex = 68;
             // 
             // label4
@@ -474,7 +474,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(641, 165);
+            this.label4.Location = new System.Drawing.Point(584, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 23);
             this.label4.TabIndex = 35;
@@ -486,7 +486,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTotalSales.AutoSize = true;
             this.labelTotalSales.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalSales.Location = new System.Drawing.Point(695, 64);
+            this.labelTotalSales.Location = new System.Drawing.Point(632, 64);
             this.labelTotalSales.Name = "labelTotalSales";
             this.labelTotalSales.Size = new System.Drawing.Size(45, 23);
             this.labelTotalSales.TabIndex = 34;
@@ -498,7 +498,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(645, 64);
+            this.label1.Location = new System.Drawing.Point(584, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 23);
             this.label1.TabIndex = 33;
@@ -509,18 +509,19 @@
             this.materialDivider2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider2.Depth = 0;
-            this.materialDivider2.Location = new System.Drawing.Point(493, 148);
+            this.materialDivider2.Location = new System.Drawing.Point(470, 161);
             this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider2.Name = "materialDivider2";
-            this.materialDivider2.Size = new System.Drawing.Size(313, 1);
+            this.materialDivider2.Size = new System.Drawing.Size(336, 1);
             this.materialDivider2.TabIndex = 29;
             this.materialDivider2.Text = "materialDivider2";
+            this.materialDivider2.Click += new System.EventHandler(this.materialDivider2_Click);
             // 
             // tbAmount
             // 
             this.tbAmount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAmount.Location = new System.Drawing.Point(649, 101);
+            this.tbAmount.Location = new System.Drawing.Point(588, 101);
             this.tbAmount.Name = "tbAmount";
             this.tbAmount.Size = new System.Drawing.Size(161, 31);
             this.tbAmount.TabIndex = 24;
@@ -534,7 +535,7 @@
             this.materialFlatButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton4.Depth = 0;
             this.materialFlatButton4.Icon = null;
-            this.materialFlatButton4.Location = new System.Drawing.Point(224, 38);
+            this.materialFlatButton4.Location = new System.Drawing.Point(210, 34);
             this.materialFlatButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton4.Name = "materialFlatButton4";
@@ -552,7 +553,7 @@
             this.materialFlatButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton5.Depth = 0;
             this.materialFlatButton5.Icon = null;
-            this.materialFlatButton5.Location = new System.Drawing.Point(385, 34);
+            this.materialFlatButton5.Location = new System.Drawing.Point(371, 34);
             this.materialFlatButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton5.Name = "materialFlatButton5";
@@ -604,7 +605,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(336, 72);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(466, 83);
+            this.groupBox4.Size = new System.Drawing.Size(452, 83);
             this.groupBox4.TabIndex = 66;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Manage Account";
@@ -618,6 +619,7 @@
             this.label17.Size = new System.Drawing.Size(83, 23);
             this.label17.TabIndex = 72;
             this.label17.Text = "CashierId";
+            this.label17.Visible = false;
             // 
             // groupBox5
             // 
@@ -625,9 +627,9 @@
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(808, 72);
+            this.groupBox5.Location = new System.Drawing.Point(794, 72);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(346, 83);
+            this.groupBox5.Size = new System.Drawing.Size(360, 83);
             this.groupBox5.TabIndex = 67;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Date and Time";

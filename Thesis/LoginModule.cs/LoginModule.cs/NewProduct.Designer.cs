@@ -180,9 +180,10 @@
             // comboBox2
             // 
             this.comboBox2.BackColor = System.Drawing.Color.White;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(210, 100);
+            this.comboBox2.Location = new System.Drawing.Point(209, 100);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(223, 32);
             this.comboBox2.TabIndex = 46;
@@ -190,9 +191,10 @@
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(210, 62);
+            this.comboBox1.Location = new System.Drawing.Point(209, 62);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(223, 32);
             this.comboBox1.TabIndex = 38;

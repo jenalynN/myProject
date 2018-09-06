@@ -19,16 +19,16 @@ namespace LoginModule.cs
         public TransactionModule(string cashier)
         {
             InitializeComponent();
-            TodaysSales();
             label17.Text = cashier;
             displayDate();
             TransactionOutput();
+            TodaysSales();
         }
         public void displayDate() 
         {
 
             timer1.Start();
-            label6.Text = DateTime.Now.ToLongDateString();
+            label6.Text = DateTime.Now.ToString();
             label7.Text = DateTime.Now.ToLongTimeString();
         
         }
@@ -40,6 +40,14 @@ namespace LoginModule.cs
             
                 conn.Open();
                 command.CommandText = "Delete from tbl_order where col_status='unfinished'";
+                command.ExecuteScalar();
+                conn.Close();
+
+                MySqlConnection conn2 = new MySqlConnection(myConnection);
+                MySqlCommand command2 = conn2.CreateCommand();
+
+                conn.Open();
+                command.CommandText = "Delete from tbl_transaction where col_transactioncode='"+labelTransactionCode.Text+"'";
                 command.ExecuteScalar();
                 conn.Close();
             
@@ -84,6 +92,7 @@ namespace LoginModule.cs
         }
         public void searchProduct() 
         {
+           
             MySqlConnection conn = new MySqlConnection(myConnection);
             materialListView2.Items.Clear();
             conn.Open();
@@ -100,8 +109,8 @@ namespace LoginModule.cs
                 materialListView2.FullRowSelect = true;
             }
             conn.Close();
+            }
         
-        }
         public void Change() 
         {
             if (!string.IsNullOrWhiteSpace(tbAmount.Text))
@@ -118,7 +127,7 @@ namespace LoginModule.cs
             con.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select SUM(col_totalprice) as price from tbl_transaction";
+            cmd.CommandText = "select SUM(col_totalprice) as price from tbl_transaction where col_dateofpurchase='"+label6.Text+"'";
             MySqlDataReader basa = cmd.ExecuteReader();
             while (basa.Read())
             {
@@ -152,7 +161,7 @@ namespace LoginModule.cs
 
         public void InsertOrder() 
         {
-            //try
+            try
             {
                 MySqlConnection conn = new MySqlConnection(myConnection);
                 conn.Open();
@@ -171,12 +180,12 @@ namespace LoginModule.cs
                     command2.CommandText = query;
                     command2.ExecuteNonQuery();
                     conn.Close();
-                    //MessageBox.Show(query);
+                    MessageBox.Show(query);
                 }
             }
-            //catch (Exception e)
+            catch (Exception e)
             {
-
+                MessageBox.Show(""+e);
 
             }
         
@@ -202,10 +211,6 @@ namespace LoginModule.cs
         public void InsertTransactionTotalAmount()
         {
             MySqlConnection conn = new MySqlConnection(myConnection);
-            double TotalSales = Double.Parse(labelTotalSales.Text);
-            double tenderAmount = Double.Parse(tbAmount.Text);
-            double change = Double.Parse(labelChange.Text);
-            
 
             if (tbAmount.Text == "")
             {
@@ -213,12 +218,15 @@ namespace LoginModule.cs
             }
             else
             {
+
+                double TotalSales = Double.Parse(labelTotalSales.Text);
+                double tenderAmount = Double.Parse(tbAmount.Text);
+                double change = Double.Parse(labelChange.Text);
+            
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
                 string query = "UPDATE tbl_transaction SET " +
                     "col_totalprice= " + TotalSales +
-                    ", col_tenderamount= " + tenderAmount +
-                    ", col_change= " + change +
                     " WHERE col_transactioncode='" + labelTransactionCode.Text + "'";
                 command2.CommandText = query;
                 command2.ExecuteScalar();
@@ -317,7 +325,7 @@ namespace LoginModule.cs
 
             for (int i = 0; i < materialListView1.Items.Count; i++)
             {
-                value += float.Parse(materialListView1.Items[i].SubItems[5].Text);
+                value += float.Parse(materialListView1.Items[i].SubItems[7].Text);
             }
 
            labelTotalSales.Text = Convert.ToString(value);
@@ -331,9 +339,8 @@ namespace LoginModule.cs
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             label7.Text = DateTime.Now.ToLongTimeString();
-            label6.Text = DateTime.Now.ToLongDateString();
+            label6.Text = DateTime.Now.ToShortDateString();
             timer1.Start();
         }
         private void materialFlatButton2_Click(object sender, EventArgs e)
@@ -413,12 +420,20 @@ namespace LoginModule.cs
         {
             InsertTransactionTotalAmount();
             MessageBox.Show("Thank You Come AGAIN!!!");
+            Login a = new Login();
+            a.Show();
+            this.Hide();
         }
 
         private void materialFlatButton4_Click(object sender, EventArgs e)
         {
             ChangePassword a = new ChangePassword(label17.Text);
             a.Show();
+        }
+
+        private void materialDivider2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

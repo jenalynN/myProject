@@ -50,6 +50,31 @@ namespace LoginModule.cs
             conn.Close();
 
         }
+        public void printarchivedproduct()
+        {
+            int data = 0;
+            ListViewItem list = materialListView2.SelectedItems[data];
+            String id = list.SubItems[0].Text;
+            label9.Text = id.ToString();
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "select * from tbl_product p " +
+                "inner join tbl_brandpartner b " +
+                "on p.col_useraccountsid = b.col_useraccountsid " +
+                "inner join tbl_category c " +
+                "on c.col_categoryid = p.col_categoryid " +
+                "where p.col_productid = '" + label9.Text + "'";
+            command.CommandText = query;
+            MySqlDataReader read = command.ExecuteReader();
+
+            conn.Close();
+        }
+        public void unarchiveproduct() 
+        {
+        
+        }
         public void countunarchiveditems()
         {
 
@@ -202,31 +227,59 @@ namespace LoginModule.cs
 
 
         }
-        public void searchunarchived() 
+        public void searchunarchived()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            materialListView1.Items.Clear();
-            conn.Open();
-            string query1 = "select * from tbl_product  where col_productcode like  '" + textBox1.Text + "%'  and col_status='unarchived'";
-
-            MySqlCommand command2 = conn.CreateCommand();
-            command2.CommandText = query1;
-            MySqlDataReader read = command2.ExecuteReader();
-            while (read.Read())
+            if (comboBox3.SelectedText == "Product Code")
             {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                materialListView1.Items.Clear();
+                conn.Open();
+                string query1 = "select * from tbl_product  where col_productcode like  '" + textBox2.Text + "%'  and col_status='unarchived'";
 
-                ListViewItem items = new ListViewItem(read["col_productid"].ToString());
-                items.SubItems.Add(read["col_brandid"].ToString());
-                items.SubItems.Add(read["col_productcode"].ToString());
-                items.SubItems.Add(read["col_productquantity"].ToString());
-                items.SubItems.Add(read["col_productprice"].ToString());
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = query1;
+                MySqlDataReader read = command2.ExecuteReader();
+                while (read.Read())
+                {
 
-              
-                materialListView1.Items.Add(items);
-                materialListView1.FullRowSelect = true;
+                    ListViewItem items = new ListViewItem(read["col_productid"].ToString());
+                    items.SubItems.Add(read["col_brandid"].ToString());
+                    items.SubItems.Add(read["col_productcode"].ToString());
+                    items.SubItems.Add(read["col_productquantity"].ToString());
+                    items.SubItems.Add(read["col_productprice"].ToString());
+
+
+                    materialListView1.Items.Add(items);
+                    materialListView1.FullRowSelect = true;
+                }
+                conn.Close();
             }
-            conn.Close();
-        
+            else if (comboBox3.SelectedText == "Product Id")
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                materialListView1.Items.Clear();
+                conn.Open();
+                string query1 = "select * from tbl_product  where col_productid like  '" + textBox2.Text + "%'  and col_status='unarchived'";
+
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = query1;
+                MySqlDataReader read = command2.ExecuteReader();
+                while (read.Read())
+                {
+
+                    ListViewItem items = new ListViewItem(read["col_productid"].ToString());
+                    items.SubItems.Add(read["col_brandid"].ToString());
+                    items.SubItems.Add(read["col_productcode"].ToString());
+                    items.SubItems.Add(read["col_productquantity"].ToString());
+                    items.SubItems.Add(read["col_productprice"].ToString());
+
+
+                    materialListView1.Items.Add(items);
+                    materialListView1.FullRowSelect = true;
+                }
+                conn.Close();
+
+            }
         }
         
 
@@ -323,6 +376,56 @@ namespace LoginModule.cs
             a.Show();
             this.Hide();
         }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialFlatButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialListView2_DoubleClick(object sender, EventArgs e)
+        {
+            printarchivedproduct();
+        }
+
+        private void materialFlatButton20_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "UPDATE tbl_product p SET " +
+            "col_status = 'unarchived' " +
+            "where p.col_productid = '" + label9.Text + "'";
+            command.CommandText = query;
+            command.ExecuteScalar();
+            conn.Close();
+
+            materialListView1.Items.Clear();
+            materialListView2.Items.Clear();
+
+            dataproductunarchived();
+            dataproductarchived();
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            searchunarchived();
+        }
+
         
     }
 }
