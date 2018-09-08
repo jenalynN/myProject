@@ -76,8 +76,6 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton5 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton20 = new MaterialSkin.Controls.MaterialFlatButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.materialTabSelector3 = new MaterialSkin.Controls.MaterialTabSelector();
@@ -133,9 +131,7 @@
             this.columnHeader58 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader59 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.materialFlatButton8 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton10 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton11 = new MaterialSkin.Controls.MaterialFlatButton();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.materialTabSelector5 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl5 = new MaterialSkin.Controls.MaterialTabControl();
@@ -197,9 +193,7 @@
             this.columnHeader54 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader61 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.materialFlatButton12 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton13 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton14 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialDivider35 = new MaterialSkin.Controls.MaterialDivider();
             this.materialDivider34 = new MaterialSkin.Controls.MaterialDivider();
             this.Logs = new System.Windows.Forms.TabPage();
@@ -887,8 +881,6 @@
             // 
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox7.Controls.Add(this.materialFlatButton3);
-            this.groupBox7.Controls.Add(this.materialFlatButton5);
             this.groupBox7.Controls.Add(this.materialFlatButton20);
             this.groupBox7.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(13, 26);
@@ -897,47 +889,6 @@
             this.groupBox7.TabIndex = 55;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Manage Product";
-            // 
-            // materialFlatButton3
-            // 
-            this.materialFlatButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton3.AutoSize = true;
-            this.materialFlatButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.materialFlatButton3.Depth = 0;
-            this.materialFlatButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialFlatButton3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.materialFlatButton3.Icon = null;
-            this.materialFlatButton3.Location = new System.Drawing.Point(440, 39);
-            this.materialFlatButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton3.Name = "materialFlatButton3";
-            this.materialFlatButton3.Primary = false;
-            this.materialFlatButton3.Size = new System.Drawing.Size(150, 36);
-            this.materialFlatButton3.TabIndex = 13;
-            this.materialFlatButton3.Text = "Add new  product";
-            this.materialFlatButton3.UseVisualStyleBackColor = false;
-            // 
-            // materialFlatButton5
-            // 
-            this.materialFlatButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton5.AutoSize = true;
-            this.materialFlatButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton5.BackColor = System.Drawing.Color.White;
-            this.materialFlatButton5.Depth = 0;
-            this.materialFlatButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialFlatButton5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.materialFlatButton5.Icon = null;
-            this.materialFlatButton5.Location = new System.Drawing.Point(598, 39);
-            this.materialFlatButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton5.Name = "materialFlatButton5";
-            this.materialFlatButton5.Primary = false;
-            this.materialFlatButton5.Size = new System.Drawing.Size(138, 36);
-            this.materialFlatButton5.TabIndex = 14;
-            this.materialFlatButton5.Text = "Update Product";
-            this.materialFlatButton5.UseVisualStyleBackColor = false;
-            this.materialFlatButton5.Click += new System.EventHandler(this.materialFlatButton5_Click);
             // 
             // materialFlatButton20
             // 
@@ -1532,9 +1483,7 @@
             // 
             this.groupBox14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox14.Controls.Add(this.materialFlatButton8);
             this.groupBox14.Controls.Add(this.materialFlatButton10);
-            this.groupBox14.Controls.Add(this.materialFlatButton11);
             this.groupBox14.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox14.Location = new System.Drawing.Point(6, 15);
             this.groupBox14.Name = "groupBox14";
@@ -1542,26 +1491,6 @@
             this.groupBox14.TabIndex = 84;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Manage Account";
-            // 
-            // materialFlatButton8
-            // 
-            this.materialFlatButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton8.AutoSize = true;
-            this.materialFlatButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.materialFlatButton8.Depth = 0;
-            this.materialFlatButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialFlatButton8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.materialFlatButton8.Icon = null;
-            this.materialFlatButton8.Location = new System.Drawing.Point(523, 39);
-            this.materialFlatButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton8.Name = "materialFlatButton8";
-            this.materialFlatButton8.Primary = false;
-            this.materialFlatButton8.Size = new System.Drawing.Size(106, 36);
-            this.materialFlatButton8.TabIndex = 13;
-            this.materialFlatButton8.Text = "add acount";
-            this.materialFlatButton8.UseVisualStyleBackColor = false;
             // 
             // materialFlatButton10
             // 
@@ -1578,30 +1507,10 @@
             this.materialFlatButton10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton10.Name = "materialFlatButton10";
             this.materialFlatButton10.Primary = false;
-            this.materialFlatButton10.Size = new System.Drawing.Size(145, 36);
+            this.materialFlatButton10.Size = new System.Drawing.Size(164, 36);
             this.materialFlatButton10.TabIndex = 52;
-            this.materialFlatButton10.Text = "archive account";
+            this.materialFlatButton10.Text = "unarchive account";
             this.materialFlatButton10.UseVisualStyleBackColor = false;
-            // 
-            // materialFlatButton11
-            // 
-            this.materialFlatButton11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton11.AutoSize = true;
-            this.materialFlatButton11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton11.BackColor = System.Drawing.Color.White;
-            this.materialFlatButton11.Depth = 0;
-            this.materialFlatButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialFlatButton11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.materialFlatButton11.Icon = null;
-            this.materialFlatButton11.Location = new System.Drawing.Point(637, 39);
-            this.materialFlatButton11.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton11.Name = "materialFlatButton11";
-            this.materialFlatButton11.Primary = false;
-            this.materialFlatButton11.Size = new System.Drawing.Size(117, 36);
-            this.materialFlatButton11.TabIndex = 51;
-            this.materialFlatButton11.Text = "edit account";
-            this.materialFlatButton11.UseVisualStyleBackColor = false;
             // 
             // tabPage7
             // 
@@ -2202,9 +2111,7 @@
             // 
             this.groupBox19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox19.Controls.Add(this.materialFlatButton12);
             this.groupBox19.Controls.Add(this.materialFlatButton13);
-            this.groupBox19.Controls.Add(this.materialFlatButton14);
             this.groupBox19.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox19.Location = new System.Drawing.Point(6, 15);
             this.groupBox19.Name = "groupBox19";
@@ -2212,26 +2119,6 @@
             this.groupBox19.TabIndex = 144;
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "Manage Account";
-            // 
-            // materialFlatButton12
-            // 
-            this.materialFlatButton12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton12.AutoSize = true;
-            this.materialFlatButton12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.materialFlatButton12.Depth = 0;
-            this.materialFlatButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialFlatButton12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.materialFlatButton12.Icon = null;
-            this.materialFlatButton12.Location = new System.Drawing.Point(523, 39);
-            this.materialFlatButton12.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton12.Name = "materialFlatButton12";
-            this.materialFlatButton12.Primary = false;
-            this.materialFlatButton12.Size = new System.Drawing.Size(106, 36);
-            this.materialFlatButton12.TabIndex = 13;
-            this.materialFlatButton12.Text = "add acount";
-            this.materialFlatButton12.UseVisualStyleBackColor = false;
             // 
             // materialFlatButton13
             // 
@@ -2253,26 +2140,6 @@
             this.materialFlatButton13.Text = "unarchive account";
             this.materialFlatButton13.UseVisualStyleBackColor = false;
             this.materialFlatButton13.Click += new System.EventHandler(this.materialFlatButton13_Click);
-            // 
-            // materialFlatButton14
-            // 
-            this.materialFlatButton14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton14.AutoSize = true;
-            this.materialFlatButton14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton14.BackColor = System.Drawing.Color.White;
-            this.materialFlatButton14.Depth = 0;
-            this.materialFlatButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialFlatButton14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.materialFlatButton14.Icon = null;
-            this.materialFlatButton14.Location = new System.Drawing.Point(637, 39);
-            this.materialFlatButton14.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton14.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton14.Name = "materialFlatButton14";
-            this.materialFlatButton14.Primary = false;
-            this.materialFlatButton14.Size = new System.Drawing.Size(117, 36);
-            this.materialFlatButton14.TabIndex = 51;
-            this.materialFlatButton14.Text = "edit account";
-            this.materialFlatButton14.UseVisualStyleBackColor = false;
             // 
             // materialDivider35
             // 
@@ -3020,9 +2887,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader58;
         private System.Windows.Forms.ColumnHeader columnHeader59;
         private System.Windows.Forms.GroupBox groupBox14;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton8;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton10;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton11;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.ComboBox comboBox6;
@@ -3044,9 +2909,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader54;
         private System.Windows.Forms.ColumnHeader columnHeader61;
         private System.Windows.Forms.GroupBox groupBox19;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton12;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton13;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton14;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ColumnHeader columnHeader60;
         private System.Windows.Forms.GroupBox groupBox24;
@@ -3118,8 +2981,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox9;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton22;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton5;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ColumnHeader activeProductName;
