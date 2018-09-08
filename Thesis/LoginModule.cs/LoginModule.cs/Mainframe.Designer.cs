@@ -150,18 +150,20 @@
             this.label39 = new System.Windows.Forms.Label();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.materialListView5 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader62 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader63 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader64 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader65 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader66 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cashier_useraccountsid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cashier_user = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cashier_password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cashier_lastname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cashier_firstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cashier_middlename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cashier_address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cashier_dateofbirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cashier_gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cashier_contactnum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.materialFlatButton15 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton16 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialFlatButton17 = new MaterialSkin.Controls.MaterialFlatButton();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -169,6 +171,17 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.materialListView4 = new MaterialSkin.Controls.MaterialListView();
+            this.arc_cashier_useraccountsid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.arc_cashier_user = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.arc_cashier_password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.arc_cashier_lastname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.arc_cashier_firstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.arc_cashier_middlename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.arc_cashier_address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.arc_cashier_dateofbirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.arc_gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.arc_cashier_contactnum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -1756,16 +1769,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.materialListView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader23,
-            this.columnHeader24,
-            this.columnHeader25,
-            this.columnHeader26,
-            this.columnHeader27,
-            this.columnHeader62,
-            this.columnHeader63,
-            this.columnHeader64,
-            this.columnHeader65,
-            this.columnHeader66});
+            this.cashier_useraccountsid,
+            this.cashier_user,
+            this.cashier_password,
+            this.cashier_lastname,
+            this.cashier_firstname,
+            this.cashier_middlename,
+            this.cashier_address,
+            this.cashier_dateofbirth,
+            this.cashier_gender,
+            this.cashier_contactnum});
             this.materialListView5.Depth = 0;
             this.materialListView5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.materialListView5.FullRowSelect = true;
@@ -1780,58 +1793,61 @@
             this.materialListView5.TabIndex = 13;
             this.materialListView5.UseCompatibleStateImageBehavior = false;
             this.materialListView5.View = System.Windows.Forms.View.Details;
+            this.materialListView5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView5_MouseDoubleClick);
             // 
-            // columnHeader23
+            // cashier_useraccountsid
             // 
-            this.columnHeader23.Text = "Brand Partner Id";
-            this.columnHeader23.Width = 125;
+            this.cashier_useraccountsid.Text = "Cashier ID";
+            this.cashier_useraccountsid.Width = 180;
             // 
-            // columnHeader24
+            // cashier_user
             // 
-            this.columnHeader24.Text = "Brand Name";
-            this.columnHeader24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader24.Width = 230;
+            this.cashier_user.Text = "Username";
+            this.cashier_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cashier_user.Width = 230;
             // 
-            // columnHeader25
+            // cashier_password
             // 
-            this.columnHeader25.Text = "Username";
-            this.columnHeader25.Width = 310;
+            this.cashier_password.Text = "Password";
+            this.cashier_password.Width = 164;
             // 
-            // columnHeader26
+            // cashier_lastname
             // 
-            this.columnHeader26.Text = "Password";
-            this.columnHeader26.Width = 180;
+            this.cashier_lastname.Text = "Last Name";
+            this.cashier_lastname.Width = 180;
             // 
-            // columnHeader27
+            // cashier_firstname
             // 
-            this.columnHeader27.Text = "Lastname";
-            this.columnHeader27.Width = 180;
+            this.cashier_firstname.Text = "First Name";
+            this.cashier_firstname.Width = 180;
             // 
-            // columnHeader62
+            // cashier_middlename
             // 
-            this.columnHeader62.Text = "Firstname";
+            this.cashier_middlename.Text = "Middle Name";
             // 
-            // columnHeader63
+            // cashier_address
             // 
-            this.columnHeader63.Text = "Middlename";
+            this.cashier_address.Text = "Address";
             // 
-            // columnHeader64
+            // cashier_dateofbirth
             // 
-            this.columnHeader64.Text = "Address";
+            this.cashier_dateofbirth.Text = "Date of Birth";
             // 
-            // columnHeader65
+            // cashier_gender
             // 
-            this.columnHeader65.Text = "Date of Birth";
+            this.cashier_gender.Text = "Gender";
             // 
-            // columnHeader66
+            // cashier_contactnum
             // 
-            this.columnHeader66.Text = "Gender";
+            this.cashier_contactnum.Text = "Contact Number";
             // 
             // groupBox22
             // 
             this.groupBox22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox22.Controls.Add(this.materialFlatButton15);
             this.groupBox22.Controls.Add(this.materialFlatButton16);
+            this.groupBox22.Controls.Add(this.materialFlatButton17);
             this.groupBox22.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox22.Location = new System.Drawing.Point(6, 15);
             this.groupBox22.Name = "groupBox22";
@@ -1839,6 +1855,27 @@
             this.groupBox22.TabIndex = 145;
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Manage Account";
+            // 
+            // materialFlatButton15
+            // 
+            this.materialFlatButton15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialFlatButton15.AutoSize = true;
+            this.materialFlatButton15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.materialFlatButton15.Depth = 0;
+            this.materialFlatButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialFlatButton15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.materialFlatButton15.Icon = null;
+            this.materialFlatButton15.Location = new System.Drawing.Point(523, 39);
+            this.materialFlatButton15.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton15.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton15.Name = "materialFlatButton15";
+            this.materialFlatButton15.Primary = false;
+            this.materialFlatButton15.Size = new System.Drawing.Size(106, 36);
+            this.materialFlatButton15.TabIndex = 13;
+            this.materialFlatButton15.Text = "add acount";
+            this.materialFlatButton15.UseVisualStyleBackColor = false;
+            this.materialFlatButton15.Click += new System.EventHandler(this.materialFlatButton15_Click);
             // 
             // materialFlatButton16
             // 
@@ -1859,6 +1896,28 @@
             this.materialFlatButton16.TabIndex = 52;
             this.materialFlatButton16.Text = "archive account";
             this.materialFlatButton16.UseVisualStyleBackColor = false;
+            this.materialFlatButton16.Click += new System.EventHandler(this.materialFlatButton16_Click);
+            // 
+            // materialFlatButton17
+            // 
+            this.materialFlatButton17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialFlatButton17.AutoSize = true;
+            this.materialFlatButton17.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton17.BackColor = System.Drawing.Color.White;
+            this.materialFlatButton17.Depth = 0;
+            this.materialFlatButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialFlatButton17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.materialFlatButton17.Icon = null;
+            this.materialFlatButton17.Location = new System.Drawing.Point(637, 39);
+            this.materialFlatButton17.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton17.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton17.Name = "materialFlatButton17";
+            this.materialFlatButton17.Primary = false;
+            this.materialFlatButton17.Size = new System.Drawing.Size(117, 36);
+            this.materialFlatButton17.TabIndex = 51;
+            this.materialFlatButton17.Text = "edit account";
+            this.materialFlatButton17.UseVisualStyleBackColor = false;
+            this.materialFlatButton17.Click += new System.EventHandler(this.materialFlatButton17_Click);
             // 
             // tabPage11
             // 
@@ -1934,6 +1993,7 @@
             // 
             this.groupBox20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox20.Controls.Add(this.materialListView4);
             this.groupBox20.Controls.Add(this.textBox6);
             this.groupBox20.Controls.Add(this.label32);
             this.groupBox20.Controls.Add(this.comboBox4);
@@ -1945,6 +2005,84 @@
             this.groupBox20.TabIndex = 86;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "Cashier Accounts Table";
+            // 
+            // materialListView4
+            // 
+            this.materialListView4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialListView4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.materialListView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.arc_cashier_useraccountsid,
+            this.arc_cashier_user,
+            this.arc_cashier_password,
+            this.arc_cashier_lastname,
+            this.arc_cashier_firstname,
+            this.arc_cashier_middlename,
+            this.arc_cashier_address,
+            this.arc_cashier_dateofbirth,
+            this.arc_gender,
+            this.arc_cashier_contactnum});
+            this.materialListView4.Depth = 0;
+            this.materialListView4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.materialListView4.FullRowSelect = true;
+            this.materialListView4.GridLines = true;
+            this.materialListView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.materialListView4.Location = new System.Drawing.Point(7, 106);
+            this.materialListView4.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView4.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView4.Name = "materialListView4";
+            this.materialListView4.OwnerDraw = true;
+            this.materialListView4.Size = new System.Drawing.Size(901, 284);
+            this.materialListView4.TabIndex = 60;
+            this.materialListView4.UseCompatibleStateImageBehavior = false;
+            this.materialListView4.View = System.Windows.Forms.View.Details;
+            this.materialListView4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView4_MouseDoubleClick);
+            // 
+            // arc_cashier_useraccountsid
+            // 
+            this.arc_cashier_useraccountsid.Text = "Cashier ID";
+            this.arc_cashier_useraccountsid.Width = 125;
+            // 
+            // arc_cashier_user
+            // 
+            this.arc_cashier_user.Text = "Username";
+            this.arc_cashier_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.arc_cashier_user.Width = 230;
+            // 
+            // arc_cashier_password
+            // 
+            this.arc_cashier_password.Text = "Password";
+            this.arc_cashier_password.Width = 164;
+            // 
+            // arc_cashier_lastname
+            // 
+            this.arc_cashier_lastname.Text = "Last Name";
+            this.arc_cashier_lastname.Width = 180;
+            // 
+            // arc_cashier_firstname
+            // 
+            this.arc_cashier_firstname.Text = "First Name";
+            this.arc_cashier_firstname.Width = 180;
+            // 
+            // arc_cashier_middlename
+            // 
+            this.arc_cashier_middlename.Text = "Middle Name";
+            // 
+            // arc_cashier_address
+            // 
+            this.arc_cashier_address.Text = "Address";
+            // 
+            // arc_cashier_dateofbirth
+            // 
+            this.arc_cashier_dateofbirth.Text = "Date of Birth";
+            // 
+            // arc_gender
+            // 
+            this.arc_gender.Text = "Gender";
+            // 
+            // arc_cashier_contactnum
+            // 
+            this.arc_cashier_contactnum.Text = "Contact Number";
             // 
             // textBox6
             // 
@@ -2110,10 +2248,11 @@
             this.materialFlatButton13.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton13.Name = "materialFlatButton13";
             this.materialFlatButton13.Primary = false;
-            this.materialFlatButton13.Size = new System.Drawing.Size(145, 36);
+            this.materialFlatButton13.Size = new System.Drawing.Size(164, 36);
             this.materialFlatButton13.TabIndex = 52;
-            this.materialFlatButton13.Text = "archive account";
+            this.materialFlatButton13.Text = "unarchive account";
             this.materialFlatButton13.UseVisualStyleBackColor = false;
+            this.materialFlatButton13.Click += new System.EventHandler(this.materialFlatButton13_Click);
             // 
             // materialFlatButton14
             // 
@@ -2920,18 +3059,19 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.ComboBox comboBox8;
         private MaterialSkin.Controls.MaterialListView materialListView5;
-        private System.Windows.Forms.ColumnHeader columnHeader23;
-        private System.Windows.Forms.ColumnHeader columnHeader24;
-        private System.Windows.Forms.ColumnHeader columnHeader25;
-        private System.Windows.Forms.ColumnHeader columnHeader26;
-        private System.Windows.Forms.ColumnHeader columnHeader27;
-        private System.Windows.Forms.ColumnHeader columnHeader62;
-        private System.Windows.Forms.ColumnHeader columnHeader63;
-        private System.Windows.Forms.ColumnHeader columnHeader64;
-        private System.Windows.Forms.ColumnHeader columnHeader65;
-        private System.Windows.Forms.ColumnHeader columnHeader66;
+        private System.Windows.Forms.ColumnHeader cashier_useraccountsid;
+        private System.Windows.Forms.ColumnHeader cashier_user;
+        private System.Windows.Forms.ColumnHeader cashier_password;
+        private System.Windows.Forms.ColumnHeader cashier_lastname;
+        private System.Windows.Forms.ColumnHeader cashier_firstname;
+        private System.Windows.Forms.ColumnHeader cashier_middlename;
+        private System.Windows.Forms.ColumnHeader cashier_address;
+        private System.Windows.Forms.ColumnHeader cashier_dateofbirth;
+        private System.Windows.Forms.ColumnHeader cashier_gender;
         private System.Windows.Forms.GroupBox groupBox22;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton15;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton16;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton17;
         private System.Windows.Forms.GroupBox groupBox21;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
@@ -2983,5 +3123,17 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ColumnHeader activeProductName;
+        private MaterialSkin.Controls.MaterialListView materialListView4;
+        private System.Windows.Forms.ColumnHeader arc_cashier_useraccountsid;
+        private System.Windows.Forms.ColumnHeader arc_cashier_user;
+        private System.Windows.Forms.ColumnHeader arc_cashier_password;
+        private System.Windows.Forms.ColumnHeader arc_cashier_lastname;
+        private System.Windows.Forms.ColumnHeader arc_cashier_firstname;
+        private System.Windows.Forms.ColumnHeader arc_cashier_middlename;
+        private System.Windows.Forms.ColumnHeader arc_cashier_address;
+        private System.Windows.Forms.ColumnHeader arc_cashier_dateofbirth;
+        private System.Windows.Forms.ColumnHeader arc_cashier_contactnum;
+        private System.Windows.Forms.ColumnHeader cashier_contactnum;
+        private System.Windows.Forms.ColumnHeader arc_gender;
     }
 }

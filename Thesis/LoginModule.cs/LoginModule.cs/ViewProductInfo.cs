@@ -133,5 +133,6 @@ namespace LoginModule.cs
             lblCategoryId.Text = read["col_categoryid"].ToString();
             conn.Close();
         }
+        
     }
 }

@@ -28,14 +28,16 @@ namespace LoginModule.cs
             countarchiveditems();
             databrandpartneraccountunarchived();
             databrandpartneraccountarchived();
+
+            dataCashierAccountUnarchived();
+            dataCashierAccountArchived();
         }
         public void databrandpartneraccountarchived() 
         {
             materialListView6.Items.Clear();
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
-            conn.Close();
-            conn.Open();
+            conn.Open();        
             MySqlCommand command = conn.CreateCommand();
 
             string query = "select * from tbl_brandpartner b " +
@@ -161,7 +163,6 @@ namespace LoginModule.cs
             }
         }
         public void databrandpartneraccountunarchived()
-        {
             materialListView3.Items.Clear();
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
@@ -203,6 +204,68 @@ namespace LoginModule.cs
 
         
         }
+        public void dataCashierAccountUnarchived()
+        {
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "select * from tbl_useraccounts u " +
+                "inner join tbl_usertype t " +
+                "on t.col_usertypeid = u.col_usertypeid " +
+                "where u.col_status='unarchived' and t.col_usertypeid=2";
+            command.CommandText = query;
+            MySqlDataReader read = command.ExecuteReader();
+
+            while (read.Read())
+            {
+                ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
+                items.SubItems.Add(read["col_user"].ToString());
+                items.SubItems.Add(read["col_password"].ToString());
+                items.SubItems.Add(read["col_lastname"].ToString());
+                items.SubItems.Add(read["col_firstname"].ToString());
+                items.SubItems.Add(read["col_middlename"].ToString()); ;
+                items.SubItems.Add(read["col_address"].ToString());
+                items.SubItems.Add(read["col_dateofbirth"].ToString());
+                items.SubItems.Add(read["col_gender"].ToString());
+                items.SubItems.Add(read["col_contactnum"].ToString());
+
+                materialListView5.Items.Add(items);
+                materialListView5.FullRowSelect = true;
+            }
+            conn.Close();
+        }
+
+        public void dataCashierAccountArchived()
+        {
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "select * from tbl_useraccounts u " +
+                "inner join tbl_usertype t " +
+                "on t.col_usertypeid = u.col_usertypeid " +
+                "where u.col_status='archived' and t.col_usertypeid=2";
+            command.CommandText = query;
+            MySqlDataReader read = command.ExecuteReader();
+
+            while (read.Read())
+            {
+                ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
+                items.SubItems.Add(read["col_user"].ToString());
+                items.SubItems.Add(read["col_password"].ToString());
+                items.SubItems.Add(read["col_lastname"].ToString());
+                items.SubItems.Add(read["col_firstname"].ToString());
+                items.SubItems.Add(read["col_middlename"].ToString()); ;
+                items.SubItems.Add(read["col_address"].ToString());
+                items.SubItems.Add(read["col_dateofbirth"].ToString());
+                items.SubItems.Add(read["col_gender"].ToString());
+                items.SubItems.Add(read["col_contactnum"].ToString());
+
+                materialListView4.Items.Add(items);
+                materialListView4.FullRowSelect = true;
+            }
+            conn.Close();
+        }
+
         public void dataproductunarchived() 
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
@@ -484,6 +547,7 @@ namespace LoginModule.cs
             ViewBrandPartnerInfo a = new ViewBrandPartnerInfo(label15.Text);
             a.Show();
             this.Hide();
+
         }
         public void printbrandpartnerunarchived() 
         {
@@ -492,6 +556,7 @@ namespace LoginModule.cs
             String id = list.SubItems[0].Text;
             label15.Text = id.ToString();
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+          
             conn.Close();
         }
         public void printbrandpartnerarchived()
@@ -507,9 +572,9 @@ namespace LoginModule.cs
         {
             printbrandpartnerunarchived();
         }
-        public void archivedbrandpartner()
+		public void archivedbrandpartner()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+		    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
             string query = "UPDATE tbl_useraccounts SET " +
@@ -519,7 +584,7 @@ namespace LoginModule.cs
             command.ExecuteScalar();
             conn.Close();
         }
-        private void materialFlatButton9_Click(object sender, EventArgs e)
+		private void materialFlatButton9_Click(object sender, EventArgs e)
         {
             archivedbrandpartner();
             databrandpartneraccountunarchived();
@@ -531,7 +596,74 @@ namespace LoginModule.cs
         
         }
 
+        private void materialFlatButton15_Click(object sender, EventArgs e)
+        {
+            NewCashier a = new NewCashier();
+            a.Show();
+            this.Hide();
+        }
 
-        
+        private void materialFlatButton17_Click(object sender, EventArgs e)
+        {
+            ViewCashierInfo a = new ViewCashierInfo(label40.Text);
+            a.Show();
+            this.Hide();
+        }
+
+        private void materialListView5_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (materialListView5.SelectedItems.Count > 0)
+            {
+                ListViewItem item = materialListView5.SelectedItems[0];
+                label40.Text = item.SubItems[0].Text;
+            }
+        }
+
+        private void materialListView4_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (materialListView4.SelectedItems.Count > 0)
+            {
+                ListViewItem item = materialListView4.SelectedItems[0];
+                label33.Text = item.SubItems[0].Text;
+            }
+        }
+
+        private void materialFlatButton16_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "UPDATE tbl_useraccounts SET " +
+            "col_status = 'archived' " +
+            "WHERE col_useraccountsid='" + label40.Text + "'";
+            command.CommandText = query;
+            command.ExecuteScalar();
+            conn.Close();
+
+            materialListView4.Items.Clear();
+            materialListView5.Items.Clear();
+
+            dataCashierAccountUnarchived();
+            dataCashierAccountArchived();
+        }
+
+        private void materialFlatButton13_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "UPDATE tbl_useraccounts SET " +
+            "col_status = 'unarchived' " +
+            "WHERE col_useraccountsid='" + label33.Text + "'";
+            command.CommandText = query;
+            command.ExecuteScalar();
+            conn.Close();
+
+            materialListView4.Items.Clear();
+            materialListView5.Items.Clear();
+
+            dataCashierAccountUnarchived();
+            dataCashierAccountArchived();
+        }
     }
 }

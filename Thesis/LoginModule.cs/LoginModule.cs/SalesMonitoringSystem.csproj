@@ -83,6 +83,12 @@
     <Compile Include="Mainframe.Designer.cs">
       <DependentUpon>Mainframe.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewCashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCashier.Designer.cs">
+      <DependentUpon>NewCashier.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewBrandPartnerAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     </Compile>
     <Compile Include="TransactionModule.Designer.cs">
       <DependentUpon>TransactionModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCashierInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCashierInfo.Designer.cs">
+      <DependentUpon>ViewCashierInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewBrandPartnerInfo.cs">
       <SubType>Form</SubType>
@@ -130,6 +142,9 @@
     <EmbeddedResource Include="Mainframe.resx">
       <DependentUpon>Mainframe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewCashier.resx">
+      <DependentUpon>NewCashier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewBrandPartnerAccount.resx">
       <DependentUpon>NewBrandPartnerAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +162,9 @@
     </Compile>
     <EmbeddedResource Include="TransactionModule.resx">
       <DependentUpon>TransactionModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCashierInfo.resx">
+      <DependentUpon>ViewCashierInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewBrandPartnerInfo.resx">
       <DependentUpon>ViewBrandPartnerInfo.cs</DependentUpon>
