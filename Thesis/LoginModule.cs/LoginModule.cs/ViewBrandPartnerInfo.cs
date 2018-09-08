@@ -69,7 +69,7 @@ namespace LoginModule.cs
             "col_address = '" + textBox5.Text + "', " +
             "col_dateofbirth = '" + dateTimePicker1.Value + "', " +
             "col_gender = '" + comboBox1.SelectedItem.ToString() + "', " +
-            "col_contactnum = '" + textBox6.Text + "', " +
+            "col_contactnum = '" + textBox6.Text + "' " +
             "WHERE col_useraccountsid='" + labelBrandpartnerId.Text + "'";
 
             command.CommandText = query;
@@ -80,11 +80,18 @@ namespace LoginModule.cs
             query = "UPDATE tbl_brandpartner SET " +
             "col_brandname = '" + textBox4.Text + "', " +
             "col_brandaddress = '" + textBox7.Text + "', " +
-            "col_brandcontactnum = '" + textBox8.Text + "', " +
+            "col_brandcontactnum = '" + textBox8.Text + "' " +
             "WHERE col_useraccountsid='" + labelBrandpartnerId.Text + "'";
             command.CommandText = query;
             command.ExecuteScalar();
             conn.Close();
+        }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+            Mainframe a = new Mainframe();
+            a.Show();
+            this.Hide();
         }
     }
 }

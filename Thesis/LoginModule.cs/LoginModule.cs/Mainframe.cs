@@ -162,7 +162,9 @@ namespace LoginModule.cs
                 label13.Text =  read["items"].ToString();
             }
         }
+
         public void databrandpartneraccountunarchived()
+        { 
             materialListView3.Items.Clear();
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
@@ -337,7 +339,8 @@ namespace LoginModule.cs
             try {
                 searchby = comboBox1.SelectedItem.ToString();
             }
-            catch (Exception e) { }
+            catch (Exception e) { //MessageBox.Show(e.ToString());  
+            }
 
             if (searchby != null)
                 {
@@ -605,9 +608,12 @@ namespace LoginModule.cs
 
         private void materialFlatButton17_Click(object sender, EventArgs e)
         {
-            ViewCashierInfo a = new ViewCashierInfo(label40.Text);
-            a.Show();
-            this.Hide();
+            if (label40.Text != "SI")
+            {
+                ViewCashierInfo a = new ViewCashierInfo(label40.Text);
+                a.Show();
+                this.Hide();
+            }
         }
 
         private void materialListView5_MouseDoubleClick(object sender, MouseEventArgs e)

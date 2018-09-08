@@ -103,6 +103,7 @@
             this.materialFlatButton2.TabIndex = 1;
             this.materialFlatButton2.Text = "Cancel";
             this.materialFlatButton2.UseVisualStyleBackColor = false;
+            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
             // 
             // groupBox1
             // 
