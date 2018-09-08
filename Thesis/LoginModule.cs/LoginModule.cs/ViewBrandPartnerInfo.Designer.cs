@@ -62,7 +62,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +83,7 @@
             this.materialFlatButton1.TabIndex = 0;
             this.materialFlatButton1.Text = "Update";
             this.materialFlatButton1.UseVisualStyleBackColor = false;
+            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
             // 
             // materialFlatButton2
             // 
@@ -107,7 +107,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.textBox11);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.labelBrandpartnerId);
@@ -433,13 +432,6 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Firstname";
             // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(610, 19);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(222, 32);
-            this.textBox11.TabIndex = 100;
-            // 
             // ViewBrandPartnerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,6 +485,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox11;
     }
 }

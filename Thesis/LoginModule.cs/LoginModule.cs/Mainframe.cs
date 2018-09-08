@@ -27,6 +27,49 @@ namespace LoginModule.cs
             countunarchiveditems();
             countarchiveditems();
             databrandpartneraccountunarchived();
+            databrandpartneraccountarchived();
+        }
+        public void databrandpartneraccountarchived() 
+        {
+            materialListView6.Items.Clear();
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+            conn.Close();
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+
+            string query = "select * from tbl_brandpartner b " +
+                "inner join tbl_useraccounts u " +
+                "on b.col_useraccountsid = u.col_useraccountsid " +
+                "inner join tbl_usertype t " +
+                "on t.col_usertypeid = u.col_usertypeid " +
+                "where u.col_status='archived' and t.col_usertypeid=3";
+            command.CommandText = query;
+
+            MySqlDataReader read = command.ExecuteReader();
+
+            while (read.Read())
+            {
+                ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
+
+                items.SubItems.Add(read["col_brandname"].ToString());
+                items.SubItems.Add(read["col_user"].ToString());
+                items.SubItems.Add(read["col_password"].ToString());
+                items.SubItems.Add(read["col_lastname"].ToString());
+                items.SubItems.Add(read["col_firstname"].ToString());
+                items.SubItems.Add(read["col_middlename"].ToString()); ;
+                items.SubItems.Add(read["col_address"].ToString());
+                items.SubItems.Add(read["col_dateofbirth"].ToString());
+                items.SubItems.Add(read["col_gender"].ToString());
+                items.SubItems.Add(read["col_contactnum"].ToString());
+
+
+
+                materialListView6.Items.Add(items);
+                materialListView6.FullRowSelect = true;
+            }
+            conn.Close();
+        
         }
         public void printunarchivedproduct()
         {
@@ -119,6 +162,7 @@ namespace LoginModule.cs
         }
         public void databrandpartneraccountunarchived()
         {
+            materialListView3.Items.Clear();
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
             conn.Close();
@@ -440,7 +484,6 @@ namespace LoginModule.cs
             ViewBrandPartnerInfo a = new ViewBrandPartnerInfo(label15.Text);
             a.Show();
             this.Hide();
-
         }
         public void printbrandpartnerunarchived() 
         {
@@ -449,13 +492,45 @@ namespace LoginModule.cs
             String id = list.SubItems[0].Text;
             label15.Text = id.ToString();
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-          
+            conn.Close();
+        }
+        public void printbrandpartnerarchived()
+        {
+            int data = 0;
+            ListViewItem list = materialListView6.SelectedItems[data];
+            String id = list.SubItems[0].Text;
+            label21.Text = id.ToString();
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             conn.Close();
         }
         private void materialListView3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             printbrandpartnerunarchived();
         }
+        public void archivedbrandpartner()
+        {
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "UPDATE tbl_useraccounts SET " +
+            "col_status = 'archived'" +
+            "WHERE col_useraccountsid='" + label15.Text + "'";
+            command.CommandText = query;
+            command.ExecuteScalar();
+            conn.Close();
+        }
+        private void materialFlatButton9_Click(object sender, EventArgs e)
+        {
+            archivedbrandpartner();
+            databrandpartneraccountunarchived();
+        }
+
+        private void materialListView6_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            printbrandpartnerarchived();
+        
+        }
+
 
         
     }

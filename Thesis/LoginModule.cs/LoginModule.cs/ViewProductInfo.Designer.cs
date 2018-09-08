@@ -46,7 +46,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox1.SuspendLayout();
@@ -240,23 +239,6 @@
             this.comboBox1.TabIndex = 38;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // materialFlatButton2
-            // 
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.BackColor = System.Drawing.Color.White;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Icon = null;
-            this.materialFlatButton2.Location = new System.Drawing.Point(213, 385);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(78, 36);
-            this.materialFlatButton2.TabIndex = 40;
-            this.materialFlatButton2.Text = "Archive";
-            this.materialFlatButton2.UseVisualStyleBackColor = false;
-            // 
             // materialFlatButton1
             // 
             this.materialFlatButton1.AutoSize = true;
@@ -303,7 +285,6 @@
             this.Controls.Add(this.materialFlatButton4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.materialFlatButton1);
-            this.Controls.Add(this.materialFlatButton2);
             this.Name = "ViewProductInfo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -317,7 +298,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
