@@ -192,7 +192,7 @@
 
 											
                   <?php
-									require 'Controller/controller.php'
+									require 'Controller/salesquery.php'
 									?>
 									<?php
                                     view_sales();

@@ -1,7 +1,7 @@
 <?php
 function view_sales()
 {
-	$db = mysqli_connect('localhost', 'root','','db_poshconceptstorefinal');
+	require ('Controller/db.php');
 	if (!$db)
 	{
 		trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
