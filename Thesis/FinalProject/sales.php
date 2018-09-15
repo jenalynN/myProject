@@ -121,8 +121,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> Cashier</a></li>
-				<li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> Brand Partners</a></li>
+                <li><a href="userCashier.php"><i class="fa fa-circle-o"></i> Cashier</a></li>
+				<li><a href="userBrandpartner.php"><i class="fa fa-circle-o"></i> Brand Partners</a></li>
               </ul>
             </li>
             

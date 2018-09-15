@@ -5,9 +5,10 @@ $password = "";
 $dbname = "db_poshconceptstorefinal";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$db = mysqli_connect($servername, $username, $password, $dbname);
+	
 // Check connection
-if (!$conn) {
+if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
 //echo "Connected successfully";
