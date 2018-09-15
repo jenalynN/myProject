@@ -1,25 +1,26 @@
 <?php
 include("db.php");
 
-session_start();
+//session_start();
 // Get values paste from form in login.php file
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = $_POST['uname'];
+$password = $_POST['psw'];
 
 
-$username = $conn->real_escape_string($username);
+//$username = $db->real_escape_string($username);
 
-$query = "SELECT uname,pass FROM tb_login WHERE uname = '$username' AND pass='$password';";
-$result = $conn->query($query);
+$query = "SELECT * FROM tbl_useraccounts WHERE col_user = '$username' AND col_password ='$password';";
+$result = mysqli_query($db, $query);
+$rowcount=mysqli_num_rows($result);
 
-if($result->num_rows == 1) 
+if($rowcount == 1) 
 {
 	$_SESSION['user'] = $username;
-	header('Location: Home.php');  
+	header('Location:../sales.php');  
 }
 
 else{ 
-	header('Location:login.php');
+	header('Location:../login.php');
 }
 
 ?>

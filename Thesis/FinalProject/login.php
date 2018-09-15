@@ -130,7 +130,7 @@ span.psw {
 <body>
 
 
-  <form class="modal-content animate" action="#">
+  <form class="modal-content animate" action="controller/verify.php" method="POST">
     <div class="imgcontainer">
       <img src="posh.jpg" alt="Avatar" class="avatar">
     </div>
@@ -142,13 +142,13 @@ span.psw {
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit">Login</button>
+      <button type="submit" >Login</button>
+
       <label>
       </label>
     </div>
-
   </form>
-
+    
 <script>
 // Get the modal
 var modal = document.getElementById('id01');
