@@ -79,7 +79,7 @@
 		  </a>
 		  <ul class="treeview-menu">
 			<li><a href="barchart.php"><i class="fa fa-circle-o"></i> Pie Charts</a></li>
-			<li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> Bar Graphs</a></li>
+			<li><a href="barchart.php"><i class="fa fa-circle-o"></i> Bar Graphs</a></li>
 		  </ul>
 		</li>
 		

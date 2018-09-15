@@ -29,7 +29,7 @@
     <![endif]-->
   </head>
   <body class="hold-transition skin-red-light sidebar-mini">
-	<?php include headernav.php; ?>
+	<?php include 'headernav.php'; ?>
    
    <div class="content-wrapper">
 
