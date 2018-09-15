@@ -130,7 +130,7 @@ span.psw {
 <body>
 
 
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="#">
     <div class="imgcontainer">
       <img src="posh.jpg" alt="Avatar" class="avatar">
     </div>
