@@ -97,6 +97,25 @@
         </section>
 		  <section class="content">
 		
+<div class="col-md-3 col-sm-6 col-xs-12">
+
+
+<div class="info-box">
+  <span class="info-box-icon bg-red"></span>
+  <div class="info-box-content">
+
+    <span class="info-box-text">Number of Transactions</span>
+    <span class="info-box-number"> <?php
+      $db = mysqli_connect('localhost', 'root', '','db_poshconceptstorefinal');
+      if (!$db){trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());}	
+      $result=mysqli_query($db, 'SELECT Count(col_transactioncode) as sales FROM tbl_transaction');
+      $row = mysqli_fetch_assoc($result);
+      $sum = $row['sales'];
+      echo $sum;
+    ?></span>
+  </div><!-- /.info-box-content -->
+</div><!-- /.info-box -->
+</div>
               <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
@@ -133,9 +152,9 @@
                   <span class="info-box-number"> <?php
 									  $db = mysqli_connect('localhost', 'root', '','db_poshconceptstorefinal');
 									  if (!$db){trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());}	
-									  $result=mysqli_query($db, 'SELECT Count(col_totalprice) as value FROM tbl_transaction');
+									  $result=mysqli_query($db, 'SELECT Count(col_orderstatus) as sales FROM tbl_order where col_orderstatus="Sales"');
 									  $row = mysqli_fetch_assoc($result);
-									  $sum = $row['value'];
+									  $sum = $row['sales'];
 									  echo $sum;
 									?></span>
                 </div><!-- /.info-box-content -->
@@ -150,9 +169,10 @@
                   <span class="info-box-number"> <?php
 									  $db = mysqli_connect('localhost', 'root', '','db_poshconceptstorefinal');
 									  if (!$db){trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());}	
-									  $result=mysqli_query($db, 'SELECT Count(col_totalprice) as value FROM tbl_transaction');
+									  $result=mysqli_query($db, 'SELECT Count(col_orderstatus) as void from tbl_order where col_orderstatus="Void"');
+
 									  $row = mysqli_fetch_assoc($result);
-									  $sum = $row['value'];
+									  $sum = $row['void'];
 									  echo $sum;
 									?></span>
                 </div><!-- /.info-box-content -->
