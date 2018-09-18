@@ -15,8 +15,10 @@ function view_user()
 						 {
 							$Tcode = 	$row['col_transactioncode'];
 							$Pcode= 	$row['col_productcode'];
-							$Pname= 	$row['col_productprice'];
+							$Pname= 	$row['col_productname'];
 							$Pprice= 	$row['col_productprice'];
+							$status= 	$row['col_status'];
+
 						
 							
 							echo '<tr class="odd gradeX">
@@ -24,6 +26,7 @@ function view_user()
 									<td>'.$Pcode.'</td>
 									<td>'.$Pname.'</td>
 									<td>'.$Pprice.'</td>
+									<td>'.$status.'</td>
 									
 								</tr>';
 						 }

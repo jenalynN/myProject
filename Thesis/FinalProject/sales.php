@@ -53,25 +53,30 @@
               <div class="box">
 			
                <div class="box-body">
-
+                      <div class="input-group" style="width: 300px;" align="right" >
+                          <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search. . . .">
+                      <div class="input-group-btn">
+                          <button class="btn btn-sm btn-danger"><i class="fa fa-search"></i></button>
+                      </div>  
+                          </div>
                   
 			<div class="panel_body" align="right">
 			  
 			<b>From:</b>
-			<input type="text" readonly class="" name="fromdate" id="fromdate" >
+      <input type="date" name="fromdate" id="fromdate" placeholder="From">
 			<b>To: </b>
-			<input type="date"  name="todate" id="todate" >
-			
+      <input type="date" name="todate" id="todate" placeholder="To">  
+			<button class = "btn btn-danger btn-md">GO</button>
 			</div>
 			
 			<table id="example2" class="table table-bordered table-hover">
 			<tr>
             <tbody>
-                                            <th>Transaction Code</th>
-											<th>Date Purchased</th>
+                      <th>Date Purchased</th>
+                      <th>Transaction Code</th>
 											<th>Product Code</th>
-                                            <th>Product Name</th>
-                                            <th>Product Price</th>
+                      <th>Product Name</th>
+                      <th>Product Price</th>
 											<th>Number of Product Sold</th>
 											<th>SubTotal</th>
 											<th>Order Type</th>

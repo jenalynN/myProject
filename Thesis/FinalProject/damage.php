@@ -64,19 +64,20 @@
 									<tr>
                                 <tbody>
                                             <th>Transaction Code</th>
-											<th>Product Code</th>
+											                      <th>Product Code</th>
                                             <th>Product Name</th>
                                             <th>Product Price</th>
+                                            <th>Status</th>
 											
 											<?php
-									require 'Controller/damagequery.php'
+									require 'Controller/productquery.php'
 									?>
                                         
                    
 				   
                                     <?php 
 									
-                                    view_user();
+                                    view_product();
                                     ?>
 											 
                                     </tbody>

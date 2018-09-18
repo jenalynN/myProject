@@ -13,17 +13,17 @@ function view_sales()
 									
 						while ($row = mysqli_fetch_assoc($result))
 						 {
-							$tcode = 		$row['col_transactioncode'];
+							$tcode = 			$row['col_transactioncode'];
 							$datepurchased= 	$row['col_dateofpurchase'];
-							$pcode= 	$row['col_productcode'];
+							$pcode= 			$row['col_productcode'];
 							$productname = 		$row['col_productname'];
 							$price =			$row['col_productprice'];	
 							$quantity = 		$row['col_quantitybought'];
 							$subtotal = 		$row['col_subtotal'];
 							
 							echo '<tr class="">
-									<td>'.$tcode.'</td>
 									<td>'.$datepurchased.'</td>
+									<td>'.$tcode.'</td>
 									<td>'.$pcode.'</td>
 									<td>'.$productname.'</td>
 									<td>'.$price.'</td>
