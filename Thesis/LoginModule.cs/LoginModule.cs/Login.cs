@@ -25,17 +25,8 @@ namespace LoginModule.cs
         public void log()
         {
                 MySqlConnection connection = new MySqlConnection(ConnectionString.myConnection);
-
-                try
-                {
-                    connection.Open();
-
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Unable to connect to database\n" + "Error\n" + e);
-                }
-                if (textBox1.Text == "" || textBox2.Text == "")
+                connection.Open();
+            if (textBox1.Text == "" || textBox2.Text == "")
                 {
                     MessageBox.Show("You need to login your credentials.");
                 }

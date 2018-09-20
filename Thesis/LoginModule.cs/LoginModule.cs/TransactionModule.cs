@@ -15,7 +15,6 @@ namespace LoginModule.cs
     public partial class TransactionModule : MaterialSkin.Controls.MaterialForm
     {
 
-        string myConnection = "Server=localhost;Database=db_poshconceptstorefinal;Uid=root;Password="; 
         public TransactionModule(string cashier)
         {
             InitializeComponent();
@@ -24,41 +23,41 @@ namespace LoginModule.cs
             TransactionOutput();
             TodaysSales();
         }
-        public void displayDate() 
+        public void displayDate()
         {
 
             timer1.Start();
-            label6.Text = DateTime.Now.ToString();
+            label2.Text = DateTime.Now.ToString("yyyy-MM-dd");
             label7.Text = DateTime.Now.ToLongTimeString();
-        
+
         }
         public void TransactionDelete()
         {
 
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             MySqlCommand command = conn.CreateCommand();
-            
-                conn.Open();
-                command.CommandText = "Delete from tbl_order where col_status='unfinished'";
-                command.ExecuteScalar();
-                conn.Close();
 
-                MySqlConnection conn2 = new MySqlConnection(myConnection);
-                MySqlCommand command2 = conn2.CreateCommand();
+            conn.Open();
+            command.CommandText = "Delete from tbl_order where col_orderstatus='unfinished'";
+            command.ExecuteScalar();
+            conn.Close();
 
-                conn.Open();
-                command.CommandText = "Delete from tbl_transaction where col_transactioncode='"+labelTransactionCode.Text+"'";
-                command.ExecuteScalar();
-                conn.Close();
-            
+            MySqlConnection conn2 = new MySqlConnection(ConnectionString.myConnection);
+            MySqlCommand command2 = conn2.CreateCommand();
+
+            conn.Open();
+            command.CommandText = "Delete from tbl_transaction where col_transactioncode='" + labelTransactionCode.Text + "'";
+            command.ExecuteScalar();
+            conn.Close();
+
         }
-        public void printitemdetails() 
+        public void printitemdetails()
         {
             int data = 0;
             ListViewItem list = materialListView2.SelectedItems[data];
             String id = list.SubItems[0].Text;
             tbProductCode.Text = id.ToString();
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
@@ -75,25 +74,25 @@ namespace LoginModule.cs
                 ListViewItem items = new ListViewItem(read["col_productid"].ToString());
                 tbProductCode.Text = (read["col_productcode"].ToString());
                 tbProductName.Text = (read["col_productname"].ToString());
-                tbBrand.Text=(read["col_brandname"].ToString());
-                tbCategory.Text=(read["col_categoryname"].ToString());
+                tbBrand.Text = (read["col_brandname"].ToString());
+                tbCategory.Text = (read["col_categoryname"].ToString());
 
-                tbPrice.Text=(read["col_productprice"].ToString());
+                tbPrice.Text = (read["col_productprice"].ToString());
             }
             conn.Close();
-        
+
         }
-      public void  printorderid()
+        public void printorderid()
         {
             int data = 0;
             ListViewItem list = materialListView1.SelectedItems[data];
             String id = list.SubItems[0].Text;
             tbOrderId.Text = id.ToString();
         }
-        public void searchProduct() 
+        public void searchProduct()
         {
-           
-            MySqlConnection conn = new MySqlConnection(myConnection);
+
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             materialListView2.Items.Clear();
             conn.Open();
             string query1 = "select * from tbl_product  where col_productcode like  '" + tbSearchItem.Text + "%'  and col_status='unarchived'";
@@ -109,9 +108,9 @@ namespace LoginModule.cs
                 materialListView2.FullRowSelect = true;
             }
             conn.Close();
-            }
-        
-        public void Change() 
+        }
+
+        public void Change()
         {
             if (!string.IsNullOrWhiteSpace(tbAmount.Text))
             {
@@ -120,50 +119,51 @@ namespace LoginModule.cs
                 labelChange.Text = (money - total).ToString();
             }
         }
-        public void TodaysSales() 
+        public void TodaysSales()
         {
 
-            MySqlConnection con = new MySqlConnection(myConnection);
+            MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
             con.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select SUM(col_totalprice) as price from tbl_transaction where col_dateofpurchase='"+label6.Text+"'";
+            cmd.CommandText = "select SUM(col_totalprice) as price from tbl_transaction where col_dateofpurchase='" + label2.Text + "'";
             MySqlDataReader basa = cmd.ExecuteReader();
             while (basa.Read())
             {
                 label5.Text = basa["price"].ToString();
+
             }
             con.Close();
-        
-        
+
+
         }
         public void TransactionOutput()
         {
-                MySqlConnection con = new MySqlConnection(myConnection);
-                con.Open();
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select MAX(col_transactionid) as ayD from tbl_transaction";
-                MySqlDataReader basa = cmd.ExecuteReader();
-                while (basa.Read())
-                {
-                    string ayd = basa["ayD"].ToString();
-                    int plus1 = Int32.Parse(ayd);
-                    int total = plus1 + 1;
-                    labelTransactionCode.Text = "PCS0" + total;
-                }
-                con.Close();
-                InsertTransaction();
+            MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select MAX(col_transactionid) as ayD from tbl_transaction";
+            MySqlDataReader basa = cmd.ExecuteReader();
+            while (basa.Read())
+            {
+                string ayd = basa["ayD"].ToString();
+                int plus1 = Int32.Parse(ayd);
+                int total = plus1 + 1;
+                labelTransactionCode.Text = "PCS0" + total;
+            }
+            con.Close();
+            InsertTransaction();
         }
 
 
 
 
-        public void InsertOrder() 
+        public void InsertOrder()
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection(myConnection);
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 conn.Open();
                 if (tbProductCode.Text == "" || tbProductName.Text == "")
                 {
@@ -173,9 +173,9 @@ namespace LoginModule.cs
                 {
                     MySqlCommand command2 = conn.CreateCommand();
 
-                    string query = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_status) " +
+                    string query = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_orderstatus) " +
                         "values ((Select col_transactionid from tbl_transaction where col_transactioncode ='" + labelTransactionCode.Text + "'), " +
-                        "(Select col_productid from tbl_product where col_productcode='" + tbProductCode.Text + "'),'" + tbQuantity.Text + "','" + 
+                        "(Select col_productid from tbl_product where col_productcode='" + tbProductCode.Text + "'),'" + tbQuantity.Text + "','" +
                         tbSubtotal.Text + "','unfinished')";
                     command2.CommandText = query;
                     command2.ExecuteNonQuery();
@@ -185,32 +185,32 @@ namespace LoginModule.cs
             }
             catch (Exception e)
             {
-                MessageBox.Show(""+e);
+                MessageBox.Show("" + e);
 
             }
-        
+
         }
         public void InsertTransaction()
         {
-                MySqlConnection conn = new MySqlConnection(myConnection);
-                if (label1.Text == "")
-                {
-                    MessageBox.Show("Please Complete the Form");
-                }
-                else
-                {
-                    conn.Open();
-                    MySqlCommand command2 = conn.CreateCommand();
-                    command2.CommandText = "insert into tbl_transaction(col_transactioncode,col_useraccountsid,col_totalprice,col_dateofpurchase) values ('" + labelTransactionCode.Text + "','" + label17.Text + "','" + labelTotalSales.Text + "',now())";
-                    command2.ExecuteScalar();
-                    conn.Close();
-                }
-            
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            if (label1.Text == "")
+            {
+                MessageBox.Show("Please Complete the Form");
+            }
+            else
+            {
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = "insert into tbl_transaction(col_transactioncode,col_useraccountsid,col_totalprice,col_dateofpurchase) values ('" + labelTransactionCode.Text + "','" + label17.Text + "','" + labelTotalSales.Text + "',now())";
+                command2.ExecuteScalar();
+                conn.Close();
+            }
+
         }
 
         public void InsertTransactionTotalAmount()
         {
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
             if (tbAmount.Text == "")
             {
@@ -222,7 +222,7 @@ namespace LoginModule.cs
                 double TotalSales = Double.Parse(labelTotalSales.Text);
                 double tenderAmount = Double.Parse(tbAmount.Text);
                 double change = Double.Parse(labelChange.Text);
-            
+
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
                 string query = "UPDATE tbl_transaction SET " +
@@ -235,24 +235,24 @@ namespace LoginModule.cs
 
         }
 
-        public void viewOrder() 
+        public void viewOrder()
         {
 
             materialListView1.Items.Clear();
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            string query = "Select * from tbl_order o " +
+            string query = "Select * from tbl_order o "+
                 "inner join tbl_transaction t " +
-                "on o.col_transactionid = t.col_transactionid " +
+                "  on t.col_transactionid = o.col_transactionid "+
                 "inner join tbl_product p " +
                 "on o.col_productid = p.col_productid " +
                 "inner join tbl_brandpartner b " +
                 "on p.col_useraccountsid = b.col_useraccountsid " +
                 "inner join tbl_category c " +
                 "on c.col_categoryid = p.col_categoryid " +
-                "where t.col_transactioncode = '" + labelTransactionCode.Text + "'";
+                "where t.col_transactioncode = '" + labelTransactionCode.Text + "' and o.col_orderstatus='unfinished'";
 
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
@@ -285,27 +285,30 @@ namespace LoginModule.cs
             tbProductCode.Clear();
             tbBrand.Clear();
             tbCategory.Clear();
-           
+
         }
-        public void remove() 
+        public void remove()
         {
-            MySqlConnection conn = new MySqlConnection(myConnection);
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             MySqlCommand command = conn.CreateCommand();
             conn.Close();
             conn.Open();
-            if (tbOrderId.Text == "") 
+            if (tbOrderId.Text == "")
             {
-            MessageBox.Show("Please select an item from the item list");
+                MessageBox.Show("Please select an item from the item list");
             }
             else
             {
                 conn.Close();
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = "Delete from tbl_order where col_orderid='"+tbOrderId.Text+"'";
+                command2.CommandText = "UPDATE tbl_order SET " +
+                    "col_orderstatus='void'" +
+                    " WHERE col_orderid='" + tbOrderId.Text + "'";
                 command2.ExecuteScalar();
                 conn.Close();
             }
+            viewOrder();
         }
         public void subtotal()
         {
@@ -314,9 +317,10 @@ namespace LoginModule.cs
                 double itemsold = Double.Parse(tbQuantity.Text);
                 double price = Double.Parse(tbPrice.Text);
                 tbSubtotal.Text = (price * itemsold).ToString();
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
-            
+
             }
         }
         public void total()
@@ -328,28 +332,28 @@ namespace LoginModule.cs
                 value += float.Parse(materialListView1.Items[i].SubItems[7].Text);
             }
 
-           labelTotalSales.Text = Convert.ToString(value);
-        
+            labelTotalSales.Text = Convert.ToString(value);
+
         }
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             Mainframe a = new Mainframe();
             a.Show();
-                this.Close();
+            this.Close();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
             label7.Text = DateTime.Now.ToLongTimeString();
-            label6.Text = DateTime.Now.ToShortDateString();
+            label2.Text = DateTime.Now.ToString("yyyy-MM-dd");
             timer1.Start();
         }
         private void materialFlatButton2_Click(object sender, EventArgs e)
-        {  
-            if (tbQuantity.Text == "" || tbProductCode.Text == "" || tbBrand.Text == "" || tbCategory.Text == "" || tbPrice.Text == "" )
+        {
+            if (tbQuantity.Text == "" || tbProductCode.Text == "" || tbBrand.Text == "" || tbCategory.Text == "" || tbPrice.Text == "")
             {
                 MessageBox.Show("Please complete the form");
             }
-            else 
+            else
             {
                 InsertOrder();
                 viewOrder();
@@ -365,10 +369,6 @@ namespace LoginModule.cs
             {
                 searchProduct();
             }
-        }
-        private void materialListView2_DoubleClick(object sender, EventArgs e)
-        {
-            printitemdetails();
         }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
@@ -419,10 +419,20 @@ namespace LoginModule.cs
         private void btnPurchase_Click(object sender, EventArgs e)
         {
             InsertTransactionTotalAmount();
-            MessageBox.Show("Thank You Come AGAIN!!!");
-            Login a = new Login();
-            a.Show();
-            this.Hide();
+            if (tbAmount.Text == "")
+            {
+
+
+            }
+            else
+            {
+                MessageBox.Show("Thank You Come AGAIN!!!");
+                Login a = new Login();
+                a.Show();
+                this.Hide();
+
+            }
+
         }
 
         private void materialFlatButton4_Click(object sender, EventArgs e)
@@ -435,5 +445,72 @@ namespace LoginModule.cs
         {
 
         }
+
+        private void TransactionModule_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialListView2_DoubleClick(object sender, MouseEventArgs e)
+        {
+            printitemdetails();
+        }
+
+        private void btnAddtoCart_Click(object sender, EventArgs e)
+        {
+            InsertOrder();
+            viewOrder();
+        }
+
+        private void btnRemovefromCart_Click(object sender, EventArgs e)
+        {
+            remove();
+        }
+
+        private void materialFlatButton4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        public void searchtransaction()
+        {
+
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            materialListView3.Items.Clear();
+            conn.Open();
+            string query1 = "select * from tbl_transaction where col_transactioncode like  '" + textBox1.Text + "%'";
+
+            MySqlCommand command2 = conn.CreateCommand();
+            command2.CommandText = query1;
+            MySqlDataReader read = command2.ExecuteReader();
+            while (read.Read())
+            {
+                ListViewItem items = new ListViewItem(read["col_transactionid"].ToString());
+                items.SubItems.Add(read["col_transactioncode"].ToString());
+                var dt = DateTime.Parse(read["col_dateofpurchase"].ToString());
+                items.SubItems.Add(dt.ToString("yyyy-MM-dd"));
+                materialListView3.Items.Add(items);
+                materialListView3.FullRowSelect = true;
+            }
+            conn.Close();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                materialListView3.Items.Clear();
+            }
+            else
+            {
+                searchtransaction();
+            }
+        }
+
+        private void materialFlatButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

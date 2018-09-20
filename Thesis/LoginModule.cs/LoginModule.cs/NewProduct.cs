@@ -36,6 +36,7 @@ namespace LoginModule.cs
             while (read.Read())
             {
                 comboBox2.Items.Add(read["col_categoryname"].ToString());
+
             }
             conn.Close();
         }
@@ -68,10 +69,10 @@ namespace LoginModule.cs
             {
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = "insert into tbl_product (col_useraccountsid, col_categoryid, col_productcode, col_productprice, col_status) " +
+                command2.CommandText = "insert into tbl_product (col_useraccountsid, col_categoryid, col_productcode, col_productname, col_productprice, col_status) " +
                     "values  ((SELECT col_useraccountsid from tbl_brandpartner where col_brandname='" + comboBox1.Text + "')," +
-                    "(SELECT col_categoryid from tbl_category where col_categoryname='" + comboBox2.Text + "'),'" + textBox1.Text + "','" + textBox2.Text + "','unarchived')";
-                command2.ExecuteScalar();
+                    "(SELECT col_categoryid from tbl_category where col_categoryname='" + comboBox2.Text + "'),'" + textBox1.Text + "','" +textBox3.Text+"','"+ textBox2.Text + "','unarchived')";
+                command2.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Successfully Added!");
                 Mainframe a = new Mainframe();

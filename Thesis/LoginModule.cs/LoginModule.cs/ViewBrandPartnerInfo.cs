@@ -45,8 +45,8 @@ namespace LoginModule.cs
             textBox6.Text = read["col_contactnum"].ToString();
             textBox4.Text = read["col_brandname"].ToString();
             textBox7.Text = read["col_brandaddress"].ToString();
-            textBox8.Text = read["col_brandcontactnum"].ToString();
-            textBox9.Text = read["col_brandcontactnum"].ToString();
+            textBox8.Text = read["col_contactnum"].ToString();
+            textBox9.Text = read["col_user"].ToString();
 
             textBox10.Text = read["col_brandcontactnum"].ToString();
             }
@@ -85,6 +85,10 @@ namespace LoginModule.cs
             command.CommandText = query;
             command.ExecuteScalar();
             conn.Close();
+            MessageBox.Show("Successfully Updated!");
+            Mainframe a = new Mainframe();
+            a.Show();
+            this.Hide();
         }
 
         private void materialFlatButton2_Click(object sender, EventArgs e)

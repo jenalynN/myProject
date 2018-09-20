@@ -47,7 +47,7 @@ namespace LoginModule.cs
                 comboBox1.Text = read["col_brandname"].ToString();
                 comboBox2.Text = read["col_categoryname"].ToString();
                 textBox2.Text = read["col_productprice"].ToString();
-                textBox4.Text = read["col_status"].ToString();
+                textBox4.Text = read["col_productstatus"].ToString();
 
             conn.Close();
 

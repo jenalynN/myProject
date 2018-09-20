@@ -181,17 +181,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.materialListView7 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader54 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader61 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.materialFlatButton13 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialDivider35 = new MaterialSkin.Controls.MaterialDivider();
@@ -555,12 +544,12 @@
             "Product Code",
             "Product Brand",
             "Product Name",
-            "Category",
-            ""});
+            "Category"});
             this.comboBox1.Location = new System.Drawing.Point(97, 42);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(223, 37);
             this.comboBox1.TabIndex = 55;
+            this.comboBox1.Text = "Product Code";
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // textBox1
@@ -808,6 +797,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(389, 37);
             this.textBox2.TabIndex = 58;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label8
@@ -1906,7 +1896,6 @@
             this.groupBox20.Controls.Add(this.textBox6);
             this.groupBox20.Controls.Add(this.label32);
             this.groupBox20.Controls.Add(this.comboBox4);
-            this.groupBox20.Controls.Add(this.materialListView7);
             this.groupBox20.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox20.Location = new System.Drawing.Point(6, 113);
             this.groupBox20.Name = "groupBox20";
@@ -2029,83 +2018,6 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(230, 31);
             this.comboBox4.TabIndex = 57;
-            // 
-            // materialListView7
-            // 
-            this.materialListView7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialListView7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.materialListView7.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader33,
-            this.columnHeader34,
-            this.columnHeader35,
-            this.columnHeader36,
-            this.columnHeader37,
-            this.columnHeader51,
-            this.columnHeader52,
-            this.columnHeader53,
-            this.columnHeader54,
-            this.columnHeader61});
-            this.materialListView7.Depth = 0;
-            this.materialListView7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.materialListView7.FullRowSelect = true;
-            this.materialListView7.GridLines = true;
-            this.materialListView7.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView7.Location = new System.Drawing.Point(6, 97);
-            this.materialListView7.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView7.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView7.Name = "materialListView7";
-            this.materialListView7.OwnerDraw = true;
-            this.materialListView7.Size = new System.Drawing.Size(901, 284);
-            this.materialListView7.TabIndex = 13;
-            this.materialListView7.UseCompatibleStateImageBehavior = false;
-            this.materialListView7.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader33
-            // 
-            this.columnHeader33.Text = "Brand Partner Id";
-            this.columnHeader33.Width = 125;
-            // 
-            // columnHeader34
-            // 
-            this.columnHeader34.Text = "Brand Name";
-            this.columnHeader34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader34.Width = 230;
-            // 
-            // columnHeader35
-            // 
-            this.columnHeader35.Text = "Username";
-            this.columnHeader35.Width = 310;
-            // 
-            // columnHeader36
-            // 
-            this.columnHeader36.Text = "Password";
-            this.columnHeader36.Width = 180;
-            // 
-            // columnHeader37
-            // 
-            this.columnHeader37.Text = "Lastname";
-            this.columnHeader37.Width = 180;
-            // 
-            // columnHeader51
-            // 
-            this.columnHeader51.Text = "Firstname";
-            // 
-            // columnHeader52
-            // 
-            this.columnHeader52.Text = "Middlename";
-            // 
-            // columnHeader53
-            // 
-            this.columnHeader53.Text = "Address";
-            // 
-            // columnHeader54
-            // 
-            this.columnHeader54.Text = "Date of Birth";
-            // 
-            // columnHeader61
-            // 
-            this.columnHeader61.Text = "Gender";
             // 
             // groupBox19
             // 
@@ -2897,17 +2809,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ComboBox comboBox4;
-        private MaterialSkin.Controls.MaterialListView materialListView7;
-        private System.Windows.Forms.ColumnHeader columnHeader33;
-        private System.Windows.Forms.ColumnHeader columnHeader34;
-        private System.Windows.Forms.ColumnHeader columnHeader35;
-        private System.Windows.Forms.ColumnHeader columnHeader36;
-        private System.Windows.Forms.ColumnHeader columnHeader37;
-        private System.Windows.Forms.ColumnHeader columnHeader51;
-        private System.Windows.Forms.ColumnHeader columnHeader52;
-        private System.Windows.Forms.ColumnHeader columnHeader53;
-        private System.Windows.Forms.ColumnHeader columnHeader54;
-        private System.Windows.Forms.ColumnHeader columnHeader61;
         private System.Windows.Forms.GroupBox groupBox19;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton13;
         private System.Windows.Forms.TextBox textBox5;
