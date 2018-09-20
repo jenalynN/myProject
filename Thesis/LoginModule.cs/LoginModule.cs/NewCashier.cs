@@ -34,7 +34,7 @@ namespace LoginModule.cs
                     "col_firstname, " +
                     "col_middlename, " +
                     "col_address, " +
-                    "col_dateofbirth, " +
+                    //"col_dateofbirth, " +
                     "col_gender, " +
                     "col_contactnum, " +
                     "col_status) " +
@@ -45,7 +45,7 @@ namespace LoginModule.cs
                     textBox1.Text + "','" +
                     textBox2.Text + "','" +
                     textBox5.Text + "','" +
-                    dateTimePicker1.Text + "','" +
+                    //dateTimePicker1.Text + "','" +
                     comboBox1.SelectedItem.ToString() + "','" +
                     textBox6.Text +
                     "','unarchived')";

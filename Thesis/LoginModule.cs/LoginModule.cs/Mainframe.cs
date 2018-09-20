@@ -61,7 +61,7 @@ namespace LoginModule.cs
                 items.SubItems.Add(read["col_firstname"].ToString());
                 items.SubItems.Add(read["col_middlename"].ToString()); ;
                 items.SubItems.Add(read["col_address"].ToString());
-                items.SubItems.Add(read["col_dateofbirth"].ToString());
+                //items.SubItems.Add(read["col_dateofbirth"].ToString());
                 items.SubItems.Add(read["col_gender"].ToString());
                 items.SubItems.Add(read["col_contactnum"].ToString());
 
@@ -193,7 +193,7 @@ namespace LoginModule.cs
                 items.SubItems.Add(read["col_firstname"].ToString());   
                 items.SubItems.Add(read["col_middlename"].ToString());;
                 items.SubItems.Add(read["col_address"].ToString());
-                items.SubItems.Add(read["col_dateofbirth"].ToString());
+                //items.SubItems.Add(read["col_dateofbirth"].ToString());
                 items.SubItems.Add(read["col_gender"].ToString());
                 items.SubItems.Add(read["col_contactnum"].ToString());
 
@@ -227,7 +227,7 @@ namespace LoginModule.cs
                 items.SubItems.Add(read["col_firstname"].ToString());
                 items.SubItems.Add(read["col_middlename"].ToString()); ;
                 items.SubItems.Add(read["col_address"].ToString());
-                items.SubItems.Add(read["col_dateofbirth"].ToString());
+                //items.SubItems.Add(read["col_dateofbirth"].ToString());
                 items.SubItems.Add(read["col_gender"].ToString());
                 items.SubItems.Add(read["col_contactnum"].ToString());
 
@@ -259,7 +259,7 @@ namespace LoginModule.cs
                 items.SubItems.Add(read["col_firstname"].ToString());
                 items.SubItems.Add(read["col_middlename"].ToString()); ;
                 items.SubItems.Add(read["col_address"].ToString());
-                items.SubItems.Add(read["col_dateofbirth"].ToString());
+                //items.SubItems.Add(read["col_dateofbirth"].ToString());
                 items.SubItems.Add(read["col_gender"].ToString());
                 items.SubItems.Add(read["col_contactnum"].ToString());
 

@@ -48,8 +48,8 @@ namespace LoginModule.cs
             {
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = "insert into tbl_useraccounts (col_usertypeid,col_user, col_password, col_lastname, col_firstname, col_middlename,col_address,col_dateofbirth,col_gender,col_contactnum,col_status) " +
-                    "values  ((SELECT col_usertypeid from tbl_usertype where col_userrole='Brandpartner'),'" + textBox9.Text + "','" + textBox11.Text + "','" + textBox3.Text + "','" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + dateTimePicker1.Text + "','" + comboBox1.SelectedItem + "','" + textBox6.Text + "','unarchived')";
+                command2.CommandText = "insert into tbl_useraccounts (col_usertypeid,col_user, col_password, col_lastname, col_firstname, col_middlename,col_address,col_gender,col_contactnum,col_status) " +
+                    "values  ((SELECT col_usertypeid from tbl_usertype where col_userrole='Brandpartner'),'" + textBox9.Text + "','" + textBox11.Text + "','" + textBox3.Text + "','" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + comboBox1.SelectedItem + "','" + textBox6.Text + "','unarchived')";
                 command2.ExecuteScalar();
                 conn.Close();
             }

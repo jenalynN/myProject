@@ -102,7 +102,6 @@
             this.Firstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Middlename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.DateofBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -128,7 +127,6 @@
             this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader58 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader59 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.materialFlatButton10 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -153,7 +151,6 @@
             this.cashier_firstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cashier_middlename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cashier_address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cashier_dateofbirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cashier_gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cashier_contactnum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox22 = new System.Windows.Forms.GroupBox();
@@ -175,7 +172,6 @@
             this.arc_cashier_firstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.arc_cashier_middlename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.arc_cashier_address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.arc_cashier_dateofbirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.arc_gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.arc_cashier_contactnum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -1115,7 +1111,6 @@
             this.Firstname,
             this.Middlename,
             this.Address,
-            this.DateofBirth,
             this.Gender,
             this.columnHeader1});
             this.materialListView3.Depth = 0;
@@ -1177,11 +1172,6 @@
             // 
             this.Address.Text = "Address";
             this.Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DateofBirth
-            // 
-            this.DateofBirth.Text = "Date of Birth";
-            this.DateofBirth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Gender
             // 
@@ -1405,7 +1395,6 @@
             this.columnHeader55,
             this.columnHeader56,
             this.columnHeader57,
-            this.columnHeader58,
             this.columnHeader59});
             this.materialListView6.Depth = 0;
             this.materialListView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
@@ -1460,10 +1449,6 @@
             // columnHeader57
             // 
             this.columnHeader57.Text = "Address";
-            // 
-            // columnHeader58
-            // 
-            this.columnHeader58.Text = "Date of Birth";
             // 
             // columnHeader59
             // 
@@ -1675,7 +1660,6 @@
             this.cashier_firstname,
             this.cashier_middlename,
             this.cashier_address,
-            this.cashier_dateofbirth,
             this.cashier_gender,
             this.cashier_contactnum});
             this.materialListView5.Depth = 0;
@@ -1727,10 +1711,6 @@
             // cashier_address
             // 
             this.cashier_address.Text = "Address";
-            // 
-            // cashier_dateofbirth
-            // 
-            this.cashier_dateofbirth.Text = "Date of Birth";
             // 
             // cashier_gender
             // 
@@ -1917,7 +1897,6 @@
             this.arc_cashier_firstname,
             this.arc_cashier_middlename,
             this.arc_cashier_address,
-            this.arc_cashier_dateofbirth,
             this.arc_gender,
             this.arc_cashier_contactnum});
             this.materialListView4.Depth = 0;
@@ -1969,10 +1948,6 @@
             // arc_cashier_address
             // 
             this.arc_cashier_address.Text = "Address";
-            // 
-            // arc_cashier_dateofbirth
-            // 
-            this.arc_cashier_dateofbirth.Text = "Date of Birth";
             // 
             // arc_gender
             // 
@@ -2770,7 +2745,6 @@
         private System.Windows.Forms.ColumnHeader Firstname;
         private System.Windows.Forms.ColumnHeader Middlename;
         private System.Windows.Forms.ColumnHeader Address;
-        private System.Windows.Forms.ColumnHeader DateofBirth;
         private System.Windows.Forms.ColumnHeader Gender;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.Label label15;
@@ -2796,7 +2770,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader55;
         private System.Windows.Forms.ColumnHeader columnHeader56;
         private System.Windows.Forms.ColumnHeader columnHeader57;
-        private System.Windows.Forms.ColumnHeader columnHeader58;
         private System.Windows.Forms.ColumnHeader columnHeader59;
         private System.Windows.Forms.GroupBox groupBox14;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton10;
@@ -2830,7 +2803,6 @@
         private System.Windows.Forms.ColumnHeader cashier_firstname;
         private System.Windows.Forms.ColumnHeader cashier_middlename;
         private System.Windows.Forms.ColumnHeader cashier_address;
-        private System.Windows.Forms.ColumnHeader cashier_dateofbirth;
         private System.Windows.Forms.ColumnHeader cashier_gender;
         private System.Windows.Forms.GroupBox groupBox22;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton15;
@@ -2893,7 +2865,6 @@
         private System.Windows.Forms.ColumnHeader arc_cashier_firstname;
         private System.Windows.Forms.ColumnHeader arc_cashier_middlename;
         private System.Windows.Forms.ColumnHeader arc_cashier_address;
-        private System.Windows.Forms.ColumnHeader arc_cashier_dateofbirth;
         private System.Windows.Forms.ColumnHeader arc_cashier_contactnum;
         private System.Windows.Forms.ColumnHeader cashier_contactnum;
         private System.Windows.Forms.ColumnHeader arc_gender;

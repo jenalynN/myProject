@@ -39,7 +39,7 @@ namespace LoginModule.cs
             textBox1.Text = read["col_firstname"].ToString();
             textBox2.Text = read["col_middlename"].ToString();
             textBox3.Text = read["col_lastname"].ToString();
-            dateTimePicker1.Value = Convert.ToDateTime(read["col_dateofbirth"].ToString());
+            //dateTimePicker1.Value = Convert.ToDateTime(read["col_dateofbirth"].ToString());
             comboBox1.Text = read["col_gender"].ToString();
             textBox5.Text = read["col_address"].ToString();
             textBox6.Text = read["col_contactnum"].ToString();
@@ -67,7 +67,7 @@ namespace LoginModule.cs
             "col_firstname = '" + textBox1.Text + "', " +
             "col_middlename = '" + textBox2.Text + "', " +
             "col_address = '" + textBox5.Text + "', " +
-            "col_dateofbirth = '" + dateTimePicker1.Value + "', " +
+            //"col_dateofbirth = '" + dateTimePicker1.Value + "', " +
             "col_gender = '" + comboBox1.SelectedItem.ToString() + "', " +
             "col_contactnum = '" + textBox6.Text + "' " +
             "WHERE col_useraccountsid='" + labelBrandpartnerId.Text + "'";
