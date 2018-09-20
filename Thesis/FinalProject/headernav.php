@@ -23,7 +23,7 @@
 		  <!-- User Account: style can be found in dropdown.less -->
 		  <li class="dropdown user user-menu">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			  <span class="hidden-xs">Alexander Pierce</span>
+			  <span class="hidden-xs"><?php echo $_SESSION['user'] ?></span>
 			</a>
 			<ul class="dropdown-menu">
 			  <!-- User image -->
@@ -36,7 +36,7 @@
 				  <a href="#" class="btn btn-default btn-flat">Profile</a>
 				</div>
 				<div class="pull-right">
-				  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+				  <a href="controller/session_destroy.php" class="btn btn-default btn-flat">Sign out</a>
 				</div>
 			  </li>
 			  
@@ -79,10 +79,12 @@
 		  </a>
 		  <ul class="treeview-menu">
 			<li><a href="barchart.php"><i class="fa fa-circle-o"></i> Pie Charts</a></li>
-			<li><a href="barchart.php"><i class="fa fa-circle-o"></i> Bar Graphs</a></li>
+			<!-- li><a href="barchart.php"><i class="fa fa-circle-o"></i> Bar Graphs</a></li -->
 		  </ul>
 		</li>
-		
+		<?php 
+			if($_SESSION['user'] == "admin"){
+		?>
 		<li class="treeview">
 		  <a href="#">
 			<i class="fa fa-user"></i>
@@ -94,7 +96,7 @@
 			<li><a href="userBrandpartner.php"><i class="fa fa-circle-o"></i> Brand Partners</a></li>
 		  </ul>
 		</li>
-		
+		<?php } ?>
 		<li class="treeview">
 		  <a href="#">
 			<i class="fa fa-th"></i> <span>Products</span>
@@ -102,7 +104,7 @@
 		  </a>
 		  <ul class="treeview-menu">
 			<li><a href="damage.php"><i class="fa fa-circle-o"></i> Damage</a></li>
-			<li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Fix</a></li>
+			<!-- li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Fix</a></li -->
 		  </ul>
 		</li>
 	   

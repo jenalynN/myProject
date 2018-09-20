@@ -7,7 +7,7 @@ function view_user()
 	{
 		trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());
 	}	
-					$result = mysqli_query($db,"SELECT * from tbl_useraccounts");
+					$result = mysqli_query($db,"SELECT * from tbl_useraccounts where col_usertypeid  = 2 and col_status = 'unarchived'");
 									
 						while ($row = mysqli_fetch_assoc($result))
 						 {
@@ -19,12 +19,13 @@ function view_user()
 							$status= 	$row['col_status'];
 							
 							echo '<tr class="odd gradeX">
+									<td>'.$Uname.'</td>
+									<td>'.$Pass.'</td>
 									<td>'.$Lname.'</td>
 									<td>'.$Fname.'</td>
 									<td>'.$Mname.'</td>
-									<td>'.$Uname.'</td>
-									<td>'.$Pass.'</td>
-									<td>'.$status.'</td>
+									
+									
 									
 								</tr>';
 						 }

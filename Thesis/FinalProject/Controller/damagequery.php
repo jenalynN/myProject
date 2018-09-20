@@ -17,7 +17,6 @@ function view_user()
 							$Pcode= 	$row['col_productcode'];
 							$Pname= 	$row['col_productname'];
 							$Pprice= 	$row['col_productprice'];
-							$status= 	$row['col_status'];
 
 						
 							
@@ -26,7 +25,6 @@ function view_user()
 									<td>'.$Pcode.'</td>
 									<td>'.$Pname.'</td>
 									<td>'.$Pprice.'</td>
-									<td>'.$status.'</td>
 									
 								</tr>';
 						 }

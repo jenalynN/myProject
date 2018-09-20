@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Posh and Fab Concept Store | Online Viewing</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=5s, user-scalable=yes" name="viewport">
-    <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="datatables/dataTables.bootstrap.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+<?php require ('header.php'); ?> 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
   <body class="hold-transition skin-red-light sidebar-mini">
 	<?php include 'headernav.php'; ?>
 
@@ -47,7 +20,7 @@
                 <div class="box-body">
 
                     <div class="input-group" style="width: 300px;" align="right" >
-                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search. . . .">
+                      <input type="text" name="table_search" id="searchInput" onkeyup="searchFunc()" class="form-control input-sm pull-right" placeholder="Search. . . .">
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-danger"><i class="fa fa-search"></i></button>
                       </div>	
@@ -60,15 +33,14 @@
 			<input type="date" name="" value="">
                </div-->
 			   </div>
-			   <table id="example2" class="table table-bordered table-hover">
+			   <table id="brandPartnerTable" class="table table-bordered table-hover">
 				<tr>
                 <tbody>
+											<th>Username</th>
+											<th>Password</th>  
                                             <th>Last Name</th>
 											<th>First Name</th>
 											<th>Middle Name</th>
-											<th>Username</th>
-											<th>Password</th>  
-                                            <th> Status</th>	
 											 
 											 <?php
 									require 'Controller/bpquery.php'
@@ -130,6 +102,23 @@
           
         });
       });
+	function searchFunc() {
+		  var input, filter, table, tr, td, i;
+		  input = document.getElementById("searchInput");
+		  filter = input.value.toUpperCase();
+		  table = document.getElementById("brandPartnerTable");
+		  tr = table.getElementsByTagName("tr");
+		  for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[0];
+			if (td) {
+			  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			  } else {
+				tr[i].style.display = "none";
+			  }
+			}       
+		  }
+		}
     </script>
   </body>
 </html>
