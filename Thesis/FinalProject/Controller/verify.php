@@ -9,7 +9,7 @@ $password = $_POST['psw'];
 
 //$username = $db->real_escape_string($username);
 
-$query = "SELECT * FROM tbl_useraccounts WHERE col_user = '$username' AND col_password ='$password';";
+$query = "SELECT * FROM tbl_useraccounts WHERE col_user = '$username' AND col_password ='$password' and col_usertypeid != 2;";
 $result = mysqli_query($db, $query);
 $rowcount=mysqli_num_rows($result);
 
