@@ -537,6 +537,7 @@ namespace LoginModule.cs
                 conn.Close();
             }
         }
+
         public void searcharchivedbp()
         {
             string search = "b.col_brandname";
@@ -574,7 +575,7 @@ namespace LoginModule.cs
                     "on b.col_useraccountsid = u.col_useraccountsid " +
                     "inner join tbl_usertype t " +
                     "on t.col_usertypeid = u.col_usertypeid " +
-                    "where b.col_brandname like '" + textBox4.Text + "%' and u.col_status='archived' and t.col_usertypeid=3";
+                    "where b.col_brandname like '" + textBox4.Text + "%' and col_status='archived' and col_usertypeid=3";
 
                 if (searchby != null)
                 {
@@ -583,7 +584,7 @@ namespace LoginModule.cs
                    "on b.col_useraccountsid = u.col_useraccountsid " +
                    "inner join tbl_usertype t " +
                    "on t.col_usertypeid = u.col_usertypeid " +
-                    "where " + search + " like  '" + textBox4.Text + "%'and u.col_status='archived' and t.col_usertypeid=3";
+                    "where " + search + " like  '" + textBox4.Text + "%'and col_status='archived' and col_usertypeid=3";
                 }
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 materialListView6.Items.Clear();
@@ -595,7 +596,6 @@ namespace LoginModule.cs
                 {
                     ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
 
-                    items.SubItems.Add(read["col_brandname"].ToString());
                     items.SubItems.Add(read["col_user"].ToString());
                     items.SubItems.Add(read["col_password"].ToString());
                     items.SubItems.Add(read["col_lastname"].ToString());
@@ -611,7 +611,129 @@ namespace LoginModule.cs
                 }
                 conn.Close();
             }
-        }        
+        }
+        public void searchunarchivedcashier()
+        {
+            string search = "u.col_lastname";
+            string searchby = null;
+            try
+            {
+                searchby = comboBox8.SelectedItem.ToString();
+            }
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
+
+            if (searchby != null)
+            {
+                if (searchby == "Lastname")
+                {
+                    search = "col_lastname";
+                }
+                else if (searchby == "Firstname")
+                {
+                    search = "col_firstname";
+                }
+                else if (searchby == "Username")
+                {
+                    search = "col_user";
+                }
+
+                string query = "select * from tbl_useraccounts  " +
+                    "where col_lastname like '" + textBox7.Text + "%' and col_status='unarchived' and col_usertypeid=2";
+
+                if (searchby != null)
+                {
+                    query = "select * from tbl_useraccounts " +
+                    "where " + search + " like  '" + textBox7.Text + "%'and col_status='unarchived' and col_usertypeid=2";
+                }
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                materialListView5.Items.Clear();
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = query;
+                MySqlDataReader read = command2.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
+
+                    items.SubItems.Add(read["col_user"].ToString());
+                    items.SubItems.Add(read["col_password"].ToString());
+                    items.SubItems.Add(read["col_lastname"].ToString());
+                    items.SubItems.Add(read["col_firstname"].ToString());
+                    items.SubItems.Add(read["col_middlename"].ToString()); ;
+                    items.SubItems.Add(read["col_address"].ToString());
+                    //items.SubItems.Add(read["col_dateofbirth"].ToString());
+                    items.SubItems.Add(read["col_gender"].ToString());
+                    items.SubItems.Add(read["col_contactnum"].ToString());
+
+                    materialListView5.Items.Add(items);
+                    materialListView5.FullRowSelect = true;
+                }
+                conn.Close();
+            }
+        }
+        public void searcharchivedcashier()
+        {
+            string search = "u.col_lastname";
+            string searchby = null;
+            try
+            {
+                searchby = comboBox4.SelectedItem.ToString();
+            }
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
+
+            if (searchby != null)
+            {
+                if (searchby == "Lastname")
+                {
+                    search = "col_lastname";
+                }
+                else if (searchby == "Firstname")
+                {
+                    search = "col_firstname";
+                }
+                else if (searchby == "Username")
+                {
+                    search = "col_user";
+                }
+
+                string query = "select * from tbl_useraccounts  " +
+                    "where col_lastname like '" + textBox6.Text + "%' and col_status='archived' and col_usertypeid=2";
+
+                if (searchby != null)
+                {
+                    query = "select * from tbl_useraccounts " +
+                    "where " + search + " like  '" + textBox6.Text + "%'and col_status='archived' and col_usertypeid=2";
+                }
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                materialListView4.Items.Clear();
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = query;
+                MySqlDataReader read = command2.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
+
+                    items.SubItems.Add(read["col_user"].ToString());
+                    items.SubItems.Add(read["col_password"].ToString());
+                    items.SubItems.Add(read["col_lastname"].ToString());
+                    items.SubItems.Add(read["col_firstname"].ToString());
+                    items.SubItems.Add(read["col_middlename"].ToString()); ;
+                    items.SubItems.Add(read["col_address"].ToString());
+                    //items.SubItems.Add(read["col_dateofbirth"].ToString());
+                    items.SubItems.Add(read["col_gender"].ToString());
+                    items.SubItems.Add(read["col_contactnum"].ToString());
+
+                    materialListView4.Items.Add(items);
+                    materialListView4.FullRowSelect = true;
+                }
+                conn.Close();
+            }
+        }
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             Login a = new Login();
@@ -686,10 +808,6 @@ namespace LoginModule.cs
         {
             searchunarchived();
         }
-        
-
-       
-
         private void materialRaisedButton1_Click_2(object sender, EventArgs e)
         {
             Login a = new Login();
@@ -804,10 +922,8 @@ namespace LoginModule.cs
 		private void materialFlatButton9_Click(object sender, EventArgs e)
         {
             archivedbrandpartner();
-                
             materialListView6.Items.Clear();
             materialListView3.Items.Clear();
-
             databrandpartneraccountunarchived();
             databrandpartneraccountarchived();
         }
@@ -815,7 +931,6 @@ namespace LoginModule.cs
         private void materialListView6_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             printbrandpartnerarchived();
-        
         }
 
         private void materialFlatButton15_Click(object sender, EventArgs e)
@@ -824,7 +939,6 @@ namespace LoginModule.cs
             a.Show();
             this.Hide();
         }
-
         private void materialFlatButton17_Click(object sender, EventArgs e)
         {
             if (label40.Text != "SI")
@@ -938,6 +1052,16 @@ namespace LoginModule.cs
 
             databrandpartneraccountunarchived();
             databrandpartneraccountarchived();
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            searchunarchivedcashier();
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            searcharchivedcashier();
         }
  
     

@@ -1630,6 +1630,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(389, 37);
             this.textBox7.TabIndex = 59;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label39
             // 
@@ -1992,6 +1993,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(389, 37);
             this.textBox6.TabIndex = 59;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label32
             // 
@@ -2094,7 +2096,7 @@
             this.materialTabControl6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl6.Name = "materialTabControl6";
             this.materialTabControl6.SelectedIndex = 0;
-            this.materialTabControl6.Size = new System.Drawing.Size(754, 356);
+            this.materialTabControl6.Size = new System.Drawing.Size(754, 562);
             this.materialTabControl6.TabIndex = 47;
             // 
             // tabPage3
@@ -2103,9 +2105,9 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(746, 330);
+            this.tabPage3.Size = new System.Drawing.Size(746, 536);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Pending";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox26
@@ -2154,7 +2156,7 @@
             this.materialListView11.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView11.Name = "materialListView11";
             this.materialListView11.OwnerDraw = true;
-            this.materialListView11.Size = new System.Drawing.Size(716, 227);
+            this.materialListView11.Size = new System.Drawing.Size(443, 227);
             this.materialListView11.TabIndex = 42;
             this.materialListView11.UseCompatibleStateImageBehavior = false;
             this.materialListView11.View = System.Windows.Forms.View.Details;
@@ -2197,7 +2199,7 @@
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage12.Size = new System.Drawing.Size(746, 330);
             this.tabPage12.TabIndex = 1;
-            this.tabPage12.Text = "tabPage12";
+            this.tabPage12.Text = "Finish";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
             // groupBox30
