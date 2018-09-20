@@ -70,17 +70,14 @@ namespace LoginModule.cs
             MySqlDataReader read = command.ExecuteReader();
             while (read.Read())
             {
-
                 ListViewItem items = new ListViewItem(read["col_productid"].ToString());
                 tbProductCode.Text = (read["col_productcode"].ToString());
                 tbProductName.Text = (read["col_productname"].ToString());
                 tbBrand.Text = (read["col_brandname"].ToString());
                 tbCategory.Text = (read["col_categoryname"].ToString());
-
                 tbPrice.Text = (read["col_productprice"].ToString());
             }
             conn.Close();
-
         }
         public void printorderid()
         {
@@ -91,7 +88,6 @@ namespace LoginModule.cs
         }
         public void searchProduct()
         {
-
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             materialListView2.Items.Clear();
             conn.Open();
@@ -109,7 +105,6 @@ namespace LoginModule.cs
             }
             conn.Close();
         }
-
         public void Change()
         {
             if (!string.IsNullOrWhiteSpace(tbAmount.Text))
@@ -121,7 +116,6 @@ namespace LoginModule.cs
         }
         public void TodaysSales()
         {
-
             MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
             con.Open();
             MySqlCommand cmd = new MySqlCommand();
@@ -134,8 +128,6 @@ namespace LoginModule.cs
 
             }
             con.Close();
-
-
         }
         public void TransactionOutput()
         {
@@ -155,10 +147,6 @@ namespace LoginModule.cs
             con.Close();
             InsertTransaction();
         }
-
-
-
-
         public void InsertOrder()
         {
             try
@@ -188,7 +176,6 @@ namespace LoginModule.cs
                 MessageBox.Show("" + e);
 
             }
-
         }
         public void InsertTransaction()
         {
@@ -205,20 +192,16 @@ namespace LoginModule.cs
                 command2.ExecuteScalar();
                 conn.Close();
             }
-
         }
-
         public void InsertTransactionTotalAmount()
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-
             if (tbAmount.Text == "")
             {
                 MessageBox.Show("Please enter tender amount");
             }
             else
             {
-
                 double TotalSales = Double.Parse(labelTotalSales.Text);
                 double tenderAmount = Double.Parse(tbAmount.Text);
                 double change = Double.Parse(labelChange.Text);
@@ -232,12 +215,9 @@ namespace LoginModule.cs
                 command2.ExecuteScalar();
                 conn.Close();
             }
-
         }
-
         public void viewOrder()
         {
-
             materialListView1.Items.Clear();
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
