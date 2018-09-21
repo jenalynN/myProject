@@ -11,7 +11,7 @@ function view_sales()
 					inner join tbl_transaction t on o.col_transactionid = t.col_transactionid					
 					";
 					
-					if(isset($_SESSION['userId'])){
+					if(isset($_SESSION['userId']) && $_SESSION['userId'] != 'admin'){
 						$query = "SELECT * from tbl_order o 
 						inner join tbl_product p on o.col_productid = p.col_productid 
 						inner join tbl_transaction t on o.col_transactionid = t.col_transactionid 

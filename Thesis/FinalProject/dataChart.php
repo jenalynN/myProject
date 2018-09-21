@@ -26,7 +26,7 @@ if ( isset( $_POST['submit'] ) )
 	//echo $query;
 	//echo "from: " . $fromdate . "to: " . $todate;
 	
-	if(isset($_SESSION['userId'])){
+	if(isset($_SESSION['userId']) && $_SESSION['userId'] != 'admin'){
 	$query = sprintf("SELECT t.col_dateofpurchase as date,t.col_totalprice as sales FROM tbl_transaction t
 	inner join tbl_order o on o.col_transactionid = t.col_transactionid 
 	inner join tbl_product p on o.col_productid = p.col_productid 
