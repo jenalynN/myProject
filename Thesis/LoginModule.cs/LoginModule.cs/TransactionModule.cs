@@ -168,7 +168,7 @@ namespace LoginModule.cs
                     command2.CommandText = query;
                     command2.ExecuteNonQuery();
                     conn.Close();
-                    MessageBox.Show(query);
+                    //MessageBox.Show(query);
                 }
             }
             catch (Exception e)
