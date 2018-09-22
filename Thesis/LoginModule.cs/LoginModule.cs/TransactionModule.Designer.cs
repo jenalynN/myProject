@@ -130,6 +130,8 @@
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -307,7 +309,7 @@
             this.materialFlatButton4.TabIndex = 24;
             this.materialFlatButton4.Text = "Change password";
             this.materialFlatButton4.UseVisualStyleBackColor = true;
-            this.materialFlatButton4.Click += new System.EventHandler(this.materialFlatButton4_Click_1);
+            this.materialFlatButton4.Click += new System.EventHandler(this.materialFlatButton4_Click);
             // 
             // materialFlatButton5
             // 
@@ -1090,7 +1092,7 @@
             this.materialListView4.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView4.Name = "materialListView4";
             this.materialListView4.OwnerDraw = true;
-            this.materialListView4.Size = new System.Drawing.Size(467, 417);
+            this.materialListView4.Size = new System.Drawing.Size(467, 380);
             this.materialListView4.TabIndex = 2;
             this.materialListView4.UseCompatibleStateImageBehavior = false;
             this.materialListView4.View = System.Windows.Forms.View.Details;
@@ -1137,6 +1139,8 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.label27);
+            this.groupBox8.Controls.Add(this.textBox8);
             this.groupBox8.Controls.Add(this.label18);
             this.groupBox8.Controls.Add(this.textBox1);
             this.groupBox8.Controls.Add(this.materialListView3);
@@ -1185,10 +1189,11 @@
             this.materialListView3.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView3.Name = "materialListView3";
             this.materialListView3.OwnerDraw = true;
-            this.materialListView3.Size = new System.Drawing.Size(323, 417);
+            this.materialListView3.Size = new System.Drawing.Size(323, 379);
             this.materialListView3.TabIndex = 22;
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
+            this.materialListView3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView3_MouseDoubleClick);
             // 
             // columnHeader11
             // 
@@ -1275,6 +1280,23 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1284, 32);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(6, 452);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(143, 23);
+            this.label27.TabIndex = 67;
+            this.label27.Text = "Transaction Code";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(155, 449);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(178, 31);
+            this.textBox8.TabIndex = 66;
             // 
             // TransactionModule
             // 
@@ -1422,5 +1444,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }

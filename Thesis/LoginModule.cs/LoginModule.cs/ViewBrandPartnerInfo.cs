@@ -97,5 +97,12 @@ namespace LoginModule.cs
             a.Show();
             this.Hide();
         }
+
+        private void materialFlatButton3_Click(object sender, EventArgs e)
+        {
+            ChangePassword a = new ChangePassword(labelBrandpartnerId.Text);
+            a.Show();
+            this.Hide();
+        }
     }
 }

@@ -15,10 +15,10 @@ namespace LoginModule.cs
     public partial class TransactionModule : MaterialSkin.Controls.MaterialForm
     {
 
-        public TransactionModule(string cashier)
+        public TransactionModule(string id)
         {
             InitializeComponent();
-            label17.Text = cashier;
+            label17.Text = id;
             displayDate();
             TransactionOutput();
             TodaysSales();
@@ -446,11 +446,6 @@ namespace LoginModule.cs
         {
             remove();
         }
-
-        private void materialFlatButton4_Click_1(object sender, EventArgs e)
-        {
-
-        }
         public void searchtransaction()
         {
 
@@ -490,6 +485,51 @@ namespace LoginModule.cs
         private void materialFlatButton6_Click(object sender, EventArgs e)
         {
 
+        }
+        public void printorders() 
+        {
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "select * from tbl_order o " +
+                "inner join tbl_product p on p.col_productid =  o.col_productid "+
+                "inner join tbl_brandpartner b on b.col_useraccountsid = u.col_useraccountsid " +
+                "inner join tbl_category c on c.col_categoryid = p.col_productid " +
+                "inner join tbl_transaction t on t.col_transactionid = o.col_transactionid where  t.col_transactioncode='" + textBox8.Text + "'";
+            command.CommandText = query;
+            MySqlDataReader read = command.ExecuteReader();
+
+
+           while(read.Read())
+{
+            ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
+
+            items.SubItems.Add(read["col_productname"].ToString());
+            items.SubItems.Add(read["col_productcode"].ToString());
+            items.SubItems.Add(read["col_brandname"].ToString());
+            items.SubItems.Add(read["col_categoryname"].ToString());
+            items.SubItems.Add(read["col_productprice"].ToString());
+            items.SubItems.Add(read["col_quantitybought"].ToString());
+            items.SubItems.Add(read["col_subtotal"].ToString());
+            materialListView1.Items.Add(items); ;
+            
+            conn.Close();
+    
+ //read tuples
+}
+        
+        }
+        public void printtransid() 
+        {
+            int data = 0;
+            ListViewItem list = materialListView3.SelectedItems[data];
+            String id = list.SubItems[1].Text;
+            textBox8.Text = id.ToString();
+            printorders();
+        }
+        private void materialListView3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            printtransid();
         }
 
     }

@@ -39,7 +39,6 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +99,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.materialFlatButton3);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.labelCashierId);
@@ -107,7 +108,6 @@
             this.groupBox1.Controls.Add(this.textBox9);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.materialDivider2);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.textBox6);
@@ -136,7 +136,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox1.Location = new System.Drawing.Point(210, 267);
+            this.comboBox1.Location = new System.Drawing.Point(210, 228);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(222, 32);
             this.comboBox1.TabIndex = 99;
@@ -167,7 +167,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(445, 240);
+            this.label16.Location = new System.Drawing.Point(445, 65);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(202, 23);
             this.label16.TabIndex = 96;
@@ -175,7 +175,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(606, 336);
+            this.textBox10.Location = new System.Drawing.Point(606, 152);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(222, 32);
             this.textBox10.TabIndex = 94;
@@ -183,7 +183,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(606, 298);
+            this.textBox9.Location = new System.Drawing.Point(606, 114);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(222, 32);
             this.textBox9.TabIndex = 93;
@@ -192,7 +192,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(445, 340);
+            this.label14.Location = new System.Drawing.Point(442, 156);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 23);
             this.label14.TabIndex = 91;
@@ -202,28 +202,17 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(445, 302);
+            this.label13.Location = new System.Drawing.Point(442, 118);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(89, 23);
             this.label13.TabIndex = 90;
             this.label13.Text = "Username";
             // 
-            // materialDivider2
-            // 
-            this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider2.Depth = 0;
-            this.materialDivider2.Location = new System.Drawing.Point(449, 236);
-            this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider2.Name = "materialDivider2";
-            this.materialDivider2.Size = new System.Drawing.Size(379, 1);
-            this.materialDivider2.TabIndex = 89;
-            this.materialDivider2.Text = "materialDivider2";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(5, 347);
+            this.label9.Location = new System.Drawing.Point(6, 308);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(82, 23);
             this.label9.TabIndex = 84;
@@ -233,7 +222,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 309);
+            this.label8.Location = new System.Drawing.Point(6, 270);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 23);
             this.label8.TabIndex = 83;
@@ -241,14 +230,14 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(210, 343);
+            this.textBox6.Location = new System.Drawing.Point(210, 304);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(222, 32);
             this.textBox6.TabIndex = 82;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(210, 305);
+            this.textBox5.Location = new System.Drawing.Point(210, 266);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(222, 32);
             this.textBox5.TabIndex = 81;
@@ -257,7 +246,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 271);
+            this.label6.Location = new System.Drawing.Point(6, 232);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 23);
             this.label6.TabIndex = 76;
@@ -335,6 +324,25 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Firstname";
             // 
+            // materialFlatButton3
+            // 
+            this.materialFlatButton3.AutoSize = true;
+            this.materialFlatButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton3.BackColor = System.Drawing.Color.White;
+            this.materialFlatButton3.Depth = 0;
+            this.materialFlatButton3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.materialFlatButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.materialFlatButton3.Icon = null;
+            this.materialFlatButton3.Location = new System.Drawing.Point(675, 193);
+            this.materialFlatButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton3.Name = "materialFlatButton3";
+            this.materialFlatButton3.Primary = false;
+            this.materialFlatButton3.Size = new System.Drawing.Size(153, 36);
+            this.materialFlatButton3.TabIndex = 42;
+            this.materialFlatButton3.Text = "Change Password";
+            this.materialFlatButton3.UseVisualStyleBackColor = false;
+            // 
             // ViewCashierInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,7 +373,6 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private MaterialSkin.Controls.MaterialDivider materialDivider2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox6;
@@ -379,5 +386,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
     }
 }

@@ -28,7 +28,6 @@ namespace LoginModule.cs
             countarchiveditems();
             databrandpartneraccountunarchived();
             databrandpartneraccountarchived();
-
             dataCashierAccountUnarchived();
             dataCashierAccountArchived();
         }
@@ -1062,6 +1061,11 @@ namespace LoginModule.cs
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
             searcharchivedcashier();
+        }
+
+        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
  
     
