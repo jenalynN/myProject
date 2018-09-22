@@ -5,7 +5,7 @@
 require ('Controller/db.php');
 //query to get data from the table
 $query = sprintf("SELECT col_dateofpurchase as date,col_totalprice as sales FROM tbl_transaction GROUP by col_dateofpurchase ORDER BY col_dateofpurchase ASC");
-if(isset($_SESSION['userId'])){
+if(isset($_SESSION['userId']) && $_SESSION['usertype'] != '1'){
 	$query = sprintf("SELECT t.col_dateofpurchase as date,t.col_totalprice as sales FROM tbl_transaction t
 	inner join tbl_order o on o.col_transactionid = t.col_transactionid 
 	inner join tbl_product p on o.col_productid = p.col_productid 
@@ -26,7 +26,7 @@ if ( isset( $_POST['submit'] ) )
 	//echo $query;
 	//echo "from: " . $fromdate . "to: " . $todate;
 	
-	if(isset($_SESSION['userId']) && $_SESSION['userId'] != 'admin'){
+	if(isset($_SESSION['userId']) && $_SESSION['usertype'] != '1'){
 	$query = sprintf("SELECT t.col_dateofpurchase as date,t.col_totalprice as sales FROM tbl_transaction t
 	inner join tbl_order o on o.col_transactionid = t.col_transactionid 
 	inner join tbl_product p on o.col_productid = p.col_productid 

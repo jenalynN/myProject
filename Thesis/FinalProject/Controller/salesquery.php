@@ -11,15 +11,15 @@ function view_sales()
 					inner join tbl_transaction t on o.col_transactionid = t.col_transactionid					
 					";
 					
-					if(isset($_SESSION['userId']) && $_SESSION['userId'] != 'admin'){
+					if(isset($_SESSION['userId']) && $_SESSION['usertype'] != '1'){
 						$query = "SELECT * from tbl_order o 
 						inner join tbl_product p on o.col_productid = p.col_productid 
 						inner join tbl_transaction t on o.col_transactionid = t.col_transactionid 
 						inner join tbl_brandpartner b on b.col_useraccountsid = p.col_useraccountsid 
 						where b.col_useraccountsid = " . $_SESSION['userId'] ;
 					}
-					
-						$result = mysqli_query($db, $query);
+
+					$result = mysqli_query($db, $query);
 						while ($row = mysqli_fetch_assoc($result))
 						 {
 							$tcode = 			$row['col_transactioncode'];
