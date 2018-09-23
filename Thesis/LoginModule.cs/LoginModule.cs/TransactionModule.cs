@@ -486,38 +486,40 @@ namespace LoginModule.cs
         {
 
         }
-        public void printorders() 
+        public void printorders()
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_order o " +
-                "inner join tbl_product p on p.col_productid =  o.col_productid "+
-                "inner join tbl_brandpartner b on b.col_useraccountsid = u.col_useraccountsid " +
-                "inner join tbl_category c on c.col_categoryid = p.col_productid " +
-                "inner join tbl_transaction t on t.col_transactionid = o.col_transactionid where  t.col_transactioncode='" + textBox8.Text + "'";
+            string query = "Select * from tbl_order o " +
+                "inner join tbl_transaction t " +
+                "  on t.col_transactionid = o.col_transactionid " +
+                "inner join tbl_product p " +
+                "on o.col_productid = p.col_productid " +
+                "inner join tbl_brandpartner b " +
+                "on p.col_useraccountsid = b.col_useraccountsid " +
+                "inner join tbl_category c " +
+                "on c.col_categoryid = p.col_categoryid " +
+                "where t.col_transactioncode = '" + textBox8.Text + "'";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
 
 
-           while(read.Read())
-{
-            ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
+            while (read.Read())
+            {
 
-            items.SubItems.Add(read["col_productname"].ToString());
-            items.SubItems.Add(read["col_productcode"].ToString());
-            items.SubItems.Add(read["col_brandname"].ToString());
-            items.SubItems.Add(read["col_categoryname"].ToString());
-            items.SubItems.Add(read["col_productprice"].ToString());
-            items.SubItems.Add(read["col_quantitybought"].ToString());
-            items.SubItems.Add(read["col_subtotal"].ToString());
-            materialListView1.Items.Add(items); ;
-            
-            conn.Close();
-    
- //read tuples
-}
-        
+                ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
+
+                items.SubItems.Add(read["col_productid"].ToString());
+                //items.SubItems.Add(read["col_productcode"].ToString());
+                //items.SubItems.Add(read["col_productprice"].ToString());
+                //items.SubItems.Add(read["col_quantitybought"].ToString());
+                items.SubItems.Add(read["col_subtotal"].ToString());
+                materialListView4.Items.Add(items); ;
+                materialListView4.FullRowSelect = true;
+                conn.Close();
+            }
+
         }
         public void printtransid() 
         {
