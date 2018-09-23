@@ -82,5 +82,12 @@ namespace LoginModule.cs
             a.Show();
             this.Hide();
         }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+            Mainframe a = new Mainframe();
+            a.Show();
+            this.Hide();
+        }
     }
 }

@@ -406,6 +406,7 @@
             this.materialFlatButton2.TabIndex = 39;
             this.materialFlatButton2.Text = "Back";
             this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
             // 
             // materialFlatButton1
             // 
