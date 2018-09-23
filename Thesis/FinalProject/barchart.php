@@ -7,7 +7,7 @@
 
         <section class="content-header">
          <h1>
-              <h1> Brand Partner Table </h1>
+              <h1> Sales Bar Graph </h1>
           </h1>
          
         </section>
@@ -32,7 +32,7 @@
 
 			   <div class="box box-success">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Bar Chart</h3>
+                  <h3 class="box-title">Bar Graph</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>

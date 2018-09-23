@@ -46,7 +46,9 @@ $result = mysqli_query($db, $query);
 $data = array();
 foreach ($result as $row) {
 	$data[] = $row;
+	
 }
+echo json_encode($data)
 
 //now print the data
 //print json_encode($data);
