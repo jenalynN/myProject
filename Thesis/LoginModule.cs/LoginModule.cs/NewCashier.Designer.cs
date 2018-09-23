@@ -89,7 +89,7 @@
             this.groupBox1.Size = new System.Drawing.Size(834, 420);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "New Brand Partner Account";
+            this.groupBox1.Text = "New Cashier Account";
             // 
             // comboBox1
             // 
