@@ -78,6 +78,29 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.materialFlatButton20 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.materialTabSelector6 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.materialTabControl6 = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.materialFlatButton5 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.groupBox26 = new System.Windows.Forms.GroupBox();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.materialListView11 = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader67 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader68 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader69 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.groupBox30 = new System.Windows.Forms.GroupBox();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.materialListView13 = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader75 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader76 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader77 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.materialTabSelector3 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl3 = new MaterialSkin.Controls.MaterialTabControl();
@@ -195,29 +218,6 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.materialTabControl6 = new MaterialSkin.Controls.MaterialTabControl();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.groupBox26 = new System.Windows.Forms.GroupBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.materialListView11 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader67 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader68 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader69 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.groupBox30 = new System.Windows.Forms.GroupBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.materialListView13 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader75 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader76 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader77 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTabSelector6 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton5 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -231,6 +231,13 @@
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.materialTabControl6.SuspendLayout();
+            this.tabPage12.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox26.SuspendLayout();
+            this.tabPage13.SuspendLayout();
+            this.groupBox30.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.materialTabControl3.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -256,13 +263,6 @@
             this.Logs.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.Settings.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.materialTabControl6.SuspendLayout();
-            this.tabPage12.SuspendLayout();
-            this.groupBox26.SuspendLayout();
-            this.tabPage13.SuspendLayout();
-            this.groupBox30.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -343,6 +343,7 @@
             this.tabPage4.Size = new System.Drawing.Size(1210, 552);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Unarchived";
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // groupBox4
             // 
@@ -905,6 +906,286 @@
             this.materialFlatButton20.Text = "Unarchive Product";
             this.materialFlatButton20.UseVisualStyleBackColor = false;
             this.materialFlatButton20.Click += new System.EventHandler(this.materialFlatButton20_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.White;
+            this.tabPage3.Controls.Add(this.materialTabSelector6);
+            this.tabPage3.Controls.Add(this.materialTabControl6);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1210, 552);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Damage";
+            // 
+            // materialTabSelector6
+            // 
+            this.materialTabSelector6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTabSelector6.BaseTabControl = this.materialTabControl6;
+            this.materialTabSelector6.Depth = 0;
+            this.materialTabSelector6.Location = new System.Drawing.Point(0, 27);
+            this.materialTabSelector6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector6.Name = "materialTabSelector6";
+            this.materialTabSelector6.Size = new System.Drawing.Size(1210, 32);
+            this.materialTabSelector6.TabIndex = 49;
+            this.materialTabSelector6.Text = "materialTabSelector6";
+            // 
+            // materialTabControl6
+            // 
+            this.materialTabControl6.Controls.Add(this.tabPage12);
+            this.materialTabControl6.Controls.Add(this.tabPage13);
+            this.materialTabControl6.Depth = 0;
+            this.materialTabControl6.Location = new System.Drawing.Point(6, 65);
+            this.materialTabControl6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabControl6.Name = "materialTabControl6";
+            this.materialTabControl6.SelectedIndex = 0;
+            this.materialTabControl6.Size = new System.Drawing.Size(1198, 503);
+            this.materialTabControl6.TabIndex = 48;
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.groupBox6);
+            this.tabPage12.Controls.Add(this.groupBox26);
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(1190, 477);
+            this.tabPage12.TabIndex = 0;
+            this.tabPage12.Text = "Pending";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.BackColor = System.Drawing.Color.White;
+            this.groupBox6.Controls.Add(this.materialFlatButton5);
+            this.groupBox6.Controls.Add(this.materialFlatButton3);
+            this.groupBox6.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(1058, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(126, 153);
+            this.groupBox6.TabIndex = 61;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Actions";
+            // 
+            // materialFlatButton5
+            // 
+            this.materialFlatButton5.AutoSize = true;
+            this.materialFlatButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton5.Depth = 0;
+            this.materialFlatButton5.Icon = null;
+            this.materialFlatButton5.Location = new System.Drawing.Point(24, 85);
+            this.materialFlatButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton5.Name = "materialFlatButton5";
+            this.materialFlatButton5.Primary = false;
+            this.materialFlatButton5.Size = new System.Drawing.Size(73, 36);
+            this.materialFlatButton5.TabIndex = 1;
+            this.materialFlatButton5.Text = "Cancel";
+            this.materialFlatButton5.UseVisualStyleBackColor = true;
+            // 
+            // materialFlatButton3
+            // 
+            this.materialFlatButton3.AutoSize = true;
+            this.materialFlatButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton3.Depth = 0;
+            this.materialFlatButton3.Icon = null;
+            this.materialFlatButton3.Location = new System.Drawing.Point(16, 47);
+            this.materialFlatButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton3.Name = "materialFlatButton3";
+            this.materialFlatButton3.Primary = false;
+            this.materialFlatButton3.Size = new System.Drawing.Size(81, 36);
+            this.materialFlatButton3.TabIndex = 0;
+            this.materialFlatButton3.Text = "Confirm";
+            this.materialFlatButton3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox26
+            // 
+            this.groupBox26.Controls.Add(this.comboBox9);
+            this.groupBox26.Controls.Add(this.materialListView11);
+            this.groupBox26.Controls.Add(this.materialLabel1);
+            this.groupBox26.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox26.Location = new System.Drawing.Point(8, 6);
+            this.groupBox26.Name = "groupBox26";
+            this.groupBox26.Size = new System.Drawing.Size(1044, 524);
+            this.groupBox26.TabIndex = 60;
+            this.groupBox26.TabStop = false;
+            this.groupBox26.Text = "Return Item Logs";
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Items.AddRange(new object[] {
+            "ID",
+            "Code",
+            "Category",
+            "Brandname"});
+            this.comboBox9.Location = new System.Drawing.Point(123, 47);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(85, 31);
+            this.comboBox9.TabIndex = 46;
+            // 
+            // materialListView11
+            // 
+            this.materialListView11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.materialListView11.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader67,
+            this.columnHeader68,
+            this.columnHeader69,
+            this.columnHeader3});
+            this.materialListView11.Depth = 0;
+            this.materialListView11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.materialListView11.FullRowSelect = true;
+            this.materialListView11.GridLines = true;
+            this.materialListView11.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.materialListView11.Location = new System.Drawing.Point(6, 85);
+            this.materialListView11.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView11.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView11.Name = "materialListView11";
+            this.materialListView11.OwnerDraw = true;
+            this.materialListView11.Size = new System.Drawing.Size(1032, 433);
+            this.materialListView11.TabIndex = 42;
+            this.materialListView11.UseCompatibleStateImageBehavior = false;
+            this.materialListView11.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader67
+            // 
+            this.columnHeader67.Text = "Damage Id";
+            this.columnHeader67.Width = 200;
+            // 
+            // columnHeader68
+            // 
+            this.columnHeader68.Text = "Product Code";
+            this.columnHeader68.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader68.Width = 230;
+            // 
+            // columnHeader69
+            // 
+            this.columnHeader69.Text = "Product Name";
+            this.columnHeader69.Width = 230;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Status";
+            this.columnHeader3.Width = 230;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(6, 53);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(111, 19);
+            this.materialLabel1.TabIndex = 32;
+            this.materialLabel1.Text = "Search Options";
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Controls.Add(this.groupBox30);
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(1190, 477);
+            this.tabPage13.TabIndex = 1;
+            this.tabPage13.Text = "Finish";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // groupBox30
+            // 
+            this.groupBox30.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox30.Controls.Add(this.comboBox11);
+            this.groupBox30.Controls.Add(this.materialListView13);
+            this.groupBox30.Controls.Add(this.materialLabel3);
+            this.groupBox30.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox30.Location = new System.Drawing.Point(6, 6);
+            this.groupBox30.Name = "groupBox30";
+            this.groupBox30.Size = new System.Drawing.Size(1172, 465);
+            this.groupBox30.TabIndex = 61;
+            this.groupBox30.TabStop = false;
+            this.groupBox30.Text = "Finished Return Item Transactions";
+            // 
+            // comboBox11
+            // 
+            this.comboBox11.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.comboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox11.FormattingEnabled = true;
+            this.comboBox11.Items.AddRange(new object[] {
+            "ID",
+            "Code",
+            "Category",
+            "Brandname"});
+            this.comboBox11.Location = new System.Drawing.Point(123, 47);
+            this.comboBox11.Name = "comboBox11";
+            this.comboBox11.Size = new System.Drawing.Size(111, 31);
+            this.comboBox11.TabIndex = 46;
+            // 
+            // materialListView13
+            // 
+            this.materialListView13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialListView13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.materialListView13.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader75,
+            this.columnHeader76,
+            this.columnHeader77});
+            this.materialListView13.Depth = 0;
+            this.materialListView13.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.materialListView13.FullRowSelect = true;
+            this.materialListView13.GridLines = true;
+            this.materialListView13.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.materialListView13.Location = new System.Drawing.Point(6, 85);
+            this.materialListView13.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView13.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView13.Name = "materialListView13";
+            this.materialListView13.OwnerDraw = true;
+            this.materialListView13.Size = new System.Drawing.Size(1160, 374);
+            this.materialListView13.TabIndex = 42;
+            this.materialListView13.UseCompatibleStateImageBehavior = false;
+            this.materialListView13.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader75
+            // 
+            this.columnHeader75.Text = "Log Id";
+            this.columnHeader75.Width = 200;
+            // 
+            // columnHeader76
+            // 
+            this.columnHeader76.Text = "Activity";
+            this.columnHeader76.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader76.Width = 230;
+            // 
+            // columnHeader77
+            // 
+            this.columnHeader77.Text = "Date";
+            this.columnHeader77.Width = 114;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(6, 53);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(111, 19);
+            this.materialLabel3.TabIndex = 32;
+            this.materialLabel3.Text = "Search Options";
             // 
             // tabPage2
             // 
@@ -2238,286 +2519,6 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Controls.Add(this.materialTabSelector6);
-            this.tabPage3.Controls.Add(this.materialTabControl6);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1210, 552);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Damage";
-            // 
-            // materialTabControl6
-            // 
-            this.materialTabControl6.Controls.Add(this.tabPage12);
-            this.materialTabControl6.Controls.Add(this.tabPage13);
-            this.materialTabControl6.Depth = 0;
-            this.materialTabControl6.Location = new System.Drawing.Point(6, 65);
-            this.materialTabControl6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabControl6.Name = "materialTabControl6";
-            this.materialTabControl6.SelectedIndex = 0;
-            this.materialTabControl6.Size = new System.Drawing.Size(1198, 503);
-            this.materialTabControl6.TabIndex = 48;
-            // 
-            // tabPage12
-            // 
-            this.tabPage12.Controls.Add(this.groupBox6);
-            this.tabPage12.Controls.Add(this.groupBox26);
-            this.tabPage12.Location = new System.Drawing.Point(4, 22);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(1190, 477);
-            this.tabPage12.TabIndex = 0;
-            this.tabPage12.Text = "Pending";
-            this.tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // groupBox26
-            // 
-            this.groupBox26.Controls.Add(this.comboBox9);
-            this.groupBox26.Controls.Add(this.materialListView11);
-            this.groupBox26.Controls.Add(this.materialLabel1);
-            this.groupBox26.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox26.Location = new System.Drawing.Point(8, 6);
-            this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Size = new System.Drawing.Size(1044, 524);
-            this.groupBox26.TabIndex = 60;
-            this.groupBox26.TabStop = false;
-            this.groupBox26.Text = "Return Item Logs";
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Items.AddRange(new object[] {
-            "ID",
-            "Code",
-            "Category",
-            "Brandname"});
-            this.comboBox9.Location = new System.Drawing.Point(123, 47);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(85, 31);
-            this.comboBox9.TabIndex = 46;
-            // 
-            // materialListView11
-            // 
-            this.materialListView11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.materialListView11.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader67,
-            this.columnHeader68,
-            this.columnHeader69,
-            this.columnHeader3});
-            this.materialListView11.Depth = 0;
-            this.materialListView11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.materialListView11.FullRowSelect = true;
-            this.materialListView11.GridLines = true;
-            this.materialListView11.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView11.Location = new System.Drawing.Point(6, 85);
-            this.materialListView11.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView11.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView11.Name = "materialListView11";
-            this.materialListView11.OwnerDraw = true;
-            this.materialListView11.Size = new System.Drawing.Size(1032, 433);
-            this.materialListView11.TabIndex = 42;
-            this.materialListView11.UseCompatibleStateImageBehavior = false;
-            this.materialListView11.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader67
-            // 
-            this.columnHeader67.Text = "Damage Id";
-            this.columnHeader67.Width = 200;
-            // 
-            // columnHeader68
-            // 
-            this.columnHeader68.Text = "Product Code";
-            this.columnHeader68.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader68.Width = 230;
-            // 
-            // columnHeader69
-            // 
-            this.columnHeader69.Text = "Product Name";
-            this.columnHeader69.Width = 230;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(6, 53);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(111, 19);
-            this.materialLabel1.TabIndex = 32;
-            this.materialLabel1.Text = "Search Options";
-            // 
-            // tabPage13
-            // 
-            this.tabPage13.Controls.Add(this.groupBox30);
-            this.tabPage13.Location = new System.Drawing.Point(4, 22);
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(1190, 477);
-            this.tabPage13.TabIndex = 1;
-            this.tabPage13.Text = "Finish";
-            this.tabPage13.UseVisualStyleBackColor = true;
-            // 
-            // groupBox30
-            // 
-            this.groupBox30.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox30.Controls.Add(this.comboBox11);
-            this.groupBox30.Controls.Add(this.materialListView13);
-            this.groupBox30.Controls.Add(this.materialLabel3);
-            this.groupBox30.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox30.Location = new System.Drawing.Point(6, 6);
-            this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(1172, 465);
-            this.groupBox30.TabIndex = 61;
-            this.groupBox30.TabStop = false;
-            this.groupBox30.Text = "Finished Return Item Transactions";
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.comboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Items.AddRange(new object[] {
-            "ID",
-            "Code",
-            "Category",
-            "Brandname"});
-            this.comboBox11.Location = new System.Drawing.Point(123, 47);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(111, 31);
-            this.comboBox11.TabIndex = 46;
-            // 
-            // materialListView13
-            // 
-            this.materialListView13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialListView13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.materialListView13.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader75,
-            this.columnHeader76,
-            this.columnHeader77});
-            this.materialListView13.Depth = 0;
-            this.materialListView13.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.materialListView13.FullRowSelect = true;
-            this.materialListView13.GridLines = true;
-            this.materialListView13.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView13.Location = new System.Drawing.Point(6, 85);
-            this.materialListView13.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView13.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView13.Name = "materialListView13";
-            this.materialListView13.OwnerDraw = true;
-            this.materialListView13.Size = new System.Drawing.Size(1160, 374);
-            this.materialListView13.TabIndex = 42;
-            this.materialListView13.UseCompatibleStateImageBehavior = false;
-            this.materialListView13.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader75
-            // 
-            this.columnHeader75.Text = "Log Id";
-            this.columnHeader75.Width = 200;
-            // 
-            // columnHeader76
-            // 
-            this.columnHeader76.Text = "Activity";
-            this.columnHeader76.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader76.Width = 230;
-            // 
-            // columnHeader77
-            // 
-            this.columnHeader77.Text = "Date";
-            this.columnHeader77.Width = 114;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(6, 53);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(111, 19);
-            this.materialLabel3.TabIndex = 32;
-            this.materialLabel3.Text = "Search Options";
-            // 
-            // materialTabSelector6
-            // 
-            this.materialTabSelector6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabSelector6.BaseTabControl = this.materialTabControl6;
-            this.materialTabSelector6.Depth = 0;
-            this.materialTabSelector6.Location = new System.Drawing.Point(0, 27);
-            this.materialTabSelector6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector6.Name = "materialTabSelector6";
-            this.materialTabSelector6.Size = new System.Drawing.Size(1210, 32);
-            this.materialTabSelector6.TabIndex = 49;
-            this.materialTabSelector6.Text = "materialTabSelector6";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Status";
-            this.columnHeader3.Width = 230;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox6.BackColor = System.Drawing.Color.White;
-            this.groupBox6.Controls.Add(this.materialFlatButton5);
-            this.groupBox6.Controls.Add(this.materialFlatButton3);
-            this.groupBox6.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(1058, 6);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(126, 153);
-            this.groupBox6.TabIndex = 61;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Actions";
-            // 
-            // materialFlatButton3
-            // 
-            this.materialFlatButton3.AutoSize = true;
-            this.materialFlatButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton3.Depth = 0;
-            this.materialFlatButton3.Icon = null;
-            this.materialFlatButton3.Location = new System.Drawing.Point(16, 47);
-            this.materialFlatButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton3.Name = "materialFlatButton3";
-            this.materialFlatButton3.Primary = false;
-            this.materialFlatButton3.Size = new System.Drawing.Size(81, 36);
-            this.materialFlatButton3.TabIndex = 0;
-            this.materialFlatButton3.Text = "Confirm";
-            this.materialFlatButton3.UseVisualStyleBackColor = true;
-            // 
-            // materialFlatButton5
-            // 
-            this.materialFlatButton5.AutoSize = true;
-            this.materialFlatButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton5.Depth = 0;
-            this.materialFlatButton5.Icon = null;
-            this.materialFlatButton5.Location = new System.Drawing.Point(24, 85);
-            this.materialFlatButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton5.Name = "materialFlatButton5";
-            this.materialFlatButton5.Primary = false;
-            this.materialFlatButton5.Size = new System.Drawing.Size(73, 36);
-            this.materialFlatButton5.TabIndex = 1;
-            this.materialFlatButton5.Text = "Cancel";
-            this.materialFlatButton5.UseVisualStyleBackColor = true;
-            // 
             // Mainframe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2551,6 +2552,16 @@
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.materialTabControl6.ResumeLayout(false);
+            this.tabPage12.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox26.ResumeLayout(false);
+            this.groupBox26.PerformLayout();
+            this.tabPage13.ResumeLayout(false);
+            this.groupBox30.ResumeLayout(false);
+            this.groupBox30.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.materialTabControl3.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
@@ -2590,16 +2601,6 @@
             this.groupBox5.PerformLayout();
             this.Settings.ResumeLayout(false);
             this.Settings.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.materialTabControl6.ResumeLayout(false);
-            this.tabPage12.ResumeLayout(false);
-            this.groupBox26.ResumeLayout(false);
-            this.groupBox26.PerformLayout();
-            this.tabPage13.ResumeLayout(false);
-            this.groupBox30.ResumeLayout(false);
-            this.groupBox30.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }

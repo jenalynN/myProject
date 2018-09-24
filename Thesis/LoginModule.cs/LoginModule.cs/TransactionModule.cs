@@ -34,16 +34,9 @@ namespace LoginModule.cs
         public void TransactionDelete()
         {
 
+
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             MySqlCommand command = conn.CreateCommand();
-
-            conn.Open();
-            command.CommandText = "Delete from tbl_order where col_orderstatus='unfinished'";
-            command.ExecuteScalar();
-            conn.Close();
-
-            MySqlConnection conn2 = new MySqlConnection(ConnectionString.myConnection);
-            MySqlCommand command2 = conn2.CreateCommand();
 
             conn.Open();
             command.CommandText = "Delete from tbl_transaction where col_transactioncode='" + labelTransactionCode.Text + "'";
@@ -352,9 +345,7 @@ namespace LoginModule.cs
         }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
-            remove();
-            total();
-            viewOrder();
+            inserttopending();
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -490,6 +481,8 @@ namespace LoginModule.cs
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             conn.Open();
+
+            materialListView4.Items.Clear(); 
             MySqlCommand command = conn.CreateCommand();
             string query = "Select * from tbl_order o " +
                 "inner join tbl_transaction t " +
@@ -503,23 +496,23 @@ namespace LoginModule.cs
                 "where t.col_transactioncode = '" + textBox8.Text + "'";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
-
-
+            
             while (read.Read())
             {
 
                 ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
-
-                items.SubItems.Add(read["col_productid"].ToString());
-                //items.SubItems.Add(read["col_productcode"].ToString());
-                //items.SubItems.Add(read["col_productprice"].ToString());
-                //items.SubItems.Add(read["col_quantitybought"].ToString());
+                items.SubItems.Add(read["col_productcode"].ToString());
+                items.SubItems.Add(read["col_productname"].ToString());
+                items.SubItems.Add(read["col_brandname"].ToString());
+                items.SubItems.Add(read["col_categoryname"].ToString());
+                items.SubItems.Add(read["col_productprice"].ToString());
+                items.SubItems.Add(read["col_quantitybought"].ToString());
                 items.SubItems.Add(read["col_subtotal"].ToString());
-                materialListView4.Items.Add(items); ;
+                materialListView4.Items.Add(items); 
                 materialListView4.FullRowSelect = true;
-                conn.Close();
             }
 
+            conn.Close();
         }
         public void printtransid() 
         {
@@ -533,6 +526,68 @@ namespace LoginModule.cs
         {
             printtransid();
         }
+        public void printorderdetails() 
+        {
+            int data = 0;
+            ListViewItem list = materialListView3.SelectedItems[data];
+            String id = list.SubItems[0].Text;
+            textBox2.Text = id.ToString();
+            
+             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            conn.Open();
+
+            MySqlCommand command = conn.CreateCommand();
+            string query = "Select * from tbl_order o " +
+                "inner join tbl_transaction t " +
+                "  on t.col_transactionid = o.col_transactionid " +
+                "inner join tbl_product p " +
+                "on o.col_productid = p.col_productid " +
+                "inner join tbl_brandpartner b " +
+                "on p.col_useraccountsid = b.col_useraccountsid " +
+                "inner join tbl_category c " +
+                "on c.col_categoryid = p.col_categoryid " +
+                "where o.col_orderid= '" + textBox2.Text + "'";
+            command.CommandText = query;
+            MySqlDataReader read = command.ExecuteReader();
+            while (read.Read())
+            {
+                textBox3.Text = read["col_productname"].ToString();
+                textBox4.Text = read["col_productcode"].ToString();
+                textBox5.Text = read["col_quantitybought"].ToString();
+                textBox7.Text = read["col_productprice"].ToString();
+            }
+            conn.Close();
+         
+        }
+        private void inserttopending()
+        {
+            if (comboBox1.SelectedItem == "Change")
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+
+                string query = "insert into tbl_damage(col_orderid,col_transactionid,col_reason,col_status) " +
+                    "values ((Select col_transactionid from tbl_transaction where col_transactioncode='"+textBox8.Text+"'),'" + textBox2.Text +"','"+
+                    textBox9.Text + "','pending-change')";
+
+                command2.CommandText = query;
+                command2.ExecuteNonQuery();
+                conn.Close();
+            }
+            else 
+            {
+            //update with correct minus of product
+            //insert
+            
+            }
+        }
+        private void materialListView4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            printorderdetails();
+        }
+
 
     }
 }
