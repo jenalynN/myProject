@@ -24,55 +24,57 @@
 		       
               <div class="box">
 			
-               <div class="box-body">
-                      <div class="input-group" style="width: 300px;" align="right" >
-                          <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search. . . .">
-                      <div class="input-group-btn">
-                          <button class="btn btn-sm btn-danger"><i class="fa fa-search"></i></button>
-                      </div>  
-			  </div>
+              <div class="box-body">
+                <div class="input-group" style="width: 300px;" align="right" >
+                    <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search. . . .">
+                <div class="input-group-btn">
+                    <button class="btn btn-sm btn-danger">Go<i class="fa fa-search"></i></button>
+                </div> 
+              </div>
+
                   
-			<div class="panel_body" align="right">
-			  
-			<b>From:</b>
-      <input type="date" name="fromdate" id="fromdate" placeholder="From">
-			<b>To: </b>
-      <input type="date" name="todate" id="todate" placeholder="To">  
-			<button class = "btn btn-danger btn-md">GO</button>
-			</div>
-			
-			<table id="example2" class="table table-bordered table-hover">
-			<tr>
-            <tbody>
-                      <th>Date Purchased</th>
-                      <th>Transaction Code</th>
-											<th>Product Code</th>
-                      <th>Product Name</th>
-                      <th>Product Price</th>
-											<th>Number of Product Sold</th>
-											<th>SubTotal</th>
-											<th>Order Type</th>
+            			<div class="panel_body" align="right" style="margin-top: -30px;">
+            			  
+            			<b>From:</b>
+                  <input type="date" name="fromdate" id="fromdate" placeholder="From">
+            			<b>To: </b>
+                  <input type="date" name="todate" id="todate" placeholder="To">  
+            			<button class = "btn btn-danger btn-md">GO</button>
+            			</div>
+            			
+            			<table id="example2" class="table table-bordered table-hover">
+            			<tr>
+                        <tbody>
+                                  <th>Date Purchased</th>
+                                  <th>Transaction Code</th>
+            											<th>Product Code</th>
+                                  <th>Product Name</th>
+                                  <th>Product Price</th>
+            											<th>Number of Product Sold</th>
+            											<th>SubTotal</th>
+            											<th>Order Type</th>
 
-											
-                  <?php
-									require 'Controller/salesquery.php'
-									?>
-									<?php
-                                    view_sales();
-                                    ?>
-                                    </tbody>
-									</tr>
-									
-                        
-									</table>
-                  
-								
+            											
+                              <?php
+            									require 'Controller/salesquery.php'
+            									?>
+            									<?php
+                                                view_sales();
+                                                ?>
+                                                </tbody>
+            									</tr>
+            									
+                                    
+            									</table>
+                              
+            								
 
-              </div><!-- /.box -->
-          <!-- /.col -->
+                          </div><!-- /.box -->
+                      <!-- /.col -->
 
-        </section>
-		  <section class="content">
+                    </section>
+            		  <section class="content">
+
 		
 <div class="col-md-3 col-sm-6 col-xs-12">
 

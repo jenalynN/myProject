@@ -20,7 +20,7 @@ if($rowcount == 1)
 	$_SESSION['user'] = $username;
 	$_SESSION['usertype'] = $row['col_usertypeid'];
 	$_SESSION['userId']  = $row['col_useraccountsid'];
-	header('Location:../sales.php');  
+	header('Location:../index.php');  
 }
 
 else{ 

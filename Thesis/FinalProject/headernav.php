@@ -33,7 +33,8 @@
 			  <!-- Menu Footer-->
 			  <li class="user-footer">
 				<div class="pull-left">
-				  <a href="#" class="btn btn-default btn-flat">Profile</a>
+				 <!--  <a href="#" class="btn btn-default btn-flat">Change Password</a> -->
+				  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Change Password</a>
 				</div>
 				<div class="pull-right">
 				  <a href="controller/session_destroy.php" class="btn btn-default btn-flat">Sign out</a>
@@ -60,7 +61,7 @@
 	  
 	  <ul class="sidebar-menu">
 	  <li>
-	   <a href="Dashboard.php">
+	   <a href="index.php">
 			<i class="fa fa-pie-chart"></i>
 			<span>Dashboard</span>
 			
@@ -71,17 +72,7 @@
 			<i class="fa fa-cart-arrow-down"></i> <span>Sales</span> 
 		  </a>
 		</li>
-		<li class="treeview">
-		  <a href="#">
-			<i class="fa fa-pie-chart"></i>
-			<span>Graphs</span>
-			<i class="fa fa-angle-left pull-right"></i>
-		  </a>
-		  <ul class="treeview-menu">
-			<li><a href="barchart.php"><i class="fa fa-circle-o"></i> Bar Graph</a></li>
-			<!-- li><a href="barchart.php"><i class="fa fa-circle-o"></i> Bar Graphs</a></li -->
-		  </ul>
-		</li>
+		
 		<?php 
 			if($_SESSION['user'] == "admin"){
 		?>
@@ -115,4 +106,38 @@
   </aside>
   <!-- Add the sidebar's background. This div must be placed
 	   immediately after the control sidebar -->
-	   
+
+
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                
+                <div class="md-form mb-5">
+                    <label data-error="wrong" data-success="right" for="orangeForm-email">New Password</label>
+                    <input type="password" id="newpass" class="form-control">
+                </div>
+
+                <div class="md-form mb-4">
+                    <label data-error="wrong" data-success="right" for="orangeForm-pass">Confirm Password</label>
+                	<input type="password" id="conpass" class="form-control">
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <span class="errormessage"></span>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                <button class="btn btn-success btn-changepass">Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>
