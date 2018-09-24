@@ -87,6 +87,8 @@
             this.btnAddtoCart = new MaterialSkin.Controls.MaterialFlatButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.materialFlatButton6 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
@@ -131,8 +133,6 @@
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -328,6 +328,7 @@
             this.materialFlatButton5.TabIndex = 25;
             this.materialFlatButton5.Text = "Logout";
             this.materialFlatButton5.UseVisualStyleBackColor = true;
+            this.materialFlatButton5.Click += new System.EventHandler(this.materialFlatButton5_Click);
             // 
             // groupBox2
             // 
@@ -369,6 +370,7 @@
             this.tbOrderId.Name = "tbOrderId";
             this.tbOrderId.Size = new System.Drawing.Size(20, 26);
             this.tbOrderId.TabIndex = 75;
+            this.tbOrderId.Visible = false;
             // 
             // labelTransactionCode
             // 
@@ -390,6 +392,7 @@
             this.tbProductName.Name = "tbProductName";
             this.tbProductName.Size = new System.Drawing.Size(20, 26);
             this.tbProductName.TabIndex = 74;
+            this.tbProductName.Visible = false;
             // 
             // label14
             // 
@@ -411,6 +414,7 @@
             this.tbSubtotal.Name = "tbSubtotal";
             this.tbSubtotal.Size = new System.Drawing.Size(20, 26);
             this.tbSubtotal.TabIndex = 73;
+            this.tbSubtotal.Visible = false;
             // 
             // label13
             // 
@@ -432,6 +436,7 @@
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(20, 26);
             this.tbPrice.TabIndex = 72;
+            this.tbPrice.Visible = false;
             // 
             // label12
             // 
@@ -441,9 +446,9 @@
             this.label12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(560, 104);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 23);
+            this.label12.Size = new System.Drawing.Size(128, 23);
             this.label12.TabIndex = 68;
-            this.label12.Text = "Amount";
+            this.label12.Text = "Tender Amount";
             // 
             // tbCategory
             // 
@@ -453,6 +458,7 @@
             this.tbCategory.Name = "tbCategory";
             this.tbCategory.Size = new System.Drawing.Size(20, 26);
             this.tbCategory.TabIndex = 71;
+            this.tbCategory.Visible = false;
             // 
             // label11
             // 
@@ -474,6 +480,7 @@
             this.tbBrand.Name = "tbBrand";
             this.tbBrand.Size = new System.Drawing.Size(20, 26);
             this.tbBrand.TabIndex = 70;
+            this.tbBrand.Visible = false;
             // 
             // labelChange
             // 
@@ -495,6 +502,7 @@
             this.tbProductCode.Name = "tbProductCode";
             this.tbProductCode.Size = new System.Drawing.Size(20, 26);
             this.tbProductCode.TabIndex = 68;
+            this.tbProductCode.Visible = false;
             // 
             // label4
             // 
@@ -844,6 +852,24 @@
             this.groupBox11.TabIndex = 88;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Return Form";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(14, 344);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(66, 23);
+            this.label28.TabIndex = 117;
+            this.label28.Text = "Reason";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(175, 344);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(176, 86);
+            this.textBox9.TabIndex = 116;
             // 
             // materialFlatButton6
             // 
@@ -1297,24 +1323,6 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1284, 32);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(175, 344);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(176, 86);
-            this.textBox9.TabIndex = 116;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(14, 344);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(66, 23);
-            this.label28.TabIndex = 117;
-            this.label28.Text = "Reason";
             // 
             // TransactionModule
             // 

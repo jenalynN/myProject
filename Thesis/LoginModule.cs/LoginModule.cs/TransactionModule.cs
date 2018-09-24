@@ -100,7 +100,8 @@ namespace LoginModule.cs
         }
         public void Change()
         {
-            if (!string.IsNullOrWhiteSpace(tbAmount.Text))
+            double Num;
+            if (!string.IsNullOrWhiteSpace(tbAmount.Text) && double.TryParse(tbAmount.Text, out Num) )
             {
                 double money = Double.Parse(tbAmount.Text);
                 double total = Double.Parse(labelTotalSales.Text);
@@ -189,9 +190,25 @@ namespace LoginModule.cs
         public void InsertTransactionTotalAmount()
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            if (tbAmount.Text == "")
+            if (labelTotalSales.Text == "0.00")
             {
-                MessageBox.Show("Please enter tender amount");
+                MessageBox.Show("Please select an item.");
+            }
+            else if (string.IsNullOrWhiteSpace(tbAmount.Text))
+            {
+                MessageBox.Show("Please enter tender amount.");
+            }
+            else if (int.Parse(tbAmount.Text) == 0)
+            {
+                MessageBox.Show("Tender should be greater than 0.");
+            }
+            else if (tbAmount.Text == "")
+            {
+                MessageBox.Show("Please enter tender amount.");
+            }
+            else if (double.Parse(tbAmount.Text) < double.Parse(labelTotalSales.Text))
+            {
+                MessageBox.Show("Please enter tender amount is insufficient.");
             }
             else
             {
@@ -207,6 +224,11 @@ namespace LoginModule.cs
                 command2.CommandText = query;
                 command2.ExecuteScalar();
                 conn.Close();
+
+                MessageBox.Show("Thank You Come AGAIN!!!");
+                Login a = new Login();
+                a.Show();
+                this.Hide();
             }
         }
         public void viewOrder()
@@ -349,7 +371,23 @@ namespace LoginModule.cs
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            Change();
+            if (string.IsNullOrWhiteSpace(tbAmount.Text))
+            {
+                labelChange.Text = "0.00";
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(tbAmount.Text, "(\\..*\\.)|[^\\d+\\.\\d+]|[^\\.\\d+]"))
+            {
+                //MessageBox.Show("Please enter only numbers.");
+                tbAmount.Text = "";
+                labelChange.Text = "0.00";
+            }
+            else
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(tbAmount.Text, "\\d+"))
+                {
+                    Change();
+                }
+            }
         }
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -380,6 +418,13 @@ namespace LoginModule.cs
         }
         private void tbQuantity_TextChanged(object sender, EventArgs e)
         {
+            if (System.Text.RegularExpressions.Regex.IsMatch(tbQuantity.Text, "[^0-9]"))
+            {
+                //MessageBox.Show("Please enter only numbers.");
+                //tbQuantity.Text = tbQuantity.Text.Remove(tbQuantity.Text.Length - 1);
+                tbQuantity.Text = "";
+            }
+
             subtotal();
         }
         private void materialListView1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -390,20 +435,7 @@ namespace LoginModule.cs
         private void btnPurchase_Click(object sender, EventArgs e)
         {
             InsertTransactionTotalAmount();
-            if (tbAmount.Text == "")
-            {
-
-
-            }
-            else
-            {
-                MessageBox.Show("Thank You Come AGAIN!!!");
-                Login a = new Login();
-                a.Show();
-                this.Hide();
-
-            }
-
+            
         }
 
         private void materialFlatButton4_Click(object sender, EventArgs e)
@@ -424,13 +456,27 @@ namespace LoginModule.cs
 
         private void materialListView2_DoubleClick(object sender, MouseEventArgs e)
         {
+            //tbQuantity.Text = "1";
             printitemdetails();
+            
         }
 
         private void btnAddtoCart_Click(object sender, EventArgs e)
         {
-            InsertOrder();
-            viewOrder();
+            if (string.IsNullOrWhiteSpace(tbQuantity.Text))
+            {
+                MessageBox.Show("Please enter quantity.");
+            }
+            else if (int.Parse(tbQuantity.Text) == 0)
+            {
+                MessageBox.Show("Quantity should be greater than 0.");
+            }
+            else
+            {
+                InsertOrder();
+                viewOrder();
+            }
+
         }
 
         private void btnRemovefromCart_Click(object sender, EventArgs e)
@@ -588,6 +634,13 @@ namespace LoginModule.cs
             printorderdetails();
         }
 
-
+        private void materialFlatButton5_Click(object sender, EventArgs e)
+        {
+            TransactionDelete();
+            Login a = new Login();
+            a.Show();
+            this.Hide();
+        }
+        
     }
 }
