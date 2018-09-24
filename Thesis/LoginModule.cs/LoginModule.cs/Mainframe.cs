@@ -574,7 +574,7 @@ namespace LoginModule.cs
                     "on b.col_useraccountsid = u.col_useraccountsid " +
                     "inner join tbl_usertype t " +
                     "on t.col_usertypeid = u.col_usertypeid " +
-                    "where b.col_brandname like '" + textBox4.Text + "%' and col_status='archived' and col_usertypeid=3";
+                    "where b.col_brandname like '" + textBox4.Text + "%' and col_status='archived' and u.col_usertypeid=3";
 
                 if (searchby != null)
                 {
@@ -583,7 +583,7 @@ namespace LoginModule.cs
                    "on b.col_useraccountsid = u.col_useraccountsid " +
                    "inner join tbl_usertype t " +
                    "on t.col_usertypeid = u.col_usertypeid " +
-                    "where " + search + " like  '" + textBox4.Text + "%'and col_status='archived' and col_usertypeid=3";
+                    "where " + search + " like  '" + textBox4.Text + "%'and col_status='archived' and u.col_usertypeid=3";
                 }
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 materialListView6.Items.Clear();
@@ -595,6 +595,7 @@ namespace LoginModule.cs
                 {
                     ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
 
+                    items.SubItems.Add(read["col_brandname"].ToString());
                     items.SubItems.Add(read["col_user"].ToString());
                     items.SubItems.Add(read["col_password"].ToString());
                     items.SubItems.Add(read["col_lastname"].ToString());
@@ -1033,7 +1034,7 @@ namespace LoginModule.cs
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            searchunarchivedbp();
+            searcharchivedbp();
         }
 
         private void materialFlatButton10_Click(object sender, EventArgs e)
