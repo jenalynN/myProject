@@ -76,10 +76,33 @@ namespace LoginModule.cs
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            update();
-            Mainframe a = new Mainframe();
-            a.Show();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(textBox9.Text) ||
+                string.IsNullOrWhiteSpace(textBox11.Text) ||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox5.Text) ||
+                string.IsNullOrWhiteSpace(comboBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox6.Text))
+            {
+                MessageBox.Show("Please don't leave any blank field(s).");
+            }
+            else if (textBox10.Text != textBox11.Text)
+            {
+                MessageBox.Show("Password does not match the confirm password.");
+            }
+            else
+            {
+                update();
+                Mainframe a = new Mainframe();
+                a.Show();
+                this.Hide();
+            }
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

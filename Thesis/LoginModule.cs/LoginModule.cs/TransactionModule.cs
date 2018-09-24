@@ -198,10 +198,10 @@ namespace LoginModule.cs
             {
                 MessageBox.Show("Please enter tender amount.");
             }
-            else if (int.Parse(tbAmount.Text) == 0)
-            {
-                MessageBox.Show("Tender should be greater than 0.");
-            }
+            //else if (int.Parse(tbAmount.Text) == 0)
+            //{
+            //    MessageBox.Show("Tender should be greater than 0.");
+            //}
             else if (tbAmount.Text == "")
             {
                 MessageBox.Show("Please enter tender amount.");
@@ -373,12 +373,13 @@ namespace LoginModule.cs
         {
             if (string.IsNullOrWhiteSpace(tbAmount.Text))
             {
+                tbAmount.Text = "0.00";
                 labelChange.Text = "0.00";
             }
             else if (System.Text.RegularExpressions.Regex.IsMatch(tbAmount.Text, "(\\..*\\.)|[^\\d+\\.\\d+]|[^\\.\\d+]"))
             {
                 //MessageBox.Show("Please enter only numbers.");
-                tbAmount.Text = "";
+                tbAmount.Text = "0.00";
                 labelChange.Text = "0.00";
             }
             else

@@ -56,10 +56,28 @@ namespace LoginModule.cs
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            addnewCashierAccount();
-            Mainframe a = new Mainframe();
-            a.Show();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(textBox9.Text) ||
+                string.IsNullOrWhiteSpace(textBox11.Text)||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox5.Text) ||
+                string.IsNullOrWhiteSpace(comboBox1.Text)||
+                string.IsNullOrWhiteSpace(textBox6.Text) )
+            {
+                MessageBox.Show("Please don't leave any blank field(s).");
+            }
+            else if (textBox10.Text != textBox11.Text)
+            {
+                MessageBox.Show("Password does not match the confirm password.");
+            }
+            else
+            {
+                addnewCashierAccount();
+                Mainframe a = new Mainframe();
+                a.Show();
+                this.Hide();
+            }
         }
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
@@ -68,6 +86,14 @@ namespace LoginModule.cs
             a.Show();
             this.Hide();
 
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox6.Text, "[^0-9]"))
+            {
+                textBox6.Text = "";
+            }
         }
     }
 }

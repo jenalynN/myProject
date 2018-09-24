@@ -45,17 +45,16 @@ namespace LoginModule.cs
             textBox6.Text = read["col_contactnum"].ToString();
             textBox4.Text = read["col_brandname"].ToString();
             textBox7.Text = read["col_brandaddress"].ToString();
-            textBox8.Text = read["col_contactnum"].ToString();
+            textBox8.Text = read["col_brandcontactnum"].ToString();
             textBox9.Text = read["col_user"].ToString();
 
-            textBox10.Text = read["col_brandcontactnum"].ToString();
+            textBox10.Text = read["col_password"].ToString();
             }
 
             conn.Close();
 
         }
-
-        private void materialFlatButton1_Click(object sender, EventArgs e)
+        public void updateBrandPartnert()
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             conn.Open();
@@ -91,6 +90,32 @@ namespace LoginModule.cs
             this.Hide();
         }
 
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox9.Text) ||
+                string.IsNullOrWhiteSpace(textBox10.Text) ||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox5.Text) ||
+                string.IsNullOrWhiteSpace(comboBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox6.Text) ||
+                string.IsNullOrWhiteSpace(textBox4.Text) ||
+                string.IsNullOrWhiteSpace(textBox7.Text) ||
+                string.IsNullOrWhiteSpace(textBox8.Text))
+            {
+                MessageBox.Show("Please don't leave any blank field(s).");
+            }
+            else if (textBox10.Text != txtConfirmPass.Text)
+            {
+                MessageBox.Show("Password does not match the confirm password.");
+            }
+            else
+            {
+                updateBrandPartnert();
+            }
+        }
+
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
             Mainframe a = new Mainframe();
@@ -103,6 +128,27 @@ namespace LoginModule.cs
             ChangePassword a = new ChangePassword(labelBrandpartnerId.Text);
             a.Show();
             this.Hide();
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox6.Text, "[^0-9]"))
+            {
+                textBox6.Text = "";
+            }
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox8.Text, "[^0-9]"))
+            {
+                textBox8.Text = "";
+            }
         }
     }
 }

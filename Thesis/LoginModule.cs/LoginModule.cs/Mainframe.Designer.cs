@@ -218,6 +218,7 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -1476,6 +1477,7 @@
             // 
             this.Gender.Text = "Gender";
             this.Gender.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Gender.Width = 160;
             // 
             // columnHeader1
             // 
@@ -1696,7 +1698,8 @@
             this.columnHeader55,
             this.columnHeader56,
             this.columnHeader57,
-            this.columnHeader59});
+            this.columnHeader59,
+            this.columnHeader4});
             this.materialListView6.Depth = 0;
             this.materialListView6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.materialListView6.FullRowSelect = true;
@@ -1717,7 +1720,7 @@
             // columnHeader28
             // 
             this.columnHeader28.Text = "Brand Partner Id";
-            this.columnHeader28.Width = 125;
+            this.columnHeader28.Width = 247;
             // 
             // columnHeader29
             // 
@@ -1758,6 +1761,7 @@
             // columnHeader59
             // 
             this.columnHeader59.Text = "Gender";
+            this.columnHeader59.Width = 150;
             // 
             // groupBox14
             // 
@@ -2526,6 +2530,11 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Contact Number";
+            this.columnHeader4.Width = 247;
+            // 
             // Mainframe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2804,5 +2813,6 @@
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton5;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

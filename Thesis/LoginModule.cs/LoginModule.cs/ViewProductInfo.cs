@@ -64,7 +64,10 @@ namespace LoginModule.cs
 
             conn.Open();
 
-                query = "select * from tbl_category c ";
+                query = "select * from tbl_category c " +
+                "inner join tbl_brandpartner b " +
+                "on c.col_useraccountsid = b.col_useraccountsid " +
+                "where b.col_useraccountsid = '" + lblBrandId.Text + "'";
                 command.CommandText = query;
                 read = command.ExecuteReader();
                 while (read.Read())
@@ -92,10 +95,21 @@ namespace LoginModule.cs
         }
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            update();
-            Mainframe a = new Mainframe();
-            a.Show();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(comboBox1.Text) ||
+                string.IsNullOrWhiteSpace(comboBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(txtProductName.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Please don't leave any blank field(s).");
+            }
+            else
+            {
+                update();
+                Mainframe a = new Mainframe();
+                a.Show();
+                this.Hide();
+            }
         }
 
         private void materialFlatButton4_Click(object sender, EventArgs e)
@@ -118,6 +132,22 @@ namespace LoginModule.cs
             read.Read();
             lblBrandId.Text = read["col_useraccountsid"].ToString();
             conn.Close();
+            comboBox2.Text = "";
+            comboBox2.Items.Clear();
+
+            conn.Open();
+
+            query = "select * from tbl_category c " +
+            "inner join tbl_brandpartner b " +
+            "on c.col_useraccountsid = b.col_useraccountsid " +
+            "where b.col_useraccountsid = '" + lblBrandId.Text + "'";
+            command.CommandText = query;
+            read = command.ExecuteReader();
+            while (read.Read())
+            {
+                comboBox2.Items.Add(read["col_categoryname"].ToString());
+            }
+            conn.Close();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -133,6 +163,29 @@ namespace LoginModule.cs
             lblCategoryId.Text = read["col_categoryid"].ToString();
             conn.Close();
         }
-        
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            int num;
+            if (string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                textBox2.Text = "1.00";
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "(\\..*\\.)|[^\\d+\\.\\d+]|[^\\.\\d+]"))
+            {
+                //MessageBox.Show("Please enter only numbers.");
+                textBox2.Text = "1.00";
+            }
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void comboBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

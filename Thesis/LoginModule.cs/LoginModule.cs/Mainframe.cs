@@ -878,10 +878,12 @@ namespace LoginModule.cs
 
         private void materialFlatButton23_Click(object sender, EventArgs e)
         {
-            ViewBrandPartnerInfo a = new ViewBrandPartnerInfo(label15.Text);
-            a.Show();
-            this.Hide();
-
+            if (label15.Text != "SI")
+            {
+                ViewBrandPartnerInfo a = new ViewBrandPartnerInfo(label15.Text);
+                a.Show();
+                this.Hide();
+            }
         }
         public void printbrandpartnerunarchived() 
         {

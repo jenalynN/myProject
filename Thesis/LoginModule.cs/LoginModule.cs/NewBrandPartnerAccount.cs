@@ -19,24 +19,24 @@ namespace LoginModule.cs
         }
         public void getmax()
         {
-                MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
-                con.Open();
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select MAX(col_useraccountsid) as maxID from tbl_useraccounts";
-                MySqlDataReader basa = cmd.ExecuteReader();
-                while (basa.Read())
-                {
-                    string maxid = basa["maxID"].ToString();
+            MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select MAX(col_useraccountsid) as maxID from tbl_useraccounts";
+            MySqlDataReader basa = cmd.ExecuteReader();
+            while (basa.Read())
+            {
+                string maxid = basa["maxID"].ToString();
 
-                    int plus1 = Int32.Parse(maxid);
-                    int total = plus1 + 1;
-                    labelTransactionCode.Text =""+ total;
-                }
-                con.Close();
-    
+                int plus1 = Int32.Parse(maxid);
+                int total = plus1 + 1;
+                labelTransactionCode.Text = "" + total;
+            }
+            con.Close();
+
         }
-        public void addnewbrandpartneraccount() 
+        public void addnewbrandpartneraccount()
         {
 
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
@@ -53,9 +53,9 @@ namespace LoginModule.cs
                 command2.ExecuteScalar();
                 conn.Close();
             }
-        
+
         }
-        public void adddetails() 
+        public void adddetails()
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             if (label1.Text == "")
@@ -71,16 +71,37 @@ namespace LoginModule.cs
                 command2.ExecuteScalar();
                 conn.Close();
             }
-        
-        
+
+
         }
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            addnewbrandpartneraccount();
-            adddetails();
-            Mainframe a = new Mainframe();
-            a.Show();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(textBox9.Text) ||
+                string.IsNullOrWhiteSpace(textBox11.Text)||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox5.Text) ||
+                string.IsNullOrWhiteSpace(comboBox1.Text)||
+                string.IsNullOrWhiteSpace(textBox6.Text) ||
+                string.IsNullOrWhiteSpace(textBox4.Text) ||
+                string.IsNullOrWhiteSpace(textBox7.Text) ||
+                string.IsNullOrWhiteSpace(textBox8.Text))
+            {
+                MessageBox.Show("Please don't leave any blank field(s).");
+            }
+            else if (textBox10.Text != textBox11.Text)
+            {
+                MessageBox.Show("Password does not match the confirm password.");
+            }
+            else
+            {
+                addnewbrandpartneraccount();
+                adddetails();
+                Mainframe a = new Mainframe();
+                a.Show();
+                this.Hide();
+            }
         }
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
@@ -88,6 +109,22 @@ namespace LoginModule.cs
             Mainframe a = new Mainframe();
             a.Show();
             this.Hide();
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox6.Text, "[^0-9]"))
+            {
+                textBox6.Text = "";
+            }
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox8.Text, "[^0-9]"))
+            {
+                textBox8.Text = "";
+            }
         }
     }
 }

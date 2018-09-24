@@ -560,6 +560,7 @@
             this.tbAmount.Name = "tbAmount";
             this.tbAmount.Size = new System.Drawing.Size(161, 31);
             this.tbAmount.TabIndex = 24;
+            this.tbAmount.Text = "0.00";
             this.tbAmount.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // materialListView1

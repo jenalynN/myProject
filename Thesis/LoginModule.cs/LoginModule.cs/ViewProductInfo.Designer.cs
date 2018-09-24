@@ -35,8 +35,6 @@
             this.lblBrandId = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,6 +46,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +76,7 @@
             this.groupBox1.Size = new System.Drawing.Size(441, 307);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Product Information";
+            this.groupBox1.Text = "Update Product Information";
             // 
             // txtProductName
             // 
@@ -136,25 +136,6 @@
             this.label12.TabIndex = 66;
             this.label12.Text = "Product Id";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(213, 259);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(222, 32);
-            this.textBox4.TabIndex = 65;
-            this.textBox4.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(5, 263);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 23);
-            this.label11.TabIndex = 64;
-            this.label11.Text = "Product Status";
-            this.label11.Visible = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -171,6 +152,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(222, 32);
             this.textBox2.TabIndex = 59;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -228,6 +210,7 @@
             this.comboBox2.Size = new System.Drawing.Size(223, 32);
             this.comboBox2.TabIndex = 46;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox2_KeyPress);
             // 
             // comboBox1
             // 
@@ -238,6 +221,7 @@
             this.comboBox1.Size = new System.Drawing.Size(223, 32);
             this.comboBox1.TabIndex = 38;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // materialFlatButton1
             // 
@@ -275,6 +259,25 @@
             this.materialFlatButton4.UseVisualStyleBackColor = false;
             this.materialFlatButton4.Click += new System.EventHandler(this.materialFlatButton4_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(5, 263);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(123, 23);
+            this.label11.TabIndex = 64;
+            this.label11.Text = "Product Status";
+            this.label11.Visible = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(213, 259);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(222, 32);
+            this.textBox4.TabIndex = 65;
+            this.textBox4.Visible = false;
+            // 
             // ViewProductInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,8 +308,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton4;
         private System.Windows.Forms.Label label12;
@@ -315,5 +316,7 @@
         private System.Windows.Forms.Label lblBrandId;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label11;
     }
 }
