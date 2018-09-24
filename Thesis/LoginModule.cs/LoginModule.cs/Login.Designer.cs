@@ -55,7 +55,7 @@
             this.materialFlatButton1.Name = "materialFlatButton1";
             this.materialFlatButton1.Primary = false;
             this.materialFlatButton1.Size = new System.Drawing.Size(63, 36);
-            this.materialFlatButton1.TabIndex = 3;
+            this.materialFlatButton1.TabIndex = 28;
             this.materialFlatButton1.Text = "Close";
             this.materialFlatButton1.UseVisualStyleBackColor = false;
             this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
@@ -120,7 +120,7 @@
             this.materialFlatButton2.Name = "materialFlatButton2";
             this.materialFlatButton2.Primary = false;
             this.materialFlatButton2.Size = new System.Drawing.Size(61, 36);
-            this.materialFlatButton2.TabIndex = 23;
+            this.materialFlatButton2.TabIndex = 27;
             this.materialFlatButton2.Text = "Login";
             this.materialFlatButton2.UseVisualStyleBackColor = false;
             this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
@@ -153,6 +153,7 @@
             this.textBox2.Size = new System.Drawing.Size(188, 27);
             this.textBox2.TabIndex = 26;
             this.textBox2.UseSystemPasswordChar = true;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // label2
             // 
