@@ -532,6 +532,7 @@
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.DisplayMember = "Product Code";
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -545,6 +546,7 @@
             this.comboBox1.TabIndex = 55;
             this.comboBox1.Text = "Product Code";
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // textBox1
             // 
@@ -787,6 +789,7 @@
             this.comboBox3.Size = new System.Drawing.Size(223, 31);
             this.comboBox3.TabIndex = 59;
             this.comboBox3.Text = "Product Code";
+            this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox3_KeyPress);
             // 
             // textBox2
             // 
@@ -1387,6 +1390,7 @@
             this.comboBox5.TabIndex = 54;
             this.comboBox5.Text = "Brandname";
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            this.comboBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox5_KeyPress);
             // 
             // materialListView3
             // 
@@ -1655,6 +1659,7 @@
             this.comboBox6.Size = new System.Drawing.Size(230, 31);
             this.comboBox6.TabIndex = 60;
             this.comboBox6.Text = "Brandname";
+            this.comboBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox6_KeyPress);
             // 
             // textBox4
             // 
@@ -1947,6 +1952,7 @@
             this.comboBox8.Size = new System.Drawing.Size(230, 31);
             this.comboBox8.TabIndex = 57;
             this.comboBox8.Text = "Lastname";
+            this.comboBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox8_KeyPress);
             // 
             // materialListView5
             // 
@@ -2200,6 +2206,7 @@
             this.comboBox4.Size = new System.Drawing.Size(230, 31);
             this.comboBox4.TabIndex = 61;
             this.comboBox4.Text = "Lastname";
+            this.comboBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox4_KeyPress);
             // 
             // materialListView4
             // 
