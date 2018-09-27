@@ -36,7 +36,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.materialFlatButton19 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btaddnewcat = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -378,12 +377,12 @@
             this.materialFlatButton19.TabIndex = 50;
             this.materialFlatButton19.Text = "Manage Category";
             this.materialFlatButton19.UseVisualStyleBackColor = false;
+            this.materialFlatButton19.Click += new System.EventHandler(this.materialFlatButton19_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.btaddnewcat);
             this.groupBox3.Controls.Add(this.materialFlatButton1);
             this.groupBox3.Controls.Add(this.materialFlatButton2);
             this.groupBox3.Controls.Add(this.materialFlatButton4);
@@ -395,27 +394,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Manage Product";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
-            // 
-            // btaddnewcat
-            // 
-            this.btaddnewcat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btaddnewcat.AutoSize = true;
-            this.btaddnewcat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btaddnewcat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btaddnewcat.Depth = 0;
-            this.btaddnewcat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btaddnewcat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btaddnewcat.Icon = null;
-            this.btaddnewcat.Location = new System.Drawing.Point(300, 39);
-            this.btaddnewcat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btaddnewcat.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btaddnewcat.Name = "btaddnewcat";
-            this.btaddnewcat.Primary = false;
-            this.btaddnewcat.Size = new System.Drawing.Size(158, 36);
-            this.btaddnewcat.TabIndex = 53;
-            this.btaddnewcat.Text = "Add new  category";
-            this.btaddnewcat.UseVisualStyleBackColor = false;
-            this.btaddnewcat.Click += new System.EventHandler(this.btaddnewcat_Click);
             // 
             // materialFlatButton1
             // 
@@ -583,7 +561,6 @@
             this.textBox1.Size = new System.Drawing.Size(389, 37);
             this.textBox1.TabIndex = 54;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.TextChanged += new System.EventHandler(new DataHandling().alphanumericTrap_TextChanged);
             // 
             // label7
             // 
@@ -2845,6 +2822,5 @@
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private MaterialSkin.Controls.MaterialFlatButton btaddnewcat;
     }
 }
