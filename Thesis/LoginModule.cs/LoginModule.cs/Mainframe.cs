@@ -34,42 +34,48 @@ namespace LoginModule.cs
         public void databrandpartneraccountarchived() 
         {
             materialListView6.Items.Clear();
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-
-            conn.Open();        
-            MySqlCommand command = conn.CreateCommand();
-
-            string query = "select * from tbl_brandpartner b " +
-                "inner join tbl_useraccounts u " +
-                "on b.col_useraccountsid = u.col_useraccountsid " +
-                "inner join tbl_usertype t " +
-                "on t.col_usertypeid = u.col_usertypeid " +
-                "where u.col_status='archived' and t.col_usertypeid=3";
-            command.CommandText = query;
-
-            MySqlDataReader read = command.ExecuteReader();
-
-            while (read.Read())
+            try
             {
-                ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
-                items.SubItems.Add(read["col_brandname"].ToString());
-                items.SubItems.Add(read["col_user"].ToString());
-                items.SubItems.Add(read["col_password"].ToString());
-                items.SubItems.Add(read["col_lastname"].ToString());
-                items.SubItems.Add(read["col_firstname"].ToString());
-                items.SubItems.Add(read["col_middlename"].ToString()); ;
-                items.SubItems.Add(read["col_address"].ToString());
-                //items.SubItems.Add(read["col_dateofbirth"].ToString());
-                items.SubItems.Add(read["col_gender"].ToString());
-                items.SubItems.Add(read["col_contactnum"].ToString());
+                conn.Open();        
+                MySqlCommand command = conn.CreateCommand();
+
+                string query = "select * from tbl_brandpartner b " +
+                    "inner join tbl_useraccounts u " +
+                    "on b.col_useraccountsid = u.col_useraccountsid " +
+                    "inner join tbl_usertype t " +
+                    "on t.col_usertypeid = u.col_usertypeid " +
+                    "where u.col_status='archived' and t.col_usertypeid=3";
+                command.CommandText = query;
+
+                MySqlDataReader read = command.ExecuteReader();
+
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
+
+                    items.SubItems.Add(read["col_brandname"].ToString());
+                    items.SubItems.Add(read["col_user"].ToString());
+                    items.SubItems.Add(read["col_password"].ToString());
+                    items.SubItems.Add(read["col_lastname"].ToString());
+                    items.SubItems.Add(read["col_firstname"].ToString());
+                    items.SubItems.Add(read["col_middlename"].ToString()); ;
+                    items.SubItems.Add(read["col_address"].ToString());
+                    //items.SubItems.Add(read["col_dateofbirth"].ToString());
+                    items.SubItems.Add(read["col_gender"].ToString());
+                    items.SubItems.Add(read["col_contactnum"].ToString());
 
 
 
-                materialListView6.Items.Add(items);
-                materialListView6.FullRowSelect = true;
+                    materialListView6.Items.Add(items);
+                    materialListView6.FullRowSelect = true;
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
         
         }
         public void printunarchivedproduct()
@@ -78,20 +84,26 @@ namespace LoginModule.cs
             ListViewItem list = materialListView1.SelectedItems[data];
             String id = list.SubItems[0].Text;
             label6.Text = id.ToString();
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_product p " +
-                "inner join tbl_brandpartner b " +
-                "on p.col_useraccountsid = b.col_useraccountsid " +
-                "inner join tbl_category c " +
-                "on c.col_categoryid = p.col_categoryid " +
-                "where p.col_productid = '" + label6.Text + "'";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "select * from tbl_product p " +
+                    "inner join tbl_brandpartner b " +
+                    "on p.col_useraccountsid = b.col_useraccountsid " +
+                    "inner join tbl_category c " +
+                    "on c.col_categoryid = p.col_categoryid " +
+                    "where p.col_productid = '" + label6.Text + "'";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
 
-            conn.Close();
+                conn.Close();
+            }
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
 
         }
         public void printarchivedproduct()
@@ -100,20 +112,26 @@ namespace LoginModule.cs
             ListViewItem list = materialListView2.SelectedItems[data];
             String id = list.SubItems[0].Text;
             label9.Text = id.ToString();
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_product p " +
-                "inner join tbl_brandpartner b " +
-                "on p.col_useraccountsid = b.col_useraccountsid " +
-                "inner join tbl_category c " +
-                "on c.col_categoryid = p.col_categoryid " +
-                "where p.col_productid = '" + label9.Text + "'";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "select * from tbl_product p " +
+                    "inner join tbl_brandpartner b " +
+                    "on p.col_useraccountsid = b.col_useraccountsid " +
+                    "inner join tbl_category c " +
+                    "on c.col_categoryid = p.col_categoryid " +
+                    "where p.col_productid = '" + label9.Text + "'";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
 
-            conn.Close();
+                conn.Close();
+            }
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
         }
         public void unarchiveproduct() 
         {
@@ -121,23 +139,29 @@ namespace LoginModule.cs
         }
         public void countunarchiveditems()
         {
-
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-
-            MySqlCommand command2 = conn.CreateCommand();
-            command.Connection = conn;
-            command.CommandText = "select COUNT(col_productid) AS '" + "items" + "' from tbl_product where col_status='unarchived'";
-
-
-            MySqlDataReader read = command.ExecuteReader();
-
-
-            while (read.Read())
+            try
             {
-              label1.Text = read["items"].ToString();
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+
+                MySqlCommand command2 = conn.CreateCommand();
+                command.Connection = conn;
+                command.CommandText = "select COUNT(col_productid) AS '" + "items" + "' from tbl_product where col_status='unarchived'";
+
+
+                MySqlDataReader read = command.ExecuteReader();
+
+
+                while (read.Read())
+                {
+                  label1.Text = read["items"].ToString();
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
             }
         }
         public void countarchiveditems()
@@ -165,43 +189,49 @@ namespace LoginModule.cs
         public void databrandpartneraccountunarchived()
         { 
             materialListView3.Items.Clear();
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
-            conn.Close();
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-
-            string query = "select * from tbl_brandpartner b " +
-                "inner join tbl_useraccounts u " +
-                "on b.col_useraccountsid = u.col_useraccountsid " +
-                "inner join tbl_usertype t " +
-                "on t.col_usertypeid = u.col_usertypeid " +
-                "where u.col_status='unarchived' and t.col_usertypeid=3";
-            command.CommandText = query;
-
-            MySqlDataReader read = command.ExecuteReader();
-
-            while (read.Read())
+            try
             {
-                ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
-                items.SubItems.Add(read["col_brandname"].ToString());
-                items.SubItems.Add(read["col_user"].ToString());
-                items.SubItems.Add(read["col_password"].ToString());
-                items.SubItems.Add(read["col_lastname"].ToString());
-                items.SubItems.Add(read["col_firstname"].ToString());   
-                items.SubItems.Add(read["col_middlename"].ToString());;
-                items.SubItems.Add(read["col_address"].ToString());
-                //items.SubItems.Add(read["col_dateofbirth"].ToString());
-                items.SubItems.Add(read["col_gender"].ToString());
-                items.SubItems.Add(read["col_contactnum"].ToString());
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+
+                string query = "select * from tbl_brandpartner b " +
+                    "inner join tbl_useraccounts u " +
+                    "on b.col_useraccountsid = u.col_useraccountsid " +
+                    "inner join tbl_usertype t " +
+                    "on t.col_usertypeid = u.col_usertypeid " +
+                    "where u.col_status='unarchived' and t.col_usertypeid=3";
+                command.CommandText = query;
+
+                MySqlDataReader read = command.ExecuteReader();
+
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
+
+                    items.SubItems.Add(read["col_brandname"].ToString());
+                    items.SubItems.Add(read["col_user"].ToString());
+                    items.SubItems.Add(read["col_password"].ToString());
+                    items.SubItems.Add(read["col_lastname"].ToString());
+                    items.SubItems.Add(read["col_firstname"].ToString());   
+                    items.SubItems.Add(read["col_middlename"].ToString());;
+                    items.SubItems.Add(read["col_address"].ToString());
+                    //items.SubItems.Add(read["col_dateofbirth"].ToString());
+                    items.SubItems.Add(read["col_gender"].ToString());
+                    items.SubItems.Add(read["col_contactnum"].ToString());
 
 
 
-                materialListView3.Items.Add(items);
-                materialListView3.FullRowSelect = true;
+                    materialListView3.Items.Add(items);
+                    materialListView3.FullRowSelect = true;
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
 
         
         }
