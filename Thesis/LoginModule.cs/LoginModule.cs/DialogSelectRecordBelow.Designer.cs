@@ -88,6 +88,7 @@
             this.Name = "DialogSelectRecordBelow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Message";
+            this.Load += new System.EventHandler(this.DialogSelectRecordBelow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

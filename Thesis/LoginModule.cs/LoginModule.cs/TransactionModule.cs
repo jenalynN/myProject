@@ -435,7 +435,7 @@ namespace LoginModule.cs
 
         private void btnPurchase_Click(object sender, EventArgs e)
         {
-            InsertTransactionTotalAmount();
+                InsertTransactionTotalAmount();
             
         }
 

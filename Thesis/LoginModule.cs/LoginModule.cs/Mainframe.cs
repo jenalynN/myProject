@@ -1105,5 +1105,12 @@ namespace LoginModule.cs
         {
             e.Handled = true;
         }
+
+        private void btaddnewcat_Click(object sender, EventArgs e)
+        {
+            AddCategory a = new AddCategory();
+            a.Show();
+            this.Hide();
+        }
     }
 }

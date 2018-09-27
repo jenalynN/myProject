@@ -152,6 +152,7 @@
             this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader59 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.materialFlatButton10 = new MaterialSkin.Controls.MaterialFlatButton();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -218,7 +219,7 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btaddnewcat = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -382,6 +383,7 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.btaddnewcat);
             this.groupBox3.Controls.Add(this.materialFlatButton1);
             this.groupBox3.Controls.Add(this.materialFlatButton2);
             this.groupBox3.Controls.Add(this.materialFlatButton4);
@@ -1763,6 +1765,11 @@
             this.columnHeader59.Text = "Gender";
             this.columnHeader59.Width = 150;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Contact Number";
+            this.columnHeader4.Width = 247;
+            // 
             // groupBox14
             // 
             this.groupBox14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2530,10 +2537,26 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
-            // columnHeader4
+            // btaddnewcat
             // 
-            this.columnHeader4.Text = "Contact Number";
-            this.columnHeader4.Width = 247;
+            this.btaddnewcat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btaddnewcat.AutoSize = true;
+            this.btaddnewcat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btaddnewcat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btaddnewcat.Depth = 0;
+            this.btaddnewcat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btaddnewcat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btaddnewcat.Icon = null;
+            this.btaddnewcat.Location = new System.Drawing.Point(300, 39);
+            this.btaddnewcat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btaddnewcat.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btaddnewcat.Name = "btaddnewcat";
+            this.btaddnewcat.Primary = false;
+            this.btaddnewcat.Size = new System.Drawing.Size(158, 36);
+            this.btaddnewcat.TabIndex = 53;
+            this.btaddnewcat.Text = "Add new  category";
+            this.btaddnewcat.UseVisualStyleBackColor = false;
+            this.btaddnewcat.Click += new System.EventHandler(this.btaddnewcat_Click);
             // 
             // Mainframe
             // 
@@ -2814,5 +2837,6 @@
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private MaterialSkin.Controls.MaterialFlatButton btaddnewcat;
     }
 }

@@ -31,6 +31,8 @@
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +132,24 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Cashier Account";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(606, 190);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(222, 32);
+            this.textBox11.TabIndex = 101;
+            this.textBox11.UseSystemPasswordChar = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(448, 194);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(152, 23);
+            this.label15.TabIndex = 100;
+            this.label15.Text = "Confirm Password";
             // 
             // materialFlatButton3
             // 
@@ -349,24 +367,6 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Firstname";
             // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(606, 190);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(222, 32);
-            this.textBox11.TabIndex = 101;
-            this.textBox11.UseSystemPasswordChar = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(448, 194);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(152, 23);
-            this.label15.TabIndex = 100;
-            this.label15.Text = "Confirm Password";
-            // 
             // ViewCashierInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +377,7 @@
             this.Controls.Add(this.materialFlatButton2);
             this.Controls.Add(this.materialFlatButton1);
             this.Name = "ViewCashierInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

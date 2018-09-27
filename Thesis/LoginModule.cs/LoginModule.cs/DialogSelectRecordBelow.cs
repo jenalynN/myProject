@@ -21,5 +21,10 @@ namespace LoginModule.cs
         {
             this.Close();
         }
+
+        private void DialogSelectRecordBelow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
