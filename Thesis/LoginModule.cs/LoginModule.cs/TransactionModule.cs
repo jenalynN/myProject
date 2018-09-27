@@ -101,7 +101,7 @@ namespace LoginModule.cs
         public void Change()
         {
             double Num;
-            if (!string.IsNullOrWhiteSpace(tbAmount.Text) && double.TryParse(tbAmount.Text, out Num) )
+            if (!string.IsNullOrWhiteSpace(tbAmount.Text) && double.TryParse(tbAmount.Text, out Num))
             {
                 double money = Double.Parse(tbAmount.Text);
                 double total = Double.Parse(labelTotalSales.Text);
@@ -194,6 +194,10 @@ namespace LoginModule.cs
             {
                 MessageBox.Show("Please select an item.");
             }
+            else if (materialListView1.Items.Count == 0)
+            {
+                MessageBox.Show("Please select an item.");
+            }
             else if (string.IsNullOrWhiteSpace(tbAmount.Text))
             {
                 MessageBox.Show("Please enter tender amount.");
@@ -202,13 +206,13 @@ namespace LoginModule.cs
             //{
             //    MessageBox.Show("Tender should be greater than 0.");
             //}
-            else if (tbAmount.Text == "")
+            else if (tbAmount.Text == ""  || tbAmount.Text == ".")
             {
                 MessageBox.Show("Please enter tender amount.");
             }
             else if (double.Parse(tbAmount.Text) < double.Parse(labelTotalSales.Text))
             {
-                MessageBox.Show("Please enter tender amount is insufficient.");
+                MessageBox.Show("Insufficient Tender amount.");
             }
             else
             {

@@ -36,6 +36,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.materialFlatButton19 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btaddnewcat = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -219,7 +220,6 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.btaddnewcat = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -396,6 +396,27 @@
             this.groupBox3.Text = "Manage Product";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // btaddnewcat
+            // 
+            this.btaddnewcat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btaddnewcat.AutoSize = true;
+            this.btaddnewcat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btaddnewcat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btaddnewcat.Depth = 0;
+            this.btaddnewcat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btaddnewcat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btaddnewcat.Icon = null;
+            this.btaddnewcat.Location = new System.Drawing.Point(300, 39);
+            this.btaddnewcat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btaddnewcat.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btaddnewcat.Name = "btaddnewcat";
+            this.btaddnewcat.Primary = false;
+            this.btaddnewcat.Size = new System.Drawing.Size(158, 36);
+            this.btaddnewcat.TabIndex = 53;
+            this.btaddnewcat.Text = "Add new  category";
+            this.btaddnewcat.UseVisualStyleBackColor = false;
+            this.btaddnewcat.Click += new System.EventHandler(this.btaddnewcat_Click);
+            // 
             // materialFlatButton1
             // 
             this.materialFlatButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -557,6 +578,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Calibri", 18F);
             this.textBox1.Location = new System.Drawing.Point(518, 42);
+            this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(389, 37);
             this.textBox1.TabIndex = 54;
@@ -800,6 +822,7 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Calibri", 18F);
             this.textBox2.Location = new System.Drawing.Point(517, 42);
+            this.textBox2.MaxLength = 30;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(389, 37);
             this.textBox2.TabIndex = 58;
@@ -1362,6 +1385,7 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Font = new System.Drawing.Font("Calibri", 18F);
             this.textBox3.Location = new System.Drawing.Point(519, 51);
+            this.textBox3.MaxLength = 30;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(389, 37);
             this.textBox3.TabIndex = 56;
@@ -1671,6 +1695,7 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Font = new System.Drawing.Font("Calibri", 18F);
             this.textBox4.Location = new System.Drawing.Point(519, 51);
+            this.textBox4.MaxLength = 30;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(389, 37);
             this.textBox4.TabIndex = 59;
@@ -1933,6 +1958,7 @@
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox7.Font = new System.Drawing.Font("Calibri", 18F);
             this.textBox7.Location = new System.Drawing.Point(519, 54);
+            this.textBox7.MaxLength = 30;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(389, 37);
             this.textBox7.TabIndex = 59;
@@ -2298,6 +2324,7 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox6.Font = new System.Drawing.Font("Calibri", 18F);
             this.textBox6.Location = new System.Drawing.Point(518, 54);
+            this.textBox6.MaxLength = 30;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(389, 37);
             this.textBox6.TabIndex = 59;
@@ -2404,6 +2431,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(480, 47);
+            this.textBox5.MaxLength = 30;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(178, 31);
             this.textBox5.TabIndex = 59;
@@ -2536,27 +2564,6 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1230, 44);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // btaddnewcat
-            // 
-            this.btaddnewcat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btaddnewcat.AutoSize = true;
-            this.btaddnewcat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btaddnewcat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btaddnewcat.Depth = 0;
-            this.btaddnewcat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btaddnewcat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btaddnewcat.Icon = null;
-            this.btaddnewcat.Location = new System.Drawing.Point(300, 39);
-            this.btaddnewcat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btaddnewcat.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btaddnewcat.Name = "btaddnewcat";
-            this.btaddnewcat.Primary = false;
-            this.btaddnewcat.Size = new System.Drawing.Size(158, 36);
-            this.btaddnewcat.TabIndex = 53;
-            this.btaddnewcat.Text = "Add new  category";
-            this.btaddnewcat.UseVisualStyleBackColor = false;
-            this.btaddnewcat.Click += new System.EventHandler(this.btaddnewcat_Click);
             // 
             // Mainframe
             // 

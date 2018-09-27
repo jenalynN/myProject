@@ -133,9 +133,6 @@
     <Compile Include="ViewProductInfo.Designer.cs">
       <DependentUpon>ViewProductInfo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddCategory.resx">
-      <DependentUpon>AddCategory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>

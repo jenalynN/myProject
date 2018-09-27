@@ -80,7 +80,8 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(213, 103);
+            this.txtProductName.Location = new System.Drawing.Point(210, 179);
+            this.txtProductName.MaxLength = 50;
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(222, 32);
             this.txtProductName.TabIndex = 73;
@@ -89,7 +90,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 107);
+            this.label5.Location = new System.Drawing.Point(4, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 23);
             this.label5.TabIndex = 72;
@@ -138,7 +139,8 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(213, 259);
+            this.textBox4.Location = new System.Drawing.Point(209, 259);
+            this.textBox4.MaxLength = 10;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(222, 32);
             this.textBox4.TabIndex = 65;
@@ -168,6 +170,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(210, 221);
+            this.textBox2.MaxLength = 10;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(222, 32);
             this.textBox2.TabIndex = 59;
@@ -187,7 +190,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 187);
+            this.label2.Location = new System.Drawing.Point(3, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 23);
             this.label2.TabIndex = 57;
@@ -195,7 +198,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(212, 61);
+            this.textBox1.Location = new System.Drawing.Point(209, 137);
+            this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 32);
             this.textBox1.TabIndex = 56;
@@ -204,7 +208,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 149);
+            this.label1.Location = new System.Drawing.Point(3, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 23);
             this.label1.TabIndex = 55;
@@ -214,7 +218,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 65);
+            this.label7.Location = new System.Drawing.Point(3, 141);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 23);
             this.label7.TabIndex = 54;
@@ -224,7 +228,7 @@
             // 
             this.comboBox2.BackColor = System.Drawing.Color.White;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(210, 183);
+            this.comboBox2.Location = new System.Drawing.Point(208, 99);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(223, 32);
             this.comboBox2.TabIndex = 46;
@@ -235,7 +239,7 @@
             // 
             this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(211, 145);
+            this.comboBox1.Location = new System.Drawing.Point(209, 61);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(223, 32);
             this.comboBox1.TabIndex = 38;
