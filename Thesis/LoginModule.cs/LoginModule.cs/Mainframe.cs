@@ -377,24 +377,30 @@ namespace LoginModule.cs
                 "where " + search + " like  '" + textBox1.Text + "%' and P.col_status='unarchived'";
             }
 
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            materialListView1.Items.Clear();
-            conn.Open();
-            MySqlCommand command2 = conn.CreateCommand();
-            command2.CommandText = query;
-            MySqlDataReader read = command2.ExecuteReader();
-            while (read.Read())
+            try
             {
-                ListViewItem items = new ListViewItem(read["col_productid"].ToString());
-                items.SubItems.Add(read["col_productcode"].ToString());
-                items.SubItems.Add(read["col_productname"].ToString());
-                items.SubItems.Add(read["col_brandname"].ToString());
-                items.SubItems.Add(read["col_categoryname"].ToString());
-                items.SubItems.Add(read["col_productprice"].ToString());
-                materialListView1.Items.Add(items);
-                materialListView1.FullRowSelect = true;
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                materialListView1.Items.Clear();
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = query;
+                MySqlDataReader read = command2.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_productid"].ToString());
+                    items.SubItems.Add(read["col_productcode"].ToString());
+                    items.SubItems.Add(read["col_productname"].ToString());
+                    items.SubItems.Add(read["col_brandname"].ToString());
+                    items.SubItems.Add(read["col_categoryname"].ToString());
+                    items.SubItems.Add(read["col_productprice"].ToString());
+                    materialListView1.Items.Add(items);
+                    materialListView1.FullRowSelect = true;
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
         }
 
         public void searcharchived()
@@ -1108,7 +1114,7 @@ namespace LoginModule.cs
 
         private void btaddnewcat_Click(object sender, EventArgs e)
         {
-            AddCategory a = new AddCategory();
+            NewCategory a = new NewCategory();
             a.Show();
             this.Hide();
         }

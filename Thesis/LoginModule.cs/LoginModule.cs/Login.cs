@@ -125,11 +125,7 @@ namespace LoginModule.cs
 
             log();
         }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
@@ -145,5 +141,6 @@ namespace LoginModule.cs
             }
             
         }
+        
     }
 }

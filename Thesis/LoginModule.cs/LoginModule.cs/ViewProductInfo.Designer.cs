@@ -85,6 +85,7 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(222, 32);
             this.txtProductName.TabIndex = 73;
+            this.txtProductName.TextChanged += new System.EventHandler(new DataHandling().alphanumericTrap_TextChanged);
             // 
             // label5
             // 

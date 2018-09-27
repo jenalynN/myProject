@@ -646,6 +646,11 @@ namespace LoginModule.cs
             a.Show();
             this.Hide();
         }
-        
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+
+        }
     }
 }

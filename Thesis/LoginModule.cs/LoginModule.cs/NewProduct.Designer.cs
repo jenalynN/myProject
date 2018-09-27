@@ -110,6 +110,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(222, 32);
             this.textBox3.TabIndex = 71;
+            this.textBox3.TextChanged += new System.EventHandler(new DataHandling().alphanumericTrap_TextChanged);
             // 
             // label4
             // 
@@ -190,6 +191,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 32);
             this.textBox1.TabIndex = 56;
+            this.textBox1.TextChanged += new System.EventHandler(new DataHandling().alphanumericTrap_TextChanged);
             // 
             // label1
             // 

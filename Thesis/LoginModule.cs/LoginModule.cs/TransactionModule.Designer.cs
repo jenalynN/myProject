@@ -557,6 +557,7 @@
             this.tbAmount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAmount.Location = new System.Drawing.Point(689, 104);
+            this.tbAmount.MaxLength = 15;
             this.tbAmount.Name = "tbAmount";
             this.tbAmount.Size = new System.Drawing.Size(161, 31);
             this.tbAmount.TabIndex = 24;
@@ -672,6 +673,7 @@
             // tbSearchItem
             // 
             this.tbSearchItem.Location = new System.Drawing.Point(134, 27);
+            this.tbSearchItem.MaxLength = 30;
             this.tbSearchItem.Name = "tbSearchItem";
             this.tbSearchItem.Size = new System.Drawing.Size(178, 31);
             this.tbSearchItem.TabIndex = 24;
@@ -680,6 +682,7 @@
             // tbQuantity
             // 
             this.tbQuantity.Location = new System.Drawing.Point(134, 346);
+            this.tbQuantity.MaxLength = 2;
             this.tbQuantity.Name = "tbQuantity";
             this.tbQuantity.Size = new System.Drawing.Size(178, 31);
             this.tbQuantity.TabIndex = 23;
@@ -867,6 +870,7 @@
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(175, 344);
+            this.textBox9.MaxLength = 200;
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(176, 86);
@@ -930,13 +934,16 @@
             // 
             this.textBox7.Enabled = false;
             this.textBox7.Location = new System.Drawing.Point(175, 207);
+            this.textBox7.MaxLength = 30;
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(176, 32);
             this.textBox7.TabIndex = 111;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(175, 294);
+            this.textBox6.MaxLength = 2;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(176, 32);
             this.textBox6.TabIndex = 110;
@@ -955,7 +962,9 @@
             // 
             this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(175, 146);
+            this.textBox5.MaxLength = 2;
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(176, 32);
             this.textBox5.TabIndex = 108;
             // 
@@ -973,7 +982,9 @@
             // 
             this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(175, 108);
+            this.textBox4.MaxLength = 30;
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(176, 32);
             this.textBox4.TabIndex = 106;
             // 
@@ -981,7 +992,9 @@
             // 
             this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(175, 70);
+            this.textBox3.MaxLength = 30;
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(176, 32);
             this.textBox3.TabIndex = 105;
             // 
@@ -989,7 +1002,9 @@
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(176, 32);
+            this.textBox2.MaxLength = 30;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(176, 32);
             this.textBox2.TabIndex = 104;
             // 
@@ -1045,6 +1060,7 @@
             this.comboBox1.Size = new System.Drawing.Size(176, 32);
             this.comboBox1.TabIndex = 100;
             this.comboBox1.Text = "Refund";
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // groupBox10
             // 

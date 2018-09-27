@@ -166,7 +166,6 @@ namespace LoginModule.cs
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            int num;
             if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
                 textBox2.Text = "1.00";
@@ -187,5 +186,6 @@ namespace LoginModule.cs
         {
             e.Handled = true;
         }
+        
     }
 }

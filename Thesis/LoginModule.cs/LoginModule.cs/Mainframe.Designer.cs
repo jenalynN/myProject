@@ -583,6 +583,7 @@
             this.textBox1.Size = new System.Drawing.Size(389, 37);
             this.textBox1.TabIndex = 54;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TextChanged += new System.EventHandler(new DataHandling().alphanumericTrap_TextChanged);
             // 
             // label7
             // 
