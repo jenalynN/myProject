@@ -25,7 +25,7 @@ namespace LoginModule.cs
 
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_brandpartner";
+            string query = "select col_brandname from tbl_brandpartner";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
 
@@ -39,7 +39,7 @@ namespace LoginModule.cs
         public void addcategory()
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            if (tbcatname.Text == "")
+            if (tbcatname.Text == "" || cbBrandP.Text == "")
             {
                 MessageBox.Show("Please Complete the Form");
             }
@@ -48,7 +48,8 @@ namespace LoginModule.cs
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
                 command2.CommandText = "insert into tbl_category (col_useraccountsid, col_categoryname) " +
-                            "values(Select col_useraccountsid from tbl_brandpartner where col_brandname= '" + cbBrandP.Text + "'),";
+                            "values((Select col_useraccountsid from tbl_brandpartner where col_brandname= '" + cbBrandP.Text + "'),'" +
+                            tbcatname.Text + "')";
                 command2.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Successfully Added!");

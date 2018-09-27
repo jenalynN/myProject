@@ -191,7 +191,7 @@ namespace LoginModule.cs
             catch (Exception)
             {
 
-                throw;
+                
             }
         }
 
@@ -534,7 +534,7 @@ namespace LoginModule.cs
             catch (Exception)
             {
 
-                throw;
+                
             }
         }
         public void searchunarchivedbp()
@@ -700,7 +700,7 @@ namespace LoginModule.cs
                 catch (Exception)
                 {
 
-                    throw;
+                    
                 }            }
         }
         public void searchunarchivedcashier()
@@ -769,7 +769,7 @@ namespace LoginModule.cs
                 catch (Exception)
                 {
 
-                    throw;
+                    
                 }            }
         }
         public void searcharchivedcashier()
@@ -838,7 +838,7 @@ namespace LoginModule.cs
                 catch (Exception)
                 {
 
-                    throw;
+                    
                 }            }
         }
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -865,7 +865,7 @@ namespace LoginModule.cs
             catch (Exception)
             {
 
-                throw;
+                
             }
 
             materialListView1.Items.Clear();
@@ -921,6 +921,7 @@ namespace LoginModule.cs
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
             searchunarchived();
         }
         private void materialRaisedButton1_Click_2(object sender, EventArgs e)
@@ -979,7 +980,7 @@ namespace LoginModule.cs
             catch (Exception)
             {
 
-                throw;
+                
             }
 
             materialListView1.Items.Clear();
@@ -1044,13 +1045,13 @@ namespace LoginModule.cs
                 command.CommandText = query;
                 command.ExecuteScalar();
 
+                conn.Close();
             }
             catch (Exception)
             {
 
-                throw;
+                
             }
-            conn.Close();
         }
 		private void materialFlatButton9_Click(object sender, EventArgs e)
         {
@@ -1117,7 +1118,7 @@ namespace LoginModule.cs
             catch (Exception)
             {
 
-                throw;
+                
             }
 
             materialListView4.Items.Clear();
@@ -1144,7 +1145,7 @@ namespace LoginModule.cs
             catch (Exception)
             {
 
-                throw;
+                
             }
 
             materialListView4.Items.Clear();
@@ -1156,6 +1157,7 @@ namespace LoginModule.cs
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
             searcharchived();
         }
 
@@ -1166,6 +1168,7 @@ namespace LoginModule.cs
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
             searchunarchivedbp();
         }
 
@@ -1181,6 +1184,7 @@ namespace LoginModule.cs
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
             searcharchivedbp();
         }
 
@@ -1201,7 +1205,7 @@ namespace LoginModule.cs
             catch (Exception)
             {
 
-                throw;
+                
             }
 
             materialListView6.Items.Clear();
@@ -1213,11 +1217,13 @@ namespace LoginModule.cs
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
             searchunarchivedcashier();
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
             searcharchivedcashier();
         }
 
@@ -1266,6 +1272,11 @@ namespace LoginModule.cs
             NewCategory a = new NewCategory();
             a.Show();
             this.Hide();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
         }
     }
 }

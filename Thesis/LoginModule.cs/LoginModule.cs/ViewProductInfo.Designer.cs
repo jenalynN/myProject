@@ -85,7 +85,7 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(222, 32);
             this.txtProductName.TabIndex = 73;
-            this.txtProductName.TextChanged += new System.EventHandler(new DataHandling().alphanumericTrap_TextChanged);
+            this.txtProductName.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
             // 
             // label5
             // 
@@ -204,6 +204,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 32);
             this.textBox1.TabIndex = 56;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 

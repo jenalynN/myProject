@@ -360,6 +360,7 @@ namespace LoginModule.cs
         }
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
             if (tbSearchItem.Text == "")
             {
                 materialListView2.Items.Clear();
@@ -380,12 +381,11 @@ namespace LoginModule.cs
                 tbAmount.Text = "0.00";
                 labelChange.Text = "0.00";
             }
-            else if (System.Text.RegularExpressions.Regex.IsMatch(tbAmount.Text, "(\\..*\\.)|[^\\d+\\.\\d+]|[^\\.\\d+]"))
-            {
-                //MessageBox.Show("Please enter only numbers.");
-                tbAmount.Text = "0.00";
-                labelChange.Text = "0.00";
-            }
+            //else if (System.Text.RegularExpressions.Regex.IsMatch(tbAmount.Text, "(\\..*\\.)|[^\\d+\\.\\d+]|[^\\.\\d+]"))
+            //{
+            //    //MessageBox.Show("Please enter only numbers.");
+            //    new DataHandling().decimalNumberTrap_KeyPress(sender, e);
+            //}
             else
             {
                 if (System.Text.RegularExpressions.Regex.IsMatch(tbAmount.Text, "\\d+"))
@@ -423,12 +423,7 @@ namespace LoginModule.cs
         }
         private void tbQuantity_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(tbQuantity.Text, "[^0-9]"))
-            {
-                //MessageBox.Show("Please enter only numbers.");
-                //tbQuantity.Text = tbQuantity.Text.Remove(tbQuantity.Text.Length - 1);
-                tbQuantity.Text = "";
-            }
+            new DataHandling().numbersOnlyTrap_TextChanged(sender, e);
 
             subtotal();
         }
@@ -514,6 +509,7 @@ namespace LoginModule.cs
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
             if (textBox1.Text == "")
             {
                 materialListView3.Items.Clear();
@@ -651,6 +647,21 @@ namespace LoginModule.cs
         {
             e.Handled = true;
 
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().numbersOnlyTrap_TextChanged(sender, e);
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().namingTrap_TextChanged(sender, e);
+        }
+
+        private void tbAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            new DataHandling().decimalNumberTrap_KeyPress(sender, e);
         }
     }
 }

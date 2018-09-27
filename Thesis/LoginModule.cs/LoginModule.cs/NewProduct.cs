@@ -93,6 +93,10 @@ namespace LoginModule.cs
             {
                 MessageBox.Show("Please don't leave any blank field(s).");
             }
+            else if (textBox2.Text == ".")
+            {
+                MessageBox.Show("Invalid Price value.");
+            }
             else
             {
                 additem();
@@ -108,18 +112,19 @@ namespace LoginModule.cs
             
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                textBox2.Text = "1.00";
-            }
-            else if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "(\\..*\\.)|[^\\d+\\.\\d+]|[^\\.\\d+]"))
-            {
-                //MessageBox.Show("Please enter only numbers.");
-                textBox2.Text = "1.00";
-            }
-        }
+        //private void textBox2_TextChanged(object sender, KeyPressEventArgs e)
+        //{
+        //    new DataHandling().decimalNumberTrap_KeyPress(sender, e);
+        //    //if (string.IsNullOrWhiteSpace(textBox2.Text))
+        //    //{
+        //    //    textBox2.Text = "1.00";
+        //    //}
+        //    //else if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "(\\..*\\.)|[^\\d+\\.\\d+]|[^\\.\\d+]"))
+        //    //{
+        //    //    //MessageBox.Show("Please enter only numbers.");
+        //    //    textBox2.Text = "1.00";
+        //    //}
+        //}
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -141,7 +146,24 @@ namespace LoginModule.cs
             conn.Close();
         }
 
-        
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
+        }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            new DataHandling().decimalNumberTrap_KeyPress(sender, e);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

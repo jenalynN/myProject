@@ -90,10 +90,46 @@ namespace LoginModule.cs
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(textBox6.Text, "[^0-9]"))
-            {
-                textBox6.Text = "";
-            }
+            new DataHandling().numbersOnlyTrap_TextChanged(sender, e);
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().namingTrap_TextChanged(sender, e);
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().namingTrap_TextChanged(sender, e);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().namingTrap_TextChanged(sender, e);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().namingTrap_TextChanged(sender, e);
         }
     }
 }

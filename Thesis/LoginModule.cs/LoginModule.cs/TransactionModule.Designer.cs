@@ -557,12 +557,13 @@
             this.tbAmount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAmount.Location = new System.Drawing.Point(689, 104);
-            this.tbAmount.MaxLength = 15;
+            this.tbAmount.MaxLength = 11;
             this.tbAmount.Name = "tbAmount";
             this.tbAmount.Size = new System.Drawing.Size(161, 31);
             this.tbAmount.TabIndex = 24;
             this.tbAmount.Text = "0.00";
             this.tbAmount.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tbAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAmount_KeyPress);
             // 
             // materialListView1
             // 
@@ -875,6 +876,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(176, 86);
             this.textBox9.TabIndex = 116;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // materialFlatButton6
             // 
@@ -947,6 +949,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(176, 32);
             this.textBox6.TabIndex = 110;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label25
             // 

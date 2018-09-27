@@ -137,10 +137,27 @@ namespace LoginModule.cs
            
             if (e.KeyCode == Keys.Enter)
             {
-                log();
+                try
+                {
+                    log();
+                }
+                catch (Exception elog)
+                {
+                    MessageBox.Show(elog.ToString());
+                }
+
             }
             
         }
-        
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
+        }
     }
 }

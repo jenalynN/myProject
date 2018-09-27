@@ -186,6 +186,15 @@ namespace LoginModule.cs
         {
             e.Handled = true;
         }
-        
+
+        private void txtProductName_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
+        }
     }
 }
