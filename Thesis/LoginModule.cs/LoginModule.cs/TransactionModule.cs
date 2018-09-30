@@ -229,12 +229,24 @@ namespace LoginModule.cs
                 command2.ExecuteScalar();
                 conn.Close();
 
+                conn.Open();
+                MySqlCommand command3 = conn.CreateCommand();
+                string query2 = "UPDATE tbl_order SET " +
+                    "col_orderstatus='Sales' Where col_transactionid = (SELECT col_transactionid from tbl_transaction where col_transactioncode = '" + labelTransactionCode.Text + "')";
+                MessageBox.Show(query2);
+                command3.CommandText = query2;
+                command3.ExecuteScalar();
+                conn.Close();
+
+
                 MessageBox.Show("Transaction Saved!");
                 materialListView1.Items.Clear();
                 materialListView2.Items.Clear();
                 labelTotalSales.Text = "0.00";
                 tbAmount.Text = "0.00";
                 labelChange.Text = "0.00";
+
+
                 TransactionModule a = new TransactionModule(label17.Text);
                 a.Show();
                 this.Hide();
