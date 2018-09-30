@@ -129,6 +129,7 @@
             this.Controls.Add(this.tbcatname);
             this.Controls.Add(this.label4);
             this.Name = "NewCategory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCategory";
             this.Load += new System.EventHandler(this.AddCategory_Load);
             this.ResumeLayout(false);

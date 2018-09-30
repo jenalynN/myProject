@@ -31,16 +31,16 @@
             this.label14 = new System.Windows.Forms.Label();
             this.tboldpass = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbuseraccountid = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbnewpass = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbconfirmnewpass = new System.Windows.Forms.TextBox();
-            this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
-            this.label4 = new System.Windows.Forms.Label();
             this.tbusername = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.tbconfirmnewpass = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbnewpass = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbuseraccountid = new System.Windows.Forms.TextBox();
+            this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,53 +90,51 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Change Password";
             // 
-            // tbuseraccountid
+            // tbusername
             // 
-            this.tbuseraccountid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbusername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbuseraccountid.Enabled = false;
-            this.tbuseraccountid.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbuseraccountid.Location = new System.Drawing.Point(213, 50);
-            this.tbuseraccountid.Name = "tbuseraccountid";
-            this.tbuseraccountid.Size = new System.Drawing.Size(222, 26);
-            this.tbuseraccountid.TabIndex = 73;
+            this.tbusername.Enabled = false;
+            this.tbusername.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbusername.Location = new System.Drawing.Point(213, 82);
+            this.tbusername.Name = "tbusername";
+            this.tbusername.Size = new System.Drawing.Size(222, 26);
+            this.tbusername.TabIndex = 82;
             // 
-            // label1
+            // label4
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 23);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "User account Id";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(16, 85);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 23);
+            this.label4.TabIndex = 81;
+            this.label4.Text = "Username";
             // 
-            // label2
+            // materialDivider1
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(20, 127);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(428, 1);
+            this.materialDivider1.TabIndex = 80;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // tbconfirmnewpass
+            // 
+            this.tbconfirmnewpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 187);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 23);
-            this.label2.TabIndex = 76;
-            this.label2.Text = "Enter new password";
-            // 
-            // tbnewpass
-            // 
-            this.tbnewpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbnewpass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbnewpass.Location = new System.Drawing.Point(213, 184);
-            this.tbnewpass.Name = "tbnewpass";
-            this.tbnewpass.Size = new System.Drawing.Size(222, 26);
-            this.tbnewpass.TabIndex = 77;
-            this.tbnewpass.UseSystemPasswordChar = true;
+            this.tbconfirmnewpass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbconfirmnewpass.Location = new System.Drawing.Point(213, 216);
+            this.tbconfirmnewpass.Name = "tbconfirmnewpass";
+            this.tbconfirmnewpass.Size = new System.Drawing.Size(222, 26);
+            this.tbconfirmnewpass.TabIndex = 79;
+            this.tbconfirmnewpass.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -151,16 +149,53 @@
             this.label3.TabIndex = 78;
             this.label3.Text = "Confirm new password";
             // 
-            // tbconfirmnewpass
+            // tbnewpass
             // 
-            this.tbconfirmnewpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbnewpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbconfirmnewpass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbconfirmnewpass.Location = new System.Drawing.Point(213, 216);
-            this.tbconfirmnewpass.Name = "tbconfirmnewpass";
-            this.tbconfirmnewpass.Size = new System.Drawing.Size(222, 26);
-            this.tbconfirmnewpass.TabIndex = 79;
-            this.tbconfirmnewpass.UseSystemPasswordChar = true;
+            this.tbnewpass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbnewpass.Location = new System.Drawing.Point(213, 184);
+            this.tbnewpass.Name = "tbnewpass";
+            this.tbnewpass.Size = new System.Drawing.Size(222, 26);
+            this.tbnewpass.TabIndex = 77;
+            this.tbnewpass.UseSystemPasswordChar = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 187);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 23);
+            this.label2.TabIndex = 76;
+            this.label2.Text = "Enter new password";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 23);
+            this.label1.TabIndex = 74;
+            this.label1.Text = "User account Id";
+            // 
+            // tbuseraccountid
+            // 
+            this.tbuseraccountid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbuseraccountid.Enabled = false;
+            this.tbuseraccountid.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbuseraccountid.Location = new System.Drawing.Point(213, 50);
+            this.tbuseraccountid.Name = "tbuseraccountid";
+            this.tbuseraccountid.Size = new System.Drawing.Size(222, 26);
+            this.tbuseraccountid.TabIndex = 73;
             // 
             // materialFlatButton4
             // 
@@ -180,41 +215,6 @@
             this.materialFlatButton4.UseVisualStyleBackColor = true;
             this.materialFlatButton4.Click += new System.EventHandler(this.materialFlatButton4_Click);
             // 
-            // materialDivider1
-            // 
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(20, 127);
-            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(428, 1);
-            this.materialDivider1.TabIndex = 80;
-            this.materialDivider1.Text = "materialDivider1";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 23);
-            this.label4.TabIndex = 81;
-            this.label4.Text = "Username";
-            // 
-            // tbusername
-            // 
-            this.tbusername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbusername.Enabled = false;
-            this.tbusername.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbusername.Location = new System.Drawing.Point(213, 82);
-            this.tbusername.Name = "tbusername";
-            this.tbusername.Size = new System.Drawing.Size(222, 26);
-            this.tbusername.TabIndex = 82;
-            // 
             // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +224,7 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "ChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -155,9 +155,9 @@ namespace LoginModule.cs
                 {
                     MySqlCommand command2 = conn.CreateCommand();
 
-                    string query = "insert into tbl_order(col_transactionid,col_productid,col_quantitybought,col_subtotal,col_orderstatus) " +
+                    string query = "insert into tbl_order(col_transactionid,col_productid,col_staticprice,col_quantitybought,col_subtotal,col_orderstatus) " +
                         "values ((Select col_transactionid from tbl_transaction where col_transactioncode ='" + labelTransactionCode.Text + "'), " +
-                        "(Select col_productid from tbl_product where col_productcode='" + tbProductCode.Text + "'),'" + tbQuantity.Text + "','" +
+                        "(Select col_productid from tbl_product where col_productcode='" + tbProductCode.Text + "'),'"+tbPrice.Text+"','" + tbQuantity.Text + "','" +
                         tbSubtotal.Text + "','unfinished')";
                     command2.CommandText = query;
                     command2.ExecuteNonQuery();
@@ -229,10 +229,16 @@ namespace LoginModule.cs
                 command2.ExecuteScalar();
                 conn.Close();
 
-                MessageBox.Show("Thank You Come AGAIN!!!");
-                Login a = new Login();
+                MessageBox.Show("Transaction Saved!");
+                materialListView1.Items.Clear();
+                materialListView2.Items.Clear();
+                labelTotalSales.Text = "0.00";
+                tbAmount.Text = "0.00";
+                labelChange.Text = "0.00";
+                TransactionModule a = new TransactionModule(label17.Text);
                 a.Show();
                 this.Hide();
+
             }
         }
         public void viewOrder()
@@ -416,10 +422,25 @@ namespace LoginModule.cs
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            TransactionDelete();
-            Login a = new Login();
-            a.Show();
-            this.Hide();
+            // Login a = new Login();
+            // a.Show();
+            //this.Hide();
+            DialogResult dialog = MessageBox.Show( "Are You sure you want to Cancel the Transaction?", "Message", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                materialListView1.Items.Clear();
+                materialListView2.Items.Clear();
+                labelTotalSales.Text = "0.00";
+                tbAmount.Text = "0.00";
+                labelChange.Text = "0.00";
+
+                TransactionDelete();
+            }
+            TransactionModule a = new TransactionModule(label17.Text);
+
+            
+
+
         }
         private void tbQuantity_TextChanged(object sender, EventArgs e)
         {
@@ -519,11 +540,6 @@ namespace LoginModule.cs
                 searchtransaction();
             }
         }
-
-        private void materialFlatButton6_Click(object sender, EventArgs e)
-        {
-
-        }
         public void printorders()
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
@@ -552,7 +568,7 @@ namespace LoginModule.cs
                 items.SubItems.Add(read["col_productname"].ToString());
                 items.SubItems.Add(read["col_brandname"].ToString());
                 items.SubItems.Add(read["col_categoryname"].ToString());
-                items.SubItems.Add(read["col_productprice"].ToString());
+                items.SubItems.Add(read["col_staticprice"].ToString());
                 items.SubItems.Add(read["col_quantitybought"].ToString());
                 items.SubItems.Add(read["col_subtotal"].ToString());
                 materialListView4.Items.Add(items); 
@@ -576,7 +592,7 @@ namespace LoginModule.cs
         public void printorderdetails() 
         {
             int data = 0;
-            ListViewItem list = materialListView3.SelectedItems[data];
+            ListViewItem list = materialListView4.SelectedItems[data];
             String id = list.SubItems[0].Text;
             textBox2.Text = id.ToString();
             
@@ -601,7 +617,7 @@ namespace LoginModule.cs
                 textBox3.Text = read["col_productname"].ToString();
                 textBox4.Text = read["col_productcode"].ToString();
                 textBox5.Text = read["col_quantitybought"].ToString();
-                textBox7.Text = read["col_productprice"].ToString();
+                textBox7.Text = read["col_staticprice"].ToString();
             }
             conn.Close();
          
@@ -614,9 +630,9 @@ namespace LoginModule.cs
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
 
-                string query = "insert into tbl_damage(col_orderid,col_transactionid,col_reason,col_status) " +
-                    "values ((Select col_transactionid from tbl_transaction where col_transactioncode='"+textBox8.Text+"'),'" + textBox2.Text +"','"+
-                    textBox9.Text + "','pending-change')";
+                string query = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_status) " +
+                    "values ((Select col_transactionid from tbl_transaction where col_transactioncode='"+textBox8.Text+"')," +
+                    "(Select col_orderid from tbl_order where col_orderid = '"+textBox2.Text+"'),'"+textBox9.Text + "','pending-change')";
 
                 command2.CommandText = query;
                 command2.ExecuteNonQuery();
@@ -662,6 +678,21 @@ namespace LoginModule.cs
         private void tbAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
             new DataHandling().decimalNumberTrap_KeyPress(sender, e);
+        }
+
+        private void materialListView4_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            printorderdetails();
+        }
+
+        private void materialTabSelector1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialListView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
