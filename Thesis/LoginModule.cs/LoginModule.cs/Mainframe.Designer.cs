@@ -2528,6 +2528,7 @@
             this.materialRaisedButton4.TabIndex = 22;
             this.materialRaisedButton4.Text = "View Admin Account ";
             this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            this.materialRaisedButton4.Click += new System.EventHandler(this.materialRaisedButton4_Click);
             // 
             // materialTabSelector1
             // 

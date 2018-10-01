@@ -1,6 +1,6 @@
 ﻿namespace LoginModule.cs
 {
-    partial class ViewBrandPartnerInfo
+    partial class viewAdminAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtConfirmPass = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.labelBrandpartnerId = new System.Windows.Forms.Label();
+            this.labelCashierId = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -62,116 +51,40 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkChangePassword = new MaterialSkin.Controls.MaterialCheckBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // materialFlatButton1
+            // textBox11
             // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.BackColor = System.Drawing.Color.White;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
-            this.materialFlatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(692, 511);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(73, 36);
-            this.materialFlatButton1.TabIndex = 0;
-            this.materialFlatButton1.Text = "Update";
-            this.materialFlatButton1.UseVisualStyleBackColor = false;
-            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
-            // 
-            // materialFlatButton2
-            // 
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.BackColor = System.Drawing.Color.White;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
-            this.materialFlatButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.materialFlatButton2.Icon = null;
-            this.materialFlatButton2.Location = new System.Drawing.Point(775, 511);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(73, 36);
-            this.materialFlatButton2.TabIndex = 1;
-            this.materialFlatButton2.Text = "Cancel";
-            this.materialFlatButton2.UseVisualStyleBackColor = false;
-            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.chkChangePassword);
-            this.groupBox1.Controls.Add(this.txtConfirmPass);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.labelBrandpartnerId);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.materialDivider2);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.materialDivider1);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(14, 82);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(834, 420);
-            this.groupBox1.TabIndex = 41;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Update Brand Partner Account";
-            // 
-            // txtConfirmPass
-            // 
-            this.txtConfirmPass.Enabled = false;
-            this.txtConfirmPass.Location = new System.Drawing.Point(606, 346);
-            this.txtConfirmPass.MaxLength = 20;
-            this.txtConfirmPass.Name = "txtConfirmPass";
-            this.txtConfirmPass.Size = new System.Drawing.Size(222, 32);
-            this.txtConfirmPass.TabIndex = 101;
-            this.txtConfirmPass.UseSystemPasswordChar = true;
-            this.txtConfirmPass.TextChanged += new System.EventHandler(this.txtConfirmPass_TextChanged);
+            this.textBox11.Enabled = false;
+            this.textBox11.Location = new System.Drawing.Point(605, 228);
+            this.textBox11.MaxLength = 20;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(222, 32);
+            this.textBox11.TabIndex = 101;
+            this.textBox11.UseSystemPasswordChar = true;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(445, 350);
+            this.label15.Location = new System.Drawing.Point(448, 152);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(152, 23);
+            this.label15.Size = new System.Drawing.Size(117, 23);
             this.label15.TabIndex = 100;
-            this.label15.Text = "Confirm Password";
+            this.label15.Text = "Old Password";
+            this.label15.Visible = false;
             // 
             // comboBox1
             // 
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Male",
@@ -191,24 +104,26 @@
             this.label17.Size = new System.Drawing.Size(141, 23);
             this.label17.TabIndex = 98;
             this.label17.Text = "User Accounts Id";
+            this.label17.Visible = false;
             // 
-            // labelBrandpartnerId
+            // labelCashierId
             // 
-            this.labelBrandpartnerId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelCashierId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelBrandpartnerId.AutoSize = true;
-            this.labelBrandpartnerId.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBrandpartnerId.Location = new System.Drawing.Point(206, 65);
-            this.labelBrandpartnerId.Name = "labelBrandpartnerId";
-            this.labelBrandpartnerId.Size = new System.Drawing.Size(20, 23);
-            this.labelBrandpartnerId.TabIndex = 97;
-            this.labelBrandpartnerId.Text = "1";
+            this.labelCashierId.AutoSize = true;
+            this.labelCashierId.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCashierId.Location = new System.Drawing.Point(206, 65);
+            this.labelCashierId.Name = "labelCashierId";
+            this.labelCashierId.Size = new System.Drawing.Size(30, 23);
+            this.labelCashierId.TabIndex = 97;
+            this.labelCashierId.Text = "17";
+            this.labelCashierId.Visible = false;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(445, 240);
+            this.label16.Location = new System.Drawing.Point(445, 65);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(202, 23);
             this.label16.TabIndex = 96;
@@ -217,7 +132,7 @@
             // textBox10
             // 
             this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(606, 308);
+            this.textBox10.Location = new System.Drawing.Point(605, 190);
             this.textBox10.MaxLength = 20;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(222, 32);
@@ -227,7 +142,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(606, 270);
+            this.textBox9.Location = new System.Drawing.Point(606, 114);
             this.textBox9.MaxLength = 20;
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
@@ -238,7 +153,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(445, 312);
+            this.label14.Location = new System.Drawing.Point(448, 190);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 23);
             this.label14.TabIndex = 91;
@@ -248,60 +163,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(445, 274);
+            this.label13.Location = new System.Drawing.Point(448, 118);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(89, 23);
             this.label13.TabIndex = 90;
             this.label13.Text = "Username";
-            // 
-            // materialDivider2
-            // 
-            this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider2.Depth = 0;
-            this.materialDivider2.Location = new System.Drawing.Point(449, 236);
-            this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider2.Name = "materialDivider2";
-            this.materialDivider2.Size = new System.Drawing.Size(379, 1);
-            this.materialDivider2.TabIndex = 89;
-            this.materialDivider2.Text = "materialDivider2";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(606, 190);
-            this.textBox8.MaxLength = 11;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(222, 32);
-            this.textBox8.TabIndex = 88;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(606, 152);
-            this.textBox7.MaxLength = 30;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(222, 32);
-            this.textBox7.TabIndex = 87;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(445, 199);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(132, 23);
-            this.label11.TabIndex = 86;
-            this.label11.Text = "Brand Contact #";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(445, 156);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 23);
-            this.label10.TabIndex = 85;
-            this.label10.Text = "Brand Address";
             // 
             // label9
             // 
@@ -341,25 +207,6 @@
             this.textBox5.TabIndex = 81;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(445, 118);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 23);
-            this.label7.TabIndex = 80;
-            this.label7.Text = "Brandname";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(606, 114);
-            this.textBox4.MaxLength = 30;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(222, 32);
-            this.textBox4.TabIndex = 79;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -369,16 +216,6 @@
             this.label6.Size = new System.Drawing.Size(67, 23);
             this.label6.TabIndex = 76;
             this.label6.Text = "Gender";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(445, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 23);
-            this.label4.TabIndex = 73;
-            this.label4.Text = "Brand Information";
             // 
             // label3
             // 
@@ -458,24 +295,123 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Firstname";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.chkChangePassword);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.labelCashierId);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.materialDivider1);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 77);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(834, 420);
+            this.groupBox1.TabIndex = 44;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Update Admin Account";
+            // 
             // chkChangePassword
             // 
             this.chkChangePassword.AutoSize = true;
             this.chkChangePassword.Depth = 0;
             this.chkChangePassword.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkChangePassword.Location = new System.Drawing.Point(687, 381);
+            this.chkChangePassword.Location = new System.Drawing.Point(678, 270);
             this.chkChangePassword.Margin = new System.Windows.Forms.Padding(0);
             this.chkChangePassword.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkChangePassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.chkChangePassword.Name = "chkChangePassword";
             this.chkChangePassword.Ripple = true;
             this.chkChangePassword.Size = new System.Drawing.Size(141, 30);
-            this.chkChangePassword.TabIndex = 105;
+            this.chkChangePassword.TabIndex = 104;
             this.chkChangePassword.Text = "Change Password";
             this.chkChangePassword.UseVisualStyleBackColor = true;
-            this.chkChangePassword.CheckedChanged += new System.EventHandler(this.chkChangePassword_CheckedChanged);
+            this.chkChangePassword.CheckedChanged += new System.EventHandler(this.materialCheckBox1_CheckedChanged);
             // 
-            // ViewBrandPartnerInfo
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(605, 152);
+            this.textBox4.MaxLength = 20;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(222, 32);
+            this.textBox4.TabIndex = 103;
+            this.textBox4.UseSystemPasswordChar = true;
+            this.textBox4.Visible = false;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(447, 228);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(152, 23);
+            this.label4.TabIndex = 102;
+            this.label4.Text = "Confirm Password";
+            // 
+            // materialFlatButton2
+            // 
+            this.materialFlatButton2.AutoSize = true;
+            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton2.BackColor = System.Drawing.Color.White;
+            this.materialFlatButton2.Depth = 0;
+            this.materialFlatButton2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.materialFlatButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.materialFlatButton2.Icon = null;
+            this.materialFlatButton2.Location = new System.Drawing.Point(771, 496);
+            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton2.Name = "materialFlatButton2";
+            this.materialFlatButton2.Primary = false;
+            this.materialFlatButton2.Size = new System.Drawing.Size(73, 36);
+            this.materialFlatButton2.TabIndex = 43;
+            this.materialFlatButton2.Text = "Cancel";
+            this.materialFlatButton2.UseVisualStyleBackColor = false;
+            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.BackColor = System.Drawing.Color.White;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.materialFlatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.materialFlatButton1.Icon = null;
+            this.materialFlatButton1.Location = new System.Drawing.Point(690, 496);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(73, 36);
+            this.materialFlatButton1.TabIndex = 42;
+            this.materialFlatButton1.Text = "Update";
+            this.materialFlatButton1.UseVisualStyleBackColor = false;
+            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            // 
+            // viewAdminAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -484,8 +420,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.materialFlatButton2);
             this.Controls.Add(this.materialFlatButton1);
-            this.Name = "ViewBrandPartnerInfo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "viewAdminAccount";
+            this.Text = "Admin Account";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -495,25 +433,21 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label labelBrandpartnerId;
-        private MaterialSkin.Controls.MaterialDivider materialDivider2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelCashierId;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
@@ -522,13 +456,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtConfirmPass;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label4;
         private MaterialSkin.Controls.MaterialCheckBox chkChangePassword;
     }
 }

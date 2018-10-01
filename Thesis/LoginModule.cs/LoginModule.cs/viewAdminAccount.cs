@@ -11,24 +11,24 @@ using MySql.Data.MySqlClient;
 
 namespace LoginModule.cs
 {
-    public partial class ViewCashierInfo : MaterialSkin.Controls.MaterialForm
+    public partial class viewAdminAccount : MaterialSkin.Controls.MaterialForm
     {
         private string tempPass;
 
-        public ViewCashierInfo(string label40)
+        public viewAdminAccount()
         {
             InitializeComponent();
-            labelCashierId.Text = label40;
-            printCashierdetails();
+            printAdmindetails();
         }
-        public void printCashierdetails() 
+
+        public void printAdmindetails()
         {
 
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
             string query = "select * from tbl_useraccounts u " +
-                "where u.col_useraccountsid = '" + labelCashierId.Text + "'";
+                "where u.col_useraccountsid = 17";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
 
@@ -50,9 +50,34 @@ namespace LoginModule.cs
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
-            Mainframe a = new Mainframe();
-            a.Show();
+            new Mainframe().Show();
             this.Hide();
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox9.Text) ||
+                (string.IsNullOrWhiteSpace(textBox11.Text) && textBox11.Enabled == true) ||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox5.Text) ||
+                string.IsNullOrWhiteSpace(comboBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox6.Text))
+            {
+                MessageBox.Show("Please don't leave any blank field(s).");
+            }
+            else if (textBox10.Text != textBox11.Text && textBox10.Enabled == true )
+            {
+                MessageBox.Show("Password does not match the confirm password.");
+            }
+            else
+            {
+                update();
+                Mainframe a = new Mainframe();
+                a.Show();
+                this.Hide();
+            }
         }
 
         public void update()
@@ -75,33 +100,6 @@ namespace LoginModule.cs
             command.ExecuteScalar();
             conn.Close();
         }
-
-        private void materialFlatButton1_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox9.Text) ||
-                (string.IsNullOrWhiteSpace(textBox11.Text) && textBox11.Enabled == true) ||
-                string.IsNullOrWhiteSpace(textBox3.Text) ||
-                string.IsNullOrWhiteSpace(textBox1.Text) ||
-                string.IsNullOrWhiteSpace(textBox2.Text) ||
-                string.IsNullOrWhiteSpace(textBox5.Text) ||
-                string.IsNullOrWhiteSpace(comboBox1.Text) ||
-                string.IsNullOrWhiteSpace(textBox6.Text))
-            {
-                MessageBox.Show("Please don't leave any blank field(s).");
-            }
-            else if (textBox10.Text != textBox11.Text && textBox10.Enabled == true)
-            {
-                MessageBox.Show("Password does not match the confirm password.");
-            }
-            else
-            {
-                update();
-                Mainframe a = new Mainframe();
-                a.Show();
-                this.Hide();
-            }
-        }
-
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -148,7 +146,7 @@ namespace LoginModule.cs
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
         }
 
-        private void chkChangePassword_CheckedChanged(object sender, EventArgs e)
+        private void materialCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (chkChangePassword.Checked == true)
             {

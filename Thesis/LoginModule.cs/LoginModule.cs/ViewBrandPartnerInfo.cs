@@ -13,6 +13,8 @@ namespace LoginModule.cs
 {
     public partial class ViewBrandPartnerInfo : MaterialSkin.Controls.MaterialForm
     {
+        private string tempPass;
+
         public ViewBrandPartnerInfo(string label15)
         {
             InitializeComponent();
@@ -49,6 +51,7 @@ namespace LoginModule.cs
             textBox9.Text = read["col_user"].ToString();
 
             textBox10.Text = read["col_password"].ToString();
+            tempPass = textBox10.Text;
             }
 
             conn.Close();
@@ -93,7 +96,7 @@ namespace LoginModule.cs
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox9.Text) ||
-                string.IsNullOrWhiteSpace(textBox10.Text) ||
+                (string.IsNullOrWhiteSpace(txtConfirmPass.Text) && txtConfirmPass.Enabled == true) ||
                 string.IsNullOrWhiteSpace(textBox3.Text) ||
                 string.IsNullOrWhiteSpace(textBox1.Text) ||
                 string.IsNullOrWhiteSpace(textBox2.Text) ||
@@ -106,7 +109,7 @@ namespace LoginModule.cs
             {
                 MessageBox.Show("Please don't leave any blank field(s).");
             }
-            else if (textBox10.Text != txtConfirmPass.Text)
+            else if (textBox10.Text != txtConfirmPass.Text && textBox10.Enabled == true)
             {
                 MessageBox.Show("Password does not match the confirm password.");
             }
@@ -185,6 +188,23 @@ namespace LoginModule.cs
         private void txtConfirmPass_TextChanged(object sender, EventArgs e)
         {
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
+        }
+
+        private void chkChangePassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkChangePassword.Checked == true)
+            {
+                textBox10.Text = "";
+                textBox10.Enabled = true;
+                txtConfirmPass.Enabled = true;
+            }
+            else
+            {
+                textBox10.Text = tempPass;
+                textBox10.Enabled = false;
+                txtConfirmPass.Enabled = false;
+                txtConfirmPass.Text = "";
+            }
         }
     }
 }

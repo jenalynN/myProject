@@ -1278,5 +1278,11 @@ namespace LoginModule.cs
         {
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
         }
+
+        private void materialRaisedButton4_Click(object sender, EventArgs e)
+        {
+            new viewAdminAccount().Show();
+            this.Hide();
+        }
     }
 }
