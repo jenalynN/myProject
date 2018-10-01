@@ -22,6 +22,9 @@ namespace LoginModule.cs
             displayDate();
             TransactionOutput();
             TodaysSales();
+            check(); 
+            textBox6.Visible = true;
+            label25.Visible = true;
         }
         public void displayDate()
         {
@@ -378,6 +381,7 @@ namespace LoginModule.cs
         }
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
             if (tbSearchItem.Text == "")
             {
@@ -388,9 +392,70 @@ namespace LoginModule.cs
                 searchProduct();
             }
         }
+        private void updatespecifiedorder() 
+        {
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+           
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_staticquantity,col_status) " +
+                    "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
+                    "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" + textBox9.Text + "','"+textBox6.Text+"','pending-refund')";
+
+                command2.ExecuteScalar();
+
+                conn.Close();
+        //insert
+        }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
-            inserttopending();
+            int a, b;
+            bool isAValid = int.TryParse(textBox5.Text, out a);
+            bool isBValid = int.TryParse(textBox6.Text, out b);
+
+            if (isAValid && isBValid)
+            {
+                if (a >= b)
+                {
+                inserttopending();
+                }
+                else if (a < b) 
+                {
+                    MessageBox.Show("The item you are returning is more than the item you bought","Message");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Unable to return items");
+            
+            }
+        }
+        private void inserttopending()
+        {
+            if (comboBox1.SelectedItem == "Change")
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+
+                string query = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_status) " +
+                    "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
+                    "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" + textBox9.Text + "','pending-change')";
+
+                command2.CommandText = query;
+                command2.ExecuteNonQuery();
+                conn.Close();
+            }
+            else if (comboBox1.SelectedItem == "Refund")
+            {
+                textBox6.Visible = true;
+                label25.Visible = true;
+                updatespecifiedorder();
+            }
+            //update with correct minus of product
+            //insert
+
+
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -632,31 +697,21 @@ namespace LoginModule.cs
                 textBox7.Text = read["col_staticprice"].ToString();
             }
             conn.Close();
-         
         }
-        private void inserttopending()
+        private void check() 
         {
-            if (comboBox1.SelectedItem == "Change")
+            if (comboBox1.SelectedItem== "Change")
             {
-                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                conn.Open();
-                MySqlCommand command2 = conn.CreateCommand();
-
-                string query = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_status) " +
-                    "values ((Select col_transactionid from tbl_transaction where col_transactioncode='"+textBox8.Text+"')," +
-                    "(Select col_orderid from tbl_order where col_orderid = '"+textBox2.Text+"'),'"+textBox9.Text + "','pending-change')";
-
-                command2.CommandText = query;
-                command2.ExecuteNonQuery();
-                conn.Close();
+                textBox6.Visible = false;
+                label25.Visible = false;
             }
-            else 
+            else if (comboBox1.SelectedItem == "Refund")
             {
-            //update with correct minus of product
-            //insert
-            
+                textBox6.Visible = true;
+                label25.Visible = true;
             }
         }
+     
         private void materialListView4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -676,10 +731,22 @@ namespace LoginModule.cs
             e.Handled = true;
 
         }
+        public void SubtractQuantityForDamage() 
+        {
 
+            int a, b;
+            bool isAValid = int.TryParse(textBox5.Text, out a);
+            bool isBValid = int.TryParse(textBox6.Text, out b);
+
+            if (isAValid && isBValid)
+            {
+                textBox10.Text = (a - b).ToString();
+            }
+        }
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
             new DataHandling().numbersOnlyTrap_TextChanged(sender, e);
+            SubtractQuantityForDamage();
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
@@ -705,6 +772,11 @@ namespace LoginModule.cs
         private void materialListView3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            check();
         }
     }
 }

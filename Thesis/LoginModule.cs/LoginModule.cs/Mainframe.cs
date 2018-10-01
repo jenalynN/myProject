@@ -22,6 +22,7 @@ namespace LoginModule.cs
         }
         public void launch() 
         {
+            viewdamageid();
             dataproductunarchived();
             dataproductarchived();
             countunarchiveditems();
@@ -1278,8 +1279,90 @@ namespace LoginModule.cs
         {
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
         }
+        private void viewdamageid()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
-        private void materialRaisedButton4_Click(object sender, EventArgs e)
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "SELECT * FROM tbl_damage d " +
+                            "inner join tbl_order o " +
+                            "on d.col_orderid = o.col_orderid " +
+                            "inner join tbl_product p " + 
+                            "on p.col_productid = o.col_productid ";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_damageitemid"].ToString());
+
+                    items.SubItems.Add(read["col_orderid"].ToString());
+                    //items.SubItems.Add(read["col_transactionid"].ToString());
+                    items.SubItems.Add(read["col_productcode"].ToString());
+                    items.SubItems.Add(read["col_productname"].ToString());
+                    //items.SubItems.Add(read["col_staticquantity"].ToString());
+                    //items.SubItems.Add(read["col_reason"].ToString());
+                    items.SubItems.Add(read["col_status"].ToString()); 
+
+                    materialListView11.Items.Add(items);
+                    materialListView11.FullRowSelect = true;
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());  
+            }
+        }
+        private void printdamageid()
+        {
+
+            int data = 0;
+            ListViewItem list = materialListView11.SelectedItems[data];
+            String id = list.SubItems[0].Text;
+            label3.Text = id.ToString();
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+            string query = "SELECT * FROM tbl_damage d " +
+                     "inner join tbl_order o " +
+                     "on d.col_orderid = o.col_orderid " +
+                     "inner join tbl_product p " +
+                     "on p.col_productid = o.col_productid where col_damageitemid='"+label3.Text+"'";
+            conn.Open();
+            MySqlCommand command2 = conn.CreateCommand();
+            command2.CommandText = query;
+            MySqlDataReader read = command2.ExecuteReader();
+            while (read.Read())
+            {
+                label18.Text = read["col_orderid"].ToString();
+                label24.Text = read["col_staticquantity"].ToString();
+                label30.Text = read["col_status"].ToString();
+
+                
+            }
+            conn.Close();
+        }
+        private void materialFlatButton3_Click(object sender, EventArgs e)
+        {
+
+
+            //MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+            //MySqlCommand command3 = conn.CreateCommand();
+            //command3.CommandText = "UPDATE tbl_order SET " +
+            //    "col_quantitybought=(Select col_staticquantity from tbl_damage where col_damageid='" + +"')";
+            //MessageBox.Show(command3.CommandText);
+            //command3.ExecuteScalar();
+
+        }
+
+        private void materialListView11_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            printdamageid();
+        }
+		
+		private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
             new viewAdminAccount().Show();
             this.Hide();

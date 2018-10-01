@@ -219,6 +219,16 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -264,6 +274,7 @@
             this.Logs.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.Settings.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -953,6 +964,7 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.groupBox17);
             this.tabPage12.Controls.Add(this.groupBox6);
             this.tabPage12.Controls.Add(this.groupBox26);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
@@ -970,9 +982,9 @@
             this.groupBox6.Controls.Add(this.materialFlatButton5);
             this.groupBox6.Controls.Add(this.materialFlatButton3);
             this.groupBox6.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(1058, 6);
+            this.groupBox6.Location = new System.Drawing.Point(950, 268);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(126, 153);
+            this.groupBox6.Size = new System.Drawing.Size(234, 153);
             this.groupBox6.TabIndex = 61;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Actions";
@@ -983,7 +995,7 @@
             this.materialFlatButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton5.Depth = 0;
             this.materialFlatButton5.Icon = null;
-            this.materialFlatButton5.Location = new System.Drawing.Point(24, 85);
+            this.materialFlatButton5.Location = new System.Drawing.Point(125, 47);
             this.materialFlatButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton5.Name = "materialFlatButton5";
@@ -1008,6 +1020,7 @@
             this.materialFlatButton3.TabIndex = 0;
             this.materialFlatButton3.Text = "Confirm";
             this.materialFlatButton3.UseVisualStyleBackColor = true;
+            this.materialFlatButton3.Click += new System.EventHandler(this.materialFlatButton3_Click);
             // 
             // groupBox26
             // 
@@ -1017,7 +1030,7 @@
             this.groupBox26.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox26.Location = new System.Drawing.Point(8, 6);
             this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Size = new System.Drawing.Size(1044, 524);
+            this.groupBox26.Size = new System.Drawing.Size(936, 524);
             this.groupBox26.TabIndex = 60;
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "Return Item Logs";
@@ -1043,6 +1056,7 @@
             this.materialListView11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.materialListView11.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader67,
+            this.columnHeader5,
             this.columnHeader68,
             this.columnHeader69,
             this.columnHeader3});
@@ -1056,10 +1070,11 @@
             this.materialListView11.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView11.Name = "materialListView11";
             this.materialListView11.OwnerDraw = true;
-            this.materialListView11.Size = new System.Drawing.Size(1032, 433);
+            this.materialListView11.Size = new System.Drawing.Size(918, 361);
             this.materialListView11.TabIndex = 42;
             this.materialListView11.UseCompatibleStateImageBehavior = false;
             this.materialListView11.View = System.Windows.Forms.View.Details;
+            this.materialListView11.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView11_MouseDoubleClick);
             // 
             // columnHeader67
             // 
@@ -2545,6 +2560,112 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
+            // groupBox17
+            // 
+            this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox17.BackColor = System.Drawing.Color.White;
+            this.groupBox17.Controls.Add(this.label30);
+            this.groupBox17.Controls.Add(this.label29);
+            this.groupBox17.Controls.Add(this.label24);
+            this.groupBox17.Controls.Add(this.label23);
+            this.groupBox17.Controls.Add(this.label18);
+            this.groupBox17.Controls.Add(this.label17);
+            this.groupBox17.Controls.Add(this.label3);
+            this.groupBox17.Controls.Add(this.label4);
+            this.groupBox17.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox17.Location = new System.Drawing.Point(950, 6);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(234, 256);
+            this.groupBox17.TabIndex = 62;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Table Information";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(174, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 23);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "SI";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(129, 23);
+            this.label4.TabIndex = 63;
+            this.label4.Text = "Refundable Qty";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(12, 85);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(93, 23);
+            this.label17.TabIndex = 65;
+            this.label17.Text = "Damage Id";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(174, 121);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(24, 23);
+            this.label18.TabIndex = 66;
+            this.label18.Text = "SI";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(12, 193);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(58, 23);
+            this.label23.TabIndex = 67;
+            this.label23.Text = "Status";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(174, 157);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(24, 23);
+            this.label24.TabIndex = 68;
+            this.label24.Text = "SI";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(12, 121);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(76, 23);
+            this.label29.TabIndex = 69;
+            this.label29.Text = "Order Id";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(174, 193);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(24, 23);
+            this.label30.TabIndex = 70;
+            this.label30.Text = "SI";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.DisplayIndex = 1;
+            this.columnHeader5.Text = "Order Id";
+            this.columnHeader5.Width = 150;
+            // 
             // Mainframe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2627,6 +2748,8 @@
             this.groupBox5.PerformLayout();
             this.Settings.ResumeLayout(false);
             this.Settings.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2824,5 +2947,15 @@
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
