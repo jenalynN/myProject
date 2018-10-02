@@ -242,17 +242,21 @@ namespace LoginModule.cs
                 conn.Close();
 
 
+                
+
+                printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("custom", 400, 800);
+                printPreviewDialog1.Size = new System.Drawing.Size(400, 800);
+                printPreviewDialog1.ShowDialog();
+
                 MessageBox.Show("Transaction Saved!");
                 materialListView1.Items.Clear();
                 materialListView2.Items.Clear();
                 labelTotalSales.Text = "0.00";
                 tbAmount.Text = "0.00";
                 labelChange.Text = "0.00";
-
-
-                TransactionModule a = new TransactionModule(label17.Text);
-                a.Show();
-                this.Hide();
+                //TransactionModule a = new TransactionModule(label17.Text);
+                //a.Show();
+                //this.Hide();
 
             }
         }
@@ -777,6 +781,53 @@ namespace LoginModule.cs
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             check();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            int ii = 1;
+            int startX, startY, Offset;
+            int total = 0;
+            startX = 10;
+            startY = 150;
+            Offset = 0;
+
+            e.Graphics.DrawString(" Posh Concept Store", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 10);
+            e.Graphics.DrawString(" #40 Salinas Drive Lahug Cebu City", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20+20);
+            e.Graphics.DrawString(" Sales Invoice No.", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20+40);
+            e.Graphics.DrawString(" " + label2.Text + " " + label7.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20+60);
+            e.Graphics.DrawString(" Cashier ID: " + label17.Text , new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20+80);
+            e.Graphics.DrawString(" ========================================= ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + 100);
+
+            for (int i = 0; i < materialListView1.Items.Count; i++)
+            {
+                // Not sure what/why these two are here 
+                startX += i;
+                startY += ii++;
+
+                // Draw the row details for ? receipt 
+                e.Graphics.DrawString(" " + 
+                    materialListView1.Items[i].SubItems[2].Text + "\t" +
+                    materialListView1.Items[i].SubItems[5].Text + "\t" +
+                    materialListView1.Items[i].SubItems[6].Text + "\t" +
+                    materialListView1.Items[i].SubItems[7].Text
+                  , new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
+
+                // Move the next print position 'down the page' ie, y axis increases from top to bottom
+                Offset = Offset + 20;
+
+                //total += int.Parse(materialListView1.Items[i].SubItems[2].Text.ToString());
+
+            }
+                Offset += 20;
+                e.Graphics.DrawString(" \t\tTotal:\t" +
+                    labelTotalSales.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
+                Offset += 20;
+                e.Graphics.DrawString(" \t\tTender Amount:\t" +
+                    tbAmount.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
+                Offset += 20;
+                e.Graphics.DrawString(" \t\tChange:\t" +
+                    labelChange.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
         }
     }
 }
