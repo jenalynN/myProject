@@ -120,29 +120,22 @@ namespace LoginModule.cs
                     MessageBox.Show("Invalid username & password. ");
                 }
             }
-
-
         }
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
 
             log();
         }
-        
-
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
             log();
         }
-
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
-           
             if (e.KeyCode == Keys.Enter)
             {
                 try
@@ -153,11 +146,8 @@ namespace LoginModule.cs
                 {
                     MessageBox.Show(elog.ToString());
                 }
-
             }
-            
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             new DataHandling().alphanumericTrap_TextChanged(sender, e);

@@ -249,14 +249,18 @@ namespace LoginModule.cs
                 printPreviewDialog1.ShowDialog();
 
                 MessageBox.Show("Transaction Saved!");
+                
+
+
+                TransactionModule a = new TransactionModule(label17.Text);
+                a.Show();
+                this.Hide();
+
                 materialListView1.Items.Clear();
                 materialListView2.Items.Clear();
                 labelTotalSales.Text = "0.00";
                 tbAmount.Text = "0.00";
                 labelChange.Text = "0.00";
-                //TransactionModule a = new TransactionModule(label17.Text);
-                //a.Show();
-                //this.Hide();
 
             }
         }
@@ -407,12 +411,28 @@ namespace LoginModule.cs
                     "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" + textBox9.Text + "','"+textBox6.Text+"','pending-refund')";
 
                 command2.ExecuteScalar();
-
                 conn.Close();
-        //insert
+                MessageBox.Show("Product successfully added to the pending process for refund");
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
+                textBox5.Clear();
+                textBox6.Clear();
+                textBox7.Clear();
+                textBox9.Clear();
+                textBox10.Clear();
+                comboBox1.Text = "";
+                materialListView4.Items.Clear();
+                textBox8.Clear();
+                materialListView3.Items.Clear();
         }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedItem == "Change")
+            {
+                inserttopending();
+            }
+            else if(comboBox1.SelectedItem=="Refund"){
             int a, b;
             bool isAValid = int.TryParse(textBox5.Text, out a);
             bool isBValid = int.TryParse(textBox6.Text, out b);
@@ -433,6 +453,7 @@ namespace LoginModule.cs
                 MessageBox.Show("Unable to return items");
             
             }
+            }
         }
         private void inserttopending()
         {
@@ -445,10 +466,22 @@ namespace LoginModule.cs
                 string query = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_status) " +
                     "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
                     "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" + textBox9.Text + "','pending-change')";
-
                 command2.CommandText = query;
                 command2.ExecuteNonQuery();
                 conn.Close();
+                MessageBox.Show("Product successfully added to the pending process for change item");
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
+                textBox5.Clear();
+                textBox6.Clear();
+                textBox7.Clear();
+                textBox9.Clear();
+                textBox10.Clear();
+                comboBox1.Text = "";
+                materialListView4.Items.Clear();
+                textBox8.Clear();
+                materialListView3.Items.Clear();
             }
             else if (comboBox1.SelectedItem == "Refund")
             {
@@ -456,9 +489,10 @@ namespace LoginModule.cs
                 label25.Visible = true;
                 updatespecifiedorder();
             }
-            //update with correct minus of product
-            //insert
-
+            else 
+            {
+                MessageBox.Show("Unable to return item /n Return item as?");
+            }
 
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -518,39 +552,29 @@ namespace LoginModule.cs
                 TransactionDelete();
             }
             TransactionModule a = new TransactionModule(label17.Text);
-
-            
-
-
         }
         private void tbQuantity_TextChanged(object sender, EventArgs e)
         {
             new DataHandling().numbersOnlyTrap_TextChanged(sender, e);
-
             subtotal();
         }
         private void materialListView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             printorderid();
         }
-
         private void btnPurchase_Click(object sender, EventArgs e)
         {
-                InsertTransactionTotalAmount();
-            
+                InsertTransactionTotalAmount();   
         }
-
         private void materialFlatButton4_Click(object sender, EventArgs e)
         {
             ChangePassword a = new ChangePassword(label17.Text);
             a.Show();
         }
-
         private void materialDivider2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void TransactionModule_Load(object sender, EventArgs e)
         {
 
@@ -562,7 +586,6 @@ namespace LoginModule.cs
             printitemdetails();
             
         }
-
         private void btnAddtoCart_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbQuantity.Text))
@@ -578,9 +601,7 @@ namespace LoginModule.cs
                 InsertOrder();
                 viewOrder();
             }
-
         }
-
         private void btnRemovefromCart_Click(object sender, EventArgs e)
         {
             remove();
@@ -786,18 +807,38 @@ namespace LoginModule.cs
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             int ii = 1;
-            int startX, startY, Offset;
-            int total = 0;
+            int startX, startY, Offset, offsetHead;
+            //int total = 0;
             startX = 10;
-            startY = 150;
+            
             Offset = 0;
+            offsetHead = 20;
+            e.Graphics.DrawString(" \t\tPosh Concept Store", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20);
+            offsetHead += 20;
+            e.Graphics.DrawString(" \t#40 Salinas Drive ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            offsetHead += 20;
+            e.Graphics.DrawString(" \tLahug Cebu City ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            offsetHead += 20;
+            e.Graphics.DrawString(" \tCebu 6000 ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            offsetHead += 20;
+            e.Graphics.DrawString(" ===================================== ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            offsetHead += 20;
+            e.Graphics.DrawString(" " + label2.Text + " " + label7.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            offsetHead += 20;
+            e.Graphics.DrawString(" Sales Invoice No." + labelTransactionCode.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            offsetHead += 20;
+            e.Graphics.DrawString(" Cashier ID: " + label17.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            offsetHead += 20;
+            e.Graphics.DrawString(" ===================================== ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            offsetHead += 20;
+            e.Graphics.DrawString(" " +
+                "ProdCode" + "\t" +
+                "Qty" + "\t" +
+                "Price" + "\t" +
+                "Sub total"
+              , new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
 
-            e.Graphics.DrawString(" Posh Concept Store", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 10);
-            e.Graphics.DrawString(" #40 Salinas Drive Lahug Cebu City", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20+20);
-            e.Graphics.DrawString(" Sales Invoice No.", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20+40);
-            e.Graphics.DrawString(" " + label2.Text + " " + label7.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20+60);
-            e.Graphics.DrawString(" Cashier ID: " + label17.Text , new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20+80);
-            e.Graphics.DrawString(" ========================================= ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + 100);
+            startY = offsetHead + 40;
 
             for (int i = 0; i < materialListView1.Items.Count; i++)
             {
@@ -807,7 +848,7 @@ namespace LoginModule.cs
 
                 // Draw the row details for ? receipt 
                 e.Graphics.DrawString(" " + 
-                    materialListView1.Items[i].SubItems[2].Text + "\t" +
+                    materialListView1.Items[i].SubItems[2].Text + "\t\t" +
                     materialListView1.Items[i].SubItems[5].Text + "\t" +
                     materialListView1.Items[i].SubItems[6].Text + "\t" +
                     materialListView1.Items[i].SubItems[7].Text
@@ -818,16 +859,24 @@ namespace LoginModule.cs
 
                 //total += int.Parse(materialListView1.Items[i].SubItems[2].Text.ToString());
 
-            }
+        }
+                Offset += 20;
+                e.Graphics.DrawString(" =================================== ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
                 Offset += 20;
                 e.Graphics.DrawString(" \t\tTotal:\t" +
                     labelTotalSales.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
                 Offset += 20;
-                e.Graphics.DrawString(" \t\tTender Amount:\t" +
+                e.Graphics.DrawString(" \tTender Amount:\t" +
                     tbAmount.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
                 Offset += 20;
                 e.Graphics.DrawString(" \t\tChange:\t" +
                     labelChange.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
-        }
     }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+}
 }

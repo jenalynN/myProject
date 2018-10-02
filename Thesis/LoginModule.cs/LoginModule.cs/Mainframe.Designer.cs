@@ -95,22 +95,15 @@
             this.materialFlatButton5 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.materialListView11 = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader67 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader68 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader69 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.materialListView13 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader75 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader76 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader77 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.materialTabSelector3 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl3 = new MaterialSkin.Controls.MaterialTabControl();
@@ -218,17 +211,19 @@
             this.materialDivider34 = new MaterialSkin.Controls.MaterialDivider();
             this.Logs = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.materialListView10 = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader60 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.Settings = new System.Windows.Forms.TabPage();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -988,9 +983,9 @@
             this.groupBox17.Controls.Add(this.label3);
             this.groupBox17.Controls.Add(this.label4);
             this.groupBox17.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.Location = new System.Drawing.Point(950, 6);
+            this.groupBox17.Location = new System.Drawing.Point(909, 6);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(234, 256);
+            this.groupBox17.Size = new System.Drawing.Size(275, 256);
             this.groupBox17.TabIndex = 62;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Table Information";
@@ -999,7 +994,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(174, 193);
+            this.label30.Location = new System.Drawing.Point(174, 181);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(24, 23);
             this.label30.TabIndex = 70;
@@ -1009,7 +1004,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(12, 121);
+            this.label29.Location = new System.Drawing.Point(12, 94);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(76, 23);
             this.label29.TabIndex = 69;
@@ -1019,7 +1014,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(174, 157);
+            this.label24.Location = new System.Drawing.Point(174, 137);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(24, 23);
             this.label24.TabIndex = 68;
@@ -1029,7 +1024,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(12, 193);
+            this.label23.Location = new System.Drawing.Point(12, 181);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(58, 23);
             this.label23.TabIndex = 67;
@@ -1039,7 +1034,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(174, 121);
+            this.label18.Location = new System.Drawing.Point(174, 94);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(24, 23);
             this.label18.TabIndex = 66;
@@ -1049,7 +1044,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(12, 85);
+            this.label17.Location = new System.Drawing.Point(12, 56);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(93, 23);
             this.label17.TabIndex = 65;
@@ -1059,7 +1054,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(174, 85);
+            this.label3.Location = new System.Drawing.Point(174, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 23);
             this.label3.TabIndex = 64;
@@ -1069,7 +1064,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 157);
+            this.label4.Location = new System.Drawing.Point(12, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 23);
             this.label4.TabIndex = 63;
@@ -1082,9 +1077,9 @@
             this.groupBox6.Controls.Add(this.materialFlatButton5);
             this.groupBox6.Controls.Add(this.materialFlatButton3);
             this.groupBox6.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(950, 268);
+            this.groupBox6.Location = new System.Drawing.Point(909, 268);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(234, 153);
+            this.groupBox6.Size = new System.Drawing.Size(275, 113);
             this.groupBox6.TabIndex = 61;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Actions";
@@ -1095,7 +1090,7 @@
             this.materialFlatButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton5.Depth = 0;
             this.materialFlatButton5.Icon = null;
-            this.materialFlatButton5.Location = new System.Drawing.Point(125, 47);
+            this.materialFlatButton5.Location = new System.Drawing.Point(157, 47);
             this.materialFlatButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton5.Name = "materialFlatButton5";
@@ -1111,7 +1106,7 @@
             this.materialFlatButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton3.Depth = 0;
             this.materialFlatButton3.Icon = null;
-            this.materialFlatButton3.Location = new System.Drawing.Point(16, 47);
+            this.materialFlatButton3.Location = new System.Drawing.Point(38, 47);
             this.materialFlatButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton3.Name = "materialFlatButton3";
@@ -1124,32 +1119,17 @@
             // 
             // groupBox26
             // 
-            this.groupBox26.Controls.Add(this.comboBox9);
+            this.groupBox26.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox26.Controls.Add(this.materialListView11);
-            this.groupBox26.Controls.Add(this.materialLabel1);
             this.groupBox26.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox26.Location = new System.Drawing.Point(8, 6);
+            this.groupBox26.Location = new System.Drawing.Point(6, 6);
             this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Size = new System.Drawing.Size(936, 524);
+            this.groupBox26.Size = new System.Drawing.Size(897, 453);
             this.groupBox26.TabIndex = 60;
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "Return Item Logs";
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Items.AddRange(new object[] {
-            "ID",
-            "Code",
-            "Category",
-            "Brandname"});
-            this.comboBox9.Location = new System.Drawing.Point(123, 47);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(85, 31);
-            this.comboBox9.TabIndex = 46;
             // 
             // materialListView11
             // 
@@ -1165,12 +1145,12 @@
             this.materialListView11.FullRowSelect = true;
             this.materialListView11.GridLines = true;
             this.materialListView11.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView11.Location = new System.Drawing.Point(6, 85);
+            this.materialListView11.Location = new System.Drawing.Point(6, 36);
             this.materialListView11.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView11.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView11.Name = "materialListView11";
             this.materialListView11.OwnerDraw = true;
-            this.materialListView11.Size = new System.Drawing.Size(918, 361);
+            this.materialListView11.Size = new System.Drawing.Size(885, 410);
             this.materialListView11.TabIndex = 42;
             this.materialListView11.UseCompatibleStateImageBehavior = false;
             this.materialListView11.View = System.Windows.Forms.View.Details;
@@ -1202,20 +1182,6 @@
             this.columnHeader3.Text = "Status";
             this.columnHeader3.Width = 230;
             // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(6, 53);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(111, 19);
-            this.materialLabel1.TabIndex = 32;
-            this.materialLabel1.Text = "Search Options";
-            // 
             // tabPage13
             // 
             this.tabPage13.Controls.Add(this.groupBox30);
@@ -1232,9 +1198,7 @@
             this.groupBox30.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox30.Controls.Add(this.comboBox11);
             this.groupBox30.Controls.Add(this.materialListView13);
-            this.groupBox30.Controls.Add(this.materialLabel3);
             this.groupBox30.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox30.Location = new System.Drawing.Point(6, 6);
             this.groupBox30.Name = "groupBox30";
@@ -1243,22 +1207,6 @@
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "Finished Return Item Transactions";
             // 
-            // comboBox11
-            // 
-            this.comboBox11.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.comboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Items.AddRange(new object[] {
-            "ID",
-            "Code",
-            "Category",
-            "Brandname"});
-            this.comboBox11.Location = new System.Drawing.Point(123, 47);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(111, 31);
-            this.comboBox11.TabIndex = 46;
-            // 
             // materialListView13
             // 
             this.materialListView13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1266,9 +1214,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.materialListView13.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader75,
-            this.columnHeader76,
-            this.columnHeader77});
+            this.columnHeader9,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14});
             this.materialListView13.Depth = 0;
             this.materialListView13.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.materialListView13.FullRowSelect = true;
@@ -1283,36 +1233,6 @@
             this.materialListView13.TabIndex = 42;
             this.materialListView13.UseCompatibleStateImageBehavior = false;
             this.materialListView13.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader75
-            // 
-            this.columnHeader75.Text = "Log Id";
-            this.columnHeader75.Width = 200;
-            // 
-            // columnHeader76
-            // 
-            this.columnHeader76.Text = "Activity";
-            this.columnHeader76.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader76.Width = 230;
-            // 
-            // columnHeader77
-            // 
-            this.columnHeader77.Text = "Date";
-            this.columnHeader77.Width = 114;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(6, 53);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(111, 19);
-            this.materialLabel3.TabIndex = 32;
-            this.materialLabel3.Text = "Search Options";
             // 
             // tabPage2
             // 
@@ -2511,45 +2431,14 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox5.Controls.Add(this.textBox5);
-            this.groupBox5.Controls.Add(this.comboBox2);
             this.groupBox5.Controls.Add(this.materialListView10);
-            this.groupBox5.Controls.Add(this.materialLabel8);
             this.groupBox5.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(8, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(664, 596);
+            this.groupBox5.Size = new System.Drawing.Size(1206, 596);
             this.groupBox5.TabIndex = 53;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Activity Logs";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(480, 47);
-            this.textBox5.MaxLength = 30;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(178, 31);
-            this.textBox5.TabIndex = 59;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "ID",
-            "Code",
-            "Category",
-            "Brandname"});
-            this.comboBox2.Location = new System.Drawing.Point(123, 47);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(139, 31);
-            this.comboBox2.TabIndex = 46;
             // 
             // materialListView10
             // 
@@ -2566,12 +2455,12 @@
             this.materialListView10.FullRowSelect = true;
             this.materialListView10.GridLines = true;
             this.materialListView10.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView10.Location = new System.Drawing.Point(6, 85);
+            this.materialListView10.Location = new System.Drawing.Point(6, 36);
             this.materialListView10.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView10.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView10.Name = "materialListView10";
             this.materialListView10.OwnerDraw = true;
-            this.materialListView10.Size = new System.Drawing.Size(652, 505);
+            this.materialListView10.Size = new System.Drawing.Size(1194, 554);
             this.materialListView10.TabIndex = 42;
             this.materialListView10.UseCompatibleStateImageBehavior = false;
             this.materialListView10.View = System.Windows.Forms.View.Details;
@@ -2591,20 +2480,6 @@
             // 
             this.columnHeader60.Text = "Date";
             this.columnHeader60.Width = 114;
-            // 
-            // materialLabel8
-            // 
-            this.materialLabel8.AutoSize = true;
-            this.materialLabel8.Depth = 0;
-            this.materialLabel8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel8.Location = new System.Drawing.Point(6, 53);
-            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(111, 19);
-            this.materialLabel8.TabIndex = 32;
-            this.materialLabel8.Text = "Search Options";
             // 
             // Settings
             // 
@@ -2665,6 +2540,31 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Damage Id";
+            this.columnHeader9.Width = 150;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Order id";
+            this.columnHeader11.Width = 250;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Product Code";
+            this.columnHeader12.Width = 270;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Product Name";
+            this.columnHeader13.Width = 270;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Status";
+            this.columnHeader14.Width = 270;
+            // 
             // Mainframe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2706,10 +2606,8 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox26.ResumeLayout(false);
-            this.groupBox26.PerformLayout();
             this.tabPage13.ResumeLayout(false);
             this.groupBox30.ResumeLayout(false);
-            this.groupBox30.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.materialTabControl3.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
@@ -2746,7 +2644,6 @@
             this.groupBox19.PerformLayout();
             this.Logs.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.Settings.ResumeLayout(false);
             this.Settings.PerformLayout();
             this.ResumeLayout(false);
@@ -2794,11 +2691,9 @@
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboBox2;
         private MaterialSkin.Controls.MaterialListView materialListView10;
         private System.Windows.Forms.ColumnHeader columnHeader49;
         private System.Windows.Forms.ColumnHeader columnHeader50;
-        private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
@@ -2867,7 +2762,6 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.GroupBox groupBox19;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton13;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ColumnHeader columnHeader60;
         private System.Windows.Forms.GroupBox groupBox24;
         private System.Windows.Forms.Label label40;
@@ -2927,20 +2821,13 @@
         private MaterialSkin.Controls.MaterialTabControl materialTabControl6;
         private System.Windows.Forms.TabPage tabPage12;
         private System.Windows.Forms.GroupBox groupBox26;
-        private System.Windows.Forms.ComboBox comboBox9;
         private MaterialSkin.Controls.MaterialListView materialListView11;
         private System.Windows.Forms.ColumnHeader columnHeader67;
         private System.Windows.Forms.ColumnHeader columnHeader68;
         private System.Windows.Forms.ColumnHeader columnHeader69;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.GroupBox groupBox30;
-        private System.Windows.Forms.ComboBox comboBox11;
         private MaterialSkin.Controls.MaterialListView materialListView13;
-        private System.Windows.Forms.ColumnHeader columnHeader75;
-        private System.Windows.Forms.ColumnHeader columnHeader76;
-        private System.Windows.Forms.ColumnHeader columnHeader77;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.GroupBox groupBox6;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton5;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
@@ -2956,5 +2843,10 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
     }
 }

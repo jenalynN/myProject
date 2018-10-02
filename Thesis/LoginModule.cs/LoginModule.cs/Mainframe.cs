@@ -23,6 +23,7 @@ namespace LoginModule.cs
         public void launch() 
         {
             viewdamageid();
+            viewfinishdamage();
             dataproductunarchived();
             dataproductarchived();
             countunarchiveditems();
@@ -168,7 +169,6 @@ namespace LoginModule.cs
         }
         public void countarchiveditems()
         {
-
             try
             {
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
@@ -1285,14 +1285,14 @@ namespace LoginModule.cs
             try
             {
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-
+                materialListView11.Items.Clear();
                 conn.Open();
                 MySqlCommand command = conn.CreateCommand();
                 string query = "SELECT * FROM tbl_damage d " +
                             "inner join tbl_order o " +
                             "on d.col_orderid = o.col_orderid " +
                             "inner join tbl_product p " + 
-                            "on p.col_productid = o.col_productid ";
+                            "on p.col_productid = o.col_productid where d.col_status='pending-change' OR d.col_status='pending-refund'";
                 command.CommandText = query;
                 MySqlDataReader read = command.ExecuteReader();
                 while (read.Read())
@@ -1344,20 +1344,80 @@ namespace LoginModule.cs
             }
             conn.Close();
         }
+        public void viewfinishdamage()
+        {
+             try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                materialListView13.Items.Clear();
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "SELECT * FROM tbl_damage d " +
+                            "inner join tbl_order o " +
+                            "on d.col_orderid = o.col_orderid " +
+                            "inner join tbl_product p " + 
+                            "on p.col_productid = o.col_productid where d.col_status='Changed' OR d.col_status='Refunded' ";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_damageitemid"].ToString());
+
+                    items.SubItems.Add(read["col_orderid"].ToString());
+                    //items.SubItems.Add(read["col_transactionid"].ToString());
+                    items.SubItems.Add(read["col_productcode"].ToString());
+                    items.SubItems.Add(read["col_productname"].ToString());
+                    //items.SubItems.Add(read["col_staticquantity"].ToString());
+                    //items.SubItems.Add(read["col_reason"].ToString());
+                    items.SubItems.Add(read["col_status"].ToString()); 
+
+                    materialListView13.Items.Add(items);
+                    materialListView13.FullRowSelect = true;
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());  
+            }
+        
+        
+        }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
-
-
-            //MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-
-            //MySqlCommand command3 = conn.CreateCommand();
-            //command3.CommandText = "UPDATE tbl_order SET " +
-            //    "col_quantitybought=(Select col_staticquantity from tbl_damage where col_damageid='" + +"')";
-            //MessageBox.Show(command3.CommandText);
-            //command3.ExecuteScalar();
-
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to confirm", "Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (label30.Text == "pending-change")
+                {
+                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                    conn.Open();
+                    MySqlCommand command3 = conn.CreateCommand();
+                    command3.CommandText = "UPDATE tbl_damage SET col_status='Changed' where col_damageitemid='"+label3.Text+"'";
+                    command3.ExecuteScalar();
+                    viewfinishdamage();
+                    viewdamageid();
+                    MessageBox.Show("Successfully Confirmed");
+                    conn.Close();
+                }
+                else if (label30.Text == "pending-refund")
+                {
+                    MySqlConnection conn2 = new MySqlConnection(ConnectionString.myConnection);
+                    conn2.Open();
+                    MySqlCommand command4 = conn2.CreateCommand();
+                    command4.CommandText = "UPDATE tbl_damage SET col_status='Refunded' where col_damageitemid='"+label3.Text+"'";
+                    command4.ExecuteScalar();
+                    viewdamageid();
+                    viewfinishdamage();
+                    MessageBox.Show("Successfully Confirmed");
+                    conn2.Close();     
+                   }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }
         }
-
         private void materialListView11_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             printdamageid();

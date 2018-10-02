@@ -33,9 +33,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnBack = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -137,7 +134,6 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -172,7 +168,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.btnBack);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox4);
@@ -188,39 +183,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1218, 588);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Transaction";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox6.Controls.Add(this.label3);
-            this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(606, 492);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(271, 83);
-            this.groupBox6.TabIndex = 83;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "# Product Sold Today";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(89, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 23);
-            this.label3.TabIndex = 65;
-            this.label3.Text = "Php";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 23);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "Php";
             // 
             // btnBack
             // 
@@ -287,6 +249,7 @@
             this.groupBox4.TabIndex = 83;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Manage Account";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // label17
             // 
@@ -951,7 +914,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(175, 294);
-            this.textBox6.MaxLength = 2;
+            this.textBox6.MaxLength = 3;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(176, 32);
             this.textBox6.TabIndex = 110;
@@ -1059,7 +1022,6 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -1352,8 +1314,6 @@
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1435,9 +1395,6 @@
         private MaterialSkin.Controls.MaterialFlatButton btnAddtoCart;
         private System.Windows.Forms.TabPage tabPage2;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox9;
         private MaterialSkin.Controls.MaterialListView materialListView4;
         private System.Windows.Forms.ColumnHeader columnHeader13;

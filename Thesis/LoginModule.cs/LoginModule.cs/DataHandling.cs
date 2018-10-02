@@ -25,7 +25,6 @@ namespace LoginModule.cs
             textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^0-9a-zA-Z,\\. ]|(\\.\\.)|(,,)|([ ]{2})", "");
             textboxSender.SelectionStart = cursorPosition;
         }
-
         public void numbersOnlyTrap_TextChanged(object sender, EventArgs e)
         {
             var textboxSender = (TextBox)sender;
@@ -33,14 +32,13 @@ namespace LoginModule.cs
             textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^0-9]", "");
             textboxSender.SelectionStart = cursorPosition;
         }
-
+        
         public void decimalNumberTrap_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
-
             // only allow one decimal point
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
