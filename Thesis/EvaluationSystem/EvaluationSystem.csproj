@@ -59,149 +59,101 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCourse.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AddCourse.cs" />
     <Compile Include="AddCourse.Designer.cs">
       <DependentUpon>AddCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddDept.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AddDept.cs" />
     <Compile Include="AddDept.Designer.cs">
       <DependentUpon>AddDept.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddIns.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AddIns.cs" />
     <Compile Include="AddIns.Designer.cs">
       <DependentUpon>AddIns.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddQuestion .cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AddQuestion .cs" />
     <Compile Include="AddQuestion .Designer.cs">
       <DependentUpon>AddQuestion .cs</DependentUpon>
     </Compile>
-    <Compile Include="AddRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AddRoom.cs" />
     <Compile Include="AddRoom.Designer.cs">
       <DependentUpon>AddRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddSched.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AddSched.cs" />
     <Compile Include="AddSched.Designer.cs">
       <DependentUpon>AddSched.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddSubject.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AddSubject.cs" />
     <Compile Include="AddSubject.Designer.cs">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddYear.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AddYear.cs" />
     <Compile Include="AddYear.Designer.cs">
       <DependentUpon>AddYear.cs</DependentUpon>
     </Compile>
-    <Compile Include="Category.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Category.cs" />
     <Compile Include="Category.Designer.cs">
       <DependentUpon>Category.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeleteEnrollSubject.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="DeleteEnrollSubject.cs" />
     <Compile Include="DeleteEnrollSubject.Designer.cs">
       <DependentUpon>DeleteEnrollSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form1.cs" />
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form2.cs" />
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form3.cs" />
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form4.cs" />
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form5.cs" />
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form6.cs" />
     <Compile Include="Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Info.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Info.cs" />
     <Compile Include="Info.Designer.cs">
       <DependentUpon>Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="InstructorInformation.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="InstructorInformation.cs" />
     <Compile Include="InstructorInformation.Designer.cs">
       <DependentUpon>InstructorInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mainframe.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Mainframe.cs" />
     <Compile Include="Mainframe.Designer.cs">
       <DependentUpon>Mainframe.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Question.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Question.cs" />
     <Compile Include="Question.Designer.cs">
       <DependentUpon>Question.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegisterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="RegisterForm.cs" />
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Reports.cs" />
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentInformation.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="StudentInformation.cs" />
     <Compile Include="StudentInformation.Designer.cs">
       <DependentUpon>StudentInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubjectEnroll.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="SubjectEnroll.cs" />
     <Compile Include="SubjectEnroll.Designer.cs">
       <DependentUpon>SubjectEnroll.cs</DependentUpon>
     </Compile>
