@@ -87,6 +87,7 @@
             this.btnAddtoCart = new MaterialSkin.Controls.MaterialFlatButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.materialFlatButton6 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -130,10 +131,7 @@
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -855,6 +853,14 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Return Form";
             // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(95, 442);
+            this.textBox10.MaxLength = 2;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(45, 32);
+            this.textBox10.TabIndex = 118;
+            // 
             // label28
             // 
             this.label28.AutoSize = true;
@@ -1278,8 +1284,6 @@
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.label15);
-            this.groupBox7.Controls.Add(this.materialFlatButton1);
-            this.groupBox7.Controls.Add(this.materialFlatButton2);
             this.groupBox7.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(6, 6);
             this.groupBox7.Name = "groupBox7";
@@ -1299,40 +1303,6 @@
             this.label15.Text = "CashierId";
             this.label15.Visible = false;
             // 
-            // materialFlatButton1
-            // 
-            this.materialFlatButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(585, 34);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(153, 36);
-            this.materialFlatButton1.TabIndex = 24;
-            this.materialFlatButton1.Text = "Change password";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
-            // 
-            // materialFlatButton2
-            // 
-            this.materialFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Icon = null;
-            this.materialFlatButton2.Location = new System.Drawing.Point(746, 34);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(74, 36);
-            this.materialFlatButton2.TabIndex = 25;
-            this.materialFlatButton2.Text = "Logout";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
-            // 
             // materialTabSelector1
             // 
             this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1346,14 +1316,6 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(95, 442);
-            this.textBox10.MaxLength = 2;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(45, 32);
-            this.textBox10.TabIndex = 118;
             // 
             // TransactionModule
             // 
@@ -1476,8 +1438,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label15;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
         private System.Windows.Forms.ColumnHeader columnHeader21;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox10;

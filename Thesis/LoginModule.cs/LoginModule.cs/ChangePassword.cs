@@ -49,7 +49,7 @@ namespace LoginModule.cs
             "WHERE col_useraccountsid='" + tbuseraccountid.Text + "'";
             command2.CommandText = query;
             command2.ExecuteScalar();
-            MessageBox.Show("oks");
+            MessageBox.Show("Password updated successfully.  ");
             conn2.Close();
 
             this.Hide();

@@ -85,6 +85,7 @@ namespace LoginModule.cs
             ListViewItem list = materialListView1.SelectedItems[data];
             String id = list.SubItems[0].Text;
             label6.Text = id.ToString();
+            materialListView1.Columns[0].Width = 0;
             try
             {
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
