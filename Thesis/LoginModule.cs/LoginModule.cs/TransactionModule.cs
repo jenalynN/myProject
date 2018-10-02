@@ -236,7 +236,7 @@ namespace LoginModule.cs
                 MySqlCommand command3 = conn.CreateCommand();
                 string query2 = "UPDATE tbl_order SET " +
                     "col_orderstatus='Sales' Where col_transactionid = (SELECT col_transactionid from tbl_transaction where col_transactioncode = '" + labelTransactionCode.Text + "')";
-                MessageBox.Show(query2);
+               // MessageBox.Show(query2);
                 command3.CommandText = query2;
                 command3.ExecuteScalar();
                 conn.Close();

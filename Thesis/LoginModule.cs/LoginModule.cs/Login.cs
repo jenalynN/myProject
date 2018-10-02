@@ -69,6 +69,10 @@ namespace LoginModule.cs
                         }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Invalid username & password. ");
+                }
             }
             else if (materialRadioButton2.Checked == true && materialRadioButton1.Checked == false)
             {
@@ -110,6 +114,10 @@ namespace LoginModule.cs
                             textBox2.Clear();
                         }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username & password. ");
                 }
             }
 
