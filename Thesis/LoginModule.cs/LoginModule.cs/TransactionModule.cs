@@ -68,6 +68,7 @@ namespace LoginModule.cs
             {
                 ListViewItem items = new ListViewItem(read["col_productid"].ToString());
                 tbProductCode.Text = (read["col_productcode"].ToString());
+                tbSearchItem.Text = (read["col_productcode"].ToString());
                 tbProductName.Text = (read["col_productname"].ToString());
                 tbBrand.Text = (read["col_brandname"].ToString());
                 tbCategory.Text = (read["col_categoryname"].ToString());
@@ -815,11 +816,11 @@ namespace LoginModule.cs
             offsetHead = 20;
             e.Graphics.DrawString(" \t\tPosh Concept Store", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20);
             offsetHead += 20;
-            e.Graphics.DrawString(" \t#40 Salinas Drive ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            e.Graphics.DrawString(" \t\t#40 Salinas Drive ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
             offsetHead += 20;
-            e.Graphics.DrawString(" \tLahug Cebu City ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            e.Graphics.DrawString(" \t\tLahug Cebu City ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
             offsetHead += 20;
-            e.Graphics.DrawString(" \tCebu 6000 ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
+            e.Graphics.DrawString(" \t\tCebu 6000 ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
             offsetHead += 20;
             e.Graphics.DrawString(" ===================================== ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
             offsetHead += 20;
@@ -833,8 +834,8 @@ namespace LoginModule.cs
             offsetHead += 20;
             e.Graphics.DrawString(" " +
                 "ProdCode" + "\t" +
-                "Qty" + "\t" +
                 "Price" + "\t" +
+                "Qty" + "\t" +
                 "Sub total"
               , new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
 
@@ -863,13 +864,13 @@ namespace LoginModule.cs
                 Offset += 20;
                 e.Graphics.DrawString(" =================================== ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
                 Offset += 20;
-                e.Graphics.DrawString(" \t\tTotal:\t" +
+                e.Graphics.DrawString(" \t\t\tTotal:\t" +
                     labelTotalSales.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
                 Offset += 20;
-                e.Graphics.DrawString(" \tTender Amount:\t" +
+                e.Graphics.DrawString(" \t\tTender Amount:\t" +
                     tbAmount.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
                 Offset += 20;
-                e.Graphics.DrawString(" \t\tChange:\t" +
+                e.Graphics.DrawString(" \t\t\tChange:\t" +
                     labelChange.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
     }
 
@@ -877,6 +878,6 @@ namespace LoginModule.cs
         {
 
         }
-
-}
+        
+    }
 }

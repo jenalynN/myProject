@@ -248,7 +248,6 @@
             this.groupBox4.Size = new System.Drawing.Size(859, 83);
             this.groupBox4.TabIndex = 83;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Manage Account";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // label17
