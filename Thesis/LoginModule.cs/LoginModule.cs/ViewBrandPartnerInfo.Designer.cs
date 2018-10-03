@@ -31,6 +31,7 @@
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkChangePassword = new MaterialSkin.Controls.MaterialCheckBox();
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -62,7 +63,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.chkChangePassword = new MaterialSkin.Controls.MaterialCheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,6 +148,23 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Brand Partner Account";
+            // 
+            // chkChangePassword
+            // 
+            this.chkChangePassword.AutoSize = true;
+            this.chkChangePassword.Depth = 0;
+            this.chkChangePassword.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkChangePassword.Location = new System.Drawing.Point(687, 381);
+            this.chkChangePassword.Margin = new System.Windows.Forms.Padding(0);
+            this.chkChangePassword.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkChangePassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkChangePassword.Name = "chkChangePassword";
+            this.chkChangePassword.Ripple = true;
+            this.chkChangePassword.Size = new System.Drawing.Size(141, 30);
+            this.chkChangePassword.TabIndex = 105;
+            this.chkChangePassword.Text = "Change Password";
+            this.chkChangePassword.UseVisualStyleBackColor = true;
+            this.chkChangePassword.CheckedChanged += new System.EventHandler(this.chkChangePassword_CheckedChanged);
             // 
             // txtConfirmPass
             // 
@@ -289,9 +306,9 @@
             this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(445, 199);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(132, 23);
+            this.label11.Size = new System.Drawing.Size(140, 23);
             this.label11.TabIndex = 86;
-            this.label11.Text = "Brand Contact #";
+            this.label11.Text = "Branch Contact #";
             // 
             // label10
             // 
@@ -299,9 +316,9 @@
             this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(445, 156);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 23);
+            this.label10.Size = new System.Drawing.Size(131, 23);
             this.label10.TabIndex = 85;
-            this.label10.Text = "Brand Address";
+            this.label10.Text = "Branch Address";
             // 
             // label9
             // 
@@ -356,6 +373,7 @@
             this.textBox4.Location = new System.Drawing.Point(606, 114);
             this.textBox4.MaxLength = 30;
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(222, 32);
             this.textBox4.TabIndex = 79;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -457,23 +475,6 @@
             this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 55;
             this.label1.Text = "Firstname";
-            // 
-            // chkChangePassword
-            // 
-            this.chkChangePassword.AutoSize = true;
-            this.chkChangePassword.Depth = 0;
-            this.chkChangePassword.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkChangePassword.Location = new System.Drawing.Point(687, 381);
-            this.chkChangePassword.Margin = new System.Windows.Forms.Padding(0);
-            this.chkChangePassword.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkChangePassword.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkChangePassword.Name = "chkChangePassword";
-            this.chkChangePassword.Ripple = true;
-            this.chkChangePassword.Size = new System.Drawing.Size(141, 30);
-            this.chkChangePassword.TabIndex = 105;
-            this.chkChangePassword.Text = "Change Password";
-            this.chkChangePassword.UseVisualStyleBackColor = true;
-            this.chkChangePassword.CheckedChanged += new System.EventHandler(this.chkChangePassword_CheckedChanged);
             // 
             // ViewBrandPartnerInfo
             // 
