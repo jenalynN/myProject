@@ -59,8 +59,6 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -83,6 +81,12 @@
             this.materialTabControl6 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -104,6 +108,11 @@
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.materialListView13 = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.materialTabSelector3 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl3 = new MaterialSkin.Controls.MaterialTabControl();
@@ -219,11 +228,6 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -611,7 +615,7 @@
             // ActiveProductId
             // 
             this.ActiveProductId.Text = "Product Id";
-            this.ActiveProductId.Width = 0;
+            this.ActiveProductId.Width = 120;
             // 
             // activeProductCode
             // 
@@ -661,8 +665,6 @@
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox10.Controls.Add(this.label9);
             this.groupBox10.Controls.Add(this.label10);
-            this.groupBox10.Controls.Add(this.label11);
-            this.groupBox10.Controls.Add(this.label12);
             this.groupBox10.Controls.Add(this.label13);
             this.groupBox10.Controls.Add(this.label14);
             this.groupBox10.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -692,26 +694,6 @@
             this.label10.Size = new System.Drawing.Size(94, 23);
             this.label10.TabIndex = 54;
             this.label10.Text = "Selected Id";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(173, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(28, 23);
-            this.label11.TabIndex = 53;
-            this.label11.Text = "ES";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 128);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 23);
-            this.label12.TabIndex = 52;
-            this.label12.Text = "Empty Stocks";
             // 
             // label13
             // 
@@ -974,6 +956,12 @@
             // 
             this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox17.BackColor = System.Drawing.Color.White;
+            this.groupBox17.Controls.Add(this.label46);
+            this.groupBox17.Controls.Add(this.label43);
+            this.groupBox17.Controls.Add(this.label42);
+            this.groupBox17.Controls.Add(this.label36);
+            this.groupBox17.Controls.Add(this.label35);
+            this.groupBox17.Controls.Add(this.label31);
             this.groupBox17.Controls.Add(this.label30);
             this.groupBox17.Controls.Add(this.label29);
             this.groupBox17.Controls.Add(this.label24);
@@ -985,26 +973,82 @@
             this.groupBox17.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox17.Location = new System.Drawing.Point(909, 6);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(275, 256);
+            this.groupBox17.Size = new System.Drawing.Size(275, 334);
             this.groupBox17.TabIndex = 62;
             this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Table Information";
+            this.groupBox17.Text = "Info";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(174, 275);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(0, 23);
+            this.label46.TabIndex = 76;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(12, 275);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(122, 23);
+            this.label43.TabIndex = 75;
+            this.label43.Text = "Price per piece";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(174, 227);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(0, 23);
+            this.label42.TabIndex = 74;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(174, 186);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(0, 23);
+            this.label36.TabIndex = 73;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(12, 227);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(123, 23);
+            this.label35.TabIndex = 72;
+            this.label35.Text = "Purchased Qty";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(12, 186);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(114, 23);
+            this.label31.TabIndex = 71;
+            this.label31.Text = "Product Code";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(174, 181);
+            this.label30.Location = new System.Drawing.Point(129, 147);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(24, 23);
+            this.label30.Size = new System.Drawing.Size(0, 23);
             this.label30.TabIndex = 70;
-            this.label30.Text = "SI";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(12, 94);
+            this.label29.Location = new System.Drawing.Point(12, 69);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(76, 23);
             this.label29.TabIndex = 69;
@@ -1014,17 +1058,16 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(174, 137);
+            this.label24.Location = new System.Drawing.Point(174, 109);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(24, 23);
+            this.label24.Size = new System.Drawing.Size(0, 23);
             this.label24.TabIndex = 68;
-            this.label24.Text = "SI";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(12, 181);
+            this.label23.Location = new System.Drawing.Point(12, 147);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(58, 23);
             this.label23.TabIndex = 67;
@@ -1034,17 +1077,16 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(174, 94);
+            this.label18.Location = new System.Drawing.Point(174, 69);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(24, 23);
+            this.label18.Size = new System.Drawing.Size(0, 23);
             this.label18.TabIndex = 66;
-            this.label18.Text = "SI";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(12, 56);
+            this.label17.Location = new System.Drawing.Point(12, 36);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(93, 23);
             this.label17.TabIndex = 65;
@@ -1054,21 +1096,20 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(174, 56);
+            this.label3.Location = new System.Drawing.Point(174, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 23);
+            this.label3.Size = new System.Drawing.Size(0, 23);
             this.label3.TabIndex = 64;
-            this.label3.Text = "SI";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 137);
+            this.label4.Location = new System.Drawing.Point(12, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 23);
+            this.label4.Size = new System.Drawing.Size(159, 23);
             this.label4.TabIndex = 63;
-            this.label4.Text = "Refundable Qty";
+            this.label4.Text = "Return Product Qty";
             // 
             // groupBox6
             // 
@@ -1077,7 +1118,7 @@
             this.groupBox6.Controls.Add(this.materialFlatButton5);
             this.groupBox6.Controls.Add(this.materialFlatButton3);
             this.groupBox6.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(909, 268);
+            this.groupBox6.Location = new System.Drawing.Point(909, 346);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(275, 113);
             this.groupBox6.TabIndex = 61;
@@ -1234,6 +1275,31 @@
             this.materialListView13.UseCompatibleStateImageBehavior = false;
             this.materialListView13.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Damage Id";
+            this.columnHeader9.Width = 150;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Order id";
+            this.columnHeader11.Width = 250;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Product Code";
+            this.columnHeader12.Width = 270;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Product Name";
+            this.columnHeader13.Width = 270;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Status";
+            this.columnHeader14.Width = 270;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
@@ -1377,9 +1443,9 @@
             this.label20.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(6, 128);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(147, 46);
+            this.label20.Size = new System.Drawing.Size(148, 46);
             this.label20.TabIndex = 50;
-            this.label20.Text = "Archived Brand\r\nPartner Accounts ";
+            this.label20.Text = "Unarchived Brand\r\nPartner Accounts ";
             // 
             // groupBox12
             // 
@@ -2474,12 +2540,12 @@
             // 
             this.columnHeader50.Text = "Activity";
             this.columnHeader50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader50.Width = 230;
+            this.columnHeader50.Width = 875;
             // 
             // columnHeader60
             // 
             this.columnHeader60.Text = "Date";
-            this.columnHeader60.Width = 114;
+            this.columnHeader60.Width = 100;
             // 
             // Settings
             // 
@@ -2539,31 +2605,6 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1230, 44);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Damage Id";
-            this.columnHeader9.Width = 150;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Order id";
-            this.columnHeader11.Width = 250;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Product Code";
-            this.columnHeader12.Width = 270;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Product Name";
-            this.columnHeader13.Width = 270;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Status";
-            this.columnHeader14.Width = 270;
             // 
             // Mainframe
             // 
@@ -2795,8 +2836,6 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox9;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton22;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
@@ -2848,5 +2887,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label31;
     }
 }

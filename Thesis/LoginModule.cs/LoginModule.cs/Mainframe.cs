@@ -26,12 +26,163 @@ namespace LoginModule.cs
             viewfinishdamage();
             dataproductunarchived();
             dataproductarchived();
-            countunarchiveditems();
-            countarchiveditems();
             databrandpartneraccountunarchived();
             databrandpartneraccountarchived();
             dataCashierAccountUnarchived();
             dataCashierAccountArchived();
+            viewlogs();
+            countunarchiveditems();
+            countarchiveditems();
+            countunarchivedcash();
+            countarchivedcash();
+            countunarchivedbp();
+            countarchivedbp();
+        }
+        public void countunarchivedbp() 
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+
+                MySqlCommand command2 = conn.CreateCommand();
+                command.Connection = conn;
+                command.CommandText = "select COUNT(col_useraccountsid) AS '" + "countubp" + "' from tbl_useraccounts where col_usertypeid='3' AND col_status='unarchived'";
+
+
+                MySqlDataReader read = command.ExecuteReader();
+
+
+                while (read.Read())
+                {
+                    label19.Text = read["countubp"].ToString();
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
+        }
+        public void countarchivedbp()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+
+                MySqlCommand command2 = conn.CreateCommand();
+                command.Connection = conn;
+                command.CommandText = "select COUNT(col_useraccountsid) AS '" + "countabp" + "' from tbl_useraccounts where col_usertypeid='3' AND col_status='archived'";
+
+
+                MySqlDataReader read = command.ExecuteReader();
+
+
+                while (read.Read())
+                {
+                    label25.Text = read["countabp"].ToString();
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
+        }
+        public void countunarchivedcash()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+
+                MySqlCommand command2 = conn.CreateCommand();
+                command.Connection = conn;
+                command.CommandText = "select COUNT(col_useraccountsid) AS '" + "countuc" + "' from tbl_useraccounts where col_usertypeid='2' AND col_status='unarchived'";
+
+
+                MySqlDataReader read = command.ExecuteReader();
+
+
+                while (read.Read())
+                {
+                    label44.Text = read["countuc"].ToString();
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
+        }
+        public void countarchivedcash()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+
+                MySqlCommand command2 = conn.CreateCommand();
+                command.Connection = conn;
+                command.CommandText = "select COUNT(col_useraccountsid) AS '" + "count" + "' from tbl_useraccounts where col_usertypeid='2' AND col_status='archived'";
+
+
+                MySqlDataReader read = command.ExecuteReader();
+
+
+                while (read.Read())
+                {
+                    label37.Text = read["count"].ToString();
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            { //MessageBox.Show(e.ToString());  
+            }
+        }
+        public void viewlogs()
+        {
+
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                materialListView10.Items.Clear();
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+                string query = "Select * from tbl_logs";
+                command2.CommandText = query;
+                MySqlDataReader read = command2.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_logid"].ToString());
+                    items.SubItems.Add(read["col_activity"].ToString());
+                    items.SubItems.Add(read["col_dateofactivity"].ToString());
+                    materialListView10.Items.Add(items);
+                    materialListView10.FullRowSelect = true;
+                }
+                conn.Close();
+
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+        public void recountbp()
+        {
+            countunarchivedbp();
+            countarchivedbp();
+        }
+        public void recountcash()
+        {
+            countarchivedcash();
+            countunarchivedcash();
         }
         public void databrandpartneraccountarchived() 
         {
@@ -80,6 +231,10 @@ namespace LoginModule.cs
             }
         
         }
+
+       
+
+
         public void printunarchivedproduct()
         {
             int data = 0;
@@ -1062,6 +1217,7 @@ namespace LoginModule.cs
             materialListView3.Items.Clear();
             databrandpartneraccountunarchived();
             databrandpartneraccountarchived();
+            recountbp();
         }
 
         private void materialListView6_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -1125,7 +1281,7 @@ namespace LoginModule.cs
 
             materialListView4.Items.Clear();
             materialListView5.Items.Clear();
-
+            recountcash();
             dataCashierAccountUnarchived();
             dataCashierAccountArchived();
         }
@@ -1155,6 +1311,8 @@ namespace LoginModule.cs
 
             dataCashierAccountUnarchived();
             dataCashierAccountArchived();
+
+            recountcash();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -1215,6 +1373,7 @@ namespace LoginModule.cs
 
             databrandpartneraccountunarchived();
             databrandpartneraccountarchived();
+            recountbp();
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)

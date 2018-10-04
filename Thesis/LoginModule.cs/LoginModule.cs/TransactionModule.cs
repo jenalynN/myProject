@@ -22,15 +22,155 @@ namespace LoginModule.cs
             displayDate();
             TransactionOutput();
             TodaysSales();
-            check(); 
             textBox6.Visible = true;
             label25.Visible = true;
+            viewcashier();
+        }
+        public void viewcashier() 
+        {
+            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            string query = "select col_user from tbl_useraccounts where col_useraccountsid='" + label17.Text + "'";
+            command.CommandText = query;
+            MySqlDataReader read = command.ExecuteReader();
+            while (read.Read())
+            {
+                label3.Text = "Hi, "+(read["col_user"].ToString());
+            }
+            conn.Close();
+        
+        }
+        public void logaddtocart() 
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                string a = "Useraccountsid: " + label17.Text.ToString() + " added  item " + tbProductCode.Text.ToString() + " to the cart in the Transaction Code" + labelTransactionCode.Text.ToString();
+
+                MySqlCommand command2 = conn.CreateCommand();
+
+                    string query = "insert into tbl_logs(col_activity,col_dateofactivity)" +
+                        "values ('" + a + "',now())";
+                    command2.CommandText = query;
+                    command2.ExecuteNonQuery();
+                    conn.Close();
+                    //MessageBox.Show(query);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+
+            }
+        
+        
+        }
+        public void logvoidfromcart()
+        {
+
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                string a = "Useraccountsid: " + label17.Text.ToString() + " voided item " + tbProductCode.Text.ToString() + "from the cart in the Transaction Code" + labelTransactionCode.Text.ToString();
+
+                MySqlCommand command2 = conn.CreateCommand();
+
+                string query = "insert into tbl_logs(col_activity,col_dateofactivity)" +
+                    "values ('" + a + "',now())";
+                command2.CommandText = query;
+                command2.ExecuteNonQuery();
+                conn.Close();
+                //MessageBox.Show(query);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+
+            }
+        }
+        public void logpurchase() 
+        {
+
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                string a = "Useraccountsid: " + label17.Text.ToString() + " added a new transaction " + labelTransactionCode.Text.ToString();
+
+                MySqlCommand command2 = conn.CreateCommand();
+
+                string query = "insert into tbl_logs(col_activity,col_dateofactivity)" +
+                    "values ('" + a + "',now())";
+                command2.CommandText = query;
+                command2.ExecuteNonQuery();
+                conn.Close();
+                //MessageBox.Show(query);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+
+            }
+        }
+        public void logcancel() 
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                string a = "Useraccountsid: " + label17.Text.ToString() + " cancel transaction " + labelTransactionCode.Text.ToString();
+
+                MySqlCommand command2 = conn.CreateCommand();
+
+                string query = "insert into tbl_logs(col_activity,col_dateofactivity)" +
+                    "values ('" + a + "',now())";
+                command2.CommandText = query;
+                command2.ExecuteNonQuery();
+                conn.Close();
+                //MessageBox.Show(query);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+
+            }
+        
+
+        }
+        public void logreturn()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                string a = "Useraccountsid: " + label17.Text.ToString() + " returned item  " + tbProductCode.Text.ToString();
+
+                MySqlCommand command2 = conn.CreateCommand();
+
+                string query = "insert into tbl_logs(col_activity,col_dateofactivity)" +
+                    "values ('" + a + "',now())";
+                command2.CommandText = query;
+                command2.ExecuteNonQuery();
+                conn.Close();
+                //MessageBox.Show(query);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+
+            }
         }
         public void displayDate()
         {
 
             timer1.Start();
             label2.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
+            label16.Text = DateTime.Now.ToString("yyy-MM-dd");
+            label19.Text = DateTime.Now.ToLongTimeString();
             label7.Text = DateTime.Now.ToLongTimeString();
 
         }
@@ -374,6 +514,8 @@ namespace LoginModule.cs
         {
             label7.Text = DateTime.Now.ToLongTimeString();
             label2.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            label16.Text = DateTime.Now.ToString("yyy-MM-dd");
+            label19.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
         }
         private void materialFlatButton2_Click(object sender, EventArgs e)
@@ -403,8 +545,7 @@ namespace LoginModule.cs
         }
         private void updatespecifiedorder() 
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-           
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
                 command2.CommandText = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_staticquantity,col_status) " +
@@ -413,7 +554,24 @@ namespace LoginModule.cs
 
                 command2.ExecuteScalar();
                 conn.Close();
+                conn.Open();
+                MySqlCommand command3 = conn.CreateCommand();
+                command3.CommandText ="UPDATE tbl_order SET " +
+                    "col_subtotal='" +textBox7.Text+"'" +
+                    " WHERE col_orderid='" + textBox2.Text + "'";
+
+                command3.ExecuteScalar();
+                conn.Close();
+                conn.Open();
+                MySqlCommand command4 = conn.CreateCommand();
+                command4.CommandText = "UPDATE tbl_order SET " +
+                    "col_quantitybought='" + textBox6.Text + "'" +
+                    " WHERE col_orderid='" + textBox2.Text + "'";
+
+                command4.ExecuteScalar();
+                conn.Close();
                 MessageBox.Show("Product successfully added to the pending process for refund");
+
                 textBox2.Clear();
                 textBox3.Clear();
                 textBox4.Clear();
@@ -423,6 +581,9 @@ namespace LoginModule.cs
                 textBox9.Clear();
                 textBox10.Clear();
                 comboBox1.Text = "";
+
+                textBox12.Clear();
+                textBox11.Clear();
                 materialListView4.Items.Clear();
                 textBox8.Clear();
                 materialListView3.Items.Clear();
@@ -460,13 +621,14 @@ namespace LoginModule.cs
         {
             if (comboBox1.SelectedItem == "Change")
             {
+                logreturn();
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
 
-                string query = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_status) " +
+                string query = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_staticquantity,col_status) " +
                     "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
-                    "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" + textBox9.Text + "','pending-change')";
+                    "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" + textBox9.Text + "','"+textBox6.Text+"','pending-change')";
                 command2.CommandText = query;
                 command2.ExecuteNonQuery();
                 conn.Close();
@@ -480,6 +642,8 @@ namespace LoginModule.cs
                 textBox9.Clear();
                 textBox10.Clear();
                 comboBox1.Text = "";
+                textBox12.Clear();
+                textBox11.Clear();
                 materialListView4.Items.Clear();
                 textBox8.Clear();
                 materialListView3.Items.Clear();
@@ -488,6 +652,7 @@ namespace LoginModule.cs
             {
                 textBox6.Visible = true;
                 label25.Visible = true;
+                logreturn();
                 updatespecifiedorder();
             }
             else 
@@ -544,6 +709,7 @@ namespace LoginModule.cs
             DialogResult dialog = MessageBox.Show( "Are You sure you want to Cancel the Transaction?", "Message", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
             {
+                logcancel();
                 materialListView1.Items.Clear();
                 materialListView2.Items.Clear();
                 labelTotalSales.Text = "0.00";
@@ -565,6 +731,7 @@ namespace LoginModule.cs
         }
         private void btnPurchase_Click(object sender, EventArgs e)
         {
+            logpurchase();
                 InsertTransactionTotalAmount();   
         }
         private void materialFlatButton4_Click(object sender, EventArgs e)
@@ -599,12 +766,15 @@ namespace LoginModule.cs
             }
             else
             {
+                logaddtocart();
                 InsertOrder();
                 viewOrder();
+                
             }
         }
         private void btnRemovefromCart_Click(object sender, EventArgs e)
         {
+            logvoidfromcart();
             remove();
         }
         public void searchtransaction()
@@ -724,20 +894,6 @@ namespace LoginModule.cs
             }
             conn.Close();
         }
-        private void check() 
-        {
-            if (comboBox1.SelectedItem== "Change")
-            {
-                textBox6.Visible = false;
-                label25.Visible = false;
-            }
-            else if (comboBox1.SelectedItem == "Refund")
-            {
-                textBox6.Visible = true;
-                label25.Visible = true;
-            }
-        }
-     
         private void materialListView4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -760,13 +916,17 @@ namespace LoginModule.cs
         public void SubtractQuantityForDamage() 
         {
 
-            int a, b;
+            int a, b,c,d;
             bool isAValid = int.TryParse(textBox5.Text, out a);
             bool isBValid = int.TryParse(textBox6.Text, out b);
+            bool isCValid = int.TryParse(textBox7.Text, out c);
+            bool isDValid = int.TryParse(textBox12.Text, out d);
 
             if (isAValid && isBValid)
             {
                 textBox10.Text = (a - b).ToString();
+                textBox11.Text = (c * b).ToString();
+                textBox12.Text = ((a - b) * c).ToString();
             }
         }
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -802,7 +962,6 @@ namespace LoginModule.cs
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            check();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

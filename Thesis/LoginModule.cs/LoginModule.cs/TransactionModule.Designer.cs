@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton5 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -85,6 +86,8 @@
             this.btnAddtoCart = new MaterialSkin.Controls.MaterialFlatButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -239,6 +242,7 @@
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.materialFlatButton4);
             this.groupBox4.Controls.Add(this.materialFlatButton5);
@@ -250,15 +254,26 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 23);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "CashierId";
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(6, 41);
+            this.label17.Location = new System.Drawing.Point(192, 34);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(83, 23);
             this.label17.TabIndex = 72;
             this.label17.Text = "CashierId";
+            this.label17.Visible = false;
             // 
             // materialFlatButton4
             // 
@@ -790,6 +805,8 @@
             // groupBox11
             // 
             this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox11.Controls.Add(this.textBox12);
+            this.groupBox11.Controls.Add(this.textBox11);
             this.groupBox11.Controls.Add(this.textBox10);
             this.groupBox11.Controls.Add(this.label28);
             this.groupBox11.Controls.Add(this.textBox9);
@@ -818,13 +835,32 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Return Form";
             // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(110, 442);
+            this.textBox12.MaxLength = 2;
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(45, 32);
+            this.textBox12.TabIndex = 120;
+            this.textBox12.Visible = false;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(212, 442);
+            this.textBox11.MaxLength = 2;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(45, 32);
+            this.textBox11.TabIndex = 119;
+            this.textBox11.Visible = false;
+            // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(95, 442);
+            this.textBox10.Location = new System.Drawing.Point(161, 442);
             this.textBox10.MaxLength = 2;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(45, 32);
             this.textBox10.TabIndex = 118;
+            this.textBox10.Visible = false;
             // 
             // label28
             // 
@@ -1441,5 +1477,8 @@
         private System.Windows.Forms.TextBox textBox10;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
     }
 }
