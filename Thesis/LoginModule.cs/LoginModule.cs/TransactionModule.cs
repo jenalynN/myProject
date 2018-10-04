@@ -783,7 +783,9 @@ namespace LoginModule.cs
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             materialListView3.Items.Clear();
             conn.Open();
-            string query1 = "select * from tbl_transaction where col_transactioncode like  '" + textBox1.Text + "%'";
+            string query1 = "select * from tbl_transaction t " +
+            "inner join tbl_order o on t.col_transactionid = o.col_transactionid " +
+            "where o.col_orderstatus='Sales' AND t.col_transactioncode like  '" + textBox1.Text + "%'";
 
             MySqlCommand command2 = conn.CreateCommand();
             command2.CommandText = query1;
@@ -829,7 +831,7 @@ namespace LoginModule.cs
                 "on p.col_useraccountsid = b.col_useraccountsid " +
                 "inner join tbl_category c " +
                 "on c.col_categoryid = p.col_categoryid " +
-                "where t.col_transactioncode = '" + textBox8.Text + "'";
+                "where t.col_transactioncode = '" + textBox8.Text + "' and o.col_orderstatus='Sales'";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
             
