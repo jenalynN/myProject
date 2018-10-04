@@ -26,15 +26,19 @@ namespace LoginModule.cs
             viewfinishdamage();
             dataproductunarchived();
             dataproductarchived();
+
             databrandpartneraccountunarchived();
             databrandpartneraccountarchived();
+
             dataCashierAccountUnarchived();
             dataCashierAccountArchived();
             viewlogs();
             countunarchiveditems();
             countarchiveditems();
+
             countunarchivedcash();
             countarchivedcash();
+
             countunarchivedbp();
             countarchivedbp();
         }
@@ -1423,36 +1427,64 @@ namespace LoginModule.cs
         {
             try
             {
+                int count = 0;
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 materialListView11.Items.Clear();
                 conn.Open();
                 MySqlCommand command = conn.CreateCommand();
-                string query = "SELECT * FROM tbl_damage d " +
+                string query = "SELECT count(*) as count FROM tbl_damage d " +
                             "inner join tbl_order o " +
                             "on d.col_orderid = o.col_orderid " +
                             "inner join tbl_transaction t " +
                             "on t.col_transactionid = o.col_transactionid " +
-                            "inner join tbl_product p " + 
+                            "inner join tbl_product p " +
                             "on p.col_productid = o.col_productid " +
                             "where d.col_status='pending-change' OR d.col_status='pending-refund'";
                 command.CommandText = query;
                 MySqlDataReader read = command.ExecuteReader();
-                while (read.Read())
-                {
-                    ListViewItem items = new ListViewItem(read["col_damageitemid"].ToString());
-
-                    items.SubItems.Add(read["col_orderid"].ToString());
-                    items.SubItems.Add(read["col_transactioncode"].ToString());
-                    items.SubItems.Add(read["col_productcode"].ToString());
-                    items.SubItems.Add(read["col_productname"].ToString());
-                    //items.SubItems.Add(read["col_staticquantity"].ToString());
-                    //items.SubItems.Add(read["col_reason"].ToString());
-                    items.SubItems.Add(read["col_status"].ToString()); 
-
-                    materialListView11.Items.Add(items);
-                    materialListView11.FullRowSelect = true;
-                }
+                read.Read();
+                count = int.Parse(read[0].ToString());
                 conn.Close();
+                 
+                if (count > 0)
+                {
+                    
+                    conn.Open();
+                    command = conn.CreateCommand();
+                    query = "SELECT * FROM tbl_damage d " +
+                                "inner join tbl_order o " +
+                                "on d.col_orderid = o.col_orderid " +
+                                "inner join tbl_transaction t " +
+                                "on t.col_transactionid = o.col_transactionid " +
+                                "inner join tbl_product p " +
+                                "on p.col_productid = o.col_productid " +
+                                "where d.col_status='pending-change' OR d.col_status='pending-refund'";
+                    command.CommandText = query;
+                    read = command.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        ListViewItem items = new ListViewItem(read["col_damageitemid"].ToString());
+
+                        items.SubItems.Add(read["col_orderid"].ToString());
+                        items.SubItems.Add(read["col_transactioncode"].ToString());
+                        items.SubItems.Add(read["col_productcode"].ToString());
+                        items.SubItems.Add(read["col_productname"].ToString());
+                        //items.SubItems.Add(read["col_staticquantity"].ToString());
+                        //items.SubItems.Add(read["col_reason"].ToString());
+                        items.SubItems.Add(read["col_status"].ToString());
+
+                        materialListView11.Items.Add(items);
+                        materialListView11.FullRowSelect = true;
+                    }
+                    conn.Close();
+                    groupBox6.Enabled = true;
+
+                }
+                else
+                {
+                    groupBox6.Enabled = false;
+                }
             }
             catch (Exception e)
             {
@@ -1466,6 +1498,7 @@ namespace LoginModule.cs
             ListViewItem list = materialListView11.SelectedItems[data];
             String id = list.SubItems[0].Text;
             lblTransactionCode.Text = list.SubItems[2].Text;
+
             label3.Text = id.ToString();
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             string query = "SELECT * FROM tbl_damage d " +
@@ -1482,8 +1515,13 @@ namespace LoginModule.cs
                 label18.Text = read["col_orderid"].ToString();
                 label24.Text = read["col_staticquantity"].ToString();
                 label30.Text = read["col_status"].ToString();
+                label36.Text = read["col_productcode"].ToString();
+                label42.Text = read["col_quantitybought"].ToString();
+                label46.Text = read["col_productprice"].ToString();
+                label11.Text = read["col_subtotal"].ToString();
 
-                
+
+
             }
             conn.Close();
         }
@@ -1558,7 +1596,8 @@ namespace LoginModule.cs
                     string query = "(Select SUM(`col_subtotal`) from tbl_order o " +
                     "inner join tbl_transaction t " +
                     "on t.col_transactionid = o.col_transactionid " +
-                    "where t.col_transactioncode = 'PCS028' and o.col_orderstatus='Sales') ";
+                    "where t.col_transactioncode = '" + lblTransactionCode.Text +
+                    "' and o.col_orderstatus='Sales') ";
                     command.CommandText = query;
                     MySqlDataReader read = command.ExecuteReader();
                     read.Read();
@@ -1579,13 +1618,27 @@ namespace LoginModule.cs
                     viewfinishdamage();
                     MessageBox.Show("Successfully Confirmed");
 
+                    clearDamage();
+
                 }
             }
             else if (dialogResult == DialogResult.No)
             {
-                
+                clearDamage();
             }
         }
+
+        private void clearDamage()
+        {
+            label3.Text = "";
+            label18.Text = "";
+            label24.Text = "";
+            label30.Text = "";
+            label36.Text = "";
+            label42.Text = "";
+            label46.Text = "";
+        }
+
         private void materialListView11_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             printdamageid();
@@ -1596,6 +1649,76 @@ namespace LoginModule.cs
             new viewAdminAccount().Show();
             this.Hide();
         }
-        
+
+        private void materialFlatButton5_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel", "Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (label30.Text == "pending-change")
+                {
+                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                    conn.Open();
+                    MySqlCommand command3 = conn.CreateCommand();
+                    command3.CommandText = "UPDATE tbl_damage SET col_status='change-cancelled' where col_damageitemid='" + label3.Text + "'";
+                    command3.ExecuteScalar();
+                    viewfinishdamage();
+                    viewdamageid();
+                    MessageBox.Show("Successfully Cancelled");
+                    conn.Close();
+                }
+                else if (label30.Text == "pending-refund")
+                {
+                    double price =  0;
+                    int qty = 0;
+                    qty = int.Parse(label42.Text) + int.Parse(label24.Text);
+                    price = (double.Parse(label46.Text) * int.Parse(label24.Text)) + double.Parse(label11.Text);
+
+                    MySqlConnection conn2 = new MySqlConnection(ConnectionString.myConnection);
+                    conn2.Open();
+                    MySqlCommand command4 = conn2.CreateCommand();
+                    command4.CommandText = "UPDATE tbl_damage SET col_status='refund-cancelled' where col_damageitemid='" + label3.Text + "'";
+                    command4.ExecuteScalar();
+                    conn2.Close();
+
+                    conn2.Open();
+                    command4 = conn2.CreateCommand();
+                    command4.CommandText = "UPDATE tbl_order SET " +
+                        "col_quantitybought='" + qty + "'" +
+                        " WHERE col_orderid='" + label18.Text + "'";
+
+                    command4.ExecuteScalar();
+                    conn2.Close();
+
+                    conn2.Open();
+                    MySqlCommand command3 = conn2.CreateCommand();
+                    command3.CommandText = "UPDATE tbl_order SET " +
+                        "col_subtotal='" + price + "'" +
+                        " WHERE col_orderid='" + label18.Text + "'";
+
+                    command3.ExecuteScalar();
+                    conn2.Close();
+                    
+                    viewdamageid();
+                    viewfinishdamage();
+                    MessageBox.Show("Successfully Cancelled");
+                    clearDamage();
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                clearDamage();
+            }
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void materialListView11_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

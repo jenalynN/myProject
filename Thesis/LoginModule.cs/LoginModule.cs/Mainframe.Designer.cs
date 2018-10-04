@@ -230,6 +230,7 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.label11 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -955,6 +956,7 @@
             // 
             this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox17.BackColor = System.Drawing.Color.White;
+            this.groupBox17.Controls.Add(this.label11);
             this.groupBox17.Controls.Add(this.lblTransactionCode);
             this.groupBox17.Controls.Add(this.label46);
             this.groupBox17.Controls.Add(this.label43);
@@ -1016,6 +1018,7 @@
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(0, 23);
             this.label42.TabIndex = 74;
+            this.label42.Visible = false;
             // 
             // label36
             // 
@@ -1035,6 +1038,7 @@
             this.label35.Size = new System.Drawing.Size(123, 23);
             this.label35.TabIndex = 72;
             this.label35.Text = "Purchased Qty";
+            this.label35.Visible = false;
             // 
             // label31
             // 
@@ -1135,6 +1139,7 @@
             this.groupBox6.TabIndex = 61;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Actions";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // materialFlatButton5
             // 
@@ -1151,6 +1156,7 @@
             this.materialFlatButton5.TabIndex = 1;
             this.materialFlatButton5.Text = "Cancel";
             this.materialFlatButton5.UseVisualStyleBackColor = true;
+            this.materialFlatButton5.Click += new System.EventHandler(this.materialFlatButton5_Click);
             // 
             // materialFlatButton3
             // 
@@ -2622,6 +2628,17 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(13, 298);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(102, 23);
+            this.label11.TabIndex = 78;
+            this.label11.Text = "Order Price ";
+            this.label11.Visible = false;
+            // 
             // Mainframe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2911,5 +2928,6 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.Label lblTransactionCode;
+        private System.Windows.Forms.Label label11;
     }
 }

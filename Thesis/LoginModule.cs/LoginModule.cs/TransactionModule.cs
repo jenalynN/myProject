@@ -584,7 +584,11 @@ namespace LoginModule.cs
         }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() == "Change")
+            if (string.IsNullOrEmpty(comboBox1.SelectedItem.ToString()))
+            {
+                MessageBox.Show("Please select return type.");
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Change")
             {
                 inserttopending();
             }
@@ -611,6 +615,7 @@ namespace LoginModule.cs
             
                 }
             }
+
         }
         private void inserttopending()
         {

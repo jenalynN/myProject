@@ -842,6 +842,7 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(45, 32);
             this.textBox12.TabIndex = 120;
+            this.textBox12.Visible = false;
             // 
             // textBox11
             // 
@@ -850,6 +851,7 @@
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(45, 32);
             this.textBox11.TabIndex = 119;
+            this.textBox11.Visible = false;
             // 
             // textBox10
             // 
@@ -858,6 +860,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(45, 32);
             this.textBox10.TabIndex = 118;
+            this.textBox10.Visible = false;
             // 
             // label28
             // 
@@ -1064,6 +1067,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(176, 32);
             this.comboBox1.TabIndex = 100;
+            this.comboBox1.Text = "Refund";
             this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // groupBox10
