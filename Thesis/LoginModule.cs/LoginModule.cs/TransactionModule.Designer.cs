@@ -897,6 +897,7 @@
             this.materialFlatButton6.TabIndex = 115;
             this.materialFlatButton6.Text = "Cancel";
             this.materialFlatButton6.UseVisualStyleBackColor = true;
+            this.materialFlatButton6.Click += new System.EventHandler(this.materialFlatButton6_Click);
             // 
             // materialFlatButton3
             // 

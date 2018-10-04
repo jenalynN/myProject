@@ -1039,6 +1039,24 @@ namespace LoginModule.cs
         {
 
         }
+
+        private void materialFlatButton6_Click(object sender, EventArgs e)
+        {
+            materialListView4.Items.Clear();
+            materialListView3.Items.Clear();
+            textBox9.Clear();
+            textBox8.Clear();
+            textBox1.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox5.Clear();
+            textBox4.Clear();
+            textBox3.Clear();
+            textBox2.Clear();
+            textBox11.Clear();
+            textBox10.Clear();
+            textBox12.Clear();
+        }
         
     }
 }

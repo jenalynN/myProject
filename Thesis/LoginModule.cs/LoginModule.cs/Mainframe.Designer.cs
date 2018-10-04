@@ -2014,11 +2014,11 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(6, 128);
+            this.label45.Location = new System.Drawing.Point(6, 151);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(147, 46);
+            this.label45.Size = new System.Drawing.Size(139, 23);
             this.label45.TabIndex = 50;
-            this.label45.Text = "Archived Brand\r\nPartner Accounts ";
+            this.label45.Text = "Archived Cashier";
             // 
             // groupBox23
             // 
@@ -2290,11 +2290,11 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(6, 128);
+            this.label38.Location = new System.Drawing.Point(6, 151);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(147, 46);
+            this.label38.Size = new System.Drawing.Size(159, 23);
             this.label38.TabIndex = 50;
-            this.label38.Text = "Archived Brand\r\nPartner Accounts ";
+            this.label38.Text = "Unarchived Cashier";
             // 
             // groupBox20
             // 
