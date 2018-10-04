@@ -373,6 +373,7 @@ namespace LoginModule.cs
                 command2.ExecuteScalar();
                 conn.Close();
 
+
                 conn.Open();
                 MySqlCommand command3 = conn.CreateCommand();
                 string query2 = "UPDATE tbl_order SET " +
@@ -550,105 +551,90 @@ namespace LoginModule.cs
                 MySqlCommand command2 = conn.CreateCommand();
                 command2.CommandText = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_staticquantity,col_status) " +
                     "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
-                    "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" + textBox9.Text + "','"+textBox6.Text+"','pending-refund')";
+                    "(Select col_orderid from tbl_order where col_orderid = '" + 
+                    textBox2.Text + "'),'" +
+                    textBox9.Text + "','" + 
+                    textBox6.Text + 
+                    "','pending-refund')";
 
                 command2.ExecuteScalar();
                 conn.Close();
+
                 conn.Open();
                 MySqlCommand command3 = conn.CreateCommand();
                 command3.CommandText ="UPDATE tbl_order SET " +
-                    "col_subtotal='" +textBox7.Text+"'" +
+                    "col_subtotal='" + textBox12.Text+"'" +
                     " WHERE col_orderid='" + textBox2.Text + "'";
 
                 command3.ExecuteScalar();
                 conn.Close();
+
                 conn.Open();
                 MySqlCommand command4 = conn.CreateCommand();
                 command4.CommandText = "UPDATE tbl_order SET " +
-                    "col_quantitybought='" + textBox6.Text + "'" +
+                    "col_quantitybought='" + textBox10.Text + "'" +
                     " WHERE col_orderid='" + textBox2.Text + "'";
 
                 command4.ExecuteScalar();
                 conn.Close();
+
                 MessageBox.Show("Product successfully added to the pending process for refund");
 
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
-                textBox6.Clear();
-                textBox7.Clear();
-                textBox9.Clear();
-                textBox10.Clear();
-                comboBox1.Text = "";
-
-                textBox12.Clear();
-                textBox11.Clear();
-                materialListView4.Items.Clear();
-                textBox8.Clear();
-                materialListView3.Items.Clear();
+                clearAllControl();
         }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == "Change")
+            if (comboBox1.SelectedItem.ToString() == "Change")
             {
                 inserttopending();
             }
-            else if(comboBox1.SelectedItem=="Refund"){
-            int a, b;
-            bool isAValid = int.TryParse(textBox5.Text, out a);
-            bool isBValid = int.TryParse(textBox6.Text, out b);
+            else if(comboBox1.SelectedItem.ToString()  == "Refund")
+            {
+                int a, b;
+                bool isAValid = int.TryParse(textBox5.Text, out a);
+                bool isBValid = int.TryParse(textBox6.Text, out b);
 
-            if (isAValid && isBValid)
-            {
-                if (a >= b)
+                if (isAValid && isBValid)
                 {
-                inserttopending();
+                    if (a >= b)
+                    {
+                        inserttopending();
+                    }
+                    else if (a < b) 
+                    {
+                        MessageBox.Show("The item you are returning is more than the item you bought","Message");
+                    }
                 }
-                else if (a < b) 
+                else
                 {
-                    MessageBox.Show("The item you are returning is more than the item you bought","Message");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Unable to return items");
+                    MessageBox.Show("Unable to return items");
             
-            }
+                }
             }
         }
         private void inserttopending()
         {
-            if (comboBox1.SelectedItem == "Change")
+            if (comboBox1.SelectedItem.ToString() == "Change")
             {
                 logreturn();
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
 
-                string query = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_staticquantity,col_status) " +
+                string query = "insert into tbl_damage(col_transactionid, col_orderid, col_reason, col_staticquantity, col_status) " +
                     "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
-                    "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" + textBox9.Text + "','"+textBox6.Text+"','pending-change')";
+                    "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" +
+                    textBox9.Text + "','" + 
+                    textBox6.Text + 
+                    "', 'pending-change' )";
                 command2.CommandText = query;
                 command2.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Product successfully added to the pending process for change item");
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
-                textBox6.Clear();
-                textBox7.Clear();
-                textBox9.Clear();
-                textBox10.Clear();
-                comboBox1.Text = "";
-                textBox12.Clear();
-                textBox11.Clear();
-                materialListView4.Items.Clear();
-                textBox8.Clear();
-                materialListView3.Items.Clear();
+                clearAllControl();
+
             }
-            else if (comboBox1.SelectedItem == "Refund")
+            else if (comboBox1.SelectedItem.ToString() == "Refund")
             {
                 textBox6.Visible = true;
                 label25.Visible = true;
@@ -661,6 +647,26 @@ namespace LoginModule.cs
             }
 
         }
+
+        private void clearAllControl()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox9.Clear();
+            textBox10.Clear();
+            comboBox1.Text = "";
+            textBox12.Clear();
+            textBox11.Clear();
+            materialListView4.Items.Clear();
+            textBox8.Clear();
+            materialListView3.Items.Clear();
+        }
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbAmount.Text))
@@ -785,7 +791,9 @@ namespace LoginModule.cs
             conn.Open();
             string query1 = "select * from tbl_transaction t " +
             "inner join tbl_order o on t.col_transactionid = o.col_transactionid " +
-            "where o.col_orderstatus='Sales' AND t.col_transactioncode like  '" + textBox1.Text + "%'";
+            "where o.col_orderstatus='Sales' " +
+            "AND t.col_totalprice > 0 " +
+            "AND t.col_transactioncode like  '" + textBox1.Text + "%'";
 
             MySqlCommand command2 = conn.CreateCommand();
             command2.CommandText = query1;
@@ -822,16 +830,17 @@ namespace LoginModule.cs
 
             materialListView4.Items.Clear(); 
             MySqlCommand command = conn.CreateCommand();
-            string query = "Select * from tbl_order o " +
+            string query = "Select *, count(col_orderid) as count from tbl_order o " +
                 "inner join tbl_transaction t " +
-                "  on t.col_transactionid = o.col_transactionid " +
+                "on t.col_transactionid = o.col_transactionid " +
                 "inner join tbl_product p " +
                 "on o.col_productid = p.col_productid " +
                 "inner join tbl_brandpartner b " +
                 "on p.col_useraccountsid = b.col_useraccountsid " +
                 "inner join tbl_category c " +
                 "on c.col_categoryid = p.col_categoryid " +
-                "where t.col_transactioncode = '" + textBox8.Text + "' and o.col_orderstatus='Sales'";
+                "where t.col_transactioncode = '" + textBox8.Text + "' and o.col_orderstatus='Sales' " +
+                "and o.col_quantitybought > 0 ";
             command.CommandText = query;
             MySqlDataReader read = command.ExecuteReader();
             
@@ -846,12 +855,15 @@ namespace LoginModule.cs
                 items.SubItems.Add(read["col_staticprice"].ToString());
                 items.SubItems.Add(read["col_quantitybought"].ToString());
                 items.SubItems.Add(read["col_subtotal"].ToString());
-                materialListView4.Items.Add(items); 
+                materialListView4.Items.Add(items);
                 materialListView4.FullRowSelect = true;
             }
-
             conn.Close();
+
+            
+
         }
+
         public void printtransid() 
         {
             int data = 0;
@@ -1022,27 +1034,9 @@ namespace LoginModule.cs
                     labelChange.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
     }
 
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void materialFlatButton6_Click(object sender, EventArgs e)
         {
-            materialListView4.Items.Clear();
-            materialListView3.Items.Clear();
-            textBox9.Clear();
-            textBox8.Clear();
-            textBox1.Clear();
-            textBox6.Clear();
-            textBox7.Clear();
-            textBox5.Clear();
-            textBox4.Clear();
-            textBox3.Clear();
-            textBox2.Clear();
-            textBox11.Clear();
-            textBox10.Clear();
-            textBox12.Clear();
+            clearAllControl();
         }
         
     }

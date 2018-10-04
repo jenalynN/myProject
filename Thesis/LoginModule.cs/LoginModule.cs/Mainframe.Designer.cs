@@ -81,6 +81,7 @@
             this.materialTabControl6 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.lblTransactionCode = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -102,6 +103,7 @@
             this.materialListView11 = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader67 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader68 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader69 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -403,7 +405,6 @@
             this.groupBox3.TabIndex = 54;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Manage Product";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // materialFlatButton1
             // 
@@ -482,7 +483,6 @@
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Table Information";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label6
             // 
@@ -609,7 +609,6 @@
             this.materialListView1.TabIndex = 42;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
-            this.materialListView1.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged);
             this.materialListView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView1_MouseDoubleClick);
             // 
             // ActiveProductId
@@ -956,6 +955,7 @@
             // 
             this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox17.BackColor = System.Drawing.Color.White;
+            this.groupBox17.Controls.Add(this.lblTransactionCode);
             this.groupBox17.Controls.Add(this.label46);
             this.groupBox17.Controls.Add(this.label43);
             this.groupBox17.Controls.Add(this.label42);
@@ -977,6 +977,17 @@
             this.groupBox17.TabIndex = 62;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Info";
+            // 
+            // lblTransactionCode
+            // 
+            this.lblTransactionCode.AutoSize = true;
+            this.lblTransactionCode.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransactionCode.Location = new System.Drawing.Point(12, 92);
+            this.lblTransactionCode.Name = "lblTransactionCode";
+            this.lblTransactionCode.Size = new System.Drawing.Size(139, 23);
+            this.lblTransactionCode.TabIndex = 77;
+            this.lblTransactionCode.Text = "transaction code";
+            this.lblTransactionCode.Visible = false;
             // 
             // label46
             // 
@@ -1105,7 +1116,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 109);
+            this.label4.Location = new System.Drawing.Point(12, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 23);
             this.label4.TabIndex = 63;
@@ -1178,6 +1189,7 @@
             this.materialListView11.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader67,
             this.columnHeader5,
+            this.columnHeader15,
             this.columnHeader68,
             this.columnHeader69,
             this.columnHeader3});
@@ -1206,6 +1218,10 @@
             // 
             this.columnHeader5.Text = "Order Id";
             this.columnHeader5.Width = 150;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Transaction Code";
             // 
             // columnHeader68
             // 
@@ -2893,5 +2909,7 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.Label lblTransactionCode;
     }
 }

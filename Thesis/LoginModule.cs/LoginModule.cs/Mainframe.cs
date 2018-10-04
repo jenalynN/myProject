@@ -1095,26 +1095,6 @@ namespace LoginModule.cs
             this.Hide();
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialFlatButton5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void materialListView2_DoubleClick(object sender, EventArgs e)
         {
             printarchivedproduct();
@@ -1450,8 +1430,11 @@ namespace LoginModule.cs
                 string query = "SELECT * FROM tbl_damage d " +
                             "inner join tbl_order o " +
                             "on d.col_orderid = o.col_orderid " +
+                            "inner join tbl_transaction t " +
+                            "on t.col_transactionid = o.col_transactionid " +
                             "inner join tbl_product p " + 
-                            "on p.col_productid = o.col_productid where d.col_status='pending-change' OR d.col_status='pending-refund'";
+                            "on p.col_productid = o.col_productid " +
+                            "where d.col_status='pending-change' OR d.col_status='pending-refund'";
                 command.CommandText = query;
                 MySqlDataReader read = command.ExecuteReader();
                 while (read.Read())
@@ -1459,7 +1442,7 @@ namespace LoginModule.cs
                     ListViewItem items = new ListViewItem(read["col_damageitemid"].ToString());
 
                     items.SubItems.Add(read["col_orderid"].ToString());
-                    //items.SubItems.Add(read["col_transactionid"].ToString());
+                    items.SubItems.Add(read["col_transactioncode"].ToString());
                     items.SubItems.Add(read["col_productcode"].ToString());
                     items.SubItems.Add(read["col_productname"].ToString());
                     //items.SubItems.Add(read["col_staticquantity"].ToString());
@@ -1482,6 +1465,7 @@ namespace LoginModule.cs
             int data = 0;
             ListViewItem list = materialListView11.SelectedItems[data];
             String id = list.SubItems[0].Text;
+            lblTransactionCode.Text = list.SubItems[2].Text;
             label3.Text = id.ToString();
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             string query = "SELECT * FROM tbl_damage d " +
@@ -1561,16 +1545,41 @@ namespace LoginModule.cs
                 }
                 else if (label30.Text == "pending-refund")
                 {
+                    double returnPrice = 0;
                     MySqlConnection conn2 = new MySqlConnection(ConnectionString.myConnection);
                     conn2.Open();
                     MySqlCommand command4 = conn2.CreateCommand();
                     command4.CommandText = "UPDATE tbl_damage SET col_status='Refunded' where col_damageitemid='"+label3.Text+"'";
                     command4.ExecuteScalar();
+                    conn2.Close();
+
+                    conn2.Open();
+                    MySqlCommand command = conn2.CreateCommand();
+                    string query = "(Select SUM(`col_subtotal`) from tbl_order o " +
+                    "inner join tbl_transaction t " +
+                    "on t.col_transactionid = o.col_transactionid " +
+                    "where t.col_transactioncode = 'PCS028' and o.col_orderstatus='Sales') ";
+                    command.CommandText = query;
+                    MySqlDataReader read = command.ExecuteReader();
+                    read.Read();
+                    returnPrice = double.Parse(read[0].ToString());
+                    conn2.Close();
+
+                    conn2.Open();
+                    command4 = conn2.CreateCommand();
+                    command4.CommandText = "UPDATE tbl_transaction SET " +
+                    "col_totalprice= " + returnPrice +
+                    " where col_transactioncode ='" + lblTransactionCode.Text + "'";
+                    command4.ExecuteScalar();
+                    conn2.Close();
+
+                    
+
                     viewdamageid();
                     viewfinishdamage();
                     MessageBox.Show("Successfully Confirmed");
-                    conn2.Close();     
-                   }
+
+                }
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -1587,5 +1596,6 @@ namespace LoginModule.cs
             new viewAdminAccount().Show();
             this.Hide();
         }
+        
     }
 }

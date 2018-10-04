@@ -252,7 +252,6 @@
             this.groupBox4.Size = new System.Drawing.Size(859, 83);
             this.groupBox4.TabIndex = 83;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // label3
             // 
@@ -728,6 +727,7 @@
             this.groupBox3.TabIndex = 82;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Today\'s Sales";
+            this.groupBox3.Visible = false;
             // 
             // label5
             // 
@@ -842,7 +842,6 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(45, 32);
             this.textBox12.TabIndex = 120;
-            this.textBox12.Visible = false;
             // 
             // textBox11
             // 
@@ -851,7 +850,6 @@
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(45, 32);
             this.textBox11.TabIndex = 119;
-            this.textBox11.Visible = false;
             // 
             // textBox10
             // 
@@ -860,7 +858,6 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(45, 32);
             this.textBox10.TabIndex = 118;
-            this.textBox10.Visible = false;
             // 
             // label28
             // 
