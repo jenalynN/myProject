@@ -207,10 +207,8 @@
     <script src="dist/js/demo.js"></script>
     <!-- page script -->
     <script>
-      $(function ()
-	  {
-        $('#example2').dataTable(
-		{
+      $(function (){
+        $('#example2').dataTable({
 			
 		  "responsive": true,
           "paging": true,
@@ -221,14 +219,7 @@
           "autoWidth": true,
           
         });
-		 $('#fromdate').datepicker(
-		{
-			
-		  "format":	 'yyyy-dd-mm',
-          "autoclose":true;
-          
-        });
-		
+		 
       });
     </script>
 	  

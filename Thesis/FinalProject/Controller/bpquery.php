@@ -1,7 +1,7 @@
 <?php
 function view_user()
 {
-	require ('Controller/db.php');
+	require_once('Controller/db.php');
 	if (!$db)
 	{
 		trigger_error('Could not connect to MySQL: ' . mysqli_connect_error());

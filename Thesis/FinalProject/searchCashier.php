@@ -1,6 +1,6 @@
 <?php
 
-require ('Controller/db.php');
+require_once ('Controller/db.php');
 
 if (!$db)
 	{

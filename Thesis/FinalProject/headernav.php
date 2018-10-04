@@ -33,11 +33,18 @@
 			  <!-- Menu Footer-->
 			  <li class="user-footer">
 				<div class="pull-left">
-				 <!--  <a href="#" class="btn btn-default btn-flat">Change Password</a> -->
 				  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Change Password</a>
 				</div>
-				<div class="pull-right">
-				  <a href="controller/session_destroy.php" class="btn btn-default btn-flat">Sign out</a>
+			  </li>
+			  <li class="user-footer">
+				<div class="pull-left">
+					<a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalProfileForm">Update Profile</a>
+				  
+				</div>
+			  </li>
+			  <li class="user-footer">
+				<div class="pull-left">
+				  <a href="Controller/session_destroy.php" class="btn btn-default btn-flat">Sign out</a>
 				</div>
 			  </li>
 			  
@@ -74,7 +81,9 @@
 		</li>
 		
 		<?php 
-			if($_SESSION['user'] == "admin"){
+
+			if($_SESSION['usertype'] == "1"){
+				
 		?>
 		<li class="treeview">
 		  <a href="#">
@@ -112,7 +121,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+                <h4 class="modal-title w-100 font-weight-bold">Change Password</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -136,6 +145,62 @@
             <div class="modal-footer d-flex justify-content-center">
                 <button class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
                 <button class="btn btn-success btn-changepass">Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalProfileForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Profile Information</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                
+                <div class="md-form mb-5">
+                    <label data-error="wrong" data-success="right" for="orangeForm-email">First Name</label>
+                    <input type="text" id="pro-fname" class="form-control" value="<?php echo $_SESSION['userFirstname'] ?>">
+                </div>
+                <div class="md-form mb-5">
+                    <label data-error="wrong" data-success="right" for="orangeForm-email">Last Name</label>
+                    <input type="text" id="pro-lname" class="form-control" value="<?php echo $_SESSION['userLastname'] ?>">
+                </div>
+                <div class="md-form mb-5">
+                    <label data-error="wrong" data-success="right" for="orangeForm-email">Middle Name</label>
+                    <input type="text" id="pro-mname" class="form-control" value="<?php echo $_SESSION['userMiddlename'] ?>">
+                </div>
+                <!-- <div class="md-form mb-5">
+                    <label data-error="wrong" data-success="right" for="orangeForm-email">Email</label>
+                    <input type="text" id="pro-email" class="form-control">
+                </div> -->
+                <div class="md-form mb-5">
+                    <label data-error="wrong" data-success="right" for="orangeForm-email">Address</label>
+                    <input type="text" id="pro-address" class="form-control" value="<?php echo $_SESSION['userAddress']?>">
+                </div>
+                <div class="md-form mb-5">
+                    <label data-error="wrong" data-success="right" for="orangeForm-email">Contact Number</label>
+                    <input type="text" id="pro-contact" class="form-control" value="<?php echo $_SESSION['userConnum']?>">
+                </div><br/>
+                <div class="md-form mb-5">
+                    <label data-error="wrong" data-success="right" for="orangeForm-email">Gender</label>
+                    <select class="pro-gender">
+                    	<option value="Female">FEMALE</option>
+                    	<option value="Male">MALE</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <span class="errormessage"></span>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                <button class="btn btn-success btn-udpateprofile">Save</button>
             </div>
 
         </div>

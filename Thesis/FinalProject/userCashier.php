@@ -22,7 +22,7 @@
                     <div class="input-group" style="width: 300px;" align="right" >
                       <input type="text" name="table_search" id="searchInput" onkeyup="searchFunc()" class="form-control input-sm pull-right" placeholder="Search. . . .">
                       <div class="input-group-btn">
-                        <button class="btn btn-sm btn-danger" ><i class="fa fa-search"></i></button>
+                        <button class="btn btn-sm btn-danger" >Go</button>
                       </div>	
                     </div>
 					
@@ -70,55 +70,6 @@
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
 
-    <!-- jQuery 2.1.4 -->
-    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- DataTables -->
-    <script src="datatables/jquery.dataTables.min.js"></script>
-    <script src="datatables/dataTables.bootstrap.min.js"></script>
-    <!-- SlimScroll -->
-    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <!-- FastClick -->
-    <script src="plugins/fastclick/fastclick.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/app.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js"></script>
-    <!-- page script -->
-    <script>
-      $(function ()
-	  {
-        $('#example2').DataTable(
-		{
-			
-		  "responsive": true,
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false,
-          
-        });
-      });
-		function searchFunc() {
-		  var input, filter, table, tr, td, i;
-		  input = document.getElementById("searchInput");
-		  filter = input.value.toUpperCase();
-		  table = document.getElementById("cashierTable");
-		  tr = table.getElementsByTagName("tr");
-		  for (i = 0; i < tr.length; i++) {
-			td = tr[i].getElementsByTagName("td")[0];
-			if (td) {
-			  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-				tr[i].style.display = "";
-			  } else {
-				tr[i].style.display = "none";
-			  }
-			}       
-		  }
-		}
-    </script>
+        <?php include 'footer_jqueries.php'; ?>    
   </body>
 </html>

@@ -130,7 +130,7 @@ span.psw {
 <body>
 
 
-  <form class="modal-content animate" action="controller/verify.php" method="POST">
+  <form class="modal-content animate" action="Controller/verify.php" method="POST">
     <div class="imgcontainer">
       <img src="posh.jpg" alt="Avatar" class="avatar">
     </div>
@@ -145,6 +145,9 @@ span.psw {
       <button type="submit" >Login</button>
 
       <label>
+        <?php if(isset($_GET["error"])){ ?>
+            <span style="color:red; font-weight:strong;"><?php echo "Invalid User" ?> </span>
+        <?php } ?>
       </label>
     </div>
   </form>

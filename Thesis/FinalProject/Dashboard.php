@@ -71,14 +71,6 @@
           "autoWidth": true,
           
         });
-		 $('#fromdate').datepicker(
-		{
-			
-		  "format":	 'yyyy-dd-mm',
-          "autoclose":true;
-          
-        });
-		
       });
     </script>
 	  
