@@ -1290,7 +1290,6 @@
             this.groupBox7.Size = new System.Drawing.Size(827, 83);
             this.groupBox7.TabIndex = 84;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Manage Account";
             // 
             // label15
             // 

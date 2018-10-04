@@ -732,7 +732,7 @@ namespace LoginModule.cs
         private void btnPurchase_Click(object sender, EventArgs e)
         {
             logpurchase();
-                InsertTransactionTotalAmount();   
+            InsertTransactionTotalAmount();   
         }
         private void materialFlatButton4_Click(object sender, EventArgs e)
         {
@@ -1001,12 +1001,12 @@ namespace LoginModule.cs
               , new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 10, 20 + offsetHead);
 
             startY = offsetHead + 40;
-
+            startX = 10;
             for (int i = 0; i < materialListView1.Items.Count; i++)
             {
                 // Not sure what/why these two are here 
-                startX += i;
-                startY += ii++;
+                //startX += i;
+                //startY += ii++;
 
                 // Draw the row details for ? receipt 
                 e.Graphics.DrawString(" " + 
