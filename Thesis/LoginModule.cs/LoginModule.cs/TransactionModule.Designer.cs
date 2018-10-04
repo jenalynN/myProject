@@ -1067,7 +1067,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(176, 32);
             this.comboBox1.TabIndex = 100;
-            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // groupBox10
@@ -1262,7 +1261,6 @@
             this.materialListView3.TabIndex = 22;
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
-            this.materialListView3.SelectedIndexChanged += new System.EventHandler(this.materialListView3_SelectedIndexChanged);
             this.materialListView3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView3_MouseDoubleClick);
             // 
             // columnHeader11
@@ -1315,7 +1313,6 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1284, 32);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
             // 
             // printDocument1
             // 

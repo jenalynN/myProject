@@ -858,6 +858,7 @@ namespace LoginModule.cs
             ListViewItem list = materialListView3.SelectedItems[data];
             String id = list.SubItems[1].Text;
             textBox8.Text = id.ToString();
+            textBox1.Text = id.ToString();
             printorders();
         }
         private void materialListView3_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -951,21 +952,7 @@ namespace LoginModule.cs
         {
             printorderdetails();
         }
-
-        private void materialTabSelector1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialListView3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
+        
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             int ii = 1;
