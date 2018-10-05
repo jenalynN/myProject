@@ -14,10 +14,23 @@ function view_product()
 						while ($row = mysqli_fetch_assoc($result))
 						 {
 							$pcode= $row['col_productcode'];
-							
-							echo '<tr class="">
+							$pname= $row['col_productname'];
+							$pprice= $row['col_productprice'];
+							$pbrand= $row['col_useraccountsid'];
+							$pcategory= $row['col_categoryid'];
+							$col_status= $row['col_status'];
+
+							echo '<tr class="odd gradeX">
 									
 									<td>'.$pcode.'</td>
+									<td>'.$pname.'</td>
+									<td>'.$pprice.'</td>
+									<td>'.$pbrand.'</td>
+									<td>'.$pcategory.'</td>
+									<td>'.$col_status.'</td>
+
+
+
 									
 								</tr>';
 						 }

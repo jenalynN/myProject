@@ -99,7 +99,7 @@
 			
               <div class="box-body">
                 <div class="input-group" style="width: 300px;" align="right" >
-                    <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search. . . .">
+                    <input type="text" name="table_search" id="searchInputSales" onkeyup="searchFuncSales()" class="form-control input-sm pull-right" placeholder="Search. . . .">
                 <div class="input-group-btn">
                     <button class="btn btn-sm btn-danger">Go</button>
                 </div> 
@@ -117,7 +117,7 @@
                    <br/>
             			</div>
             			
-            			<table id="example2" class="table table-bordered table-hover">
+            			<table id="salesTable" class="table table-bordered table-hover">
             			<tr>
                         <tbody>
                                   <th>Date Purchased</th>

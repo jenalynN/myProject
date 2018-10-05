@@ -1,13 +1,13 @@
 <?php
 //database connection from web
- define('DB_HOST', 'bigdata.clgps38zjdow.us-east-2.rds.amazonaws.com:3306');
- define('DB_USERNAME', 'root');
- define('DB_PASSWORD', 'abcefg13!#');
+ // define('DB_HOST', 'bigdata.clgps38zjdow.us-east-2.rds.amazonaws.com:3306');
+ // define('DB_USERNAME', 'root');
+ // define('DB_PASSWORD', 'abcefg13!#');
 
 // database connection from XAMPP 
-// define('DB_HOST', 'localhost');
-// define('DB_USERNAME', 'root');
-// define('DB_PASSWORD', '');
+define('DB_HOST', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
 define('DB_NAME', 'db_poshconceptstorefinal');
 
 // Create connection

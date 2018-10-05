@@ -40,17 +40,12 @@
 											                      <th>Product Code</th>
                                             <th>Product Name</th>
                                             <th>Product Price</th>
+                                            <th>Status</th>
 											
 											<?php
 									require 'Controller/damagequery.php'
 									?>
                                         
-                   
-				   
-                                    <?php 
-									                   require_once("Controller/productquery.php");
-                                    view_product();
-                                    ?>
 											 
                                     </tbody>
 									</tr>
