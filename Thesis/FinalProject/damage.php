@@ -20,7 +20,7 @@
                 <div class="box-body">
 
                     <div class="input-group" style="width: 300px;" align="right" >
-                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search. . . .">
+                      <input type="text" name="table_search" id="searchInputDamage" onkeyup="searchFuncDamage()" class="form-control input-sm pull-right" placeholder="Search. . . .">
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-danger"><i class="fa fa-search"></i></button>
                       </div>	
@@ -33,19 +33,24 @@
 			<input type="date" name="" value="">
                </div-->
 			   </div>
-			   <table id="example2" class="table table-bordered table-hover">
+			   <table id="damageTable" class="table table-bordered table-hover">
 									<tr>
                                 <tbody>
                                             <th>Transaction Code</th>
-											                      <th>Product Code</th>
+										    <th>Product Code</th>
                                             <th>Product Name</th>
-                                            <th>Product Price</th>
+                                            <th>Product Price</th>	
+                                            <th>Returned Quantity</th>
                                             <th>Status</th>
 											
 											<?php
 									require 'Controller/damagequery.php'
 									?>
-                                        
+									
+									
+                                        <?php
+										view_damageproduct();
+										?>
 											 
                                     </tbody>
 									</tr>
