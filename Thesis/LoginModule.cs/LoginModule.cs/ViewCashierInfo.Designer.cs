@@ -31,6 +31,7 @@
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkChangePassword = new MaterialSkin.Controls.MaterialCheckBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.chkChangePassword = new MaterialSkin.Controls.MaterialCheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,6 +136,23 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Cashier Account";
+            // 
+            // chkChangePassword
+            // 
+            this.chkChangePassword.AutoSize = true;
+            this.chkChangePassword.Depth = 0;
+            this.chkChangePassword.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkChangePassword.Location = new System.Drawing.Point(687, 266);
+            this.chkChangePassword.Margin = new System.Windows.Forms.Padding(0);
+            this.chkChangePassword.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkChangePassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkChangePassword.Name = "chkChangePassword";
+            this.chkChangePassword.Ripple = true;
+            this.chkChangePassword.Size = new System.Drawing.Size(141, 30);
+            this.chkChangePassword.TabIndex = 106;
+            this.chkChangePassword.Text = "Change Password";
+            this.chkChangePassword.UseVisualStyleBackColor = true;
+            this.chkChangePassword.CheckedChanged += new System.EventHandler(this.chkChangePassword_CheckedChanged);
             // 
             // textBox4
             // 
@@ -390,23 +407,6 @@
             this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 55;
             this.label1.Text = "Firstname";
-            // 
-            // chkChangePassword
-            // 
-            this.chkChangePassword.AutoSize = true;
-            this.chkChangePassword.Depth = 0;
-            this.chkChangePassword.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkChangePassword.Location = new System.Drawing.Point(687, 266);
-            this.chkChangePassword.Margin = new System.Windows.Forms.Padding(0);
-            this.chkChangePassword.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkChangePassword.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkChangePassword.Name = "chkChangePassword";
-            this.chkChangePassword.Ripple = true;
-            this.chkChangePassword.Size = new System.Drawing.Size(141, 30);
-            this.chkChangePassword.TabIndex = 106;
-            this.chkChangePassword.Text = "Change Password";
-            this.chkChangePassword.UseVisualStyleBackColor = true;
-            this.chkChangePassword.CheckedChanged += new System.EventHandler(this.chkChangePassword_CheckedChanged);
             // 
             // ViewCashierInfo
             // 

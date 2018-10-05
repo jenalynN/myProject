@@ -37,7 +37,8 @@ namespace LoginModule.cs
                     //"col_dateofbirth, " +
                     "col_gender, " +
                     "col_contactnum, " +
-                    "col_status) " +
+                    "col_status,"+
+                     "col_email) " +
                     "values  ((SELECT col_usertypeid from tbl_usertype where col_userrole='Cashier'),'" +
                     textBox9.Text + "','" +
                     textBox11.Text + "','" +
@@ -48,7 +49,7 @@ namespace LoginModule.cs
                     //dateTimePicker1.Text + "','" +
                     comboBox1.SelectedItem.ToString() + "','" +
                     textBox6.Text +
-                    "','unarchived')";
+                    "','unarchived','"+textBox4.Text+"')";
                 command2.ExecuteScalar();
                 conn.Close();
             }        

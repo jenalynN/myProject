@@ -62,12 +62,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.labelTransactionCode);
@@ -449,6 +453,24 @@
             this.materialFlatButton1.UseVisualStyleBackColor = false;
             this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(5, 383);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 23);
+            this.label5.TabIndex = 100;
+            this.label5.Text = "Email";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(210, 381);
+            this.textBox12.MaxLength = 35;
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(222, 32);
+            this.textBox12.TabIndex = 101;
+            // 
             // NewBrandPartnerAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,5 +525,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label labelTransactionCode;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label5;
     }
 }

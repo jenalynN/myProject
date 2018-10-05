@@ -63,6 +63,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +111,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.textBox11);
             this.groupBox1.Controls.Add(this.chkChangePassword);
             this.groupBox1.Controls.Add(this.txtConfirmPass);
             this.groupBox1.Controls.Add(this.label15);
@@ -476,6 +480,24 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Firstname";
             // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(210, 341);
+            this.textBox11.MaxLength = 35;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(222, 32);
+            this.textBox11.TabIndex = 106;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(8, 345);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 23);
+            this.label5.TabIndex = 107;
+            this.label5.Text = "Email";
+            // 
             // ViewBrandPartnerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,5 +553,7 @@
         private System.Windows.Forms.TextBox txtConfirmPass;
         private System.Windows.Forms.Label label15;
         private MaterialSkin.Controls.MaterialCheckBox chkChangePassword;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox11;
     }
 }

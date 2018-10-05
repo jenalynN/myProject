@@ -80,10 +80,13 @@
             // cbBrandP
             // 
             this.cbBrandP.BackColor = System.Drawing.Color.White;
+            this.cbBrandP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBrandP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbBrandP.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBrandP.FormattingEnabled = true;
             this.cbBrandP.Location = new System.Drawing.Point(224, 103);
             this.cbBrandP.Name = "cbBrandP";
-            this.cbBrandP.Size = new System.Drawing.Size(223, 21);
+            this.cbBrandP.Size = new System.Drawing.Size(223, 33);
             this.cbBrandP.TabIndex = 88;
             // 
             // label1
@@ -122,6 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 291);
+            this.ControlBox = false;
             this.Controls.Add(this.btcancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbBrandP);

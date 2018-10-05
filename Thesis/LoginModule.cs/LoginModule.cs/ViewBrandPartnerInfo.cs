@@ -49,7 +49,7 @@ namespace LoginModule.cs
             textBox7.Text = read["col_brandaddress"].ToString();
             textBox8.Text = read["col_brandcontactnum"].ToString();
             textBox9.Text = read["col_user"].ToString();
-
+            textBox11.Text = read["col_email"].ToString();
             textBox10.Text = read["col_password"].ToString();
             tempPass = textBox10.Text;
             }
@@ -71,11 +71,12 @@ namespace LoginModule.cs
             "col_address = '" + textBox5.Text + "', " +
             //"col_dateofbirth = '" + dateTimePicker1.Value + "', " +
             "col_gender = '" + comboBox1.SelectedItem.ToString() + "', " +
-            "col_contactnum = '" + textBox6.Text + "' " +
+            "col_contactnum = '" + textBox6.Text + "', " +
+            "col_email ='"+textBox11.Text+"' "+
             "WHERE col_useraccountsid='" + labelBrandpartnerId.Text + "'";
 
             command.CommandText = query;
-            command.ExecuteScalar();
+             command.ExecuteScalar();
             conn.Close();
             conn.Open();
             command = conn.CreateCommand();
