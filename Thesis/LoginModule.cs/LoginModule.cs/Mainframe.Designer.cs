@@ -81,6 +81,7 @@
             this.materialTabControl6 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.lblTransactionCode = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -230,7 +231,6 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.label11 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -483,7 +483,7 @@
             this.groupBox2.Size = new System.Drawing.Size(263, 245);
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Table Information";
+            this.groupBox2.Text = "Information Table";
             // 
             // label6
             // 
@@ -610,7 +610,7 @@
             this.materialListView1.TabIndex = 42;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
-            this.materialListView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView1_MouseDoubleClick);
+            this.materialListView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView1_MouseDoubleClick);
             // 
             // ActiveProductId
             // 
@@ -673,7 +673,7 @@
             this.groupBox10.Size = new System.Drawing.Size(263, 245);
             this.groupBox10.TabIndex = 58;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Table Information";
+            this.groupBox10.Text = "Information Table";
             // 
             // label9
             // 
@@ -684,6 +684,7 @@
             this.label9.Size = new System.Drawing.Size(24, 23);
             this.label9.TabIndex = 55;
             this.label9.Text = "SI";
+            this.label9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView2_MouseClick);
             // 
             // label10
             // 
@@ -832,7 +833,7 @@
             this.materialListView2.TabIndex = 42;
             this.materialListView2.UseCompatibleStateImageBehavior = false;
             this.materialListView2.View = System.Windows.Forms.View.Details;
-            this.materialListView2.DoubleClick += new System.EventHandler(this.materialListView2_DoubleClick);
+            this.materialListView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView2_MouseClick);
             // 
             // columnHeader6
             // 
@@ -979,6 +980,17 @@
             this.groupBox17.TabIndex = 62;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Info";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(13, 298);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(102, 23);
+            this.label11.TabIndex = 78;
+            this.label11.Text = "Order Price ";
+            this.label11.Visible = false;
             // 
             // lblTransactionCode
             // 
@@ -1139,7 +1151,6 @@
             this.groupBox6.TabIndex = 61;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Actions";
-            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // materialFlatButton5
             // 
@@ -1213,7 +1224,7 @@
             this.materialListView11.TabIndex = 42;
             this.materialListView11.UseCompatibleStateImageBehavior = false;
             this.materialListView11.View = System.Windows.Forms.View.Details;
-            this.materialListView11.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView11_MouseDoubleClick);
+            this.materialListView11.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView11_MouseDoubleClick);
             // 
             // columnHeader67
             // 
@@ -1427,7 +1438,7 @@
             this.groupBox13.Size = new System.Drawing.Size(262, 286);
             this.groupBox13.TabIndex = 85;
             this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Table Information";
+            this.groupBox13.Text = "Information Table";
             // 
             // label15
             // 
@@ -1556,7 +1567,7 @@
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
             this.materialListView3.SelectedIndexChanged += new System.EventHandler(this.materialListView3_SelectedIndexChanged);
-            this.materialListView3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView3_MouseDoubleClick);
+            this.materialListView3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView3_MouseDoubleClick);
             // 
             // BrandPartnerId
             // 
@@ -1720,7 +1731,7 @@
             this.groupBox16.Size = new System.Drawing.Size(262, 245);
             this.groupBox16.TabIndex = 86;
             this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Table Information";
+            this.groupBox16.Text = "Information Table";
             // 
             // label21
             // 
@@ -1848,7 +1859,7 @@
             this.materialListView6.UseCompatibleStateImageBehavior = false;
             this.materialListView6.View = System.Windows.Forms.View.Details;
             this.materialListView6.SelectedIndexChanged += new System.EventHandler(this.materialListView6_SelectedIndexChanged);
-            this.materialListView6.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView6_MouseDoubleClick);
+            this.materialListView6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView6_MouseDoubleClick);
             // 
             // columnHeader28
             // 
@@ -2000,7 +2011,7 @@
             this.groupBox24.Size = new System.Drawing.Size(262, 286);
             this.groupBox24.TabIndex = 147;
             this.groupBox24.TabStop = false;
-            this.groupBox24.Text = "Table Information";
+            this.groupBox24.Text = "Information Table";
             // 
             // label40
             // 
@@ -2126,7 +2137,7 @@
             this.materialListView5.TabIndex = 13;
             this.materialListView5.UseCompatibleStateImageBehavior = false;
             this.materialListView5.View = System.Windows.Forms.View.Details;
-            this.materialListView5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView5_MouseDoubleClick);
+            this.materialListView5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView5_MouseDoubleClick);
             // 
             // cashier_useraccountsid
             // 
@@ -2276,7 +2287,7 @@
             this.groupBox21.Size = new System.Drawing.Size(262, 286);
             this.groupBox21.TabIndex = 145;
             this.groupBox21.TabStop = false;
-            this.groupBox21.Text = "Table Information";
+            this.groupBox21.Text = "Information Table";
             // 
             // label33
             // 
@@ -2380,7 +2391,7 @@
             this.materialListView4.TabIndex = 60;
             this.materialListView4.UseCompatibleStateImageBehavior = false;
             this.materialListView4.View = System.Windows.Forms.View.Details;
-            this.materialListView4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView4_MouseDoubleClick);
+            this.materialListView4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView4_MouseDoubleClick);
             // 
             // arc_cashier_useraccountsid
             // 
@@ -2627,17 +2638,6 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1230, 44);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 298);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 23);
-            this.label11.TabIndex = 78;
-            this.label11.Text = "Order Price ";
-            this.label11.Visible = false;
             // 
             // Mainframe
             // 

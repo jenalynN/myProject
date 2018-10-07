@@ -202,6 +202,7 @@
             this.textBox1.Location = new System.Drawing.Point(209, 137);
             this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(222, 32);
             this.textBox1.TabIndex = 56;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);

@@ -26,19 +26,15 @@ namespace LoginModule.cs
             viewfinishdamage();
             dataproductunarchived();
             dataproductarchived();
-
             databrandpartneraccountunarchived();
             databrandpartneraccountarchived();
-
             dataCashierAccountUnarchived();
             dataCashierAccountArchived();
             viewlogs();
             countunarchiveditems();
             countarchiveditems();
-
             countunarchivedcash();
             countarchivedcash();
-
             countunarchivedbp();
             countarchivedbp();
         }
@@ -241,11 +237,18 @@ namespace LoginModule.cs
 
         public void printunarchivedproduct()
         {
-            int data = 0;
-            ListViewItem list = materialListView1.SelectedItems[data];
-            String id = list.SubItems[0].Text;
-            label6.Text = id.ToString();
-            materialListView1.Columns[0].Width = 0;
+            try
+            {
+                int data = 0;
+                ListViewItem list = materialListView1.SelectedItems[data];
+                String id = list.SubItems[0].Text;
+                label6.Text = id.ToString();
+                materialListView1.Columns[0].Width = 0;
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show("Select only one record below");
+            }
             try
             {
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
@@ -270,10 +273,17 @@ namespace LoginModule.cs
         }
         public void printarchivedproduct()
         {
-            int data = 0;
-            ListViewItem list = materialListView2.SelectedItems[data];
-            String id = list.SubItems[0].Text;
-            label9.Text = id.ToString();
+            try
+            {
+                int data = 0;
+                ListViewItem list = materialListView2.SelectedItems[data];
+                String id = list.SubItems[0].Text;
+                label9.Text = id.ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Select only one record below");
+            }
             try
             {
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
@@ -1087,9 +1097,14 @@ namespace LoginModule.cs
         }
         private void materialRaisedButton1_Click_2(object sender, EventArgs e)
         {
-            Login a = new Login();
-            a.Show();
-            this.Hide();
+          
+                DialogResult dialog = MessageBox.Show( "Are You sure you want to Log-out?", "Message", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    Login a = new Login();
+                    a.Show();
+                    this.Hide();
+                }
         }
 
         private void materialFlatButton7_Click(object sender, EventArgs e)
@@ -1097,6 +1112,21 @@ namespace LoginModule.cs
             NewBrandPartnerAccount a = new NewBrandPartnerAccount();
             a.Show();
             this.Hide();
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void materialListView2_DoubleClick(object sender, EventArgs e)
@@ -1437,7 +1467,7 @@ namespace LoginModule.cs
                             "on d.col_orderid = o.col_orderid " +
                             "inner join tbl_transaction t " +
                             "on t.col_transactionid = o.col_transactionid " +
-                            "inner join tbl_product p " +
+                            "inner join tbl_product p " + 
                             "on p.col_productid = o.col_productid " +
                             "where d.col_status='pending-change' OR d.col_status='pending-refund'";
                 command.CommandText = query;
@@ -1462,25 +1492,25 @@ namespace LoginModule.cs
                     command.CommandText = query;
                     read = command.ExecuteReader();
 
-                    while (read.Read())
-                    {
-                        ListViewItem items = new ListViewItem(read["col_damageitemid"].ToString());
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_damageitemid"].ToString());
 
-                        items.SubItems.Add(read["col_orderid"].ToString());
+                    items.SubItems.Add(read["col_orderid"].ToString());
                         items.SubItems.Add(read["col_transactioncode"].ToString());
-                        items.SubItems.Add(read["col_productcode"].ToString());
-                        items.SubItems.Add(read["col_productname"].ToString());
-                        //items.SubItems.Add(read["col_staticquantity"].ToString());
-                        //items.SubItems.Add(read["col_reason"].ToString());
-                        items.SubItems.Add(read["col_status"].ToString());
+                    items.SubItems.Add(read["col_productcode"].ToString());
+                    items.SubItems.Add(read["col_productname"].ToString());
+                    //items.SubItems.Add(read["col_staticquantity"].ToString());
+                    //items.SubItems.Add(read["col_reason"].ToString());
+                    items.SubItems.Add(read["col_status"].ToString()); 
 
-                        materialListView11.Items.Add(items);
-                        materialListView11.FullRowSelect = true;
-                    }
-                    conn.Close();
+                    materialListView11.Items.Add(items);
+                    materialListView11.FullRowSelect = true;
+                }
+                conn.Close();
                     groupBox6.Enabled = true;
 
-                }
+            }
                 else
                 {
                     groupBox6.Enabled = false;
@@ -1520,8 +1550,7 @@ namespace LoginModule.cs
                 label46.Text = read["col_productprice"].ToString();
                 label11.Text = read["col_subtotal"].ToString();
 
-
-
+                
             }
             conn.Close();
         }
@@ -1620,7 +1649,7 @@ namespace LoginModule.cs
 
                     clearDamage();
 
-                }
+                   }
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -1703,7 +1732,7 @@ namespace LoginModule.cs
                     viewfinishdamage();
                     MessageBox.Show("Successfully Cancelled");
                     clearDamage();
-                }
+        }
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -1711,14 +1740,11 @@ namespace LoginModule.cs
             }
         }
 
-        private void groupBox6_Enter(object sender, EventArgs e)
+        private void materialListView2_MouseClick(object sender, MouseEventArgs e)
         {
-            
+            printarchivedproduct();
         }
 
-        private void materialListView11_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

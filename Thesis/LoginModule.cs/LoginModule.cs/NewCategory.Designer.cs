@@ -42,6 +42,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbcatname.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbcatname.Location = new System.Drawing.Point(225, 153);
+            this.tbcatname.MaxLength = 30;
             this.tbcatname.Name = "tbcatname";
             this.tbcatname.Size = new System.Drawing.Size(222, 26);
             this.tbcatname.TabIndex = 86;

@@ -57,7 +57,7 @@ namespace LoginModule.cs
                         string pass = (copro["col_password"].ToString());
                         if (user == textBox1.Text && pass == textBox2.Text)
                         {
-                            DialogSuccessfulyLogin a = new DialogSuccessfulyLogin();
+                            Mainframe a = new Mainframe();
                             a.Show();
                             this.Hide();
                         }

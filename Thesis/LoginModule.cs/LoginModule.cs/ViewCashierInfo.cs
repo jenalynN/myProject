@@ -44,7 +44,6 @@ namespace LoginModule.cs
             textBox9.Text = read["col_user"].ToString();
             textBox10.Text = read["col_password"].ToString();
 
-            textBox7.Text = read["col_password"].ToString();
             tempPass = textBox10.Text;
             conn.Close();
 
@@ -72,7 +71,6 @@ namespace LoginModule.cs
             "col_contactnum = '" + textBox6.Text + "', " +
             "col_user = '" + textBox9.Text + "', " +
             "col_password = '" + textBox10.Text + "' " +
-            "col_email ='"+textBox7.Text+"'"+
             "WHERE col_useraccountsid='" + labelCashierId.Text + "'";
             command.CommandText = query;
             command.ExecuteScalar();

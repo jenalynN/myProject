@@ -167,6 +167,7 @@
             this.materialTabControl1.SelectedIndex = 0;
             this.materialTabControl1.Size = new System.Drawing.Size(1226, 614);
             this.materialTabControl1.TabIndex = 0;
+            this.materialTabControl1.SelectedIndexChanged += new System.EventHandler(this.materialTabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -350,6 +351,7 @@
             this.tbOrderId.Name = "tbOrderId";
             this.tbOrderId.Size = new System.Drawing.Size(20, 26);
             this.tbOrderId.TabIndex = 75;
+            this.tbOrderId.Visible = false;
             // 
             // labelTransactionCode
             // 
@@ -371,6 +373,7 @@
             this.tbProductName.Name = "tbProductName";
             this.tbProductName.Size = new System.Drawing.Size(20, 26);
             this.tbProductName.TabIndex = 74;
+            this.tbProductName.Visible = false;
             // 
             // label14
             // 
@@ -392,6 +395,7 @@
             this.tbSubtotal.Name = "tbSubtotal";
             this.tbSubtotal.Size = new System.Drawing.Size(20, 26);
             this.tbSubtotal.TabIndex = 73;
+            this.tbSubtotal.Visible = false;
             // 
             // label13
             // 
@@ -413,6 +417,7 @@
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(20, 26);
             this.tbPrice.TabIndex = 72;
+            this.tbPrice.Visible = false;
             // 
             // label12
             // 
@@ -434,6 +439,7 @@
             this.tbCategory.Name = "tbCategory";
             this.tbCategory.Size = new System.Drawing.Size(20, 26);
             this.tbCategory.TabIndex = 71;
+            this.tbCategory.Visible = false;
             // 
             // label11
             // 
@@ -455,6 +461,7 @@
             this.tbBrand.Name = "tbBrand";
             this.tbBrand.Size = new System.Drawing.Size(20, 26);
             this.tbBrand.TabIndex = 70;
+            this.tbBrand.Visible = false;
             // 
             // labelChange
             // 
@@ -476,6 +483,7 @@
             this.tbProductCode.Name = "tbProductCode";
             this.tbProductCode.Size = new System.Drawing.Size(20, 26);
             this.tbProductCode.TabIndex = 68;
+            this.tbProductCode.Visible = false;
             // 
             // label4
             // 
@@ -656,7 +664,7 @@
             // tbQuantity
             // 
             this.tbQuantity.Location = new System.Drawing.Point(134, 346);
-            this.tbQuantity.MaxLength = 2;
+            this.tbQuantity.MaxLength = 3;
             this.tbQuantity.Name = "tbQuantity";
             this.tbQuantity.Size = new System.Drawing.Size(178, 31);
             this.tbQuantity.TabIndex = 23;
@@ -684,7 +692,7 @@
             this.materialListView2.TabIndex = 22;
             this.materialListView2.UseCompatibleStateImageBehavior = false;
             this.materialListView2.View = System.Windows.Forms.View.Details;
-            this.materialListView2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView2_DoubleClick);
+            this.materialListView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView2_DoubleClick);
             // 
             // columnHeader8
             // 
@@ -1146,7 +1154,7 @@
             this.materialListView4.TabIndex = 2;
             this.materialListView4.UseCompatibleStateImageBehavior = false;
             this.materialListView4.View = System.Windows.Forms.View.Details;
-            this.materialListView4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView4_MouseDoubleClick);
+            this.materialListView4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView4_MouseDoubleClick);
             // 
             // columnHeader13
             // 
@@ -1234,6 +1242,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(155, 24);
+            this.textBox1.MaxLength = 20;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(178, 31);
             this.textBox1.TabIndex = 24;
@@ -1262,7 +1271,7 @@
             this.materialListView3.TabIndex = 22;
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
-            this.materialListView3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListView3_MouseDoubleClick);
+            this.materialListView3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView3_MouseDoubleClick);
             // 
             // columnHeader11
             // 

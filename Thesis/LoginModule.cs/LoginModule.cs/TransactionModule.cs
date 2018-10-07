@@ -37,7 +37,7 @@ namespace LoginModule.cs
             MySqlDataReader read = command.ExecuteReader();
             while (read.Read())
             {
-                label3.Text = "Hi, "+(read["col_user"].ToString());
+                label3.Text = (read["col_user"].ToString());
             }
             conn.Close();
         
@@ -189,58 +189,83 @@ namespace LoginModule.cs
         }
         public void printitemdetails()
         {
-            int data = 0;
-            ListViewItem list = materialListView2.SelectedItems[data];
-            String id = list.SubItems[0].Text;
-            tbProductCode.Text = id.ToString();
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "select P.col_productid,P.col_productcode, P.col_productname ," +
-                "B.col_brandname,  C.col_categoryname,  P.col_productprice from tbl_product P " +
-                "LEFT JOIN tbl_brandpartner B ON B.col_useraccountsid = P.col_useraccountsid " +
-                "LEFT JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
-                "where P.col_status='unarchived' and P.col_productcode='" + tbProductCode.Text + "'";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
-            while (read.Read())
+            try
             {
-                ListViewItem items = new ListViewItem(read["col_productid"].ToString());
-                tbProductCode.Text = (read["col_productcode"].ToString());
-                tbSearchItem.Text = (read["col_productcode"].ToString());
-                tbProductName.Text = (read["col_productname"].ToString());
-                tbBrand.Text = (read["col_brandname"].ToString());
-                tbCategory.Text = (read["col_categoryname"].ToString());
-                tbPrice.Text = (read["col_productprice"].ToString());
+                int data = 0;
+                ListViewItem list = materialListView2.SelectedItems[data];
+                String id = list.SubItems[0].Text;
+                tbProductCode.Text = id.ToString();
+                }
+            catch (Exception e)
+            {
+                MessageBox.Show("Select only one Product at a time");
+
             }
-            conn.Close();
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "select P.col_productid,P.col_productcode, P.col_productname ," +
+                    "B.col_brandname,  C.col_categoryname,  P.col_productprice from tbl_product P " +
+                    "LEFT JOIN tbl_brandpartner B ON B.col_useraccountsid = P.col_useraccountsid " +
+                    "LEFT JOIN tbl_category C ON C.col_categoryid = P.col_categoryid " +
+                    "where P.col_status='unarchived' and P.col_productcode='" + tbProductCode.Text + "'";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_productid"].ToString());
+                    tbProductCode.Text = (read["col_productcode"].ToString());
+                    tbSearchItem.Text = (read["col_productcode"].ToString());
+                    tbProductName.Text = (read["col_productname"].ToString());
+                    tbBrand.Text = (read["col_brandname"].ToString());
+                    tbCategory.Text = (read["col_categoryname"].ToString());
+                    tbPrice.Text = (read["col_productprice"].ToString());
+                }
+                conn.Close();
+            
+            
         }
         public void printorderid()
         {
-            int data = 0;
-            ListViewItem list = materialListView1.SelectedItems[data];
-            String id = list.SubItems[0].Text;
-            tbOrderId.Text = id.ToString();
+            try
+            {
+                int data = 0;
+                ListViewItem list = materialListView1.SelectedItems[data];
+                String id = list.SubItems[0].Text;
+                tbOrderId.Text = id.ToString();
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show("Select only one product");
+            }
         }
+
         public void searchProduct()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            materialListView2.Items.Clear();
-            conn.Open();
-            string query1 = "select * from tbl_product  where col_productcode like  '" + tbSearchItem.Text + "%'  and col_status='unarchived'";
-
-            MySqlCommand command2 = conn.CreateCommand();
-            command2.CommandText = query1;
-            MySqlDataReader read = command2.ExecuteReader();
-            while (read.Read())
+            try
             {
-                ListViewItem items = new ListViewItem(read["col_productcode"].ToString());
-                items.SubItems.Add(read["col_productname"].ToString());
-                materialListView2.Items.Add(items);
-                materialListView2.FullRowSelect = true;
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                materialListView2.Items.Clear();
+                conn.Open();
+                string query1 = "select * from tbl_product  where col_productcode like  '" + tbSearchItem.Text + "%'  and col_status='unarchived'";
+
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = query1;
+                MySqlDataReader read = command2.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_productcode"].ToString());
+                    items.SubItems.Add(read["col_productname"].ToString());
+                    materialListView2.Items.Add(items);
+                    materialListView2.FullRowSelect = true;
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception e) 
+            {
+                MessageBox.Show("unable to read");
+            }
         }
         public void Change()
         {
@@ -372,7 +397,6 @@ namespace LoginModule.cs
                 command2.CommandText = query;
                 command2.ExecuteScalar();
                 conn.Close();
-
 
                 conn.Open();
                 MySqlCommand command3 = conn.CreateCommand();
@@ -559,7 +583,6 @@ namespace LoginModule.cs
 
                 command2.ExecuteScalar();
                 conn.Close();
-
                 conn.Open();
                 MySqlCommand command3 = conn.CreateCommand();
                 command3.CommandText ="UPDATE tbl_order SET " +
@@ -568,7 +591,6 @@ namespace LoginModule.cs
 
                 command3.ExecuteScalar();
                 conn.Close();
-
                 conn.Open();
                 MySqlCommand command4 = conn.CreateCommand();
                 command4.CommandText = "UPDATE tbl_order SET " +
@@ -577,22 +599,22 @@ namespace LoginModule.cs
 
                 command4.ExecuteScalar();
                 conn.Close();
-
                 MessageBox.Show("Product successfully added to the pending process for refund");
 
                 clearAllControl();
         }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(comboBox1.SelectedItem.ToString()))
+            if (comboBox1.Text == "") 
             {
-                MessageBox.Show("Please select return type.");
+                MessageBox.Show("Please select between Change or Refund");
+            
             }
-            else if (comboBox1.SelectedItem.ToString() == "Change")
+            else if (comboBox1.SelectedItem == "Change")
             {
                 inserttopending();
             }
-            else if(comboBox1.SelectedItem.ToString()  == "Refund")
+            else if (comboBox1.SelectedItem == "Refund")
             {
                 int a, b;
                 bool isAValid = int.TryParse(textBox5.Text, out a);
@@ -600,78 +622,83 @@ namespace LoginModule.cs
 
                 if (isAValid && isBValid)
                 {
+                    if (b == 0) 
+                    {
+                        MessageBox.Show("The item you are returning should not be zero","Message");
+                    }
                     if (a >= b)
                     {
                         inserttopending();
                     }
-                    else if (a < b) 
+                    else if (a < b)
                     {
-                        MessageBox.Show("The item you are returning is more than the item you bought","Message");
+                        MessageBox.Show("The item you are returning is more than the item you bought", "Message");
                     }
                 }
                 else
                 {
                     MessageBox.Show("Unable to return items");
-            
+
                 }
             }
-
+            
         }
         private void inserttopending()
         {
-            if (comboBox1.SelectedItem.ToString() == "Change")
+            if (textBox8.Text != "")
             {
-                logreturn();
-                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                conn.Open();
-                MySqlCommand command2 = conn.CreateCommand();
+                if (comboBox1.SelectedItem == "Change")
+                {
+                    logreturn();
+                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                    conn.Open();
+                    MySqlCommand command2 = conn.CreateCommand();
 
-                string query = "insert into tbl_damage(col_transactionid, col_orderid, col_reason, col_staticquantity, col_status) " +
-                    "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
+                    string query = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_staticquantity,col_status) " +
+                        "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
                     "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" +
                     textBox9.Text + "','" + 
                     textBox6.Text + 
                     "', 'pending-change' )";
-                command2.CommandText = query;
-                command2.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Product successfully added to the pending process for change item");
-                clearAllControl();
-
-            }
-            else if (comboBox1.SelectedItem.ToString() == "Refund")
-            {
-                textBox6.Visible = true;
-                label25.Visible = true;
-                logreturn();
-                updatespecifiedorder();
-            }
-            else 
+                    command2.CommandText = query;
+                    command2.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Product successfully added to the pending process for change item");
+                    clearAllControl();
+                }
+                else if (comboBox1.SelectedItem == "Refund")
+                {
+                    textBox6.Visible = true;
+                    label25.Visible = true;
+                    logreturn();
+                    updatespecifiedorder();
+                 }
+            else
             {
                 MessageBox.Show("Unable to return item /n Return item as?");
             }
 
         }
-
+        }
         private void clearAllControl()
         {
             textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox6.Clear();
-            textBox7.Clear();
-            textBox9.Clear();
-            textBox10.Clear();
-            comboBox1.Text = "";
-            textBox12.Clear();
-            textBox11.Clear();
-            materialListView4.Items.Clear();
-            textBox8.Clear();
-            materialListView3.Items.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                    textBox6.Clear();
+                    textBox7.Clear();
+                    textBox9.Clear();
+                    textBox10.Clear();
+                    comboBox1.Text = "";
+                    textBox12.Clear();
+                    textBox11.Clear();
+                    materialListView4.Items.Clear();
+                    textBox8.Clear();
+                    materialListView3.Items.Clear();
+             
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbAmount.Text))
@@ -717,19 +744,25 @@ namespace LoginModule.cs
             // Login a = new Login();
             // a.Show();
             //this.Hide();
-            DialogResult dialog = MessageBox.Show( "Are You sure you want to Cancel the Transaction?", "Message", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
+            if (materialListView1.Items.Count==0) 
             {
+            MessageBox.Show("You haven't ordered yet");
+            } 
+            else
+            {
+                DialogResult dialog = MessageBox.Show( "Are You sure you want to Cancel the Transaction?", "Message", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                     {
                 logcancel();
                 materialListView1.Items.Clear();
                 materialListView2.Items.Clear();
                 labelTotalSales.Text = "0.00";
                 tbAmount.Text = "0.00";
                 labelChange.Text = "0.00";
-
                 TransactionDelete();
+                    TransactionModule a = new TransactionModule(label17.Text);
             }
-            TransactionModule a = new TransactionModule(label17.Text);
+            }
         }
         private void tbQuantity_TextChanged(object sender, EventArgs e)
         {
@@ -837,7 +870,7 @@ namespace LoginModule.cs
             MySqlCommand command = conn.CreateCommand();
             string query = "Select *, count(col_orderid) as count from tbl_order o " +
                 "inner join tbl_transaction t " +
-                "on t.col_transactionid = o.col_transactionid " +
+                "  on t.col_transactionid = o.col_transactionid " +
                 "inner join tbl_product p " +
                 "on o.col_productid = p.col_productid " +
                 "inner join tbl_brandpartner b " +
@@ -860,59 +893,80 @@ namespace LoginModule.cs
                 items.SubItems.Add(read["col_staticprice"].ToString());
                 items.SubItems.Add(read["col_quantitybought"].ToString());
                 items.SubItems.Add(read["col_subtotal"].ToString());
-                materialListView4.Items.Add(items);
+                materialListView4.Items.Add(items); 
                 materialListView4.FullRowSelect = true;
             }
+
             conn.Close();
-
-            
-
         }
-
         public void printtransid() 
         {
-            int data = 0;
-            ListViewItem list = materialListView3.SelectedItems[data];
-            String id = list.SubItems[1].Text;
-            textBox8.Text = id.ToString();
+            try
+            {
+                int data = 0;
+                ListViewItem list = materialListView3.SelectedItems[data];
+                String id = list.SubItems[1].Text;
+                textBox8.Text = id.ToString();
             textBox1.Text = id.ToString();
-            printorders();
+                printorders();
+            }
+            catch (Exception E) 
+            {
+                MessageBox.Show("Select only one transaction");
+            }
         }
         private void materialListView3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             printtransid();
         }
-        public void printorderdetails() 
+        public void printorderdetails()
         {
-            int data = 0;
-            ListViewItem list = materialListView4.SelectedItems[data];
-            String id = list.SubItems[0].Text;
-            textBox2.Text = id.ToString();
-            
-             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            conn.Open();
 
-            MySqlCommand command = conn.CreateCommand();
-            string query = "Select * from tbl_order o " +
-                "inner join tbl_transaction t " +
-                "  on t.col_transactionid = o.col_transactionid " +
-                "inner join tbl_product p " +
-                "on o.col_productid = p.col_productid " +
-                "inner join tbl_brandpartner b " +
-                "on p.col_useraccountsid = b.col_useraccountsid " +
-                "inner join tbl_category c " +
-                "on c.col_categoryid = p.col_categoryid " +
-                "where o.col_orderid= '" + textBox2.Text + "'";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
-            while (read.Read())
+            int data = 0;
+            try
             {
-                textBox3.Text = read["col_productname"].ToString();
-                textBox4.Text = read["col_productcode"].ToString();
-                textBox5.Text = read["col_quantitybought"].ToString();
-                textBox7.Text = read["col_staticprice"].ToString();
+                ListViewItem list = materialListView4.SelectedItems[data];
+                String id = list.SubItems[0].Text;
+                textBox2.Text = id.ToString();
             }
-            conn.Close();
+            catch (Exception e)
+            {
+                MessageBox.Show("Select only one order");
+            }
+
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+
+                MySqlCommand command = conn.CreateCommand();
+                string query = "Select * from tbl_order o " +
+                    "inner join tbl_transaction t " +
+                    "  on t.col_transactionid = o.col_transactionid " +
+                    "inner join tbl_product p " +
+                    "on o.col_productid = p.col_productid " +
+                    "inner join tbl_brandpartner b " +
+                    "on p.col_useraccountsid = b.col_useraccountsid " +
+                    "inner join tbl_category c " +
+                    "on c.col_categoryid = p.col_categoryid " +
+                    "where o.col_orderid= '" + textBox2.Text + "'";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+                while (read.Read())
+                {
+                    textBox3.Text = read["col_productname"].ToString();
+                    textBox4.Text = read["col_productcode"].ToString();
+                    textBox5.Text = read["col_quantitybought"].ToString();
+                    textBox7.Text = read["col_staticprice"].ToString();
+                }
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error reading data from the database");
+
+            }
         }
         private void materialListView4_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -922,10 +976,14 @@ namespace LoginModule.cs
 
         private void materialFlatButton5_Click(object sender, EventArgs e)
         {
-            TransactionDelete();
-            Login a = new Login();
-            a.Show();
-            this.Hide();
+                DialogResult dialog = MessageBox.Show( "Are You sure you want to Log-out?", "Message", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    TransactionDelete();
+                    Login a = new Login();
+                    a.Show();
+                    this.Hide();
+                }
         }
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -969,7 +1027,21 @@ namespace LoginModule.cs
         {
             printorderdetails();
         }
-        
+
+        private void materialTabSelector1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialListView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             int ii = 1;
@@ -1039,9 +1111,26 @@ namespace LoginModule.cs
                     labelChange.Text + "\t", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, startX, startY + Offset);
     }
 
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void materialFlatButton6_Click(object sender, EventArgs e)
         {
             clearAllControl();
+        }
+
+        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            clearAllControl();
+            materialListView1.Items.Clear();
+            materialListView2.Items.Clear();
+            labelTotalSales.Text = "0.00";
+            tbAmount.Text = "0.00";
+            labelChange.Text = "0.00";
+            tbQuantity.Text = "";
+            tbSearchItem.Text = "";
         }
         
     }

@@ -61,13 +61,29 @@ namespace LoginModule.cs
         public void additem()
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            if (label1.Text == "")
-            {
-                MessageBox.Show("Please Complete the Form");
-            }
-            else
-            {
+       
                 conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                command.CommandText = "select * from tbl_product where col_productcode = '" + textBox1.Text  + "' " ;
+                MySqlDataReader read = command.ExecuteReader();
+
+                int count = 0;
+                while (read.Read())
+                {
+                    count++;
+                }
+                if (count == 1)
+                {
+                    MessageBox.Show("Please try another ''col_productcode''");
+                }
+                else if (count > 1)
+                {
+                    MessageBox.Show("Please try another ''col_productcode''");
+                }
+                else
+                {
+                    conn.Close();
+                    conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
                 command2.CommandText = "insert into tbl_product (col_useraccountsid, col_categoryid, col_productcode, col_productname, col_productprice, col_status) " +
                     "values  ((SELECT col_useraccountsid from tbl_brandpartner where col_brandname='" + comboBox1.Text + "')," +
@@ -75,16 +91,22 @@ namespace LoginModule.cs
                     textBox1.Text + "','" +
                     textBox3.Text + "','" + 
                     textBox2.Text + "','unarchived')";
+
                 command2.ExecuteNonQuery();
+
                 conn.Close();
                 MessageBox.Show("Successfully Added!");
                 Mainframe a = new Mainframe();
                 a.Show();
                 this.Close();
+                }
             }
-        }
+
+        
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
+                int b;
+                bool isBValid = int.TryParse(textBox2.Text, out b);
             if (string.IsNullOrWhiteSpace(comboBox1.Text) ||
                 string.IsNullOrWhiteSpace(comboBox2.Text) ||
                 string.IsNullOrWhiteSpace(textBox1.Text) ||
@@ -96,6 +118,10 @@ namespace LoginModule.cs
             else if (textBox2.Text == ".")
             {
                 MessageBox.Show("Invalid Price value.");
+            }
+            else if(b<1)
+            {
+                MessageBox.Show("Price should be greater than 0");
             }
             else
             {
@@ -161,9 +187,5 @@ namespace LoginModule.cs
             new DataHandling().decimalNumberTrap_KeyPress(sender, e);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
