@@ -1422,16 +1422,6 @@ namespace LoginModule.cs
             searcharchivedcashier();
         }
 
-        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -1794,7 +1784,29 @@ namespace LoginModule.cs
         {
             printarchivedproduct();
         }
+        
+        private void defaultFaultSelectID()
+        {
+            label6.Text = "SI";
+            label9.Text = "SI";
+            clearDamage();
 
+            label15.Text = "SI";
+            label21.Text = "SI";
 
+            label40.Text = "SI";
+            label33.Text = "SI";
+        }
+        
+        private void outsideListview_Click(object sender, EventArgs e)
+        {
+            defaultFaultSelectID();
+        }
+
+        private void genericTabControl_SelectedTabIndexChanged(object sender, EventArgs e)
+        {
+            defaultFaultSelectID();
+        }
+        
     }
 }

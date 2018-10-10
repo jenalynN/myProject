@@ -62,7 +62,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.materialFlatButton22 = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -241,7 +240,6 @@
             this.groupBox1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -297,7 +295,8 @@
             this.materialTabControl1.SelectedIndex = 0;
             this.materialTabControl1.Size = new System.Drawing.Size(1230, 637);
             this.materialTabControl1.TabIndex = 0;
-            this.materialTabControl1.SelectedIndexChanged += new System.EventHandler(this.materialTabControl1_SelectedIndexChanged);
+            this.materialTabControl1.SelectedIndexChanged += new System.EventHandler(this.genericTabControl_SelectedTabIndexChanged);
+            this.materialTabControl1.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // tabPage1
             // 
@@ -310,6 +309,7 @@
             this.tabPage1.Size = new System.Drawing.Size(1222, 608);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Product";
+            this.tabPage1.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialTabSelector2
             // 
@@ -325,6 +325,7 @@
             this.materialTabSelector2.Size = new System.Drawing.Size(1246, 16);
             this.materialTabSelector2.TabIndex = 2;
             this.materialTabSelector2.Text = "materialTabSelector2";
+            this.materialTabSelector2.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialTabControl2
             // 
@@ -343,6 +344,8 @@
             this.materialTabControl2.SelectedIndex = 0;
             this.materialTabControl2.Size = new System.Drawing.Size(1218, 578);
             this.materialTabControl2.TabIndex = 4;
+            this.materialTabControl2.SelectedIndexChanged += new System.EventHandler(this.genericTabControl_SelectedTabIndexChanged);
+            this.materialTabControl2.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // tabPage4
             // 
@@ -357,7 +360,7 @@
             this.tabPage4.Size = new System.Drawing.Size(1210, 552);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Unarchived";
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            this.tabPage4.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox4
             // 
@@ -370,6 +373,7 @@
             this.groupBox4.TabIndex = 55;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Category";
+            this.groupBox4.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialFlatButton19
             // 
@@ -406,6 +410,7 @@
             this.groupBox3.TabIndex = 54;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Manage Product";
+            this.groupBox3.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialFlatButton1
             // 
@@ -484,6 +489,7 @@
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information Table";
+            this.groupBox2.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label6
             // 
@@ -494,6 +500,7 @@
             this.label6.Size = new System.Drawing.Size(24, 23);
             this.label6.TabIndex = 55;
             this.label6.Text = "SI";
+            this.label6.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label5
             // 
@@ -504,6 +511,7 @@
             this.label5.Size = new System.Drawing.Size(94, 23);
             this.label5.TabIndex = 54;
             this.label5.Text = "Selected Id";
+            this.label5.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label1
             // 
@@ -514,6 +522,7 @@
             this.label1.Size = new System.Drawing.Size(32, 23);
             this.label1.TabIndex = 51;
             this.label1.Text = "AP";
+            this.label1.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label2
             // 
@@ -524,6 +533,7 @@
             this.label2.Size = new System.Drawing.Size(161, 23);
             this.label2.TabIndex = 50;
             this.label2.Text = "Unarchive Products";
+            this.label2.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox1
             // 
@@ -541,6 +551,7 @@
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Table";
+            this.groupBox1.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // comboBox1
             // 
@@ -559,6 +570,7 @@
             this.comboBox1.TabIndex = 55;
             this.comboBox1.Text = "Product Code";
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            this.comboBox1.Click += new System.EventHandler(this.outsideListview_Click);
             this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // textBox1
@@ -571,6 +583,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(389, 37);
             this.textBox1.TabIndex = 54;
+            this.textBox1.Click += new System.EventHandler(this.outsideListview_Click);
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label7
@@ -582,6 +595,7 @@
             this.label7.Size = new System.Drawing.Size(85, 23);
             this.label7.TabIndex = 53;
             this.label7.Text = "Search by";
+            this.label7.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialListView1
             // 
@@ -659,6 +673,7 @@
             this.tabPage5.Size = new System.Drawing.Size(1210, 552);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Archived";
+            this.tabPage5.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox10
             // 
@@ -674,6 +689,7 @@
             this.groupBox10.TabIndex = 58;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Information Table";
+            this.groupBox10.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label9
             // 
@@ -684,7 +700,7 @@
             this.label9.Size = new System.Drawing.Size(24, 23);
             this.label9.TabIndex = 55;
             this.label9.Text = "SI";
-            this.label9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView2_MouseClick);
+            this.label9.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label10
             // 
@@ -695,6 +711,7 @@
             this.label10.Size = new System.Drawing.Size(94, 23);
             this.label10.TabIndex = 54;
             this.label10.Text = "Selected Id";
+            this.label10.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label13
             // 
@@ -705,6 +722,7 @@
             this.label13.Size = new System.Drawing.Size(32, 23);
             this.label13.TabIndex = 51;
             this.label13.Text = "AP";
+            this.label13.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label14
             // 
@@ -715,38 +733,18 @@
             this.label14.Size = new System.Drawing.Size(141, 23);
             this.label14.TabIndex = 50;
             this.label14.Text = "Archive Products";
+            this.label14.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox9
             // 
             this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox9.Controls.Add(this.materialFlatButton22);
             this.groupBox9.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.Location = new System.Drawing.Point(932, 26);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(263, 92);
             this.groupBox9.TabIndex = 57;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Category";
-            // 
-            // materialFlatButton22
-            // 
-            this.materialFlatButton22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton22.AutoSize = true;
-            this.materialFlatButton22.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton22.BackColor = System.Drawing.Color.White;
-            this.materialFlatButton22.Depth = 0;
-            this.materialFlatButton22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialFlatButton22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.materialFlatButton22.Icon = null;
-            this.materialFlatButton22.Location = new System.Drawing.Point(55, 39);
-            this.materialFlatButton22.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton22.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton22.Name = "materialFlatButton22";
-            this.materialFlatButton22.Primary = false;
-            this.materialFlatButton22.Size = new System.Drawing.Size(152, 36);
-            this.materialFlatButton22.TabIndex = 50;
-            this.materialFlatButton22.Text = "Manage Category";
-            this.materialFlatButton22.UseVisualStyleBackColor = false;
+            this.groupBox9.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox8
             // 
@@ -764,6 +762,7 @@
             this.groupBox8.TabIndex = 56;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Product Table";
+            this.groupBox8.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // comboBox3
             // 
@@ -781,6 +780,7 @@
             this.comboBox3.Size = new System.Drawing.Size(223, 31);
             this.comboBox3.TabIndex = 59;
             this.comboBox3.Text = "Product Code";
+            this.comboBox3.Click += new System.EventHandler(this.outsideListview_Click);
             this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox3_KeyPress);
             // 
             // textBox2
@@ -793,6 +793,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(389, 37);
             this.textBox2.TabIndex = 58;
+            this.textBox2.Click += new System.EventHandler(this.outsideListview_Click);
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
@@ -805,6 +806,7 @@
             this.label8.Size = new System.Drawing.Size(85, 23);
             this.label8.TabIndex = 53;
             this.label8.Text = "Search by";
+            this.label8.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialListView2
             // 
@@ -881,6 +883,7 @@
             this.groupBox7.TabIndex = 55;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Manage Product";
+            this.groupBox7.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialFlatButton20
             // 
@@ -914,6 +917,7 @@
             this.tabPage3.Size = new System.Drawing.Size(1210, 552);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Damage";
+            this.tabPage3.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialTabSelector6
             // 
@@ -927,6 +931,7 @@
             this.materialTabSelector6.Size = new System.Drawing.Size(1210, 32);
             this.materialTabSelector6.TabIndex = 49;
             this.materialTabSelector6.Text = "materialTabSelector6";
+            this.materialTabSelector6.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialTabControl6
             // 
@@ -939,6 +944,8 @@
             this.materialTabControl6.SelectedIndex = 0;
             this.materialTabControl6.Size = new System.Drawing.Size(1198, 503);
             this.materialTabControl6.TabIndex = 48;
+            this.materialTabControl6.SelectedIndexChanged += new System.EventHandler(this.genericTabControl_SelectedTabIndexChanged);
+            this.materialTabControl6.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // tabPage12
             // 
@@ -980,6 +987,7 @@
             this.groupBox17.TabIndex = 62;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Info";
+            this.groupBox17.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label11
             // 
@@ -991,6 +999,7 @@
             this.label11.TabIndex = 78;
             this.label11.Text = "Order Price ";
             this.label11.Visible = false;
+            this.label11.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // lblTransactionCode
             // 
@@ -1002,6 +1011,7 @@
             this.lblTransactionCode.TabIndex = 77;
             this.lblTransactionCode.Text = "transaction code";
             this.lblTransactionCode.Visible = false;
+            this.lblTransactionCode.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label46
             // 
@@ -1009,8 +1019,10 @@
             this.label46.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.Location = new System.Drawing.Point(174, 275);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(0, 23);
+            this.label46.Size = new System.Drawing.Size(20, 23);
             this.label46.TabIndex = 76;
+            this.label46.Text = "0";
+            this.label46.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label43
             // 
@@ -1021,6 +1033,7 @@
             this.label43.Size = new System.Drawing.Size(122, 23);
             this.label43.TabIndex = 75;
             this.label43.Text = "Price per piece";
+            this.label43.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label42
             // 
@@ -1028,9 +1041,11 @@
             this.label42.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(174, 227);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(0, 23);
+            this.label42.Size = new System.Drawing.Size(20, 23);
             this.label42.TabIndex = 74;
+            this.label42.Text = "0";
             this.label42.Visible = false;
+            this.label42.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label36
             // 
@@ -1038,8 +1053,10 @@
             this.label36.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.Location = new System.Drawing.Point(174, 186);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(0, 23);
+            this.label36.Size = new System.Drawing.Size(20, 23);
             this.label36.TabIndex = 73;
+            this.label36.Text = "0";
+            this.label36.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label35
             // 
@@ -1051,6 +1068,7 @@
             this.label35.TabIndex = 72;
             this.label35.Text = "Purchased Qty";
             this.label35.Visible = false;
+            this.label35.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label31
             // 
@@ -1061,6 +1079,7 @@
             this.label31.Size = new System.Drawing.Size(114, 23);
             this.label31.TabIndex = 71;
             this.label31.Text = "Product Code";
+            this.label31.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label30
             // 
@@ -1068,8 +1087,10 @@
             this.label30.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(129, 147);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(0, 23);
+            this.label30.Size = new System.Drawing.Size(20, 23);
             this.label30.TabIndex = 70;
+            this.label30.Text = "0";
+            this.label30.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label29
             // 
@@ -1080,6 +1101,7 @@
             this.label29.Size = new System.Drawing.Size(76, 23);
             this.label29.TabIndex = 69;
             this.label29.Text = "Order Id";
+            this.label29.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label24
             // 
@@ -1087,8 +1109,10 @@
             this.label24.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(174, 109);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(0, 23);
+            this.label24.Size = new System.Drawing.Size(20, 23);
             this.label24.TabIndex = 68;
+            this.label24.Text = "0";
+            this.label24.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label23
             // 
@@ -1099,6 +1123,7 @@
             this.label23.Size = new System.Drawing.Size(58, 23);
             this.label23.TabIndex = 67;
             this.label23.Text = "Status";
+            this.label23.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label18
             // 
@@ -1106,8 +1131,10 @@
             this.label18.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(174, 69);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(0, 23);
+            this.label18.Size = new System.Drawing.Size(20, 23);
             this.label18.TabIndex = 66;
+            this.label18.Text = "0";
+            this.label18.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label17
             // 
@@ -1118,6 +1145,7 @@
             this.label17.Size = new System.Drawing.Size(93, 23);
             this.label17.TabIndex = 65;
             this.label17.Text = "Damage Id";
+            this.label17.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label3
             // 
@@ -1125,8 +1153,10 @@
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(174, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 23);
+            this.label3.Size = new System.Drawing.Size(20, 23);
             this.label3.TabIndex = 64;
+            this.label3.Text = "0";
+            this.label3.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label4
             // 
@@ -1137,6 +1167,7 @@
             this.label4.Size = new System.Drawing.Size(159, 23);
             this.label4.TabIndex = 63;
             this.label4.Text = "Return Product Qty";
+            this.label4.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox6
             // 
@@ -1151,6 +1182,7 @@
             this.groupBox6.TabIndex = 61;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Actions";
+            this.groupBox6.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialFlatButton5
             // 
@@ -1199,6 +1231,7 @@
             this.groupBox26.TabIndex = 60;
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "Return Item Logs";
+            this.groupBox26.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialListView11
             // 
@@ -1266,6 +1299,7 @@
             this.tabPage13.TabIndex = 1;
             this.tabPage13.Text = "Finish";
             this.tabPage13.UseVisualStyleBackColor = true;
+            this.tabPage13.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox30
             // 
@@ -1344,6 +1378,7 @@
             this.tabPage2.Size = new System.Drawing.Size(1222, 608);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Accounts";
+            this.tabPage2.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialTabSelector3
             // 
@@ -1358,6 +1393,7 @@
             this.materialTabSelector3.Size = new System.Drawing.Size(1245, 16);
             this.materialTabSelector3.TabIndex = 15;
             this.materialTabSelector3.Text = "materialTabSelector3";
+            this.materialTabSelector3.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialTabControl3
             // 
@@ -1372,6 +1408,8 @@
             this.materialTabControl3.SelectedIndex = 0;
             this.materialTabControl3.Size = new System.Drawing.Size(1216, 583);
             this.materialTabControl3.TabIndex = 14;
+            this.materialTabControl3.SelectedIndexChanged += new System.EventHandler(this.genericTabControl_SelectedTabIndexChanged);
+            this.materialTabControl3.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // tabPage6
             // 
@@ -1384,6 +1422,7 @@
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Brand Partner";
             this.tabPage6.UseVisualStyleBackColor = true;
+            this.tabPage6.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialTabSelector4
             // 
@@ -1398,6 +1437,7 @@
             this.materialTabSelector4.Size = new System.Drawing.Size(1985, 19);
             this.materialTabSelector4.TabIndex = 16;
             this.materialTabSelector4.Text = "materialTabSelector4";
+            this.materialTabSelector4.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialTabControl4
             // 
@@ -1411,6 +1451,7 @@
             this.materialTabControl4.SelectedIndex = 0;
             this.materialTabControl4.Size = new System.Drawing.Size(1202, 529);
             this.materialTabControl4.TabIndex = 17;
+            this.materialTabControl4.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // tabPage8
             // 
@@ -1424,6 +1465,7 @@
             this.tabPage8.Size = new System.Drawing.Size(1194, 503);
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "Unarchived";
+            this.tabPage8.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox13
             // 
@@ -1439,6 +1481,7 @@
             this.groupBox13.TabIndex = 85;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Information Table";
+            this.groupBox13.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label15
             // 
@@ -1449,6 +1492,7 @@
             this.label15.Size = new System.Drawing.Size(24, 23);
             this.label15.TabIndex = 55;
             this.label15.Text = "SI";
+            this.label15.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label16
             // 
@@ -1459,6 +1503,7 @@
             this.label16.Size = new System.Drawing.Size(94, 23);
             this.label16.TabIndex = 54;
             this.label16.Text = "Selected Id";
+            this.label16.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label19
             // 
@@ -1469,6 +1514,7 @@
             this.label19.Size = new System.Drawing.Size(32, 23);
             this.label19.TabIndex = 51;
             this.label19.Text = "AP";
+            this.label19.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label20
             // 
@@ -1479,6 +1525,7 @@
             this.label20.Size = new System.Drawing.Size(148, 46);
             this.label20.TabIndex = 50;
             this.label20.Text = "Unarchived Brand\r\nPartner Accounts ";
+            this.label20.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox12
             // 
@@ -1495,6 +1542,7 @@
             this.groupBox12.TabIndex = 84;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Brand Partner Accounts Table";
+            this.groupBox12.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // textBox3
             // 
@@ -1506,6 +1554,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(389, 37);
             this.textBox3.TabIndex = 56;
+            this.textBox3.Click += new System.EventHandler(this.outsideListview_Click);
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label27
@@ -1517,6 +1566,7 @@
             this.label27.Size = new System.Drawing.Size(85, 23);
             this.label27.TabIndex = 55;
             this.label27.Text = "Search by";
+            this.label27.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // comboBox5
             // 
@@ -1534,6 +1584,7 @@
             this.comboBox5.TabIndex = 54;
             this.comboBox5.Text = "Brandname";
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            this.comboBox5.Click += new System.EventHandler(this.outsideListview_Click);
             this.comboBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox5_KeyPress);
             // 
             // materialListView3
@@ -1641,6 +1692,7 @@
             this.groupBox11.TabIndex = 83;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Manage Account";
+            this.groupBox11.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialFlatButton7
             // 
@@ -1717,6 +1769,7 @@
             this.tabPage9.Size = new System.Drawing.Size(1194, 503);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "Archived";
+            this.tabPage9.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox16
             // 
@@ -1732,6 +1785,7 @@
             this.groupBox16.TabIndex = 86;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Information Table";
+            this.groupBox16.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label21
             // 
@@ -1742,6 +1796,7 @@
             this.label21.Size = new System.Drawing.Size(24, 23);
             this.label21.TabIndex = 55;
             this.label21.Text = "SI";
+            this.label21.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label22
             // 
@@ -1752,6 +1807,7 @@
             this.label22.Size = new System.Drawing.Size(94, 23);
             this.label22.TabIndex = 54;
             this.label22.Text = "Selected Id";
+            this.label22.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label25
             // 
@@ -1762,6 +1818,7 @@
             this.label25.Size = new System.Drawing.Size(32, 23);
             this.label25.TabIndex = 51;
             this.label25.Text = "AP";
+            this.label25.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label26
             // 
@@ -1772,6 +1829,7 @@
             this.label26.Size = new System.Drawing.Size(143, 46);
             this.label26.TabIndex = 50;
             this.label26.Text = "Archived Brand\r\nPartner Accounts\r\n";
+            this.label26.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox15
             // 
@@ -1788,6 +1846,7 @@
             this.groupBox15.TabIndex = 85;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Brand Partner Accounts  Table";
+            this.groupBox15.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // comboBox6
             // 
@@ -1804,6 +1863,7 @@
             this.comboBox6.Size = new System.Drawing.Size(230, 31);
             this.comboBox6.TabIndex = 60;
             this.comboBox6.Text = "Brandname";
+            this.comboBox6.Click += new System.EventHandler(this.outsideListview_Click);
             this.comboBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox6_KeyPress);
             // 
             // textBox4
@@ -1816,6 +1876,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(389, 37);
             this.textBox4.TabIndex = 59;
+            this.textBox4.Click += new System.EventHandler(this.outsideListview_Click);
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label28
@@ -1827,6 +1888,7 @@
             this.label28.Size = new System.Drawing.Size(85, 23);
             this.label28.TabIndex = 58;
             this.label28.Text = "Search by";
+            this.label28.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialListView6
             // 
@@ -1924,6 +1986,7 @@
             this.groupBox14.TabIndex = 84;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Manage Account";
+            this.groupBox14.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialFlatButton10
             // 
@@ -1957,6 +2020,7 @@
             this.tabPage7.Size = new System.Drawing.Size(1208, 557);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Cashier";
+            this.tabPage7.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialTabSelector5
             // 
@@ -1971,6 +2035,7 @@
             this.materialTabSelector5.Size = new System.Drawing.Size(1985, 19);
             this.materialTabSelector5.TabIndex = 18;
             this.materialTabSelector5.Text = "materialTabSelector5";
+            this.materialTabSelector5.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialTabControl5
             // 
@@ -1984,6 +2049,8 @@
             this.materialTabControl5.SelectedIndex = 0;
             this.materialTabControl5.Size = new System.Drawing.Size(1202, 529);
             this.materialTabControl5.TabIndex = 19;
+            this.materialTabControl5.SelectedIndexChanged += new System.EventHandler(this.genericTabControl_SelectedTabIndexChanged);
+            this.materialTabControl5.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // tabPage10
             // 
@@ -1997,6 +2064,7 @@
             this.tabPage10.Size = new System.Drawing.Size(1194, 503);
             this.tabPage10.TabIndex = 0;
             this.tabPage10.Text = "Unarchived";
+            this.tabPage10.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox24
             // 
@@ -2012,6 +2080,7 @@
             this.groupBox24.TabIndex = 147;
             this.groupBox24.TabStop = false;
             this.groupBox24.Text = "Information Table";
+            this.groupBox24.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label40
             // 
@@ -2022,6 +2091,7 @@
             this.label40.Size = new System.Drawing.Size(24, 23);
             this.label40.TabIndex = 55;
             this.label40.Text = "SI";
+            this.label40.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label41
             // 
@@ -2032,6 +2102,7 @@
             this.label41.Size = new System.Drawing.Size(94, 23);
             this.label41.TabIndex = 54;
             this.label41.Text = "Selected Id";
+            this.label41.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label44
             // 
@@ -2042,6 +2113,7 @@
             this.label44.Size = new System.Drawing.Size(32, 23);
             this.label44.TabIndex = 51;
             this.label44.Text = "AP";
+            this.label44.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label45
             // 
@@ -2052,6 +2124,7 @@
             this.label45.Size = new System.Drawing.Size(159, 23);
             this.label45.TabIndex = 50;
             this.label45.Text = "Unarchived Cashier";
+            this.label45.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox23
             // 
@@ -2068,6 +2141,7 @@
             this.groupBox23.TabIndex = 146;
             this.groupBox23.TabStop = false;
             this.groupBox23.Text = "Cashier Accounts Table";
+            this.groupBox23.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // textBox7
             // 
@@ -2079,6 +2153,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(389, 37);
             this.textBox7.TabIndex = 59;
+            this.textBox7.Click += new System.EventHandler(this.outsideListview_Click);
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label39
@@ -2090,6 +2165,7 @@
             this.label39.Size = new System.Drawing.Size(85, 23);
             this.label39.TabIndex = 58;
             this.label39.Text = "Search by";
+            this.label39.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // comboBox8
             // 
@@ -2106,6 +2182,7 @@
             this.comboBox8.Size = new System.Drawing.Size(230, 31);
             this.comboBox8.TabIndex = 57;
             this.comboBox8.Text = "Lastname";
+            this.comboBox8.Click += new System.EventHandler(this.outsideListview_Click);
             this.comboBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox8_KeyPress);
             // 
             // materialListView5
@@ -2195,6 +2272,7 @@
             this.groupBox22.TabIndex = 145;
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Manage Account";
+            this.groupBox22.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialFlatButton15
             // 
@@ -2273,6 +2351,7 @@
             this.tabPage11.Size = new System.Drawing.Size(1194, 503);
             this.tabPage11.TabIndex = 1;
             this.tabPage11.Text = "Archived";
+            this.tabPage11.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox21
             // 
@@ -2288,6 +2367,7 @@
             this.groupBox21.TabIndex = 145;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "Information Table";
+            this.groupBox21.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label33
             // 
@@ -2298,6 +2378,7 @@
             this.label33.Size = new System.Drawing.Size(24, 23);
             this.label33.TabIndex = 55;
             this.label33.Text = "SI";
+            this.label33.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label34
             // 
@@ -2308,6 +2389,7 @@
             this.label34.Size = new System.Drawing.Size(94, 23);
             this.label34.TabIndex = 54;
             this.label34.Text = "Selected Id";
+            this.label34.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label37
             // 
@@ -2318,6 +2400,7 @@
             this.label37.Size = new System.Drawing.Size(32, 23);
             this.label37.TabIndex = 51;
             this.label37.Text = "AP";
+            this.label37.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // label38
             // 
@@ -2328,6 +2411,7 @@
             this.label38.Size = new System.Drawing.Size(139, 23);
             this.label38.TabIndex = 50;
             this.label38.Text = "Archived Cashier";
+            this.label38.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox20
             // 
@@ -2344,6 +2428,7 @@
             this.groupBox20.TabIndex = 86;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "Cashier Accounts Table";
+            this.groupBox20.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // comboBox4
             // 
@@ -2360,6 +2445,7 @@
             this.comboBox4.Size = new System.Drawing.Size(230, 31);
             this.comboBox4.TabIndex = 61;
             this.comboBox4.Text = "Lastname";
+            this.comboBox4.Click += new System.EventHandler(this.outsideListview_Click);
             this.comboBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox4_KeyPress);
             // 
             // materialListView4
@@ -2445,6 +2531,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(389, 37);
             this.textBox6.TabIndex = 59;
+            this.textBox6.Click += new System.EventHandler(this.outsideListview_Click);
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label32
@@ -2456,6 +2543,7 @@
             this.label32.Size = new System.Drawing.Size(85, 23);
             this.label32.TabIndex = 58;
             this.label32.Text = "Search by";
+            this.label32.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // groupBox19
             // 
@@ -2469,6 +2557,7 @@
             this.groupBox19.TabIndex = 144;
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "Manage Account";
+            this.groupBox19.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialFlatButton13
             // 
@@ -2502,6 +2591,7 @@
             this.materialDivider35.Size = new System.Drawing.Size(1, 406);
             this.materialDivider35.TabIndex = 143;
             this.materialDivider35.Text = "materialDivider35";
+            this.materialDivider35.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // materialDivider34
             // 
@@ -2514,6 +2604,7 @@
             this.materialDivider34.Size = new System.Drawing.Size(1, 406);
             this.materialDivider34.TabIndex = 142;
             this.materialDivider34.Text = "materialDivider34";
+            this.materialDivider34.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // Logs
             // 
@@ -2638,6 +2729,7 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1230, 44);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
+            this.materialTabSelector1.Click += new System.EventHandler(this.outsideListview_Click);
             // 
             // Mainframe
             // 
@@ -2651,6 +2743,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mainframe";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Click += new System.EventHandler(this.outsideListview_Click);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.materialTabControl2.ResumeLayout(false);
@@ -2666,8 +2759,6 @@
             this.tabPage5.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -2870,7 +2961,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox9;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton22;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ColumnHeader activeProductName;
