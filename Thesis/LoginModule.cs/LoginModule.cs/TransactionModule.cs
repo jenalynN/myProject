@@ -26,8 +26,9 @@ namespace LoginModule.cs
             label25.Visible = true;
             viewcashier();
         }
-        public void viewcashier() 
+        public void viewcashier()
         {
+            try { 
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
             conn.Open();
@@ -40,8 +41,12 @@ namespace LoginModule.cs
                 label3.Text = (read["col_user"].ToString());
             }
             conn.Close();
-        
         }
+            catch (Exception e)
+            {
+                MessageBox.Show("No connection to host");
+            
+        }}
         public void logaddtocart() 
         {
             try
@@ -61,7 +66,7 @@ namespace LoginModule.cs
             }
             catch (Exception e)
             {
-                MessageBox.Show("" + e);
+                MessageBox.Show("No connection to host");
 
             }
         
@@ -87,7 +92,7 @@ namespace LoginModule.cs
             }
             catch (Exception e)
             {
-                MessageBox.Show("" + e);
+                MessageBox.Show("No Connection to host");
 
             }
         }
@@ -111,7 +116,7 @@ namespace LoginModule.cs
             }
             catch (Exception e)
             {
-                MessageBox.Show("" + e);
+                MessageBox.Show("No Connection to host");
 
             }
         }
@@ -134,7 +139,7 @@ namespace LoginModule.cs
             }
             catch (Exception e)
             {
-                MessageBox.Show("" + e);
+                MessageBox.Show("No Connection to host");
 
             }
         
@@ -159,7 +164,7 @@ namespace LoginModule.cs
             }
             catch (Exception e)
             {
-                MessageBox.Show("" + e);
+                MessageBox.Show("No Connection to host");
 
             }
         }
@@ -176,16 +181,21 @@ namespace LoginModule.cs
         }
         public void TransactionDelete()
         {
+            try
+            {
 
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                MySqlCommand command = conn.CreateCommand();
 
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            MySqlCommand command = conn.CreateCommand();
-
-            conn.Open();
-            command.CommandText = "Delete from tbl_transaction where col_transactioncode='" + labelTransactionCode.Text + "'";
-            command.ExecuteScalar();
-            conn.Close();
-
+                conn.Open();
+                command.CommandText = "Delete from tbl_transaction where col_transactioncode='" + labelTransactionCode.Text + "'";
+                command.ExecuteScalar();
+                conn.Close();
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show("No connection to host");
+            }
         }
         public void printitemdetails()
         {
@@ -201,6 +211,8 @@ namespace LoginModule.cs
                 MessageBox.Show("Select only one Product at a time");
 
             }
+            try
+            {
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
                 conn.Open();
@@ -223,7 +235,11 @@ namespace LoginModule.cs
                     tbPrice.Text = (read["col_productprice"].ToString());
                 }
                 conn.Close();
-            
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show("No Connection to host");
+            }
             
         }
         public void printorderid()
@@ -264,7 +280,7 @@ namespace LoginModule.cs
             }
             catch (Exception e) 
             {
-                MessageBox.Show("unable to read");
+                MessageBox.Show("No Connection to host");
             }
         }
         public void Change()
@@ -279,36 +295,47 @@ namespace LoginModule.cs
         }
         public void TodaysSales()
         {
-            MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "select SUM(col_totalprice) as price from tbl_transaction where col_dateofpurchase='" + label2.Text + "'";
-            MySqlDataReader basa = cmd.ExecuteReader();
-            while (basa.Read())
+            try
             {
-                label5.Text = basa["price"].ToString();
+                MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select SUM(col_totalprice) as price from tbl_transaction where col_dateofpurchase='" + label2.Text + "'";
+                MySqlDataReader basa = cmd.ExecuteReader();
+                while (basa.Read())
+                {
+                    label5.Text = basa["price"].ToString();
 
+                }
+                con.Close();
             }
-            con.Close();
+            catch (Exception e) { MessageBox.Show("No connection to host"); }
         }
         public void TransactionOutput()
         {
-            MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "select MAX(col_transactionid) as ayD from tbl_transaction";
-            MySqlDataReader basa = cmd.ExecuteReader();
-            while (basa.Read())
+            try
             {
-                string ayd = basa["ayD"].ToString();
-                int plus1 = Int32.Parse(ayd);
-                int total = plus1 + 1;
-                labelTransactionCode.Text = "PCS0" + total;
+                MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select MAX(col_transactionid) as ayD from tbl_transaction";
+                MySqlDataReader basa = cmd.ExecuteReader();
+                while (basa.Read())
+                {
+                    string ayd = basa["ayD"].ToString();
+                    int plus1 = Int32.Parse(ayd);
+                    int total = plus1 + 1;
+                    labelTransactionCode.Text = "PCS0" + total;
+                }
+                con.Close();
+                InsertTransaction();
             }
-            con.Close();
-            InsertTransaction();
+            catch (Exception e) 
+            {
+                MessageBox.Show("No connection to host");
+            }
         }
         public void InsertOrder()
         {
@@ -336,153 +363,176 @@ namespace LoginModule.cs
             }
             catch (Exception e)
             {
-                MessageBox.Show("" + e);
+                MessageBox.Show("No Connection to host");
 
             }
         }
         public void InsertTransaction()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            if (label1.Text == "")
+            try
             {
-                MessageBox.Show("Please Complete the Form");
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                if (label1.Text == "")
+                {
+                    MessageBox.Show("Please Complete the Form");
+                }
+                else
+                {
+                    conn.Open();
+                    MySqlCommand command2 = conn.CreateCommand();
+                    command2.CommandText = "insert into tbl_transaction(col_transactioncode,col_useraccountsid,col_totalprice,col_dateofpurchase) values ('" + labelTransactionCode.Text + "','" + label17.Text + "','" + labelTotalSales.Text + "',now())";
+                    command2.ExecuteScalar();
+                    conn.Close();
+                }
             }
-            else
+            catch (Exception e) 
             {
-                conn.Open();
-                MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = "insert into tbl_transaction(col_transactioncode,col_useraccountsid,col_totalprice,col_dateofpurchase) values ('" + labelTransactionCode.Text + "','" + label17.Text + "','" + labelTotalSales.Text + "',now())";
-                command2.ExecuteScalar();
-                conn.Close();
+                MessageBox.Show("No connection to host");
             }
         }
         public void InsertTransactionTotalAmount()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            if (labelTotalSales.Text == "0.00")
+            try
             {
-                MessageBox.Show("Please select an item.");
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                if (labelTotalSales.Text == "0.00")
+                {
+                    MessageBox.Show("Please select an item.");
+                }
+                else if (materialListView1.Items.Count == 0)
+                {
+                    MessageBox.Show("Please select an item.");
+                }
+                else if (string.IsNullOrWhiteSpace(tbAmount.Text))
+                {
+                    MessageBox.Show("Please enter tender amount.");
+                }
+                //else if (int.Parse(tbAmount.Text) == 0)
+                //{
+                //    MessageBox.Show("Tender should be greater than 0.");
+                //}
+                else if (tbAmount.Text == "" || tbAmount.Text == ".")
+                {
+                    MessageBox.Show("Please enter tender amount.");
+                }
+                else if (double.Parse(tbAmount.Text) < double.Parse(labelTotalSales.Text))
+                {
+                    MessageBox.Show("Insufficient Tender amount.");
+                }
+                else
+                {
+                    double TotalSales = Double.Parse(labelTotalSales.Text);
+                    double tenderAmount = Double.Parse(tbAmount.Text);
+                    double change = Double.Parse(labelChange.Text);
+
+                    conn.Open();
+                    MySqlCommand command2 = conn.CreateCommand();
+                    string query = "UPDATE tbl_transaction SET " +
+                        "col_totalprice= " + TotalSales +
+                        " WHERE col_transactioncode='" + labelTransactionCode.Text + "'";
+                    command2.CommandText = query;
+                    command2.ExecuteScalar();
+                    conn.Close();
+
+                    conn.Open();
+                    MySqlCommand command3 = conn.CreateCommand();
+                    string query2 = "UPDATE tbl_order SET " +
+                        "col_orderstatus='Sales' Where col_transactionid = (SELECT col_transactionid from tbl_transaction where col_transactioncode = '" + labelTransactionCode.Text + "')";
+                    // MessageBox.Show(query2);
+                    command3.CommandText = query2;
+                    command3.ExecuteScalar();
+                    conn.Close();
+
+
+
+
+                    printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("custom", 400, 800);
+                    printPreviewDialog1.Size = new System.Drawing.Size(400, 800);
+                    printPreviewDialog1.ShowDialog();
+
+                    MessageBox.Show("Transaction Saved!");
+
+
+
+                    TransactionModule a = new TransactionModule(label17.Text);
+                    a.Show();
+                    this.Hide();
+
+                    materialListView1.Items.Clear();
+                    materialListView2.Items.Clear();
+                    labelTotalSales.Text = "0.00";
+                    tbAmount.Text = "0.00";
+                    labelChange.Text = "0.00";
+
+                }
             }
-            else if (materialListView1.Items.Count == 0)
+            catch (Exception e)
             {
-                MessageBox.Show("Please select an item.");
+                MessageBox.Show("No connection to host");
             }
-            else if (string.IsNullOrWhiteSpace(tbAmount.Text))
-            {
-                MessageBox.Show("Please enter tender amount.");
-            }
-            //else if (int.Parse(tbAmount.Text) == 0)
-            //{
-            //    MessageBox.Show("Tender should be greater than 0.");
-            //}
-            else if (tbAmount.Text == ""  || tbAmount.Text == ".")
-            {
-                MessageBox.Show("Please enter tender amount.");
-            }
-            else if (double.Parse(tbAmount.Text) < double.Parse(labelTotalSales.Text))
-            {
-                MessageBox.Show("Insufficient Tender amount.");
-            }
-            else
-            {
-                double TotalSales = Double.Parse(labelTotalSales.Text);
-                double tenderAmount = Double.Parse(tbAmount.Text);
-                double change = Double.Parse(labelChange.Text);
-
-                conn.Open();
-                MySqlCommand command2 = conn.CreateCommand();
-                string query = "UPDATE tbl_transaction SET " +
-                    "col_totalprice= " + TotalSales +
-                    " WHERE col_transactioncode='" + labelTransactionCode.Text + "'";
-                command2.CommandText = query;
-                command2.ExecuteScalar();
-                conn.Close();
-
-                conn.Open();
-                MySqlCommand command3 = conn.CreateCommand();
-                string query2 = "UPDATE tbl_order SET " +
-                    "col_orderstatus='Sales' Where col_transactionid = (SELECT col_transactionid from tbl_transaction where col_transactioncode = '" + labelTransactionCode.Text + "')";
-               // MessageBox.Show(query2);
-                command3.CommandText = query2;
-                command3.ExecuteScalar();
-                conn.Close();
-
-
-                
-
-                printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("custom", 400, 800);
-                printPreviewDialog1.Size = new System.Drawing.Size(400, 800);
-                printPreviewDialog1.ShowDialog();
-
-                MessageBox.Show("Transaction Saved!");
-                
-
-
-                TransactionModule a = new TransactionModule(label17.Text);
-                a.Show();
-                this.Hide();
-
-                materialListView1.Items.Clear();
-                materialListView2.Items.Clear();
-                labelTotalSales.Text = "0.00";
-                tbAmount.Text = "0.00";
-                labelChange.Text = "0.00";
-
-            }
+           
         }
         public void viewOrder()
         {
-            materialListView1.Items.Clear();
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "Select * from tbl_order o "+
-                "inner join tbl_transaction t " +
-                "  on t.col_transactionid = o.col_transactionid "+
-                "inner join tbl_product p " +
-                "on o.col_productid = p.col_productid " +
-                "inner join tbl_brandpartner b " +
-                "on p.col_useraccountsid = b.col_useraccountsid " +
-                "inner join tbl_category c " +
-                "on c.col_categoryid = p.col_categoryid " +
-                "where t.col_transactioncode = '" + labelTransactionCode.Text + "' and o.col_orderstatus='unfinished'";
-
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
-            while (read.Read())
+            try
             {
-                ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
-                items.SubItems.Add(read["col_productcode"].ToString());
-                items.SubItems.Add(read["col_productname"].ToString());
-                items.SubItems.Add(read["col_brandname"].ToString());
-                items.SubItems.Add(read["col_categoryname"].ToString());
-                items.SubItems.Add(read["col_productprice"].ToString());
-                items.SubItems.Add(read["col_quantitybought"].ToString());
-                items.SubItems.Add(read["col_subtotal"].ToString());
-                materialListView1.Items.Add(items);
+                materialListView1.Items.Clear();
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "Select * from tbl_order o " +
+                    "inner join tbl_transaction t " +
+                    "  on t.col_transactionid = o.col_transactionid " +
+                    "inner join tbl_product p " +
+                    "on o.col_productid = p.col_productid " +
+                    "inner join tbl_brandpartner b " +
+                    "on p.col_useraccountsid = b.col_useraccountsid " +
+                    "inner join tbl_category c " +
+                    "on c.col_categoryid = p.col_categoryid " +
+                    "where t.col_transactioncode = '" + labelTransactionCode.Text + "' and o.col_orderstatus='unfinished'";
+
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
+                    items.SubItems.Add(read["col_productcode"].ToString());
+                    items.SubItems.Add(read["col_productname"].ToString());
+                    items.SubItems.Add(read["col_brandname"].ToString());
+                    items.SubItems.Add(read["col_categoryname"].ToString());
+                    items.SubItems.Add(read["col_productprice"].ToString());
+                    items.SubItems.Add(read["col_quantitybought"].ToString());
+                    items.SubItems.Add(read["col_subtotal"].ToString());
+                    materialListView1.Items.Add(items);
+                }
+                conn.Close();
+                //MessageBox.Show(query);
+
+                subtotal();
+                total();
+
+                materialListView2.Items.Clear();
+
+                tbSubtotal.Clear();
+                tbSearchItem.Clear();
+                tbQuantity.Clear();
+                tbPrice.Clear();
+                tbOrderId.Clear();
+                tbProductName.Clear();
+                tbProductCode.Clear();
+                tbBrand.Clear();
+                tbCategory.Clear();
             }
-            conn.Close();
-            //MessageBox.Show(query);
-
-            subtotal();
-            total();
-
-            materialListView2.Items.Clear();
-
-            tbSubtotal.Clear();
-            tbSearchItem.Clear();
-            tbQuantity.Clear();
-            tbPrice.Clear();
-            tbOrderId.Clear();
-            tbProductName.Clear();
-            tbProductCode.Clear();
-            tbBrand.Clear();
-            tbCategory.Clear();
-
+            catch (Exception e) 
+            {
+                MessageBox.Show("No connection");
+            }
         }
         public void remove()
         {
+            try
+            {
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             MySqlCommand command = conn.CreateCommand();
             conn.Close();
@@ -503,6 +553,13 @@ namespace LoginModule.cs
                 conn.Close();
             }
             viewOrder();
+         
+                
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show("No connection to host");
+            }
         }
         public void subtotal()
         {
@@ -568,25 +625,27 @@ namespace LoginModule.cs
                 searchProduct();
             }
         }
-        private void updatespecifiedorder() 
+        private void updatespecifiedorder()
         {
+            try
+            {
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
                 command2.CommandText = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_staticquantity,col_status) " +
                     "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
-                    "(Select col_orderid from tbl_order where col_orderid = '" + 
+                    "(Select col_orderid from tbl_order where col_orderid = '" +
                     textBox2.Text + "'),'" +
-                    textBox9.Text + "','" + 
-                    textBox6.Text + 
+                    textBox9.Text + "','" +
+                    textBox6.Text +
                     "','pending-refund')";
 
                 command2.ExecuteScalar();
                 conn.Close();
                 conn.Open();
                 MySqlCommand command3 = conn.CreateCommand();
-                command3.CommandText ="UPDATE tbl_order SET " +
-                    "col_subtotal='" + textBox12.Text+"'" +
+                command3.CommandText = "UPDATE tbl_order SET " +
+                    "col_subtotal='" + textBox12.Text + "'" +
                     " WHERE col_orderid='" + textBox2.Text + "'";
 
                 command3.ExecuteScalar();
@@ -602,6 +661,11 @@ namespace LoginModule.cs
                 MessageBox.Show("Product successfully added to the pending process for refund");
 
                 clearAllControl();
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show("no connection to host");
+            }
         }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
@@ -645,40 +709,47 @@ namespace LoginModule.cs
         }
         private void inserttopending()
         {
-            if (textBox8.Text != "")
+            try
             {
-                if (comboBox1.SelectedItem == "Change")
+                if (textBox8.Text != "")
                 {
-                    logreturn();
-                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                    conn.Open();
-                    MySqlCommand command2 = conn.CreateCommand();
+                    if (comboBox1.SelectedItem == "Change")
+                    {
+                        logreturn();
+                        MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                        conn.Open();
+                        MySqlCommand command2 = conn.CreateCommand();
 
-                    string query = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_staticquantity,col_status) " +
-                        "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
-                    "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" +
-                    textBox9.Text + "','" + 
-                    textBox6.Text + 
-                    "', 'pending-change' )";
-                    command2.CommandText = query;
-                    command2.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Product successfully added to the pending process for change item");
-                    clearAllControl();
+                        string query = "insert into tbl_damage(col_transactionid,col_orderid,col_reason,col_staticquantity,col_status) " +
+                            "values ((Select col_transactionid from tbl_transaction where col_transactioncode='" + textBox8.Text + "')," +
+                        "(Select col_orderid from tbl_order where col_orderid = '" + textBox2.Text + "'),'" +
+                        textBox9.Text + "','" +
+                        textBox6.Text +
+                        "', 'pending-change' )";
+                        command2.CommandText = query;
+                        command2.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Product successfully added to the pending process for change item");
+                        clearAllControl();
+                    }
+                    else if (comboBox1.SelectedItem == "Refund")
+                    {
+                        textBox6.Visible = true;
+                        label25.Visible = true;
+                        logreturn();
+                        updatespecifiedorder();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to return item /n Return item as?");
+                    }
                 }
-                else if (comboBox1.SelectedItem == "Refund")
-                {
-                    textBox6.Visible = true;
-                    label25.Visible = true;
-                    logreturn();
-                    updatespecifiedorder();
-                 }
-            else
-            {
-                MessageBox.Show("Unable to return item /n Return item as?");
             }
-
-        }
+            catch (Exception e)
+            {
+                MessageBox.Show("No connection to host");
+            }
+        
         }
         private void clearAllControl()
         {
@@ -744,24 +815,30 @@ namespace LoginModule.cs
             // Login a = new Login();
             // a.Show();
             //this.Hide();
-            if (materialListView1.Items.Count==0) 
+            try {
+                if (materialListView1.Items.Count == 0)
+                {
+                    MessageBox.Show("You haven't ordered yet");
+                }
+                else
+                {
+                    DialogResult dialog = MessageBox.Show("Are You sure you want to Cancel the Transaction?", "Message", MessageBoxButtons.YesNo);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        logcancel();
+                        materialListView1.Items.Clear();
+                        materialListView2.Items.Clear();
+                        labelTotalSales.Text = "0.00";
+                        tbAmount.Text = "0.00";
+                        labelChange.Text = "0.00";
+                        TransactionDelete();
+                        TransactionModule a = new TransactionModule(label17.Text);
+                    }
+                }
+                }catch(Exception a)
             {
-            MessageBox.Show("You haven't ordered yet");
-            } 
-            else
-            {
-                DialogResult dialog = MessageBox.Show( "Are You sure you want to Cancel the Transaction?", "Message", MessageBoxButtons.YesNo);
-                if (dialog == DialogResult.Yes)
-                     {
-                logcancel();
-                materialListView1.Items.Clear();
-                materialListView2.Items.Clear();
-                labelTotalSales.Text = "0.00";
-                tbAmount.Text = "0.00";
-                labelChange.Text = "0.00";
-                TransactionDelete();
-                    TransactionModule a = new TransactionModule(label17.Text);
-            }
+                MessageBox.Show("No connection to host");
+                
             }
         }
         private void tbQuantity_TextChanged(object sender, EventArgs e)
@@ -823,32 +900,37 @@ namespace LoginModule.cs
         }
         public void searchtransaction()
         {
-
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            materialListView3.Items.Clear();
-            conn.Open();
-            string query1 = "select * from tbl_transaction t " +
-            "inner join tbl_order o on t.col_transactionid = o.col_transactionid " +
-            "where o.col_orderstatus='Sales' " +
-            "AND t.col_totalprice > 0 " +
-            "AND t.col_transactioncode like  '" + textBox1.Text + "%'";
-
-            MySqlCommand command2 = conn.CreateCommand();
-            command2.CommandText = query1;
-            MySqlDataReader read = command2.ExecuteReader();
-            while (read.Read())
+            try
             {
-                ListViewItem items = new ListViewItem(read["col_transactionid"].ToString());
-                items.SubItems.Add(read["col_transactioncode"].ToString());
-                var dt = DateTime.Parse(read["col_dateofpurchase"].ToString());
-                items.SubItems.Add(dt.ToString("yyyy-MM-dd"));
-                materialListView3.Items.Add(items);
-                materialListView3.FullRowSelect = true;
-            }
-            conn.Close();
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                materialListView3.Items.Clear();
+                conn.Open();
+                string query1 = "select * from tbl_transaction t " +
+                "inner join tbl_order o on t.col_transactionid = o.col_transactionid " +
+                "where o.col_orderstatus='Sales' " +
+                "AND t.col_totalprice > 0 " +
+                "AND t.col_transactioncode like  '" + textBox1.Text + "%'";
 
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = query1;
+                MySqlDataReader read = command2.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem items = new ListViewItem(read["col_transactionid"].ToString());
+                    items.SubItems.Add(read["col_transactioncode"].ToString());
+                    var dt = DateTime.Parse(read["col_dateofpurchase"].ToString());
+                    items.SubItems.Add(dt.ToString("yyyy-MM-dd"));
+                    materialListView3.Items.Add(items);
+                    materialListView3.FullRowSelect = true;
+                }
+                conn.Close();
+
+            
         }
-
+            catch(Exception e)
+    {
+    MessageBox.Show("No connection to host");
+    }}
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
@@ -863,42 +945,48 @@ namespace LoginModule.cs
         }
         public void printorders()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            conn.Open();
-
-            materialListView4.Items.Clear(); 
-            MySqlCommand command = conn.CreateCommand();
-            string query = "Select *, count(col_orderid) as count from tbl_order o " +
-                "inner join tbl_transaction t " +
-                "  on t.col_transactionid = o.col_transactionid " +
-                "inner join tbl_product p " +
-                "on o.col_productid = p.col_productid " +
-                "inner join tbl_brandpartner b " +
-                "on p.col_useraccountsid = b.col_useraccountsid " +
-                "inner join tbl_category c " +
-                "on c.col_categoryid = p.col_categoryid " +
-                "where t.col_transactioncode = '" + textBox8.Text + "' and o.col_orderstatus='Sales' " +
-                "and o.col_quantitybought > 0 ";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
-            
-            while (read.Read())
+            try
             {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
 
-                ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
-                items.SubItems.Add(read["col_productcode"].ToString());
-                items.SubItems.Add(read["col_productname"].ToString());
-                items.SubItems.Add(read["col_brandname"].ToString());
-                items.SubItems.Add(read["col_categoryname"].ToString());
-                items.SubItems.Add(read["col_staticprice"].ToString());
-                items.SubItems.Add(read["col_quantitybought"].ToString());
-                items.SubItems.Add(read["col_subtotal"].ToString());
-                materialListView4.Items.Add(items); 
-                materialListView4.FullRowSelect = true;
+                materialListView4.Items.Clear();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "Select *, count(col_orderid) as count from tbl_order o " +
+                    "inner join tbl_transaction t " +
+                    "  on t.col_transactionid = o.col_transactionid " +
+                    "inner join tbl_product p " +
+                    "on o.col_productid = p.col_productid " +
+                    "inner join tbl_brandpartner b " +
+                    "on p.col_useraccountsid = b.col_useraccountsid " +
+                    "inner join tbl_category c " +
+                    "on c.col_categoryid = p.col_categoryid " +
+                    "where t.col_transactioncode = '" + textBox8.Text + "' and o.col_orderstatus='Sales' " +
+                    "and o.col_quantitybought > 0 ";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+
+                while (read.Read())
+                {
+
+                    ListViewItem items = new ListViewItem(read["col_orderid"].ToString());
+                    items.SubItems.Add(read["col_productcode"].ToString());
+                    items.SubItems.Add(read["col_productname"].ToString());
+                    items.SubItems.Add(read["col_brandname"].ToString());
+                    items.SubItems.Add(read["col_categoryname"].ToString());
+                    items.SubItems.Add(read["col_staticprice"].ToString());
+                    items.SubItems.Add(read["col_quantitybought"].ToString());
+                    items.SubItems.Add(read["col_subtotal"].ToString());
+                    materialListView4.Items.Add(items);
+                    materialListView4.FullRowSelect = true;
+                }
+
+                conn.Close();
             }
-
-            conn.Close();
-        }
+        catch(Exception e)
+    {
+    MessageBox.Show("No Connection to host");
+    }}
         public void printtransid() 
         {
             try
@@ -964,7 +1052,7 @@ namespace LoginModule.cs
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error reading data from the database");
+                MessageBox.Show("No connection to hoste");
 
             }
         }

@@ -20,24 +20,31 @@ namespace LoginModule.cs
         }
         public void viewbrand()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            cbBrandP.Items.Clear();
-
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "select col_brandname from tbl_brandpartner";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
-
-            while (read.Read())
+            try
             {
-                cbBrandP.Items.Add(read["col_brandname"].ToString());
-            }
-            conn.Close();
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                cbBrandP.Items.Clear();
 
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "select col_brandname from tbl_brandpartner";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+
+                while (read.Read())
+                {
+                    cbBrandP.Items.Add(read["col_brandname"].ToString());
+                }
+                conn.Close();
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show("No connection to host");
+            }
         }
         public void addcategory()
         {
+            try { 
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
             if (tbcatname.Text == "" || cbBrandP.Text == "")
             {
@@ -57,7 +64,8 @@ namespace LoginModule.cs
                 a.Show();
                 this.Close();
             }
-
+                }
+            catch (Exception e) { MessageBox.Show("No connection to host"); }
         }
 
         private void btAddCat_Click(object sender, EventArgs e)
