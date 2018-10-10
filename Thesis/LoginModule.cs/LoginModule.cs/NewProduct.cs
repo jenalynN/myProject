@@ -24,47 +24,62 @@ namespace LoginModule.cs
         }
         public void viewcategory()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            comboBox2.Items.Clear();
-
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_category";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
-
-            while (read.Read())
+            try
             {
-                comboBox2.Items.Add(read["col_categoryname"].ToString());
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                comboBox2.Items.Clear();
 
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "select * from tbl_category";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+
+                while (read.Read())
+                {
+                    comboBox2.Items.Add(read["col_categoryname"].ToString());
+
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception e) 
+            {
+                MessageBox.Show("No connection to host");
+            }
         }
         public void viewbrand()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            comboBox1.Items.Clear();
-
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_brandpartner";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
-
-            while (read.Read())
+            try
             {
-                comboBox1.Items.Add(read["col_brandname"].ToString());
-            }
-            conn.Close();
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                comboBox1.Items.Clear();
 
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "select * from tbl_brandpartner";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+
+                while (read.Read())
+                {
+                    comboBox1.Items.Add(read["col_brandname"].ToString());
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No connection to host");
+            }
         }
         public void additem()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-       
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+
                 conn.Open();
                 MySqlCommand command = conn.CreateCommand();
-                command.CommandText = "select * from tbl_product where col_productcode = '" + textBox1.Text  + "' " ;
+                command.CommandText = "select * from tbl_product where col_productcode = '" + textBox1.Text + "' ";
                 MySqlDataReader read = command.ExecuteReader();
 
                 int count = 0;
@@ -74,34 +89,37 @@ namespace LoginModule.cs
                 }
                 if (count == 1)
                 {
-                    MessageBox.Show("Please try another ''col_productcode''");
+                    MessageBox.Show("The product code is already taken, please try another one");
                 }
                 else if (count > 1)
                 {
-                    MessageBox.Show("Please try another ''col_productcode''");
+                    MessageBox.Show("The product code is already taken, please try another one");
                 }
                 else
                 {
                     conn.Close();
                     conn.Open();
-                MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = "insert into tbl_product (col_useraccountsid, col_categoryid, col_productcode, col_productname, col_productprice, col_status) " +
-                    "values  ((SELECT col_useraccountsid from tbl_brandpartner where col_brandname='" + comboBox1.Text + "')," +
-                    "(SELECT col_categoryid from tbl_category c inner join tbl_brandpartner b on c.col_useraccountsid = b.col_useraccountsid where b.col_brandname='" + comboBox1.Text + "' and col_categoryname= '" + comboBox2.Text + "'),'" + 
-                    textBox1.Text + "','" +
-                    textBox3.Text + "','" + 
-                    textBox2.Text + "','unarchived')";
+                    MySqlCommand command2 = conn.CreateCommand();
+                    command2.CommandText = "insert into tbl_product (col_useraccountsid, col_categoryid, col_productcode, col_productname, col_productprice, col_status) " +
+                        "values  ((SELECT col_useraccountsid from tbl_brandpartner where col_brandname='" + comboBox1.Text + "')," +
+                        "(SELECT col_categoryid from tbl_category c inner join tbl_brandpartner b on c.col_useraccountsid = b.col_useraccountsid where b.col_brandname='" + comboBox1.Text + "' and col_categoryname= '" + comboBox2.Text + "'),'" +
+                        textBox1.Text + "','" +
+                        textBox3.Text + "','" +
+                        textBox2.Text + "','unarchived')";
 
-                command2.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
 
-                conn.Close();
-                MessageBox.Show("Successfully Added!");
-                Mainframe a = new Mainframe();
-                a.Show();
-                this.Close();
+                    conn.Close();
+                    MessageBox.Show("Successfully Added!");
+                    Mainframe a = new Mainframe();
+                    a.Show();
+                    this.Close();
                 }
-            }
-
+            
+        }    catch (Exception e) 
+            {
+                MessageBox.Show("No connection to host");
+            }}
         
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
@@ -154,22 +172,29 @@ namespace LoginModule.cs
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox2.Text = "";
-            comboBox2.Items.Clear();
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_category c " +
-            "inner join tbl_brandpartner b " +
-            "on c.col_useraccountsid = b.col_useraccountsid " +
-            "where b.col_brandname='" + comboBox1.Text + "'";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
-            while (read.Read())
+            try
             {
-                comboBox2.Items.Add(read["col_categoryname"].ToString());
+                comboBox2.Text = "";
+                comboBox2.Items.Clear();
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "select * from tbl_category c " +
+                "inner join tbl_brandpartner b " +
+                "on c.col_useraccountsid = b.col_useraccountsid " +
+                "where b.col_brandname='" + comboBox1.Text + "'";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+                while (read.Read())
+                {
+                    comboBox2.Items.Add(read["col_categoryname"].ToString());
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception a)
+            {
+                MessageBox.Show("No connection to host");
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

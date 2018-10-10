@@ -38,87 +38,102 @@ namespace LoginModule.cs
         }
         public void Update()
         {
-            MySqlConnection conn2 =new MySqlConnection(ConnectionString.myConnection);
+            try
+            {
+                MySqlConnection conn2 = new MySqlConnection(ConnectionString.myConnection);
+
+                MySqlCommand command2 = conn2.CreateCommand();
+
+                conn2.Open();
+                string query = "UPDATE tbl_useraccounts SET " +
+                "col_password= '" + tbconfirmnewpass.Text + "'" +
+                "WHERE col_useraccountsid='" + tbuseraccountid.Text + "'";
+                command2.CommandText = query;
+                command2.ExecuteScalar();
+                MessageBox.Show("Password updated successfully.  ");
+                conn2.Close();
+
+                this.Hide();
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show("No connection to the host");
             
-            MySqlCommand command2 = conn2.CreateCommand();
-
-            conn2.Open();
-            string query = "UPDATE tbl_useraccounts SET " +
-            "col_password= '" + tbconfirmnewpass.Text + "'" +
-            "WHERE col_useraccountsid='" + tbuseraccountid.Text + "'";
-            command2.CommandText = query;
-            command2.ExecuteScalar();
-            MessageBox.Show("Password updated successfully.  ");
-            conn2.Close();
-
-            this.Hide();
-
+            }
 
         }
 
         public void checkPassword()
         {
-            if (tbnewpass.Text == "" || tbconfirmnewpass.Text == "")
+            try
             {
-                MessageBox.Show("Don't leave fields");
-            }
-            else if (tbnewpass.Text != "" || tbconfirmnewpass.Text == "")
-            {
-                if (tbnewpass.Text == tbconfirmnewpass.Text)
+                if (tbnewpass.Text == "" || tbconfirmnewpass.Text == "")
                 {
-                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                    MySqlCommand Command2 = conn.CreateCommand();
-                    Command2.Connection = conn;
-                    conn.Open();
-                    Command2.CommandText = "select * from tbl_useraccounts where col_user = '" + tbusername.Text + "' and col_password= '" + tboldpass.Text + "' and col_status='unarchived'";
-                    MySqlDataReader read2 = Command2.ExecuteReader();
-                    int count2 = 0;
-                    while (read2.Read())
+                    MessageBox.Show("Don't leave fields");
+                }
+                else if (tbnewpass.Text != "" || tbconfirmnewpass.Text == "")
+                {
+                    if (tbnewpass.Text == tbconfirmnewpass.Text)
                     {
-                        count2++;
-
-                    }
-                    conn.Close();
-                    if (count2 >= 1)
-                    {
-                        MySqlCommand copro5 = new MySqlCommand();
+                        MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                        MySqlCommand Command2 = conn.CreateCommand();
+                        Command2.Connection = conn;
                         conn.Open();
-                        copro5.Connection = conn;
-
-                        copro5.CommandText = "select * from tbl_useraccounts where col_user = '" +
-                        tbusername.Text + "' and col_password= '" + tboldpass.Text + "' and col_useraccountsid= '" +
-                        tbuseraccountid.Text + "' and col_usertypeid='2'";
-
-
-                        MySqlDataReader copro2 = copro5.ExecuteReader();
-                        while (copro2.Read())
+                        Command2.CommandText = "select * from tbl_useraccounts where col_user = '" + tbusername.Text + "' and col_password= '" + tboldpass.Text + "' and col_status='unarchived'";
+                        MySqlDataReader read2 = Command2.ExecuteReader();
+                        int count2 = 0;
+                        while (read2.Read())
                         {
-                            string userid = (copro2["col_useraccountsid"].ToString());
-                            string user = (copro2["col_user"].ToString());
-                            string pass = (copro2["col_password"].ToString());
-
-                            if (userid == tbuseraccountid.Text && user == tbusername.Text && pass == tboldpass.Text)
-                            {
-                                Update();
-                            }
-
+                            count2++;
 
                         }
-
                         conn.Close();
+                        if (count2 >= 1)
+                        {
+                            MySqlCommand copro5 = new MySqlCommand();
+                            conn.Open();
+                            copro5.Connection = conn;
 
+                            copro5.CommandText = "select * from tbl_useraccounts where col_user = '" +
+                            tbusername.Text + "' and col_password= '" + tboldpass.Text + "' and col_useraccountsid= '" +
+                            tbuseraccountid.Text + "' and col_usertypeid='2'";
+
+
+                            MySqlDataReader copro2 = copro5.ExecuteReader();
+                            while (copro2.Read())
+                            {
+                                string userid = (copro2["col_useraccountsid"].ToString());
+                                string user = (copro2["col_user"].ToString());
+                                string pass = (copro2["col_password"].ToString());
+
+                                if (userid == tbuseraccountid.Text && user == tbusername.Text && pass == tboldpass.Text)
+                                {
+                                    Update();
+                                }
+
+
+                            }
+
+                            conn.Close();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Wrong Password");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Wrong Password");
+                        MessageBox.Show("Password does not match");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Password does not match");
-                }
+
             }
-        }
+            catch (Exception e)
+            {
+                MessageBox.Show("No connection to the host");
+            }
+            }
         private void materialFlatButton4_Click(object sender, EventArgs e)
         {
             checkPassword();

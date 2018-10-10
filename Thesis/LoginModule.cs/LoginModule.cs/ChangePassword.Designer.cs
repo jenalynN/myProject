@@ -204,7 +204,7 @@
             this.materialFlatButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton4.Depth = 0;
             this.materialFlatButton4.Icon = null;
-            this.materialFlatButton4.Location = new System.Drawing.Point(322, 360);
+            this.materialFlatButton4.Location = new System.Drawing.Point(297, 360);
             this.materialFlatButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton4.Name = "materialFlatButton4";

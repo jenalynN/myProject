@@ -24,35 +24,36 @@ namespace LoginModule.cs
 
         public void log()
         {
+            try { 
                 MySqlConnection connection = new MySqlConnection(ConnectionString.myConnection);
                 connection.Open();
-            if (textBox1.Text == "" || textBox2.Text == "")
-                {
+                    if (textBox1.Text == "" || textBox2.Text == "")
+                   {
                     MessageBox.Show("You need to login your credentials.");
-                }
-            else if (materialRadioButton1.Checked == true)
-            {
-                MySqlCommand Command = connection.CreateCommand();
-                Command.Connection = connection;
-                Command.CommandText = "select * from tbl_useraccounts where col_user = '" +
-                    textBox1.Text + "' and col_password= '" + textBox2.Text + "' and col_usertypeid = 1 ";
-                MySqlDataReader read = Command.ExecuteReader();
-                int count1 = 0;
-                while (read.Read())
-                {
-                    count1++;
-                }
-                connection.Close();
-                if (count1 == 1)
-                {
-                    MySqlCommand copro3 = new MySqlCommand();
-                    connection.Open();
-                    copro3.Connection = connection;
-                    copro3.CommandText = "select * from tbl_useraccounts where col_user = '" +
-                        textBox1.Text + "' and col_password= '" + textBox2.Text + "' and col_usertypeid = 1 ";
-                    MySqlDataReader copro = copro3.ExecuteReader();
-                    while (copro.Read())
-                    {
+                     }
+                   else if (materialRadioButton1.Checked == true)
+                  {
+                       MySqlCommand Command = connection.CreateCommand();
+                        Command.Connection = connection;
+                         Command.CommandText = "select * from tbl_useraccounts where col_user = '" +
+                         textBox1.Text + "' and col_password= '" + textBox2.Text + "' and col_usertypeid = 1 ";
+                       MySqlDataReader read = Command.ExecuteReader();
+                      int count1 = 0;
+                      while (read.Read())
+                       {
+                           count1++;
+                       }
+                     connection.Close();
+                     if (count1 == 1)
+                        {
+                           MySqlCommand copro3 = new MySqlCommand();
+                         connection.Open();
+                           copro3.Connection = connection;
+                            copro3.CommandText = "select * from tbl_useraccounts where col_user = '" +
+                            textBox1.Text + "' and col_password= '" + textBox2.Text + "' and col_usertypeid = 1 ";
+                             MySqlDataReader copro = copro3.ExecuteReader();
+                         while (copro.Read())
+                            {
                         string user = (copro["col_user"].ToString());
                         string pass = (copro["col_password"].ToString());
                         if (user == textBox1.Text && pass == textBox2.Text)
@@ -72,8 +73,8 @@ namespace LoginModule.cs
                 else
                 {
                     MessageBox.Show("Invalid username & password. ");
-                }
-            }
+            
+                }}
             else if (materialRadioButton2.Checked == true && materialRadioButton1.Checked == false)
             {
                 MySqlCommand Command2 = connection.CreateCommand();
@@ -119,6 +120,10 @@ namespace LoginModule.cs
                 {
                     MessageBox.Show("Invalid username & password. ");
                 }
+            }    
+            }catch(Exception e)
+            {
+            MessageBox.Show("No connection to the host");
             }
         }
         private void materialFlatButton1_Click(object sender, EventArgs e)

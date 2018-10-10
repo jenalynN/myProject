@@ -62,7 +62,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            { 
+                MessageBox.Show("Lost connection to the host");  
             }
         }
         public void countarchivedbp()
@@ -89,7 +90,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host");
             }
         }
         public void countunarchivedcash()
@@ -116,7 +118,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host");
             }
         }
         public void countarchivedcash()
@@ -143,7 +146,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host"); 
             }
         }
         public void viewlogs()
@@ -171,7 +175,7 @@ namespace LoginModule.cs
             }
             catch (Exception e) 
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("No connection to the host");
             }
         }
         public void recountbp()
@@ -186,9 +190,9 @@ namespace LoginModule.cs
         }
         public void databrandpartneraccountarchived() 
         {
-            materialListView6.Items.Clear();
             try
             {
+                materialListView6.Items.Clear();
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
                 conn.Open();        
@@ -227,7 +231,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host"); 
             }
         
         }
@@ -267,7 +272,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host");   
             }
 
         }
@@ -302,7 +308,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host");   
             }
         }
         public void unarchiveproduct() 
@@ -333,7 +340,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host"); 
             }
         }
         public void countarchiveditems()
@@ -362,16 +370,16 @@ namespace LoginModule.cs
             catch (Exception)
             {
 
+                MessageBox.Show("No connection to the host"); 
                 
             }
         }
 
         public void databrandpartneraccountunarchived()
         { 
-            materialListView3.Items.Clear();
-
             try
             {
+                materialListView3.Items.Clear();
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
 
                 conn.Open();
@@ -410,7 +418,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host"); 
             }
 
         
@@ -448,7 +457,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host"); 
             }
         }
 
@@ -486,7 +496,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host"); 
             }
         }
 
@@ -524,7 +535,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host");   
             }
 
 
@@ -563,7 +575,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host");  
             }
 
         }
@@ -632,7 +645,8 @@ namespace LoginModule.cs
                 conn.Close();
             }
             catch (Exception e)
-            { //MessageBox.Show(e.ToString());  
+            {
+                MessageBox.Show("No connection to the host"); 
             }
         }
 
@@ -704,7 +718,7 @@ namespace LoginModule.cs
             }
             catch (Exception)
             {
-
+                MessageBox.Show("No connection to the host"); 
                 
             }
         }
@@ -786,7 +800,7 @@ namespace LoginModule.cs
                 }
                 catch
                 {
-
+                    MessageBox.Show("No connection to the host"); 
                 }
             }
         }
@@ -870,7 +884,7 @@ namespace LoginModule.cs
                 }
                 catch (Exception)
                 {
-
+                    MessageBox.Show("No connection to the host"); 
                     
                 }            }
         }
@@ -939,7 +953,7 @@ namespace LoginModule.cs
                 }
                 catch (Exception)
                 {
-
+                    MessageBox.Show("No connection to the host"); 
                     
                 }            }
         }
@@ -1008,7 +1022,7 @@ namespace LoginModule.cs
                 }
                 catch (Exception)
                 {
-
+                    MessageBox.Show("No connection to the host"); 
                     
                 }            }
         }
@@ -1035,7 +1049,7 @@ namespace LoginModule.cs
             }
             catch (Exception)
             {
-
+                MessageBox.Show("No connection to the host"); 
                 
             }
 
@@ -1150,7 +1164,7 @@ namespace LoginModule.cs
             }
             catch (Exception)
             {
-
+                MessageBox.Show("No connection to the host"); 
                 
             }
 
@@ -1220,7 +1234,7 @@ namespace LoginModule.cs
             }
             catch (Exception)
             {
-
+                MessageBox.Show("No connection to the host"); 
                 
             }
         }
@@ -1290,7 +1304,7 @@ namespace LoginModule.cs
             catch (Exception)
             {
 
-                
+                MessageBox.Show("No connection to the host"); 
             }
 
             materialListView4.Items.Clear();
@@ -1316,7 +1330,7 @@ namespace LoginModule.cs
             }
             catch (Exception)
             {
-
+                MessageBox.Show("No connection to the host"); 
                 
             }
 
@@ -1378,7 +1392,7 @@ namespace LoginModule.cs
             }
             catch (Exception)
             {
-
+                MessageBox.Show("No connection to the host"); 
                 
             }
 
@@ -1518,41 +1532,55 @@ namespace LoginModule.cs
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());  
+                MessageBox.Show("No connection to the host"); 
             }
         }
         private void printdamageid()
         {
-
-            int data = 0;
-            ListViewItem list = materialListView11.SelectedItems[data];
-            String id = list.SubItems[0].Text;
-            lblTransactionCode.Text = list.SubItems[2].Text;
-
-            label3.Text = id.ToString();
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            string query = "SELECT * FROM tbl_damage d " +
-                     "inner join tbl_order o " +
-                     "on d.col_orderid = o.col_orderid " +
-                     "inner join tbl_product p " +
-                     "on p.col_productid = o.col_productid where col_damageitemid='"+label3.Text+"'";
-            conn.Open();
-            MySqlCommand command2 = conn.CreateCommand();
-            command2.CommandText = query;
-            MySqlDataReader read = command2.ExecuteReader();
-            while (read.Read())
+            try
             {
-                label18.Text = read["col_orderid"].ToString();
-                label24.Text = read["col_staticquantity"].ToString();
-                label30.Text = read["col_status"].ToString();
-                label36.Text = read["col_productcode"].ToString();
-                label42.Text = read["col_quantitybought"].ToString();
-                label46.Text = read["col_productprice"].ToString();
-                label11.Text = read["col_subtotal"].ToString();
+                int data = 0;
+                ListViewItem list = materialListView11.SelectedItems[data];
+                String id = list.SubItems[0].Text;
+                lblTransactionCode.Text = list.SubItems[2].Text;
 
-                
+                label3.Text = id.ToString();
             }
-            conn.Close();
+            catch (Exception e)
+            {
+                MessageBox.Show("Select only one damage product");
+            }
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                string query = "SELECT * FROM tbl_damage d " +
+                         "inner join tbl_order o " +
+                         "on d.col_orderid = o.col_orderid " +
+                         "inner join tbl_product p " +
+                         "on p.col_productid = o.col_productid where col_damageitemid='" + label3.Text + "'";
+                conn.Open();
+                MySqlCommand command2 = conn.CreateCommand();
+                command2.CommandText = query;
+                MySqlDataReader read = command2.ExecuteReader();
+                while (read.Read())
+                {
+                    label18.Text = read["col_orderid"].ToString();
+                    label24.Text = read["col_staticquantity"].ToString();
+                    label30.Text = read["col_status"].ToString();
+                    label36.Text = read["col_productcode"].ToString();
+                    label42.Text = read["col_quantitybought"].ToString();
+                    label46.Text = read["col_productprice"].ToString();
+                    label11.Text = read["col_subtotal"].ToString();
+
+
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No connection to the host");
+
+            }
         }
         public void viewfinishdamage()
         {
@@ -1588,75 +1616,82 @@ namespace LoginModule.cs
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());  
+                MessageBox.Show("No connection to the host" +e); 
             }
         
         
         }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to confirm", "Confirmation", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                if (label30.Text == "pending-change")
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to confirm", "Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                    conn.Open();
-                    MySqlCommand command3 = conn.CreateCommand();
-                    command3.CommandText = "UPDATE tbl_damage SET col_status='Changed' where col_damageitemid='"+label3.Text+"'";
-                    command3.ExecuteScalar();
-                    viewfinishdamage();
-                    viewdamageid();
-                    MessageBox.Show("Successfully Confirmed");
-                    conn.Close();
+                    if (label30.Text == "pending-change")
+                    {
+                        MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                        conn.Open();
+                        MySqlCommand command3 = conn.CreateCommand();
+                        command3.CommandText = "UPDATE tbl_damage SET col_status='Changed' where col_damageitemid='" + label3.Text + "'";
+                        command3.ExecuteScalar();
+                        viewfinishdamage();
+                        viewdamageid();
+                        MessageBox.Show("Successfully Confirmed");
+                        conn.Close();
+                    }
+                    else if (label30.Text == "pending-refund")
+                    {
+                        double returnPrice = 0;
+                        MySqlConnection conn2 = new MySqlConnection(ConnectionString.myConnection);
+                        conn2.Open();
+                        MySqlCommand command4 = conn2.CreateCommand();
+                        command4.CommandText = "UPDATE tbl_damage SET col_status='Refunded' where col_damageitemid='" + label3.Text + "'";
+                        command4.ExecuteScalar();
+                        conn2.Close();
+
+                        conn2.Open();
+                        MySqlCommand command = conn2.CreateCommand();
+                        string query = "(Select SUM(`col_subtotal`) from tbl_order o " +
+                        "inner join tbl_transaction t " +
+                        "on t.col_transactionid = o.col_transactionid " +
+                        "where t.col_transactioncode = '" + lblTransactionCode.Text +
+                        "' and o.col_orderstatus='Sales') ";
+                        command.CommandText = query;
+                        MySqlDataReader read = command.ExecuteReader();
+                        read.Read();
+                        returnPrice = double.Parse(read[0].ToString());
+                        conn2.Close();
+
+                        conn2.Open();
+                        command4 = conn2.CreateCommand();
+                        command4.CommandText = "UPDATE tbl_transaction SET " +
+                        "col_totalprice= " + returnPrice +
+                        " where col_transactioncode ='" + lblTransactionCode.Text + "'";
+                        command4.ExecuteScalar();
+                        conn2.Close();
+
+
+
+                        viewdamageid();
+                        viewfinishdamage();
+                        MessageBox.Show("Successfully Confirmed");
+
+                        clearDamage();
+
+                    }
                 }
-                else if (label30.Text == "pending-refund")
+                else if (dialogResult == DialogResult.No)
                 {
-                    double returnPrice = 0;
-                    MySqlConnection conn2 = new MySqlConnection(ConnectionString.myConnection);
-                    conn2.Open();
-                    MySqlCommand command4 = conn2.CreateCommand();
-                    command4.CommandText = "UPDATE tbl_damage SET col_status='Refunded' where col_damageitemid='"+label3.Text+"'";
-                    command4.ExecuteScalar();
-                    conn2.Close();
-
-                    conn2.Open();
-                    MySqlCommand command = conn2.CreateCommand();
-                    string query = "(Select SUM(`col_subtotal`) from tbl_order o " +
-                    "inner join tbl_transaction t " +
-                    "on t.col_transactionid = o.col_transactionid " +
-                    "where t.col_transactioncode = '" + lblTransactionCode.Text +
-                    "' and o.col_orderstatus='Sales') ";
-                    command.CommandText = query;
-                    MySqlDataReader read = command.ExecuteReader();
-                    read.Read();
-                    returnPrice = double.Parse(read[0].ToString());
-                    conn2.Close();
-
-                    conn2.Open();
-                    command4 = conn2.CreateCommand();
-                    command4.CommandText = "UPDATE tbl_transaction SET " +
-                    "col_totalprice= " + returnPrice +
-                    " where col_transactioncode ='" + lblTransactionCode.Text + "'";
-                    command4.ExecuteScalar();
-                    conn2.Close();
-
-                    
-
-                    viewdamageid();
-                    viewfinishdamage();
-                    MessageBox.Show("Successfully Confirmed");
-
                     clearDamage();
-
-                   }
+                }
             }
-            else if (dialogResult == DialogResult.No)
+            catch (Exception a)
             {
-                clearDamage();
+                MessageBox.Show("No connection to the host" + a);
             }
+        
         }
-
         private void clearDamage()
         {
             label3.Text = "";
@@ -1681,64 +1716,73 @@ namespace LoginModule.cs
 
         private void materialFlatButton5_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel", "Confirmation", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+
+            try
             {
-                if (label30.Text == "pending-change")
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel", "Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                    conn.Open();
-                    MySqlCommand command3 = conn.CreateCommand();
-                    command3.CommandText = "UPDATE tbl_damage SET col_status='change-cancelled' where col_damageitemid='" + label3.Text + "'";
-                    command3.ExecuteScalar();
-                    viewfinishdamage();
-                    viewdamageid();
-                    MessageBox.Show("Successfully Cancelled");
-                    conn.Close();
+                    if (label30.Text == "pending-change")
+                    {
+                        MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                        conn.Open();
+                        MySqlCommand command3 = conn.CreateCommand();
+                        command3.CommandText = "UPDATE tbl_damage SET col_status='change-cancelled' where col_damageitemid='" + label3.Text + "'";
+                        command3.ExecuteScalar();
+                        viewfinishdamage();
+                        viewdamageid();
+                        MessageBox.Show("Successfully Cancelled");
+                        conn.Close();
+                        
+                    }
+                    else if (label30.Text == "pending-refund")
+                    {
+                        double price = 0;
+                        int qty = 0;
+                        qty = int.Parse(label42.Text) + int.Parse(label24.Text);
+                        price = (double.Parse(label46.Text) * int.Parse(label24.Text)) + double.Parse(label11.Text);
+
+                        MySqlConnection conn2 = new MySqlConnection(ConnectionString.myConnection);
+                        conn2.Open();
+                        MySqlCommand command4 = conn2.CreateCommand();
+                        command4.CommandText = "UPDATE tbl_damage SET col_status='refund-cancelled' where col_damageitemid='" + label3.Text + "'";
+                        command4.ExecuteScalar();
+                        conn2.Close();
+
+                        conn2.Open();
+                        command4 = conn2.CreateCommand();
+                        command4.CommandText = "UPDATE tbl_order SET " +
+                            "col_quantitybought='" + qty + "'" +
+                            " WHERE col_orderid='" + label18.Text + "'";
+
+                        command4.ExecuteScalar();
+                        conn2.Close();
+
+                        conn2.Open();
+                        MySqlCommand command3 = conn2.CreateCommand();
+                        command3.CommandText = "UPDATE tbl_order SET " +
+                            "col_subtotal='" + price + "'" +
+                            " WHERE col_orderid='" + label18.Text + "'";
+
+                        command3.ExecuteScalar();
+                        conn2.Close();
+
+                        viewdamageid();
+                        viewfinishdamage();
+                        MessageBox.Show("Successfully Cancelled");
+                        clearDamage();
+                    }
                 }
-                else if (label30.Text == "pending-refund")
+                else if (dialogResult == DialogResult.No)
                 {
-                    double price =  0;
-                    int qty = 0;
-                    qty = int.Parse(label42.Text) + int.Parse(label24.Text);
-                    price = (double.Parse(label46.Text) * int.Parse(label24.Text)) + double.Parse(label11.Text);
-
-                    MySqlConnection conn2 = new MySqlConnection(ConnectionString.myConnection);
-                    conn2.Open();
-                    MySqlCommand command4 = conn2.CreateCommand();
-                    command4.CommandText = "UPDATE tbl_damage SET col_status='refund-cancelled' where col_damageitemid='" + label3.Text + "'";
-                    command4.ExecuteScalar();
-                    conn2.Close();
-
-                    conn2.Open();
-                    command4 = conn2.CreateCommand();
-                    command4.CommandText = "UPDATE tbl_order SET " +
-                        "col_quantitybought='" + qty + "'" +
-                        " WHERE col_orderid='" + label18.Text + "'";
-
-                    command4.ExecuteScalar();
-                    conn2.Close();
-
-                    conn2.Open();
-                    MySqlCommand command3 = conn2.CreateCommand();
-                    command3.CommandText = "UPDATE tbl_order SET " +
-                        "col_subtotal='" + price + "'" +
-                        " WHERE col_orderid='" + label18.Text + "'";
-
-                    command3.ExecuteScalar();
-                    conn2.Close();
-                    
-                    viewdamageid();
-                    viewfinishdamage();
-                    MessageBox.Show("Successfully Cancelled");
                     clearDamage();
-        }
+                }
             }
-            else if (dialogResult == DialogResult.No)
+            catch (Exception a) 
             {
-                clearDamage();
+      MessageBox.Show("No connection to the host"+a); 
+    }
             }
-        }
 
         private void materialListView2_MouseClick(object sender, MouseEventArgs e)
         {

@@ -44,16 +44,37 @@ namespace LoginModule.cs
             {
                 MessageBox.Show("Complete the Form");
             }
-            else
-            {
-                conn.Open();
-                MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = "insert into tbl_useraccounts (col_usertypeid,col_user, col_password, col_lastname, col_firstname, col_middlename,col_address,col_gender,col_contactnum,col_status,col_email) " +
-                    "values  ((SELECT col_usertypeid from tbl_usertype where col_userrole='Brandpartner'),'" + textBox9.Text + "','" + textBox11.Text + "','" + textBox3.Text + "','" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + comboBox1.SelectedItem + "','" + textBox6.Text + "','unarchived','"+textBox12.Text+"')";
-                command2.ExecuteScalar();
-                conn.Close();
-            }
+           
+                else
+                {
+                    conn.Open();
+                    MySqlCommand command = conn.CreateCommand();
+                    command.CommandText = "select * from tbl_useraccounts where col_user = '" + textBox9.Text + "' ";
+                    MySqlDataReader read = command.ExecuteReader();
 
+                    int count = 0;
+                    while (read.Read())
+                    {
+                        count++;
+                    }
+                    if (count == 1)
+                    {
+                        MessageBox.Show("The username is already taken, please try another one");
+                    }
+                    else if (count > 1)
+                    {
+                        MessageBox.Show("The username is already taken, please try another one");
+                    }
+                    conn.Close();
+                    conn.Open();
+                    MySqlCommand command2 = conn.CreateCommand();
+                    command2.CommandText = "insert into tbl_useraccounts (col_usertypeid,col_user, col_password, col_lastname, col_firstname, col_middlename,col_address,col_gender,col_contactnum,col_status,col_email) " +
+                        "values  ((SELECT col_usertypeid from tbl_usertype where col_userrole='Brandpartner'),'" + textBox9.Text + "','" + textBox11.Text + "','" + textBox3.Text + "','" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + comboBox1.SelectedItem + "','" + textBox6.Text + "','unarchived','" + textBox12.Text + "')";
+                    command2.ExecuteScalar();
+                    conn.Close();
+                }
+
+            
         }
         public void adddetails()
         {
@@ -64,12 +85,36 @@ namespace LoginModule.cs
             }
             else
             {
+         
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                command.CommandText = "select * from tbl_brandpartner where col_brandname = '" + textBox4.Text + "' ";
+                MySqlDataReader read = command.ExecuteReader();
+
+                int count = 0;
+                while (read.Read())
+                {
+                    count++;
+                }
+                if (count == 1)
+                {
+                    MessageBox.Show("The brandname is already taken, please try another one");
+                }
+                else if (count > 1)
+                {
+                    MessageBox.Show("The brandname is already taken, please try another one");
+                }
+                conn.Close();
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
                 command2.CommandText = "insert into tbl_brandpartner(col_useraccountsid, col_brandname, col_brandaddress, col_brandcontactnum) " +
                     "values  ('" + labelTransactionCode.Text + "','" + textBox4.Text + "','" + textBox7.Text + "','" + textBox8.Text + "')";
                 command2.ExecuteScalar();
                 conn.Close();
+
+                Mainframe a = new Mainframe();
+                a.Show();
+                this.Hide();
             }
 
 
@@ -98,9 +143,6 @@ namespace LoginModule.cs
             {
                 addnewbrandpartneraccount();
                 adddetails();
-                Mainframe a = new Mainframe();
-                a.Show();
-                this.Hide();
             }
         }
 
