@@ -1035,29 +1035,37 @@ namespace LoginModule.cs
         private void materialFlatButton4_Click(object sender, EventArgs e)
         {
             //searchunarchived();
-            try
+            if (label6.Text == "SI")
             {
-                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                conn.Open();
-                MySqlCommand command = conn.CreateCommand();
-                string query = "UPDATE tbl_product p SET " +
-                "col_status = 'archived' " +
-                "where p.col_productid = '" + label6.Text + "'";
-                command.CommandText = query;
-                command.ExecuteScalar();
-                conn.Close();
+                MessageBox.Show("Select a record below");
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("No connection to the host"); 
-                
+                try
+                {
+                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                    conn.Open();
+                    MySqlCommand command = conn.CreateCommand();
+                    string query = "UPDATE tbl_product p SET " +
+                    "col_status = 'archived' " +
+                    "where p.col_productid = '" + label6.Text + "'";
+                    command.CommandText = query;
+                    command.ExecuteScalar();
+                    conn.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No connection to the host");
+
+                }
+
+                materialListView1.Items.Clear();
+                materialListView2.Items.Clear();
+
+                dataproductunarchived();
+                dataproductarchived();
+                defaultFaultSelectID();
             }
-
-            materialListView1.Items.Clear();
-            materialListView2.Items.Clear();
-
-            dataproductunarchived();
-            dataproductarchived();
         }
 
         private void materialFlatButton6_Click(object sender, EventArgs e)
@@ -1148,29 +1156,37 @@ namespace LoginModule.cs
 
         private void materialFlatButton20_Click(object sender, EventArgs e)
         {
-            try
+            if (label9.Text == "SI")
             {
-                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                conn.Open();
-                MySqlCommand command = conn.CreateCommand();
-                string query = "UPDATE tbl_product p SET " +
-                "col_status = 'unarchived' " +
-                "where p.col_productid = '" + label9.Text + "'";
-                command.CommandText = query;
-                command.ExecuteScalar();
-                conn.Close();
+                MessageBox.Show("Select a record below");
             }
-            catch (Exception)
-            {
-                MessageBox.Show("No connection to the host"); 
-                
+            else
+	        {
+                try
+                {
+                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                    conn.Open();
+                    MySqlCommand command = conn.CreateCommand();
+                    string query = "UPDATE tbl_product p SET " +
+                    "col_status = 'unarchived' " +
+                    "where p.col_productid = '" + label9.Text + "'";
+                    command.CommandText = query;
+                    command.ExecuteScalar();
+                    conn.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No connection to the host");
+
+                }
+
+                materialListView1.Items.Clear();
+                materialListView2.Items.Clear();
+
+                dataproductunarchived();
+                dataproductarchived();
+                defaultFaultSelectID();
             }
-
-            materialListView1.Items.Clear();
-            materialListView2.Items.Clear();
-
-            dataproductunarchived();
-            dataproductarchived();
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -1242,12 +1258,21 @@ namespace LoginModule.cs
         }
 		private void materialFlatButton9_Click(object sender, EventArgs e)
         {
-            archivedbrandpartner();
-            materialListView6.Items.Clear();
-            materialListView3.Items.Clear();
-            databrandpartneraccountunarchived();
-            databrandpartneraccountarchived();
-            recountbp();
+            if (label15.Text != "SI")
+            {
+                archivedbrandpartner();
+                materialListView6.Items.Clear();
+                materialListView3.Items.Clear();
+                databrandpartneraccountunarchived();
+                databrandpartneraccountarchived();
+                recountbp();
+                defaultFaultSelectID();
+            }
+            else
+            {
+                MessageBox.Show("Select a record below");
+            }
+            
         }
 
         private void materialListView6_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -1295,58 +1320,75 @@ namespace LoginModule.cs
 
         private void materialFlatButton16_Click(object sender, EventArgs e)
         {
-            try
+            if (label40.Text != "SI")
             {
-                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                conn.Open();
-                MySqlCommand command = conn.CreateCommand();
-                string query = "UPDATE tbl_useraccounts SET " +
-                "col_status = 'archived' " +
-                "WHERE col_useraccountsid='" + label40.Text + "'";
-                command.CommandText = query;
-                command.ExecuteScalar();
-                conn.Close();
+                try
+                {
+                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                    conn.Open();
+                    MySqlCommand command = conn.CreateCommand();
+                    string query = "UPDATE tbl_useraccounts SET " +
+                    "col_status = 'archived' " +
+                    "WHERE col_useraccountsid='" + label40.Text + "'";
+                    command.CommandText = query;
+                    command.ExecuteScalar();
+                    conn.Close();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("No connection to the host");
+                }
+
+                materialListView4.Items.Clear();
+                materialListView5.Items.Clear();
+                recountcash();
+                dataCashierAccountUnarchived();
+                dataCashierAccountArchived();
+                defaultFaultSelectID();
             }
-            catch (Exception)
+            else
             {
-
-                MessageBox.Show("No connection to the host"); 
+                MessageBox.Show("Select a record below");
             }
-
-            materialListView4.Items.Clear();
-            materialListView5.Items.Clear();
-            recountcash();
-            dataCashierAccountUnarchived();
-            dataCashierAccountArchived();
+            
         }
 
         private void materialFlatButton13_Click(object sender, EventArgs e)
         {
-            try
+            if (label33.Text != "SI")
             {
-                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                conn.Open();
-                MySqlCommand command = conn.CreateCommand();
-                string query = "UPDATE tbl_useraccounts SET " +
-                "col_status = 'unarchived' " +
-                "WHERE col_useraccountsid='" + label33.Text + "'";
-                command.CommandText = query;
-                command.ExecuteScalar();
-                conn.Close();
+                try
+                {
+                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                    conn.Open();
+                    MySqlCommand command = conn.CreateCommand();
+                    string query = "UPDATE tbl_useraccounts SET " +
+                    "col_status = 'unarchived' " +
+                    "WHERE col_useraccountsid='" + label33.Text + "'";
+                    command.CommandText = query;
+                    command.ExecuteScalar();
+                    conn.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No connection to the host");
+
+                }
+
+                materialListView4.Items.Clear();
+                materialListView5.Items.Clear();
+
+                dataCashierAccountUnarchived();
+                dataCashierAccountArchived();
+
+                recountcash();
+                defaultFaultSelectID();
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("No connection to the host"); 
-                
+                MessageBox.Show("Select a Record below.");
             }
-
-            materialListView4.Items.Clear();
-            materialListView5.Items.Clear();
-
-            dataCashierAccountUnarchived();
-            dataCashierAccountArchived();
-
-            recountcash();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -1384,30 +1426,38 @@ namespace LoginModule.cs
 
         private void materialFlatButton10_Click(object sender, EventArgs e)
         {
-            try
+            if (label21.Text != "SI")
             {
-                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-                conn.Open();
-                MySqlCommand command = conn.CreateCommand();
-                string query = "UPDATE tbl_useraccounts SET " +
-                "col_status = 'unarchived' " +
-                "where col_useraccountsid = '" + label21.Text + "'";
-                command.CommandText = query;
-                command.ExecuteScalar();
-                conn.Close();
+                try
+                {
+                    MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                    conn.Open();
+                    MySqlCommand command = conn.CreateCommand();
+                    string query = "UPDATE tbl_useraccounts SET " +
+                    "col_status = 'unarchived' " +
+                    "where col_useraccountsid = '" + label21.Text + "'";
+                    command.CommandText = query;
+                    command.ExecuteScalar();
+                    conn.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No connection to the host");
+
+                }
+
+                materialListView6.Items.Clear();
+                materialListView3.Items.Clear();
+
+                databrandpartneraccountunarchived();
+                databrandpartneraccountarchived();
+                recountbp();
+                defaultFaultSelectID();
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("No connection to the host"); 
-                
+                MessageBox.Show("Select a record below.");
             }
-
-            materialListView6.Items.Clear();
-            materialListView3.Items.Clear();
-
-            databrandpartneraccountunarchived();
-            databrandpartneraccountarchived();
-            recountbp();
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)

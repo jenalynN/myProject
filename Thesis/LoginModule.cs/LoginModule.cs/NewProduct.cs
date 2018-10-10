@@ -13,9 +13,6 @@ namespace LoginModule.cs
 {
     public partial class NewProduct : MaterialSkin.Controls.MaterialForm
     {
-
-
-        
         public NewProduct()
         {
             InitializeComponent();
@@ -71,6 +68,7 @@ namespace LoginModule.cs
                 MessageBox.Show("No connection to host");
             }
         }
+
         public void additem()
         {
             try
@@ -87,25 +85,22 @@ namespace LoginModule.cs
                 {
                     count++;
                 }
-                if (count == 1)
-                {
-                    MessageBox.Show("The product code is already taken, please try another one");
-                }
-                else if (count > 1)
+                conn.Close();
+
+                if (count >= 1)
                 {
                     MessageBox.Show("The product code is already taken, please try another one");
                 }
                 else
                 {
-                    conn.Close();
                     conn.Open();
                     MySqlCommand command2 = conn.CreateCommand();
                     command2.CommandText = "insert into tbl_product (col_useraccountsid, col_categoryid, col_productcode, col_productname, col_productprice, col_status) " +
-                        "values  ((SELECT col_useraccountsid from tbl_brandpartner where col_brandname='" + comboBox1.Text + "')," +
-                        "(SELECT col_categoryid from tbl_category c inner join tbl_brandpartner b on c.col_useraccountsid = b.col_useraccountsid where b.col_brandname='" + comboBox1.Text + "' and col_categoryname= '" + comboBox2.Text + "'),'" +
+                        "values  ((SELECT col_useraccountsid from tbl_brandpartner where col_brandname='" + comboBox1.Text + "' limit 1)," +
+                        "(SELECT col_categoryid from tbl_category c inner join tbl_brandpartner b on c.col_useraccountsid = b.col_useraccountsid where b.col_brandname='" + comboBox1.Text + "' and col_categoryname= '" + comboBox2.Text + "' limit 1),'" +
                         textBox1.Text + "','" +
-                        textBox3.Text + "','" +
-                        textBox2.Text + "','unarchived')";
+                        textBox3.Text + "', round(" +
+                        textBox2.Text + ",2),'unarchived')";
 
                     command2.ExecuteNonQuery();
 
@@ -116,7 +111,8 @@ namespace LoginModule.cs
                     this.Close();
                 }
             
-        }catch (Exception e) 
+            }
+            catch (Exception e) 
             {
                 MessageBox.Show("No connection to host");
             }
@@ -124,8 +120,8 @@ namespace LoginModule.cs
         
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-                int b;
-                bool isBValid = int.TryParse(textBox2.Text, out b);
+                double b;
+                bool isBValid = double.TryParse(textBox2.Text, out b);
             if (string.IsNullOrWhiteSpace(comboBox1.Text) ||
                 string.IsNullOrWhiteSpace(comboBox2.Text) ||
                 string.IsNullOrWhiteSpace(textBox1.Text) ||
@@ -138,7 +134,7 @@ namespace LoginModule.cs
             {
                 MessageBox.Show("Invalid Price value.");
             }
-            else if(b<1)
+            else if(b <= 0)
             {
                 MessageBox.Show("Price should be greater than 0");
             }

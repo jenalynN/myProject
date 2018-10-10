@@ -101,7 +101,7 @@
             this.comboBox1.Location = new System.Drawing.Point(210, 228);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(222, 32);
-            this.comboBox1.TabIndex = 99;
+            this.comboBox1.TabIndex = 4;
             // 
             // label17
             // 
@@ -141,7 +141,7 @@
             this.textBox11.MaxLength = 20;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(222, 32);
-            this.textBox11.TabIndex = 95;
+            this.textBox11.TabIndex = 9;
             this.textBox11.UseSystemPasswordChar = true;
             this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
@@ -151,7 +151,7 @@
             this.textBox10.MaxLength = 20;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(222, 32);
-            this.textBox10.TabIndex = 94;
+            this.textBox10.TabIndex = 8;
             this.textBox10.UseSystemPasswordChar = true;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
@@ -161,7 +161,7 @@
             this.textBox9.MaxLength = 20;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(222, 32);
-            this.textBox9.TabIndex = 93;
+            this.textBox9.TabIndex = 7;
             this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // label15
@@ -220,7 +220,7 @@
             this.textBox6.MaxLength = 11;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(222, 32);
-            this.textBox6.TabIndex = 82;
+            this.textBox6.TabIndex = 6;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBox5
@@ -229,7 +229,7 @@
             this.textBox5.MaxLength = 30;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(222, 32);
-            this.textBox5.TabIndex = 81;
+            this.textBox5.TabIndex = 5;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label6
@@ -258,7 +258,7 @@
             this.textBox3.MaxLength = 30;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(222, 32);
-            this.textBox3.TabIndex = 71;
+            this.textBox3.TabIndex = 3;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
@@ -267,7 +267,7 @@
             this.textBox2.MaxLength = 30;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(222, 32);
-            this.textBox2.TabIndex = 70;
+            this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // materialDivider1
@@ -307,7 +307,7 @@
             this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 32);
-            this.textBox1.TabIndex = 56;
+            this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1

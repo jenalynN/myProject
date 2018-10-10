@@ -44,28 +44,51 @@ namespace LoginModule.cs
         }
         public void addcategory()
         {
-            try { 
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            if (tbcatname.Text == "" || cbBrandP.Text == "")
-            {
-                MessageBox.Show("Please Complete the Form");
-            }
-            else
-            {
-                conn.Open();
-                MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = "insert into tbl_category (col_useraccountsid, col_categoryname) " +
-                            "values((Select col_useraccountsid from tbl_brandpartner where col_brandname= '" + cbBrandP.Text + "'),'" +
-                            tbcatname.Text + "')";
-                command2.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Successfully Added!");
-                Mainframe a = new Mainframe();
-                a.Show();
-                this.Close();
-            }
+            try
+            { 
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                if (tbcatname.Text == "" || cbBrandP.Text == "")
+                {
+                    MessageBox.Show("Please Complete the Form");
                 }
-            catch (Exception e) { MessageBox.Show("No connection to host"); }
+                else
+                {
+                    conn.Open();
+                    MySqlCommand command = conn.CreateCommand();
+                    command.CommandText = "select * from tbl_category where col_categoryname = '" + tbcatname.Text + "' ";
+                    MySqlDataReader read = command.ExecuteReader();
+
+                    int count = 0;
+                    while (read.Read())
+                    {
+                        count++;
+                    }
+                    conn.Close();
+
+                    if (count >= 1)
+                    {
+                        MessageBox.Show("Category already exist.");
+                    }
+                    else
+                    {
+                        conn.Open();
+                        MySqlCommand command2 = conn.CreateCommand();
+                        command2.CommandText = "insert into tbl_category (col_useraccountsid, col_categoryname) " +
+                                    "values((Select col_useraccountsid from tbl_brandpartner where col_brandname= '" + cbBrandP.Text + "'),'" +
+                                    tbcatname.Text + "')";
+                        command2.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Successfully Added!");
+                        Mainframe a = new Mainframe();
+                        a.Show();
+                        this.Close(); 
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No connection to host");
+            }
         }
 
         private void btAddCat_Click(object sender, EventArgs e)

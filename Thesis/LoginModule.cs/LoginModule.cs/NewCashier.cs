@@ -28,6 +28,26 @@ namespace LoginModule.cs
                 else
                 {
                     conn.Open();
+                    MySqlCommand command = conn.CreateCommand();
+                    command.CommandText = "select * from tbl_useraccounts where col_user = '" + textBox9.Text + "' ";
+                    MySqlDataReader read = command.ExecuteReader();
+
+                    int count = 0;
+                    while (read.Read())
+                    {
+                        count++;
+                    }
+                    conn.Close();
+
+                    if (count >= 1)
+                    {
+                        MessageBox.Show("The Username is already taken, please try another one");
+                    }
+                    else
+                    {
+
+                    
+                    conn.Open();
                     MySqlCommand command2 = conn.CreateCommand();
                     command2.CommandText = "insert into tbl_useraccounts (col_usertypeid, " +
                         "col_user, " +
@@ -53,9 +73,16 @@ namespace LoginModule.cs
                         "','unarchived')";
                     command2.ExecuteScalar();
                     conn.Close();
+
+                        MessageBox.Show("Saved Successfully");
+
+                        Mainframe a = new Mainframe();
+                        a.Show();
+                        this.Hide();
+                    }
                 }
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 MessageBox.Show("No Connection to host");
             }
@@ -80,9 +107,8 @@ namespace LoginModule.cs
             else
             {
                 addnewCashierAccount();
-                Mainframe a = new Mainframe();
-                a.Show();
-                this.Hide();
+
+                
             }
         }
 

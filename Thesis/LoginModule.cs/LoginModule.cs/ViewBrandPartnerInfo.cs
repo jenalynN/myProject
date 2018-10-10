@@ -49,7 +49,7 @@ namespace LoginModule.cs
             textBox7.Text = read["col_brandaddress"].ToString();
             textBox8.Text = read["col_brandcontactnum"].ToString();
             textBox9.Text = read["col_user"].ToString();
-            textBox11.Text = read["col_email"].ToString();
+            textBox11.Text = read["col_brandemail"].ToString();
             textBox10.Text = read["col_password"].ToString();
             tempPass = textBox10.Text;
             }
@@ -59,35 +59,46 @@ namespace LoginModule.cs
         }
         public void updateBrandPartnert()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "UPDATE tbl_useraccounts SET " +
-            "col_user = '" + textBox9.Text + "', " +
-            "col_password = '" + textBox10.Text + "', " +
-            "col_lastname = '" + textBox3.Text + "', " +
-            "col_firstname = '" + textBox1.Text + "', " +
-            "col_middlename = '" + textBox2.Text + "', " +
-            "col_address = '" + textBox5.Text + "', " +
-            //"col_dateofbirth = '" + dateTimePicker1.Value + "', " +
-            "col_gender = '" + comboBox1.SelectedItem.ToString() + "', " +
-            "col_contactnum = '" + textBox6.Text + "', " +
-            "col_email ='"+textBox11.Text+"' "+
-            "WHERE col_useraccountsid='" + labelBrandpartnerId.Text + "'";
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "UPDATE tbl_useraccounts SET " +
+                "col_user = '" + textBox9.Text + "', " +
+                "col_password = '" + textBox10.Text + "', " +
+                "col_lastname = '" + textBox3.Text + "', " +
+                "col_firstname = '" + textBox1.Text + "', " +
+                "col_middlename = '" + textBox2.Text + "', " +
+                "col_address = '" + textBox5.Text + "', " +
+                //"col_dateofbirth = '" + dateTimePicker1.Value + "', " +
+                "col_gender = '" + comboBox1.SelectedItem.ToString() + "', " +
+                "col_contactnum = '" + textBox6.Text + "' " +
+                //"col_brandemail ='" + textBox11.Text+"' "+
+                "WHERE col_useraccountsid='" + labelBrandpartnerId.Text + "'";
 
-            command.CommandText = query;
-             command.ExecuteScalar();
-            conn.Close();
-            conn.Open();
-            command = conn.CreateCommand();
-            query = "UPDATE tbl_brandpartner SET " +
-            "col_brandname = '" + textBox4.Text + "', " +
-            "col_brandaddress = '" + textBox7.Text + "', " +
-            "col_brandcontactnum = '" + textBox8.Text + "' " +
-            "WHERE col_useraccountsid='" + labelBrandpartnerId.Text + "'";
-            command.CommandText = query;
-            command.ExecuteScalar();
-            conn.Close();
+                command.CommandText = query;
+                command.ExecuteScalar();
+                conn.Close();
+
+                conn.Open();
+                command = conn.CreateCommand();
+                query = "UPDATE tbl_brandpartner SET " +
+                "col_brandname = '" + textBox4.Text + "', " +
+                "col_brandaddress = '" + textBox7.Text + "', " +
+                "col_brandcontactnum = '" + textBox8.Text + "', " +
+                "col_brandemail ='" + textBox11.Text + "' " +
+                "WHERE col_useraccountsid='" + labelBrandpartnerId.Text + "'";
+                command.CommandText = query;
+                command.ExecuteScalar();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("No Connection to Host.");
+            }
+
             MessageBox.Show("Successfully Updated!");
             Mainframe a = new Mainframe();
             a.Show();

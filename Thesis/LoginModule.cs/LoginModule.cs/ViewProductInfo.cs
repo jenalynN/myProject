@@ -23,8 +23,11 @@ namespace LoginModule.cs
         }
         public void printdata()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            conn.Open();
+            try
+            {
+
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
                 MySqlCommand command = conn.CreateCommand();
                 //string query = "select * from tbl_product where col_productid = '" + label4.Text + "'";
                 string query = "select * from tbl_product p " +
@@ -49,9 +52,9 @@ namespace LoginModule.cs
                 textBox2.Text = read["col_productprice"].ToString();
                 textBox4.Text = read["col_status"].ToString();
 
-            conn.Close();
+                conn.Close();
 
-            conn.Open();
+                conn.Open();
 
                 query = "select * from tbl_brandpartner p ";
                 command.CommandText = query;
@@ -60,9 +63,9 @@ namespace LoginModule.cs
                 {
                     comboBox1.Items.Add(read["col_brandname"].ToString());
                 }
-            conn.Close();
+                conn.Close();
 
-            conn.Open();
+                conn.Open();
 
                 query = "select * from tbl_category c " +
                 "inner join tbl_brandpartner b " +
@@ -74,27 +77,43 @@ namespace LoginModule.cs
                 {
                     comboBox2.Items.Add(read["col_categoryname"].ToString());
                 }
-            conn.Close();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No connection to host");
+            }
 
         }
+
         public void update()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "UPDATE tbl_product SET " +
-            "col_productcode = '" + textBox1.Text + "', " +
-            "col_productname = '" + txtProductName.Text + "', " +
-            "col_productprice = '" + textBox2.Text + "', " +
-            "col_useraccountsid = '" + lblBrandId.Text + "', " +
-            "col_categoryid = '" + lblCategoryId.Text + "' " +
-            "WHERE col_productid='" + label4.Text + "'";
-            command.CommandText = query;
-            command.ExecuteScalar();
-            conn.Close();
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "UPDATE tbl_product SET " +
+                "col_productcode = '" + textBox1.Text + "', " +
+                "col_productname = '" + txtProductName.Text + "', " +
+                "col_productprice = round(" + textBox2.Text + ",2), " +
+                "col_useraccountsid = '" + lblBrandId.Text + "', " +
+                "col_categoryid = '" + lblCategoryId.Text + "' " +
+                "WHERE col_productid='" + label4.Text + "'";
+                command.CommandText = query;
+                command.ExecuteScalar();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No connection to host");
+            }
         }
+
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
+            double b;
+            bool isBValid = double.TryParse(textBox2.Text, out b);
             if (string.IsNullOrWhiteSpace(comboBox1.Text) ||
                 string.IsNullOrWhiteSpace(comboBox2.Text) ||
                 string.IsNullOrWhiteSpace(textBox1.Text) ||
@@ -102,6 +121,14 @@ namespace LoginModule.cs
                 string.IsNullOrWhiteSpace(textBox2.Text))
             {
                 MessageBox.Show("Please don't leave any blank field(s).");
+            }
+            else if (textBox2.Text == ".")
+            {
+                MessageBox.Show("Invalid Price value.");
+            }
+            else if (b <= 0)
+            {
+                MessageBox.Show("Price should be greater than 0");
             }
             else
             {
@@ -122,60 +149,63 @@ namespace LoginModule.cs
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_brandpartner b " +
-                "where col_brandname = '" + comboBox1.Text + "'";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
-            read.Read();
-            lblBrandId.Text = read["col_useraccountsid"].ToString();
-            conn.Close();
-            comboBox2.Text = "";
-            comboBox2.Items.Clear();
-
-            conn.Open();
-
-            query = "select * from tbl_category c " +
-            "inner join tbl_brandpartner b " +
-            "on c.col_useraccountsid = b.col_useraccountsid " +
-            "where b.col_useraccountsid = '" + lblBrandId.Text + "'";
-            command.CommandText = query;
-            read = command.ExecuteReader();
-            while (read.Read())
+            try
             {
-                comboBox2.Items.Add(read["col_categoryname"].ToString());
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "select * from tbl_brandpartner b " +
+                    "where col_brandname = '" + comboBox1.Text + "'";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+                read.Read();
+                lblBrandId.Text = read["col_useraccountsid"].ToString();
+                conn.Close();
+                comboBox2.Text = "";
+                comboBox2.Items.Clear();
+
+                conn.Open();
+
+                query = "select * from tbl_category c " +
+                "inner join tbl_brandpartner b " +
+                "on c.col_useraccountsid = b.col_useraccountsid " +
+                "where b.col_useraccountsid = '" + lblBrandId.Text + "'";
+                command.CommandText = query;
+                read = command.ExecuteReader();
+                while (read.Read())
+                {
+                    comboBox2.Items.Add(read["col_categoryname"].ToString());
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception)
+            {
+                MessageBox.Show("No connection to host");
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "select * from tbl_category b " +
-                "where col_categoryname = '" + comboBox2.Text + "'";
-            command.CommandText = query;
-            MySqlDataReader read = command.ExecuteReader();
-            read.Read();
-            lblCategoryId.Text = read["col_categoryid"].ToString();
-            conn.Close();
-        }
+            try
+            {
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                textBox2.Text = "1.00";
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "select * from tbl_category b " +
+                    "where col_categoryname = '" + comboBox2.Text + "'";
+                command.CommandText = query;
+                MySqlDataReader read = command.ExecuteReader();
+                read.Read();
+                lblCategoryId.Text = read["col_categoryid"].ToString();
+                conn.Close();
             }
-            else if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "(\\..*\\.)|[^\\d+\\.\\d+]|[^\\.\\d+]"))
+            catch (MySqlException )
             {
-                //MessageBox.Show("Please enter only numbers.");
-                textBox2.Text = "1.00";
+                MessageBox.Show("No connection to host");
             }
         }
+        
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -195,6 +225,11 @@ namespace LoginModule.cs
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            new DataHandling().decimalNumberTrap_KeyPress(sender, e);
         }
     }
 }

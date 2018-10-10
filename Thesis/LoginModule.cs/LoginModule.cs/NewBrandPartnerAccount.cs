@@ -63,21 +63,38 @@ namespace LoginModule.cs
                     {
                         count++;
                     }
-                    if (count == 1)
-                    {
-                        MessageBox.Show("The username is already taken, please try another one");
-                    }
-                    else if (count > 1)
-                    {
-                        MessageBox.Show("The username is already taken, please try another one");
-                    }
                     conn.Close();
+
                     conn.Open();
-                    MySqlCommand command2 = conn.CreateCommand();
-                    command2.CommandText = "insert into tbl_useraccounts (col_usertypeid,col_user, col_password, col_lastname, col_firstname, col_middlename,col_address,col_gender,col_contactnum,col_status,col_email) " +
-                        "values  ((SELECT col_usertypeid from tbl_usertype where col_userrole='Brandpartner'),'" + textBox9.Text + "','" + textBox11.Text + "','" + textBox3.Text + "','" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + comboBox1.SelectedItem + "','" + textBox6.Text + "','unarchived','" + textBox12.Text + "')";
-                    command2.ExecuteScalar();
+                    command = conn.CreateCommand();
+                    command.CommandText = "select * from tbl_brandpartner where col_brandname = '" + textBox4.Text + "' ";
+                    read = command.ExecuteReader();
+
+                    int countBrand = 0;
+                    while (read.Read())
+                    {
+                        countBrand++;
+                    }
                     conn.Close();
+
+                    if (count >= 1)
+                    {
+                        MessageBox.Show("The username is already taken, please try another one");
+                    }
+                    else if (countBrand >= 1)
+                    {
+                        MessageBox.Show("Brandname is exist, please try another one");
+                    }
+                    else
+                    {
+                        
+                        conn.Open();
+                        MySqlCommand command2 = conn.CreateCommand();
+                        command2.CommandText = "insert into tbl_useraccounts (col_usertypeid,col_user, col_password, col_lastname, col_firstname, col_middlename,col_address,col_gender,col_contactnum,col_status) " +
+                            "values  ((SELECT col_usertypeid from tbl_usertype where col_userrole='Brandpartner'),'" + textBox9.Text + "','" + textBox11.Text + "','" + textBox3.Text + "','" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + comboBox1.SelectedItem + "','" + textBox6.Text + "','unarchived')";
+                        command2.ExecuteScalar();
+                        conn.Close(); 
+                    }
                 }
 
             
@@ -102,21 +119,18 @@ namespace LoginModule.cs
                 {
                     count++;
                 }
-                if (count == 1)
+                conn.Close();
+
+                if (count >= 1)
                 {
-                    MessageBox.Show("The brandname is already taken, please try another one");
-                }
-                else if (count > 1)
-                {
-                    MessageBox.Show("The brandname is already taken, please try another one");
+                    //MessageBox.Show("The brandname is already taken, please try another one");
                 }
                 else
                 {
-                    conn.Close();
                     conn.Open();
                     MySqlCommand command2 = conn.CreateCommand();
-                    command2.CommandText = "insert into tbl_brandpartner(col_useraccountsid, col_brandname, col_brandaddress, col_brandcontactnum) " +
-                        "values  ('" + labelTransactionCode.Text + "','" + textBox4.Text + "','" + textBox7.Text + "','" + textBox8.Text + "')";
+                    command2.CommandText = "insert into tbl_brandpartner(col_useraccountsid, col_brandname, col_brandaddress, col_brandcontactnum,col_brandemail) " +
+                        "values  ('" + labelTransactionCode.Text + "','" + textBox4.Text + "','" + textBox7.Text + "','" + textBox8.Text + "','" + textBox12.Text + "')";
                     command2.ExecuteScalar();
                     conn.Close();
                     MessageBox.Show("Successfully added");

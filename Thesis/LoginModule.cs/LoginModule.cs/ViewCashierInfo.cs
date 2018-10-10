@@ -97,6 +97,9 @@ namespace LoginModule.cs
             else
             {
                 update();
+
+                MessageBox.Show("Updated Successfully");
+
                 Mainframe a = new Mainframe();
                 a.Show();
                 this.Hide();
