@@ -116,10 +116,11 @@ namespace LoginModule.cs
                     this.Close();
                 }
             
-        }    catch (Exception e) 
+        }catch (Exception e) 
             {
                 MessageBox.Show("No connection to host");
-            }}
+            }
+        }
         
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {

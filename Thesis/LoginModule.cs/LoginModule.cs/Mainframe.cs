@@ -1080,9 +1080,7 @@ namespace LoginModule.cs
         {
             if (label6.Text == "SI") 
             {
-                DialogSelectRecordBelow a = new DialogSelectRecordBelow();
-                a.Show();
-            
+                MessageBox.Show("Select a record below");
             }
             else
             {
@@ -1194,6 +1192,10 @@ namespace LoginModule.cs
                 a.Show();
                 this.Hide();
             }
+            else
+            {
+                MessageBox.Show("Select a record below");
+            }
         }
         public void printbrandpartnerunarchived() 
         {
@@ -1266,6 +1268,10 @@ namespace LoginModule.cs
                 ViewCashierInfo a = new ViewCashierInfo(label40.Text);
                 a.Show();
                 this.Hide();
+            }
+            else 
+            {
+                MessageBox.Show("Select a record below");
             }
         }
 

@@ -19,30 +19,36 @@ namespace LoginModule.cs
         }
         public void getmax()
         {
-            MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "select MAX(col_useraccountsid) as maxID from tbl_useraccounts";
-            MySqlDataReader basa = cmd.ExecuteReader();
-            while (basa.Read())
+            try
             {
-                string maxid = basa["maxID"].ToString();
+                MySqlConnection con = new MySqlConnection(ConnectionString.myConnection);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select MAX(col_useraccountsid) as maxID from tbl_useraccounts";
+                MySqlDataReader basa = cmd.ExecuteReader();
+                while (basa.Read())
+                {
+                    string maxid = basa["maxID"].ToString();
 
-                int plus1 = Int32.Parse(maxid);
-                int total = plus1 + 1;
-                labelTransactionCode.Text = "" + total;
+                    int plus1 = Int32.Parse(maxid);
+                    int total = plus1 + 1;
+                    labelTransactionCode.Text = "" + total;
+                }
+                con.Close();
             }
-            con.Close();
-
+            catch (Exception e) 
+            {
+                MessageBox.Show("No Connection to the host");
+            }
         }
         public void addnewbrandpartneraccount()
         {
 
             MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            if (label1.Text == "")
+            if (textBox1.Text == ""||textBox2.Text == ""||textBox3.Text == ""||textBox5.Text == ""||textBox6.Text == ""||textBox12.Text == ""||textBox7.Text == ""||textBox8.Text == ""||textBox9.Text == ""||textBox10.Text == ""||textBox11.Text == ""||comboBox1.Text=="")
             {
-                MessageBox.Show("Complete the Form");
+                MessageBox.Show("Missing Fields");
             }
            
                 else
@@ -85,7 +91,7 @@ namespace LoginModule.cs
             }
             else
             {
-         
+
                 conn.Open();
                 MySqlCommand command = conn.CreateCommand();
                 command.CommandText = "select * from tbl_brandpartner where col_brandname = '" + textBox4.Text + "' ";
@@ -104,19 +110,21 @@ namespace LoginModule.cs
                 {
                     MessageBox.Show("The brandname is already taken, please try another one");
                 }
-                conn.Close();
-                conn.Open();
-                MySqlCommand command2 = conn.CreateCommand();
-                command2.CommandText = "insert into tbl_brandpartner(col_useraccountsid, col_brandname, col_brandaddress, col_brandcontactnum) " +
-                    "values  ('" + labelTransactionCode.Text + "','" + textBox4.Text + "','" + textBox7.Text + "','" + textBox8.Text + "')";
-                command2.ExecuteScalar();
-                conn.Close();
-
-                Mainframe a = new Mainframe();
-                a.Show();
-                this.Hide();
+                else
+                {
+                    conn.Close();
+                    conn.Open();
+                    MySqlCommand command2 = conn.CreateCommand();
+                    command2.CommandText = "insert into tbl_brandpartner(col_useraccountsid, col_brandname, col_brandaddress, col_brandcontactnum) " +
+                        "values  ('" + labelTransactionCode.Text + "','" + textBox4.Text + "','" + textBox7.Text + "','" + textBox8.Text + "')";
+                    command2.ExecuteScalar();
+                    conn.Close();
+                    MessageBox.Show("Successfully added");
+                    Mainframe a = new Mainframe();
+                    a.Show();
+                    this.Hide();
+                }
             }
-
 
         }
         private void materialFlatButton1_Click(object sender, EventArgs e)

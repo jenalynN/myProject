@@ -136,8 +136,17 @@ namespace LoginModule.cs
             }
         private void materialFlatButton4_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrWhiteSpace(tboldpass.Text)||
+                string.IsNullOrWhiteSpace(tbnewpass.Text)||
+                string.IsNullOrWhiteSpace(tbconfirmnewpass.Text))
+            {
+            MessageBox.Show("Missing fields");
+            }
+            else
+
+            {
             checkPassword();
-        }
+        }}
 
             
 }

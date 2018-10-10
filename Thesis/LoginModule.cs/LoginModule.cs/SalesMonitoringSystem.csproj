@@ -66,12 +66,6 @@
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionString.cs" />
-    <Compile Include="DialogSelectRecordBelow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DialogSelectRecordBelow.Designer.cs">
-      <DependentUpon>DialogSelectRecordBelow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,9 +130,6 @@
     </Compile>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DialogSelectRecordBelow.resx">
-      <DependentUpon>DialogSelectRecordBelow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
