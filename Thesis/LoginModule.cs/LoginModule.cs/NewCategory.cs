@@ -74,7 +74,7 @@ namespace LoginModule.cs
                         conn.Open();
                         MySqlCommand command2 = conn.CreateCommand();
                         command2.CommandText = "insert into tbl_category (col_useraccountsid, col_categoryname) " +
-                                    "values((Select col_useraccountsid from tbl_brandpartner where col_brandname= '" + cbBrandP.Text + "'),'" +
+                                    "values((Select col_useraccountsid from tbl_brandpartner where col_brandname= '" + cbBrandP.Text + "' limit 1),'" +
                                     tbcatname.Text + "')";
                         command2.ExecuteNonQuery();
                         conn.Close();
