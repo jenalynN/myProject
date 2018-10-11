@@ -27,7 +27,9 @@ namespace LoginModule.cs
 
                 conn.Open();
                 MySqlCommand command = conn.CreateCommand();
-                string query = "select col_brandname from tbl_brandpartner";
+                string query = "select col_brandname from tbl_brandpartner b " +
+                    "inner join tbl_useraccounts u on u.col_useraccountsid = b.col_useraccountsid " +
+                    "where u.col_status = 'unarchived'";
                 command.CommandText = query;
                 MySqlDataReader read = command.ExecuteReader();
 
@@ -55,7 +57,10 @@ namespace LoginModule.cs
                 {
                     conn.Open();
                     MySqlCommand command = conn.CreateCommand();
-                    command.CommandText = "select * from tbl_category where col_categoryname = '" + tbcatname.Text + "' ";
+                    command.CommandText = "select * from tbl_category c " +
+                    "inner join tbl_brandpartner b on c.col_useraccountsid = b.col_useraccountsid " +
+                    " where b.col_brandname = '" + cbBrandP.Text +
+                    "' and col_categoryname = '" + tbcatname.Text + "' ";
                     MySqlDataReader read = command.ExecuteReader();
 
                     int count = 0;
