@@ -83,7 +83,7 @@ namespace LoginModule.cs
                     }
                     else if (countBrand >= 1)
                     {
-                        MessageBox.Show("Brandname is exist, please try another one");
+                        MessageBox.Show("Brandname already exist, please try another one");
                     }
                     else
                     {
@@ -230,6 +230,14 @@ namespace LoginModule.cs
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             new DataHandling().namingTrap_TextChanged(sender, e);
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+            var textboxSender = (TextBox)sender;
+            var cursorPosition = textboxSender.SelectionStart;
+            textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^0-9a-zA-Z,\\.@]|(\\.\\.)|(,,)|(@@)", "");
+            textboxSender.SelectionStart = cursorPosition;
         }
     }
 }

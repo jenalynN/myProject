@@ -54,9 +54,9 @@
             this.chkChangePassword = new MaterialSkin.Controls.MaterialCheckBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             this.textBox11.MaxLength = 20;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(222, 32);
-            this.textBox11.TabIndex = 101;
+            this.textBox11.TabIndex = 10;
             this.textBox11.UseSystemPasswordChar = true;
             this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
@@ -92,7 +92,7 @@
             this.comboBox1.Location = new System.Drawing.Point(210, 228);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(222, 32);
-            this.comboBox1.TabIndex = 99;
+            this.comboBox1.TabIndex = 4;
             this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // label17
@@ -136,7 +136,7 @@
             this.textBox10.MaxLength = 20;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(222, 32);
-            this.textBox10.TabIndex = 94;
+            this.textBox10.TabIndex = 9;
             this.textBox10.UseSystemPasswordChar = true;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
@@ -147,7 +147,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(222, 32);
-            this.textBox9.TabIndex = 93;
+            this.textBox9.TabIndex = 7;
             // 
             // label14
             // 
@@ -195,7 +195,7 @@
             this.textBox5.MaxLength = 30;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(222, 32);
-            this.textBox5.TabIndex = 81;
+            this.textBox5.TabIndex = 5;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label6
@@ -224,7 +224,7 @@
             this.textBox3.MaxLength = 30;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(222, 32);
-            this.textBox3.TabIndex = 71;
+            this.textBox3.TabIndex = 3;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
@@ -233,7 +233,7 @@
             this.textBox2.MaxLength = 30;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(222, 32);
-            this.textBox2.TabIndex = 70;
+            this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // materialDivider1
@@ -273,7 +273,7 @@
             this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 32);
-            this.textBox1.TabIndex = 56;
+            this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
@@ -335,7 +335,7 @@
             this.chkChangePassword.Name = "chkChangePassword";
             this.chkChangePassword.Ripple = true;
             this.chkChangePassword.Size = new System.Drawing.Size(141, 30);
-            this.chkChangePassword.TabIndex = 104;
+            this.chkChangePassword.TabIndex = 11;
             this.chkChangePassword.Text = "Change Password";
             this.chkChangePassword.UseVisualStyleBackColor = true;
             this.chkChangePassword.CheckedChanged += new System.EventHandler(this.materialCheckBox1_CheckedChanged);
@@ -347,7 +347,7 @@
             this.textBox4.MaxLength = 20;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(222, 32);
-            this.textBox4.TabIndex = 103;
+            this.textBox4.TabIndex = 8;
             this.textBox4.UseSystemPasswordChar = true;
             this.textBox4.Visible = false;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -361,6 +361,15 @@
             this.label4.Size = new System.Drawing.Size(152, 23);
             this.label4.TabIndex = 102;
             this.label4.Text = "Confirm Password";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(210, 304);
+            this.textBox6.MaxLength = 11;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(222, 32);
+            this.textBox6.TabIndex = 6;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // materialFlatButton2
             // 
@@ -377,7 +386,7 @@
             this.materialFlatButton2.Name = "materialFlatButton2";
             this.materialFlatButton2.Primary = false;
             this.materialFlatButton2.Size = new System.Drawing.Size(73, 36);
-            this.materialFlatButton2.TabIndex = 43;
+            this.materialFlatButton2.TabIndex = 13;
             this.materialFlatButton2.Text = "Cancel";
             this.materialFlatButton2.UseVisualStyleBackColor = false;
             this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
@@ -397,19 +406,10 @@
             this.materialFlatButton1.Name = "materialFlatButton1";
             this.materialFlatButton1.Primary = false;
             this.materialFlatButton1.Size = new System.Drawing.Size(73, 36);
-            this.materialFlatButton1.TabIndex = 42;
+            this.materialFlatButton1.TabIndex = 12;
             this.materialFlatButton1.Text = "Update";
             this.materialFlatButton1.UseVisualStyleBackColor = false;
             this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(210, 304);
-            this.textBox6.MaxLength = 11;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(222, 32);
-            this.textBox6.TabIndex = 82;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // viewAdminAccount
             // 

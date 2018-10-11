@@ -82,23 +82,30 @@ namespace LoginModule.cs
 
         public void update()
         {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            string query = "UPDATE tbl_useraccounts SET " +
-            "col_firstname = '" + textBox1.Text + "', " +
-            "col_middlename = '" + textBox2.Text + "', " +
-            "col_lastname = '" + textBox3.Text + "', " +
-            //"col_dateofbirth = '" + dateTimePicker1.Text + "', " +
-            "col_gender = '" + comboBox1.SelectedItem.ToString() + "', " +
-            "col_address = '" + textBox5.Text + "', " +
-            "col_contactnum = '" + textBox6.Text + "', " +
-            "col_user = '" + textBox9.Text + "', " +
-            "col_password = '" + textBox10.Text + "' " +
-            "WHERE col_useraccountsid='" + labelCashierId.Text + "'";
-            command.CommandText = query;
-            command.ExecuteScalar();
-            conn.Close();
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                string query = "UPDATE tbl_useraccounts SET " +
+                "col_firstname = '" + textBox1.Text + "', " +
+                "col_middlename = '" + textBox2.Text + "', " +
+                "col_lastname = '" + textBox3.Text + "', " +
+                    //"col_dateofbirth = '" + dateTimePicker1.Text + "', " +
+                "col_gender = '" + comboBox1.SelectedItem.ToString() + "', " +
+                "col_address = '" + textBox5.Text + "', " +
+                "col_contactnum = '" + textBox6.Text + "', " +
+                "col_user = '" + textBox9.Text + "', " +
+                "col_password = '" + textBox10.Text + "' " +
+                "WHERE col_useraccountsid='" + labelCashierId.Text + "'";
+                command.CommandText = query;
+                command.ExecuteScalar();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Connection Lost");
+            }
         }
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {

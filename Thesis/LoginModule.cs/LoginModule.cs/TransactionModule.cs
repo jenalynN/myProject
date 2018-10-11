@@ -690,13 +690,13 @@ namespace LoginModule.cs
                     {
                         MessageBox.Show("The item you are returning should not be zero","Message");
                     }
-                    if (a >= b)
-                    {
-                        inserttopending();
-                    }
                     else if (a < b)
                     {
                         MessageBox.Show("The item you are returning is more than the item you bought", "Message");
+                    }
+                    else if (a >= b)
+                    {
+                        inserttopending();
                     }
                 }
                 else
@@ -908,8 +908,8 @@ namespace LoginModule.cs
                 string query1 = "select * from tbl_transaction t " +
                 "inner join tbl_order o on t.col_transactionid = o.col_transactionid " +
                 "where o.col_orderstatus='Sales' " +
-                "AND t.col_totalprice > 0 " +
-                "AND t.col_transactioncode like  '" + textBox1.Text + "%'";
+                "AND o.col_quantitybought  > 0 " +
+                "AND t.col_transactioncode like  '" + textBox1.Text + "%' GROUP BY col_transactioncode";
 
                 MySqlCommand command2 = conn.CreateCommand();
                 command2.CommandText = query1;
@@ -952,7 +952,7 @@ namespace LoginModule.cs
 
                 materialListView4.Items.Clear();
                 MySqlCommand command = conn.CreateCommand();
-                string query = "Select *, count(col_orderid) as count from tbl_order o " +
+                string query = "Select * from tbl_order o " +
                     "inner join tbl_transaction t " +
                     "  on t.col_transactionid = o.col_transactionid " +
                     "inner join tbl_product p " +
@@ -995,7 +995,7 @@ namespace LoginModule.cs
                 ListViewItem list = materialListView3.SelectedItems[data];
                 String id = list.SubItems[1].Text;
                 textBox8.Text = id.ToString();
-            textBox1.Text = id.ToString();
+                textBox1.Text = id.ToString();
                 printorders();
             }
             catch (Exception E) 

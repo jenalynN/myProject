@@ -218,5 +218,13 @@ namespace LoginModule.cs
                 txtConfirmPass.Text = "";
             }
         }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+            var textboxSender = (TextBox)sender;
+            var cursorPosition = textboxSender.SelectionStart;
+            textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^0-9a-zA-Z,\\.@]|(\\.\\.)|(,,)|(@@)", "");
+            textboxSender.SelectionStart = cursorPosition;
+        }
     }
 }

@@ -230,6 +230,7 @@
             // comboBox2
             // 
             this.comboBox2.BackColor = System.Drawing.Color.White;
+            this.comboBox2.Enabled = false;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(208, 99);
             this.comboBox2.Name = "comboBox2";
@@ -241,6 +242,7 @@
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(209, 61);
             this.comboBox1.Name = "comboBox1";

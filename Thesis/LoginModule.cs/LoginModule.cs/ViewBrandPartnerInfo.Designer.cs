@@ -170,6 +170,7 @@
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(222, 32);
             this.textBox11.TabIndex = 7;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // chkChangePassword
             // 
