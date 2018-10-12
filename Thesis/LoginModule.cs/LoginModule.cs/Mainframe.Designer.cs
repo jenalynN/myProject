@@ -618,12 +618,15 @@
             this.materialListView1.Location = new System.Drawing.Point(8, 85);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView1.MultiSelect = false;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
             this.materialListView1.Size = new System.Drawing.Size(899, 314);
             this.materialListView1.TabIndex = 42;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
+            this.materialListView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
+            this.materialListView1.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged);
             this.materialListView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView1_MouseDoubleClick);
             // 
             // ActiveProductId
@@ -829,12 +832,15 @@
             this.materialListView2.Location = new System.Drawing.Point(8, 85);
             this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView2.MultiSelect = false;
             this.materialListView2.Name = "materialListView2";
             this.materialListView2.OwnerDraw = true;
             this.materialListView2.Size = new System.Drawing.Size(899, 314);
             this.materialListView2.TabIndex = 42;
             this.materialListView2.UseCompatibleStateImageBehavior = false;
             this.materialListView2.View = System.Windows.Forms.View.Details;
+            this.materialListView2.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
+            this.materialListView2.SelectedIndexChanged += new System.EventHandler(this.materialListView2_SelectedIndexChanged);
             this.materialListView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView2_MouseClick);
             // 
             // columnHeader6
@@ -962,7 +968,8 @@
             // 
             // groupBox17
             // 
-            this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox17.BackColor = System.Drawing.Color.White;
             this.groupBox17.Controls.Add(this.label11);
             this.groupBox17.Controls.Add(this.lblTransactionCode);
@@ -996,7 +1003,7 @@
             this.label11.Location = new System.Drawing.Point(13, 298);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(102, 23);
-            this.label11.TabIndex = 78;
+            this.label11.TabIndex = 9;
             this.label11.Text = "Order Price ";
             this.label11.Visible = false;
             this.label11.Click += new System.EventHandler(this.outsideListview_Click);
@@ -1008,7 +1015,7 @@
             this.lblTransactionCode.Location = new System.Drawing.Point(12, 92);
             this.lblTransactionCode.Name = "lblTransactionCode";
             this.lblTransactionCode.Size = new System.Drawing.Size(139, 23);
-            this.lblTransactionCode.TabIndex = 77;
+            this.lblTransactionCode.TabIndex = 3;
             this.lblTransactionCode.Text = "transaction code";
             this.lblTransactionCode.Visible = false;
             this.lblTransactionCode.Click += new System.EventHandler(this.outsideListview_Click);
@@ -1020,7 +1027,7 @@
             this.label46.Location = new System.Drawing.Point(174, 275);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(20, 23);
-            this.label46.TabIndex = 76;
+            this.label46.TabIndex = 8;
             this.label46.Text = "0";
             this.label46.Click += new System.EventHandler(this.outsideListview_Click);
             // 
@@ -1042,7 +1049,7 @@
             this.label42.Location = new System.Drawing.Point(174, 227);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(20, 23);
-            this.label42.TabIndex = 74;
+            this.label42.TabIndex = 7;
             this.label42.Text = "0";
             this.label42.Visible = false;
             this.label42.Click += new System.EventHandler(this.outsideListview_Click);
@@ -1054,7 +1061,7 @@
             this.label36.Location = new System.Drawing.Point(174, 186);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(20, 23);
-            this.label36.TabIndex = 73;
+            this.label36.TabIndex = 6;
             this.label36.Text = "0";
             this.label36.Click += new System.EventHandler(this.outsideListview_Click);
             // 
@@ -1088,7 +1095,7 @@
             this.label30.Location = new System.Drawing.Point(129, 147);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(20, 23);
-            this.label30.TabIndex = 70;
+            this.label30.TabIndex = 5;
             this.label30.Text = "0";
             this.label30.Click += new System.EventHandler(this.outsideListview_Click);
             // 
@@ -1110,7 +1117,7 @@
             this.label24.Location = new System.Drawing.Point(174, 109);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(20, 23);
-            this.label24.TabIndex = 68;
+            this.label24.TabIndex = 4;
             this.label24.Text = "0";
             this.label24.Click += new System.EventHandler(this.outsideListview_Click);
             // 
@@ -1132,7 +1139,7 @@
             this.label18.Location = new System.Drawing.Point(174, 69);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(20, 23);
-            this.label18.TabIndex = 66;
+            this.label18.TabIndex = 2;
             this.label18.Text = "0";
             this.label18.Click += new System.EventHandler(this.outsideListview_Click);
             // 
@@ -1154,7 +1161,7 @@
             this.label3.Location = new System.Drawing.Point(174, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(20, 23);
-            this.label3.TabIndex = 64;
+            this.label3.TabIndex = 1;
             this.label3.Text = "0";
             this.label3.Click += new System.EventHandler(this.outsideListview_Click);
             // 
@@ -1175,6 +1182,7 @@
             this.groupBox6.BackColor = System.Drawing.Color.White;
             this.groupBox6.Controls.Add(this.materialFlatButton5);
             this.groupBox6.Controls.Add(this.materialFlatButton3);
+            this.groupBox6.Enabled = false;
             this.groupBox6.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(909, 346);
             this.groupBox6.Name = "groupBox6";
@@ -1248,15 +1256,18 @@
             this.materialListView11.FullRowSelect = true;
             this.materialListView11.GridLines = true;
             this.materialListView11.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView11.Location = new System.Drawing.Point(6, 36);
+            this.materialListView11.Location = new System.Drawing.Point(12, 36);
             this.materialListView11.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView11.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView11.MultiSelect = false;
             this.materialListView11.Name = "materialListView11";
             this.materialListView11.OwnerDraw = true;
             this.materialListView11.Size = new System.Drawing.Size(885, 410);
             this.materialListView11.TabIndex = 42;
             this.materialListView11.UseCompatibleStateImageBehavior = false;
             this.materialListView11.View = System.Windows.Forms.View.Details;
+            this.materialListView11.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
+            this.materialListView11.SelectedIndexChanged += new System.EventHandler(this.materialListView11_SelectedIndexChanged);
             this.materialListView11.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView11_MouseDoubleClick);
             // 
             // columnHeader67
@@ -1583,7 +1594,6 @@
             this.comboBox5.Size = new System.Drawing.Size(230, 31);
             this.comboBox5.TabIndex = 54;
             this.comboBox5.Text = "Brandname";
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             this.comboBox5.Click += new System.EventHandler(this.outsideListview_Click);
             this.comboBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox5_KeyPress);
             // 
@@ -1611,12 +1621,14 @@
             this.materialListView3.Location = new System.Drawing.Point(6, 94);
             this.materialListView3.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView3.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView3.MultiSelect = false;
             this.materialListView3.Name = "materialListView3";
             this.materialListView3.OwnerDraw = true;
             this.materialListView3.Size = new System.Drawing.Size(901, 278);
             this.materialListView3.TabIndex = 13;
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
+            this.materialListView3.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
             this.materialListView3.SelectedIndexChanged += new System.EventHandler(this.materialListView3_SelectedIndexChanged);
             this.materialListView3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView3_MouseDoubleClick);
             // 
@@ -1914,12 +1926,14 @@
             this.materialListView6.Location = new System.Drawing.Point(6, 94);
             this.materialListView6.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView6.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView6.MultiSelect = false;
             this.materialListView6.Name = "materialListView6";
             this.materialListView6.OwnerDraw = true;
             this.materialListView6.Size = new System.Drawing.Size(901, 287);
             this.materialListView6.TabIndex = 13;
             this.materialListView6.UseCompatibleStateImageBehavior = false;
             this.materialListView6.View = System.Windows.Forms.View.Details;
+            this.materialListView6.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
             this.materialListView6.SelectedIndexChanged += new System.EventHandler(this.materialListView6_SelectedIndexChanged);
             this.materialListView6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView6_MouseDoubleClick);
             // 
@@ -2208,12 +2222,15 @@
             this.materialListView5.Location = new System.Drawing.Point(6, 97);
             this.materialListView5.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView5.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView5.MultiSelect = false;
             this.materialListView5.Name = "materialListView5";
             this.materialListView5.OwnerDraw = true;
             this.materialListView5.Size = new System.Drawing.Size(901, 284);
             this.materialListView5.TabIndex = 13;
             this.materialListView5.UseCompatibleStateImageBehavior = false;
             this.materialListView5.View = System.Windows.Forms.View.Details;
+            this.materialListView5.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
+            this.materialListView5.SelectedIndexChanged += new System.EventHandler(this.materialListView5_SelectedIndexChanged);
             this.materialListView5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView5_MouseDoubleClick);
             // 
             // cashier_useraccountsid
@@ -2471,12 +2488,15 @@
             this.materialListView4.Location = new System.Drawing.Point(6, 97);
             this.materialListView4.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView4.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView4.MultiSelect = false;
             this.materialListView4.Name = "materialListView4";
             this.materialListView4.OwnerDraw = true;
             this.materialListView4.Size = new System.Drawing.Size(901, 284);
             this.materialListView4.TabIndex = 60;
             this.materialListView4.UseCompatibleStateImageBehavior = false;
             this.materialListView4.View = System.Windows.Forms.View.Details;
+            this.materialListView4.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
+            this.materialListView4.SelectedIndexChanged += new System.EventHandler(this.materialListView4_SelectedIndexChanged);
             this.materialListView4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView4_MouseDoubleClick);
             // 
             // arc_cashier_useraccountsid
@@ -2619,8 +2639,9 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.materialListView10);
             this.groupBox5.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(8, 6);
@@ -2648,6 +2669,7 @@
             this.materialListView10.Location = new System.Drawing.Point(6, 36);
             this.materialListView10.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView10.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView10.MultiSelect = false;
             this.materialListView10.Name = "materialListView10";
             this.materialListView10.OwnerDraw = true;
             this.materialListView10.Size = new System.Drawing.Size(1194, 554);

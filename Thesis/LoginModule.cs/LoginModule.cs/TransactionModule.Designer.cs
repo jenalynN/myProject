@@ -569,6 +569,7 @@
             this.materialListView1.Location = new System.Drawing.Point(6, 27);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView1.MultiSelect = false;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
             this.materialListView1.Size = new System.Drawing.Size(542, 358);
@@ -686,6 +687,7 @@
             this.materialListView2.Location = new System.Drawing.Point(10, 64);
             this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView2.MultiSelect = false;
             this.materialListView2.Name = "materialListView2";
             this.materialListView2.OwnerDraw = true;
             this.materialListView2.Size = new System.Drawing.Size(302, 266);
@@ -1148,6 +1150,7 @@
             this.materialListView4.Location = new System.Drawing.Point(6, 64);
             this.materialListView4.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView4.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView4.MultiSelect = false;
             this.materialListView4.Name = "materialListView4";
             this.materialListView4.OwnerDraw = true;
             this.materialListView4.Size = new System.Drawing.Size(467, 380);
@@ -1265,6 +1268,7 @@
             this.materialListView3.Location = new System.Drawing.Point(10, 64);
             this.materialListView3.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView3.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView3.MultiSelect = false;
             this.materialListView3.Name = "materialListView3";
             this.materialListView3.OwnerDraw = true;
             this.materialListView3.Size = new System.Drawing.Size(323, 379);

@@ -20,8 +20,23 @@ namespace LoginModule.cs
             InitializeComponent();
             launch();
         }
+
+        public void initializeListviewHeaderStyle()
+        {
+            materialListView1.HeaderStyle = ColumnHeaderStyle.Clickable;
+            materialListView10.HeaderStyle = ColumnHeaderStyle.Clickable;
+            materialListView11.HeaderStyle = ColumnHeaderStyle.Clickable;
+            materialListView13.HeaderStyle = ColumnHeaderStyle.Clickable;
+            materialListView2.HeaderStyle = ColumnHeaderStyle.Clickable;
+            materialListView3.HeaderStyle = ColumnHeaderStyle.Clickable;
+            materialListView4.HeaderStyle = ColumnHeaderStyle.Clickable;
+            materialListView5.HeaderStyle = ColumnHeaderStyle.Clickable;
+            materialListView6.HeaderStyle = ColumnHeaderStyle.Clickable;
+        }
+
         public void launch() 
         {
+            initializeListviewHeaderStyle();
             viewdamageid();
             viewfinishdamage();
             dataproductunarchived();
@@ -281,14 +296,22 @@ namespace LoginModule.cs
         {
             try
             {
-                int data = 0;
-                ListViewItem list = materialListView2.SelectedItems[data];
-                String id = list.SubItems[0].Text;
-                label9.Text = id.ToString();
+                if (materialListView2.SelectedItems.Count > 0)
+                {
+                    int data = 0;
+                    ListViewItem list = materialListView2.SelectedItems[data];
+                    String id = list.SubItems[0].Text;
+                    label9.Text = id.ToString();
+                }
+                else
+                {
+                    defaultFaultSelectID();
+                }
+                
             }
             catch (Exception e)
             {
-                MessageBox.Show("Select only one record below");
+                //MessageBox.Show("Select only one record below");
             }
             try
             {
@@ -1105,8 +1128,10 @@ namespace LoginModule.cs
             {
                 ListViewItem item = materialListView1.SelectedItems[0];
                 label6.Text = item.SubItems[0].Text;
-               
-
+            }
+            else
+            {
+                defaultFaultSelectID();
             }
         }
 
@@ -1133,22 +1158,7 @@ namespace LoginModule.cs
             a.Show();
             this.Hide();
         }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void materialListView2_DoubleClick(object sender, EventArgs e)
         {
             printarchivedproduct();
@@ -1215,21 +1225,31 @@ namespace LoginModule.cs
         }
         public void printbrandpartnerunarchived() 
         {
-            int data = 0;
-            ListViewItem list = materialListView3.SelectedItems[data];
-            String id = list.SubItems[0].Text;
-            label15.Text = id.ToString();
-            //MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            //conn.Close();
+            if (materialListView3.SelectedItems.Count > 0)
+            {
+                int data = 0;
+                ListViewItem list = materialListView3.SelectedItems[data];
+                String id = list.SubItems[0].Text;
+                label15.Text = id.ToString();
+            }
+            else
+            {
+                defaultFaultSelectID();
+            }
         }
         public void printbrandpartnerarchived()
         {
-            int data = 0;
-            ListViewItem list = materialListView6.SelectedItems[data];
-            String id = list.SubItems[0].Text;
-            label21.Text = id.ToString();
-            //MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            //conn.Close();
+            if (materialListView6.SelectedItems.Count > 0)
+            {
+                int data = 0;
+                ListViewItem list = materialListView6.SelectedItems[data];
+                String id = list.SubItems[0].Text;
+                label21.Text = id.ToString();
+            }
+            else
+            {
+                defaultFaultSelectID();
+            }
         }
         private void materialListView3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -1300,22 +1320,40 @@ namespace LoginModule.cs
             }
         }
 
-        private void materialListView5_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void printcashieridunarchived()
         {
             if (materialListView5.SelectedItems.Count > 0)
             {
                 ListViewItem item = materialListView5.SelectedItems[0];
                 label40.Text = item.SubItems[0].Text;
             }
+            else
+            {
+                defaultFaultSelectID();
+            }
         }
 
-        private void materialListView4_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void materialListView5_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            printcashieridunarchived();
+        }
+
+        private void printcashieridarchived()
         {
             if (materialListView4.SelectedItems.Count > 0)
             {
                 ListViewItem item = materialListView4.SelectedItems[0];
                 label33.Text = item.SubItems[0].Text;
             }
+            else
+            {
+                defaultFaultSelectID();
+            }
+        }
+
+        private void materialListView4_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            printcashieridarchived();
         }
 
         private void materialFlatButton16_Click(object sender, EventArgs e)
@@ -1399,7 +1437,7 @@ namespace LoginModule.cs
 
         private void materialListView3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            printbrandpartnerunarchived();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -1408,14 +1446,9 @@ namespace LoginModule.cs
             searchunarchivedbp();
         }
 
-        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void materialListView6_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            printbrandpartnerarchived();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -1453,6 +1486,7 @@ namespace LoginModule.cs
                 databrandpartneraccountarchived();
                 recountbp();
                 defaultFaultSelectID();
+
             }
             else
             {
@@ -1513,6 +1547,19 @@ namespace LoginModule.cs
         {
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
         }
+
+        private void disableConfirmDamage()
+        {
+            if (label3.Text != "0" || label3.Text != "")
+            {
+                groupBox6.Enabled = true;
+            }
+            else
+            {
+                groupBox6.Enabled = false;
+            }
+        }
+
         private void viewdamageid()
         {
             try
@@ -1585,19 +1632,31 @@ namespace LoginModule.cs
         {
             try
             {
-                int data = 0;
-                ListViewItem list = materialListView11.SelectedItems[data];
-                String id = list.SubItems[0].Text;
-                lblTransactionCode.Text = list.SubItems[2].Text;
+                if (materialListView11.SelectedItems.Count > 0)
+                {
+                    int data = 0;
+                    ListViewItem list = materialListView11.SelectedItems[data];
+                    String id = list.SubItems[0].Text;
+                    lblTransactionCode.Text = list.SubItems[2].Text;
 
-                label3.Text = id.ToString();
+                    label3.Text = id.ToString();
+                    disableConfirmDamage();
+
+                }
+                else
+                {
+                    defaultFaultSelectID();
+
+                }
+                
             }
             catch (Exception e)
             {
-                MessageBox.Show("Select only one damage product");
+                //MessageBox.Show("Select only one damage product");
             }
             try
             {
+                
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 string query = "SELECT * FROM tbl_damage d " +
                          "inner join tbl_order o " +
@@ -1671,6 +1730,7 @@ namespace LoginModule.cs
         {
             try
             {
+                
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to confirm", "Confirmation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -1730,7 +1790,8 @@ namespace LoginModule.cs
                 else if (dialogResult == DialogResult.No)
                 {
                     clearDamage();
-                }
+                } 
+                
             }
             catch (Exception a)
             {
@@ -1747,6 +1808,8 @@ namespace LoginModule.cs
             label36.Text = "";
             label42.Text = "";
             label46.Text = "";
+
+            groupBox6.Enabled = false;
         }
 
         private void materialListView11_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -1826,8 +1889,8 @@ namespace LoginModule.cs
             }
             catch (Exception a) 
             {
-      MessageBox.Show("No connection to the host"+a); 
-    }
+                MessageBox.Show("No connection to the host"+a); 
+            }
             }
 
         private void materialListView2_MouseClick(object sender, MouseEventArgs e)
@@ -1837,6 +1900,16 @@ namespace LoginModule.cs
         
         private void defaultFaultSelectID()
         {
+            materialListView1.SelectedIndices.Clear();
+            materialListView10.SelectedIndices.Clear();
+            materialListView11.SelectedIndices.Clear();
+            materialListView13.SelectedIndices.Clear();
+            materialListView2.SelectedIndices.Clear();
+            materialListView3.SelectedIndices.Clear();
+            materialListView4.SelectedIndices.Clear();
+            materialListView5.SelectedIndices.Clear();
+            materialListView6.SelectedIndices.Clear();
+            
             label6.Text = "SI";
             label9.Text = "SI";
             clearDamage();
@@ -1846,8 +1919,11 @@ namespace LoginModule.cs
 
             label40.Text = "SI";
             label33.Text = "SI";
+
+            
+
         }
-        
+
         private void outsideListview_Click(object sender, EventArgs e)
         {
             defaultFaultSelectID();
@@ -1857,6 +1933,45 @@ namespace LoginModule.cs
         {
             defaultFaultSelectID();
         }
-        
+
+        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (materialListView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = materialListView1.SelectedItems[0];
+                label6.Text = item.SubItems[0].Text;
+                
+            }
+            else
+            {
+                defaultFaultSelectID();
+            }
+        }
+
+        private void listviewHeader_Click(object sender, ColumnClickEventArgs e)
+        {
+            defaultFaultSelectID();
+        }
+
+        private void materialListView11_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            printdamageid();
+        }
+
+        private void materialListView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            printarchivedproduct();
+        }
+
+        private void materialListView5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            printcashieridunarchived();
+        }
+
+        private void materialListView4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            printcashieridarchived();
+        }
     }
 }
