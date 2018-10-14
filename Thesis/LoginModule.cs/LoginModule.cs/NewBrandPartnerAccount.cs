@@ -93,7 +93,9 @@ namespace LoginModule.cs
                         command2.CommandText = "insert into tbl_useraccounts (col_usertypeid,col_user, col_password, col_lastname, col_firstname, col_middlename,col_address,col_gender,col_contactnum,col_status) " +
                             "values  ((SELECT col_usertypeid from tbl_usertype where col_userrole='Brandpartner'),'" + textBox9.Text + "','" + textBox11.Text + "','" + textBox3.Text + "','" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + comboBox1.SelectedItem + "','" + textBox6.Text + "','unarchived')";
                         command2.ExecuteScalar();
-                        conn.Close(); 
+                        conn.Close();
+
+                        adddetails();
                     }
                 }
 
@@ -157,9 +159,9 @@ namespace LoginModule.cs
             {
                 MessageBox.Show("Please don't leave any blank field(s).");
             }
-            else if (!(System.Text.RegularExpressions.Regex.IsMatch(textBox12.Text, "@.+\\.com$")))
+            else if (!(System.Text.RegularExpressions.Regex.IsMatch(textBox12.Text, ".+@.+\\.com$")))
             {
-                MessageBox.Show("email.");
+                MessageBox.Show("Invalid Email Address.");
             }
             else if (textBox10.Text != textBox11.Text)
             {
@@ -168,7 +170,7 @@ namespace LoginModule.cs
             else
             {
                 addnewbrandpartneraccount();
-                adddetails();
+                
             }
         }
 
@@ -238,10 +240,7 @@ namespace LoginModule.cs
 
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
-            var textboxSender = (TextBox)sender;
-            var cursorPosition = textboxSender.SelectionStart;
-            textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^0-9a-zA-Z,\\.@]|(\\.\\.)|(,,)|(@@)", "");
-            textboxSender.SelectionStart = cursorPosition;
+            new DataHandling().emailAddressTrap_TextChanged(sender, e);
         }
     }
 }
