@@ -135,7 +135,6 @@
             this.BrandPartnerId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BrandName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Username = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Lastname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Firstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Middlename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -160,7 +159,6 @@
             this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -185,7 +183,6 @@
             this.materialListView5 = new MaterialSkin.Controls.MaterialListView();
             this.cashier_useraccountsid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cashier_user = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cashier_password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cashier_lastname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cashier_firstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cashier_middlename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -207,7 +204,6 @@
             this.materialListView4 = new MaterialSkin.Controls.MaterialListView();
             this.arc_cashier_useraccountsid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.arc_cashier_user = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.arc_cashier_password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.arc_cashier_lastname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.arc_cashier_firstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.arc_cashier_middlename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -968,8 +964,7 @@
             // 
             // groupBox17
             // 
-            this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox17.BackColor = System.Drawing.Color.White;
             this.groupBox17.Controls.Add(this.label11);
             this.groupBox17.Controls.Add(this.lblTransactionCode);
@@ -990,7 +985,7 @@
             this.groupBox17.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox17.Location = new System.Drawing.Point(909, 6);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(275, 334);
+            this.groupBox17.Size = new System.Drawing.Size(278, 345);
             this.groupBox17.TabIndex = 62;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Info";
@@ -1000,7 +995,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 298);
+            this.label11.Location = new System.Drawing.Point(167, 274);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(102, 23);
             this.label11.TabIndex = 9;
@@ -1012,7 +1007,7 @@
             // 
             this.lblTransactionCode.AutoSize = true;
             this.lblTransactionCode.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionCode.Location = new System.Drawing.Point(12, 92);
+            this.lblTransactionCode.Location = new System.Drawing.Point(130, 18);
             this.lblTransactionCode.Name = "lblTransactionCode";
             this.lblTransactionCode.Size = new System.Drawing.Size(139, 23);
             this.lblTransactionCode.TabIndex = 3;
@@ -1023,10 +1018,10 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(174, 275);
+            this.label46.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(168, 246);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(20, 23);
+            this.label46.Size = new System.Drawing.Size(15, 18);
             this.label46.TabIndex = 8;
             this.label46.Text = "0";
             this.label46.Click += new System.EventHandler(this.outsideListview_Click);
@@ -1035,7 +1030,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(12, 275);
+            this.label43.Location = new System.Drawing.Point(12, 241);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(122, 23);
             this.label43.TabIndex = 75;
@@ -1045,10 +1040,10 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(174, 227);
+            this.label42.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(168, 308);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(20, 23);
+            this.label42.Size = new System.Drawing.Size(15, 18);
             this.label42.TabIndex = 7;
             this.label42.Text = "0";
             this.label42.Visible = false;
@@ -1057,10 +1052,10 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(174, 186);
+            this.label36.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(168, 204);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(20, 23);
+            this.label36.Size = new System.Drawing.Size(15, 18);
             this.label36.TabIndex = 6;
             this.label36.Text = "0";
             this.label36.Click += new System.EventHandler(this.outsideListview_Click);
@@ -1069,7 +1064,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(12, 227);
+            this.label35.Location = new System.Drawing.Point(12, 303);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(123, 23);
             this.label35.TabIndex = 72;
@@ -1081,7 +1076,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(12, 186);
+            this.label31.Location = new System.Drawing.Point(12, 204);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(114, 23);
             this.label31.TabIndex = 71;
@@ -1091,10 +1086,10 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(129, 147);
+            this.label30.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(168, 164);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(20, 23);
+            this.label30.Size = new System.Drawing.Size(15, 18);
             this.label30.TabIndex = 5;
             this.label30.Text = "0";
             this.label30.Click += new System.EventHandler(this.outsideListview_Click);
@@ -1103,7 +1098,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(12, 69);
+            this.label29.Location = new System.Drawing.Point(12, 83);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(76, 23);
             this.label29.TabIndex = 69;
@@ -1113,10 +1108,10 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(174, 109);
+            this.label24.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(168, 126);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(20, 23);
+            this.label24.Size = new System.Drawing.Size(15, 18);
             this.label24.TabIndex = 4;
             this.label24.Text = "0";
             this.label24.Click += new System.EventHandler(this.outsideListview_Click);
@@ -1125,7 +1120,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(12, 147);
+            this.label23.Location = new System.Drawing.Point(12, 164);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(58, 23);
             this.label23.TabIndex = 67;
@@ -1135,10 +1130,10 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(174, 69);
+            this.label18.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(168, 88);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(20, 23);
+            this.label18.Size = new System.Drawing.Size(15, 18);
             this.label18.TabIndex = 2;
             this.label18.Text = "0";
             this.label18.Click += new System.EventHandler(this.outsideListview_Click);
@@ -1147,7 +1142,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(12, 36);
+            this.label17.Location = new System.Drawing.Point(12, 49);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(93, 23);
             this.label17.TabIndex = 65;
@@ -1157,10 +1152,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(174, 36);
+            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(168, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 23);
+            this.label3.Size = new System.Drawing.Size(15, 18);
             this.label3.TabIndex = 1;
             this.label3.Text = "0";
             this.label3.Click += new System.EventHandler(this.outsideListview_Click);
@@ -1169,7 +1164,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 115);
+            this.label4.Location = new System.Drawing.Point(12, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 23);
             this.label4.TabIndex = 63;
@@ -1178,7 +1173,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.BackColor = System.Drawing.Color.White;
             this.groupBox6.Controls.Add(this.materialFlatButton5);
             this.groupBox6.Controls.Add(this.materialFlatButton3);
@@ -1186,7 +1181,7 @@
             this.groupBox6.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(909, 346);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(275, 113);
+            this.groupBox6.Size = new System.Drawing.Size(278, 113);
             this.groupBox6.TabIndex = 61;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Actions";
@@ -1243,6 +1238,9 @@
             // 
             // materialListView11
             // 
+            this.materialListView11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.materialListView11.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader67,
@@ -1606,7 +1604,6 @@
             this.BrandPartnerId,
             this.BrandName,
             this.Username,
-            this.Password,
             this.Lastname,
             this.Firstname,
             this.Middlename,
@@ -1648,12 +1645,6 @@
             this.Username.Text = "Username";
             this.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Username.Width = 310;
-            // 
-            // Password
-            // 
-            this.Password.Text = "Password";
-            this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Password.Width = 180;
             // 
             // Lastname
             // 
@@ -1911,7 +1902,6 @@
             this.columnHeader28,
             this.columnHeader29,
             this.columnHeader30,
-            this.columnHeader31,
             this.columnHeader32,
             this.columnHeader55,
             this.columnHeader56,
@@ -1952,11 +1942,6 @@
             // 
             this.columnHeader30.Text = "Username";
             this.columnHeader30.Width = 310;
-            // 
-            // columnHeader31
-            // 
-            this.columnHeader31.Text = "Password";
-            this.columnHeader31.Width = 180;
             // 
             // columnHeader32
             // 
@@ -2207,7 +2192,6 @@
             this.materialListView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cashier_useraccountsid,
             this.cashier_user,
-            this.cashier_password,
             this.cashier_lastname,
             this.cashier_firstname,
             this.cashier_middlename,
@@ -2243,11 +2227,6 @@
             this.cashier_user.Text = "Username";
             this.cashier_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cashier_user.Width = 230;
-            // 
-            // cashier_password
-            // 
-            this.cashier_password.Text = "Password";
-            this.cashier_password.Width = 164;
             // 
             // cashier_lastname
             // 
@@ -2473,7 +2452,6 @@
             this.materialListView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.arc_cashier_useraccountsid,
             this.arc_cashier_user,
-            this.arc_cashier_password,
             this.arc_cashier_lastname,
             this.arc_cashier_firstname,
             this.arc_cashier_middlename,
@@ -2509,11 +2487,6 @@
             this.arc_cashier_user.Text = "Username";
             this.arc_cashier_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.arc_cashier_user.Width = 230;
-            // 
-            // arc_cashier_password
-            // 
-            this.arc_cashier_password.Text = "Password";
-            this.arc_cashier_password.Width = 164;
             // 
             // arc_cashier_lastname
             // 
@@ -2907,7 +2880,6 @@
         private System.Windows.Forms.ColumnHeader BrandPartnerId;
         private System.Windows.Forms.ColumnHeader BrandName;
         private System.Windows.Forms.ColumnHeader Username;
-        private System.Windows.Forms.ColumnHeader Password;
         private System.Windows.Forms.ColumnHeader Lastname;
         private System.Windows.Forms.ColumnHeader Firstname;
         private System.Windows.Forms.ColumnHeader Middlename;
@@ -2932,7 +2904,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader28;
         private System.Windows.Forms.ColumnHeader columnHeader29;
         private System.Windows.Forms.ColumnHeader columnHeader30;
-        private System.Windows.Forms.ColumnHeader columnHeader31;
         private System.Windows.Forms.ColumnHeader columnHeader32;
         private System.Windows.Forms.ColumnHeader columnHeader55;
         private System.Windows.Forms.ColumnHeader columnHeader56;
@@ -2962,7 +2933,6 @@
         private MaterialSkin.Controls.MaterialListView materialListView5;
         private System.Windows.Forms.ColumnHeader cashier_useraccountsid;
         private System.Windows.Forms.ColumnHeader cashier_user;
-        private System.Windows.Forms.ColumnHeader cashier_password;
         private System.Windows.Forms.ColumnHeader cashier_lastname;
         private System.Windows.Forms.ColumnHeader cashier_firstname;
         private System.Windows.Forms.ColumnHeader cashier_middlename;
@@ -2989,7 +2959,6 @@
         private MaterialSkin.Controls.MaterialListView materialListView4;
         private System.Windows.Forms.ColumnHeader arc_cashier_useraccountsid;
         private System.Windows.Forms.ColumnHeader arc_cashier_user;
-        private System.Windows.Forms.ColumnHeader arc_cashier_password;
         private System.Windows.Forms.ColumnHeader arc_cashier_lastname;
         private System.Windows.Forms.ColumnHeader arc_cashier_firstname;
         private System.Windows.Forms.ColumnHeader arc_cashier_middlename;

@@ -18,6 +18,23 @@ namespace LoginModule.cs
             textboxSender.SelectionStart = cursorPosition;
         }
 
+        public void stringOnly_TextChanged(object sender, EventArgs e)
+        {
+            var textboxSender = (TextBox)sender;
+            var cursorPosition = textboxSender.SelectionStart;
+            textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^a-zA-Z]", "");
+            textboxSender.SelectionStart = cursorPosition;
+        }
+
+        public void emailAddressTrap_TextChanged(object sender, EventArgs e)
+        {
+            var textboxSender = (TextBox)sender;
+            var cursorPosition = textboxSender.SelectionStart;
+            textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^0-9a-zA-Z\\.@]|(\\.\\.)|(@.*@)|(@.*\\..*\\.com)", "");
+            textboxSender.SelectionStart = cursorPosition;
+            //textboxSender.Text = textboxSender.Text.Remove(textboxSender.Text.Length - 1);
+        }
+
         public void namingTrap_TextChanged(object sender, EventArgs e)
         {
             var textboxSender = (TextBox)sender;

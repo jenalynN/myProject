@@ -67,6 +67,7 @@
             this.tboldpass.Size = new System.Drawing.Size(222, 26);
             this.tboldpass.TabIndex = 72;
             this.tboldpass.UseSystemPasswordChar = true;
+            this.tboldpass.TextChanged += new System.EventHandler(this.tboldpass_TextChanged);
             // 
             // groupBox1
             // 
@@ -135,6 +136,7 @@
             this.tbconfirmnewpass.Size = new System.Drawing.Size(222, 26);
             this.tbconfirmnewpass.TabIndex = 79;
             this.tbconfirmnewpass.UseSystemPasswordChar = true;
+            this.tbconfirmnewpass.TextChanged += new System.EventHandler(this.tbconfirmnewpass_TextChanged);
             // 
             // label3
             // 
@@ -159,6 +161,7 @@
             this.tbnewpass.Size = new System.Drawing.Size(222, 26);
             this.tbnewpass.TabIndex = 77;
             this.tbnewpass.UseSystemPasswordChar = true;
+            this.tbnewpass.TextChanged += new System.EventHandler(this.tbnewpass_TextChanged);
             // 
             // label2
             // 

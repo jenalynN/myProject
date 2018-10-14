@@ -229,7 +229,7 @@ namespace LoginModule.cs
 
                     items.SubItems.Add(read["col_brandname"].ToString());
                     items.SubItems.Add(read["col_user"].ToString());
-                    items.SubItems.Add(read["col_password"].ToString());
+                    //items.SubItems.Add(read["col_password"].ToString());
                     items.SubItems.Add(read["col_lastname"].ToString());
                     items.SubItems.Add(read["col_firstname"].ToString());
                     items.SubItems.Add(read["col_middlename"].ToString()); ;
@@ -424,7 +424,7 @@ namespace LoginModule.cs
 
                     items.SubItems.Add(read["col_brandname"].ToString());
                     items.SubItems.Add(read["col_user"].ToString());
-                    items.SubItems.Add(read["col_password"].ToString());
+                    //items.SubItems.Add(read["col_password"].ToString());
                     items.SubItems.Add(read["col_lastname"].ToString());
                     items.SubItems.Add(read["col_firstname"].ToString());   
                     items.SubItems.Add(read["col_middlename"].ToString());;
@@ -465,7 +465,7 @@ namespace LoginModule.cs
                 {
                     ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
                     items.SubItems.Add(read["col_user"].ToString());
-                    items.SubItems.Add(read["col_password"].ToString());
+                    //items.SubItems.Add(read["col_password"].ToString());
                     items.SubItems.Add(read["col_lastname"].ToString());
                     items.SubItems.Add(read["col_firstname"].ToString());
                     items.SubItems.Add(read["col_middlename"].ToString()); ;
@@ -504,7 +504,7 @@ namespace LoginModule.cs
                 {
                     ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
                     items.SubItems.Add(read["col_user"].ToString());
-                    items.SubItems.Add(read["col_password"].ToString());
+                    //items.SubItems.Add(read["col_password"].ToString());
                     items.SubItems.Add(read["col_lastname"].ToString());
                     items.SubItems.Add(read["col_firstname"].ToString());
                     items.SubItems.Add(read["col_middlename"].ToString()); ;
@@ -807,7 +807,7 @@ namespace LoginModule.cs
 
                         items.SubItems.Add(read["col_brandname"].ToString());
                         items.SubItems.Add(read["col_user"].ToString());
-                        items.SubItems.Add(read["col_password"].ToString());
+                        //items.SubItems.Add(read["col_password"].ToString());
                         items.SubItems.Add(read["col_lastname"].ToString());
                         items.SubItems.Add(read["col_firstname"].ToString());
                         items.SubItems.Add(read["col_middlename"].ToString()); ;
@@ -890,7 +890,7 @@ namespace LoginModule.cs
 
                         items.SubItems.Add(read["col_brandname"].ToString());
                         items.SubItems.Add(read["col_user"].ToString());
-                        items.SubItems.Add(read["col_password"].ToString());
+                        //items.SubItems.Add(read["col_password"].ToString());
                         items.SubItems.Add(read["col_lastname"].ToString());
                         items.SubItems.Add(read["col_firstname"].ToString());
                         items.SubItems.Add(read["col_middlename"].ToString()); ;
@@ -959,7 +959,7 @@ namespace LoginModule.cs
                         ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
 
                         items.SubItems.Add(read["col_user"].ToString());
-                        items.SubItems.Add(read["col_password"].ToString());
+                        //items.SubItems.Add(read["col_password"].ToString());
                         items.SubItems.Add(read["col_lastname"].ToString());
                         items.SubItems.Add(read["col_firstname"].ToString());
                         items.SubItems.Add(read["col_middlename"].ToString()); ;
@@ -1028,7 +1028,7 @@ namespace LoginModule.cs
                         ListViewItem items = new ListViewItem(read["col_useraccountsid"].ToString());
 
                         items.SubItems.Add(read["col_user"].ToString());
-                        items.SubItems.Add(read["col_password"].ToString());
+                        //items.SubItems.Add(read["col_password"].ToString());
                         items.SubItems.Add(read["col_lastname"].ToString());
                         items.SubItems.Add(read["col_firstname"].ToString());
                         items.SubItems.Add(read["col_middlename"].ToString()); ;

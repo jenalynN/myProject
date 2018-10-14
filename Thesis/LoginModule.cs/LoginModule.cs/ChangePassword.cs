@@ -148,6 +148,19 @@ namespace LoginModule.cs
             checkPassword();
         }}
 
-            
-}
+        private void tboldpass_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().stringOnly_TextChanged(sender, e);
+        }
+
+        private void tbnewpass_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().stringOnly_TextChanged(sender, e);
+        }
+
+        private void tbconfirmnewpass_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().stringOnly_TextChanged(sender, e);
+        }
+    }
 }

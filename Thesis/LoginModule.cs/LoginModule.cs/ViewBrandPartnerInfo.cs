@@ -121,6 +121,10 @@ namespace LoginModule.cs
             {
                 MessageBox.Show("Please don't leave any blank field(s).");
             }
+            else if (!(System.Text.RegularExpressions.Regex.IsMatch(textBox11.Text, ".+@.+\\.com$")))
+            {
+                MessageBox.Show("Invalid Email Address.");
+            }
             else if (textBox10.Text != txtConfirmPass.Text && textBox10.Enabled == true)
             {
                 MessageBox.Show("Password does not match the confirm password.");
@@ -169,12 +173,12 @@ namespace LoginModule.cs
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            new DataHandling().namingTrap_TextChanged(sender, e);
+            new DataHandling().stringOnly_TextChanged(sender, e);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            new DataHandling().namingTrap_TextChanged(sender, e);
+            new DataHandling().stringOnly_TextChanged(sender, e);
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -184,7 +188,7 @@ namespace LoginModule.cs
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            new DataHandling().namingTrap_TextChanged(sender, e);
+            new DataHandling().stringOnly_TextChanged(sender, e);
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -221,10 +225,7 @@ namespace LoginModule.cs
 
         private void textBox11_TextChanged(object sender, EventArgs e)
         {
-            var textboxSender = (TextBox)sender;
-            var cursorPosition = textboxSender.SelectionStart;
-            textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^0-9a-zA-Z,\\.@]|(\\.\\.)|(,,)|(@@)", "");
-            textboxSender.SelectionStart = cursorPosition;
+            new DataHandling().emailAddressTrap_TextChanged(sender, e);
         }
     }
 }

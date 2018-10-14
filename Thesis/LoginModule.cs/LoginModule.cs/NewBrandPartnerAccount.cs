@@ -157,6 +157,10 @@ namespace LoginModule.cs
             {
                 MessageBox.Show("Please don't leave any blank field(s).");
             }
+            else if (!(System.Text.RegularExpressions.Regex.IsMatch(textBox12.Text, "@.+\\.com$")))
+            {
+                MessageBox.Show("email.");
+            }
             else if (textBox10.Text != textBox11.Text)
             {
                 MessageBox.Show("Password does not match the confirm password.");
@@ -209,12 +213,12 @@ namespace LoginModule.cs
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            new DataHandling().namingTrap_TextChanged(sender, e);
+            new DataHandling().stringOnly_TextChanged(sender, e);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            new DataHandling().namingTrap_TextChanged(sender, e);
+            new DataHandling().stringOnly_TextChanged(sender, e);
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -224,7 +228,7 @@ namespace LoginModule.cs
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            new DataHandling().namingTrap_TextChanged(sender, e);
+            new DataHandling().stringOnly_TextChanged(sender, e);
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)

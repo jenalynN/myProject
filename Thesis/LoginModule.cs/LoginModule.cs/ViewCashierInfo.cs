@@ -128,17 +128,17 @@ namespace LoginModule.cs
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            new DataHandling().namingTrap_TextChanged(sender, e);
+            new DataHandling().stringOnly_TextChanged(sender, e);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            new DataHandling().namingTrap_TextChanged(sender, e);
+            new DataHandling().stringOnly_TextChanged(sender, e);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            new DataHandling().namingTrap_TextChanged(sender, e);
+            new DataHandling().stringOnly_TextChanged(sender, e);
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
