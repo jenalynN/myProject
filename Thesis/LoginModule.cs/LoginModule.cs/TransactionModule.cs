@@ -228,11 +228,14 @@ namespace LoginModule.cs
                     "where P.col_status='unarchived' and P.col_productcode='" + tbProductCode.Text + "'";
                 command.CommandText = query;
                 MySqlDataReader read = command.ExecuteReader();
+                tbSearchItem.Clear();
+                tbQuantity.Enabled = true;
+                tbQuantity.Clear();
+                tbProductCode.Clear();
                 while (read.Read())
                 {
                     ListViewItem items = new ListViewItem(read["col_productid"].ToString());
                     tbProductCode.Text = (read["col_productcode"].ToString());
-                    tbSearchItem.Text = (read["col_productcode"].ToString());
                     tbProductName.Text = (read["col_productname"].ToString());
                     tbBrand.Text = (read["col_brandname"].ToString());
                     tbCategory.Text = (read["col_categoryname"].ToString());
@@ -256,6 +259,11 @@ namespace LoginModule.cs
                     ListViewItem list = materialListView1.SelectedItems[data];
                     String id = list.SubItems[0].Text;
                     tbOrderId.Text = id.ToString();
+                    tbQuantity.Enabled = false;
+                }
+                else 
+                {
+                    tbOrderId.Clear();
                 }
                 
             }
@@ -773,7 +781,7 @@ namespace LoginModule.cs
         }
         private void clearAllControl()
         {
-            textBox1.Clear();
+             textBox1.Clear();
                     textBox2.Clear();
                     textBox3.Clear();
                     textBox4.Clear();
@@ -789,6 +797,24 @@ namespace LoginModule.cs
                     textBox8.Clear();
                     materialListView3.Items.Clear();
              
+        }
+
+        private void clearAllControlwithoutsearchtrans()
+        {
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox9.Clear();
+            textBox10.Clear();
+            comboBox1.Text = "";
+            textBox12.Clear();
+            textBox11.Clear();
+            materialListView4.Items.Clear();
+            materialListView3.Items.Clear();
+
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -896,8 +922,12 @@ namespace LoginModule.cs
             
         }
         private void btnAddtoCart_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbQuantity.Text))
+        { 
+            if (string.IsNullOrWhiteSpace(tbProductCode.Text))
+            {
+                MessageBox.Show("Select Product code");
+            }
+            else if (string.IsNullOrWhiteSpace(tbQuantity.Text))
             {
                 MessageBox.Show("Please enter quantity.");
             }
@@ -910,7 +940,7 @@ namespace LoginModule.cs
                 logaddtocart();
                 InsertOrder();
                 viewOrder();
-                
+                tbQuantity.Enabled = false;
             }
         }
         private void btnRemovefromCart_Click(object sender, EventArgs e)
@@ -954,9 +984,11 @@ namespace LoginModule.cs
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
+            clearAllControlwithoutsearchtrans();
             if (textBox1.Text == "")
             {
                 materialListView3.Items.Clear();
+
             }
             else
             {
@@ -1015,8 +1047,9 @@ namespace LoginModule.cs
                 ListViewItem list = materialListView3.SelectedItems[data];
                 String id = list.SubItems[1].Text;
                 textBox8.Text = id.ToString();
-                textBox1.Text = id.ToString();
+              
                 printorders();
+                textBox1.Clear();
             }
             catch (Exception E) 
             {
@@ -1253,6 +1286,11 @@ namespace LoginModule.cs
         private void materialListView2_MouseClick(object sender, MouseEventArgs e)
         {
             printitemdetails();
+        }
+
+        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            printorderid();
         }
         
     }

@@ -135,6 +135,7 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.label6 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -328,7 +329,6 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.tbBrand);
             this.groupBox2.Controls.Add(this.labelChange);
-            this.groupBox2.Controls.Add(this.tbProductCode);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.labelTotalSales);
             this.groupBox2.Controls.Add(this.label1);
@@ -351,6 +351,7 @@
             this.tbOrderId.Name = "tbOrderId";
             this.tbOrderId.Size = new System.Drawing.Size(20, 26);
             this.tbOrderId.TabIndex = 75;
+            this.tbOrderId.Visible = false;
             // 
             // labelTransactionCode
             // 
@@ -372,6 +373,7 @@
             this.tbProductName.Name = "tbProductName";
             this.tbProductName.Size = new System.Drawing.Size(20, 26);
             this.tbProductName.TabIndex = 74;
+            this.tbProductName.Visible = false;
             // 
             // label14
             // 
@@ -393,6 +395,7 @@
             this.tbSubtotal.Name = "tbSubtotal";
             this.tbSubtotal.Size = new System.Drawing.Size(20, 26);
             this.tbSubtotal.TabIndex = 73;
+            this.tbSubtotal.Visible = false;
             // 
             // label13
             // 
@@ -414,6 +417,7 @@
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(20, 26);
             this.tbPrice.TabIndex = 72;
+            this.tbPrice.Visible = false;
             // 
             // label12
             // 
@@ -435,6 +439,7 @@
             this.tbCategory.Name = "tbCategory";
             this.tbCategory.Size = new System.Drawing.Size(20, 26);
             this.tbCategory.TabIndex = 71;
+            this.tbCategory.Visible = false;
             // 
             // label11
             // 
@@ -456,6 +461,7 @@
             this.tbBrand.Name = "tbBrand";
             this.tbBrand.Size = new System.Drawing.Size(20, 26);
             this.tbBrand.TabIndex = 70;
+            this.tbBrand.Visible = false;
             // 
             // labelChange
             // 
@@ -472,10 +478,11 @@
             // tbProductCode
             // 
             this.tbProductCode.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.tbProductCode.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProductCode.Location = new System.Drawing.Point(689, 215);
+            this.tbProductCode.Enabled = false;
+            this.tbProductCode.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.tbProductCode.Location = new System.Drawing.Point(134, 347);
             this.tbProductCode.Name = "tbProductCode";
-            this.tbProductCode.Size = new System.Drawing.Size(20, 26);
+            this.tbProductCode.Size = new System.Drawing.Size(178, 31);
             this.tbProductCode.TabIndex = 68;
             // 
             // label4
@@ -569,6 +576,7 @@
             this.materialListView1.TabIndex = 2;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
+            this.materialListView1.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged);
             this.materialListView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView1_MouseDoubleClick);
             // 
             // columnHeader1
@@ -613,11 +621,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.tbSearchItem);
             this.groupBox1.Controls.Add(this.tbQuantity);
             this.groupBox1.Controls.Add(this.materialListView2);
+            this.groupBox1.Controls.Add(this.tbProductCode);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 95);
             this.groupBox1.Name = "groupBox1";
@@ -630,7 +640,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 349);
+            this.label10.Location = new System.Drawing.Point(6, 387);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 23);
             this.label10.TabIndex = 66;
@@ -642,13 +652,13 @@
             this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(6, 27);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 23);
+            this.label9.Size = new System.Drawing.Size(127, 46);
             this.label9.TabIndex = 65;
-            this.label9.Text = "Product Code";
+            this.label9.Text = "Search Product\r\n Code";
             // 
             // tbSearchItem
             // 
-            this.tbSearchItem.Location = new System.Drawing.Point(134, 27);
+            this.tbSearchItem.Location = new System.Drawing.Point(134, 30);
             this.tbSearchItem.MaxLength = 30;
             this.tbSearchItem.Name = "tbSearchItem";
             this.tbSearchItem.Size = new System.Drawing.Size(178, 31);
@@ -657,7 +667,8 @@
             // 
             // tbQuantity
             // 
-            this.tbQuantity.Location = new System.Drawing.Point(134, 346);
+            this.tbQuantity.Enabled = false;
+            this.tbQuantity.Location = new System.Drawing.Point(134, 384);
             this.tbQuantity.MaxLength = 3;
             this.tbQuantity.Name = "tbQuantity";
             this.tbQuantity.Size = new System.Drawing.Size(178, 31);
@@ -677,13 +688,13 @@
             this.materialListView2.FullRowSelect = true;
             this.materialListView2.GridLines = true;
             this.materialListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView2.Location = new System.Drawing.Point(10, 64);
+            this.materialListView2.Location = new System.Drawing.Point(10, 92);
             this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView2.MultiSelect = false;
             this.materialListView2.Name = "materialListView2";
             this.materialListView2.OwnerDraw = true;
-            this.materialListView2.Size = new System.Drawing.Size(302, 266);
+            this.materialListView2.Size = new System.Drawing.Size(302, 238);
             this.materialListView2.TabIndex = 22;
             this.materialListView2.UseCompatibleStateImageBehavior = false;
             this.materialListView2.View = System.Windows.Forms.View.Details;
@@ -1337,6 +1348,16 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 346);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 23);
+            this.label6.TabIndex = 69;
+            this.label6.Text = "Product Code";
+            // 
             // TransactionModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1485,5 +1506,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label6;
     }
 }
