@@ -63,6 +63,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tboldpass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tboldpass.Location = new System.Drawing.Point(213, 152);
+            this.tboldpass.MaxLength = 20;
             this.tboldpass.Name = "tboldpass";
             this.tboldpass.Size = new System.Drawing.Size(222, 26);
             this.tboldpass.TabIndex = 72;
@@ -96,10 +97,10 @@
             this.tbusername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbusername.Enabled = false;
-            this.tbusername.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbusername.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbusername.Location = new System.Drawing.Point(213, 82);
             this.tbusername.Name = "tbusername";
-            this.tbusername.Size = new System.Drawing.Size(222, 26);
+            this.tbusername.Size = new System.Drawing.Size(222, 27);
             this.tbusername.TabIndex = 82;
             // 
             // label4
@@ -132,6 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbconfirmnewpass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbconfirmnewpass.Location = new System.Drawing.Point(213, 216);
+            this.tbconfirmnewpass.MaxLength = 20;
             this.tbconfirmnewpass.Name = "tbconfirmnewpass";
             this.tbconfirmnewpass.Size = new System.Drawing.Size(222, 26);
             this.tbconfirmnewpass.TabIndex = 79;
@@ -157,6 +159,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbnewpass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbnewpass.Location = new System.Drawing.Point(213, 184);
+            this.tbnewpass.MaxLength = 20;
             this.tbnewpass.Name = "tbnewpass";
             this.tbnewpass.Size = new System.Drawing.Size(222, 26);
             this.tbnewpass.TabIndex = 77;
@@ -194,10 +197,10 @@
             this.tbuseraccountid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbuseraccountid.Enabled = false;
-            this.tbuseraccountid.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbuseraccountid.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbuseraccountid.Location = new System.Drawing.Point(213, 50);
             this.tbuseraccountid.Name = "tbuseraccountid";
-            this.tbuseraccountid.Size = new System.Drawing.Size(222, 26);
+            this.tbuseraccountid.Size = new System.Drawing.Size(222, 27);
             this.tbuseraccountid.TabIndex = 73;
             // 
             // materialFlatButton4

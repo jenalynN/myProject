@@ -409,7 +409,7 @@ namespace LoginModule.cs
                 }
                 else if (materialListView1.Items.Count == 0)
                 {
-                    MessageBox.Show("Please select an item.");
+                    MessageBox.Show("You havent ordered yet.");
                 }
                 else if (string.IsNullOrWhiteSpace(tbAmount.Text))
                 {
@@ -709,7 +709,7 @@ namespace LoginModule.cs
                 }
                 else
                 {
-                    MessageBox.Show("Unable to return items");
+                    MessageBox.Show("Return item should not be blank");
 
                 }
             }

@@ -207,6 +207,7 @@ namespace LoginModule.cs
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             new DataHandling().decimalNumberTrap_KeyPress(sender, e);
+            
         }
 
     }

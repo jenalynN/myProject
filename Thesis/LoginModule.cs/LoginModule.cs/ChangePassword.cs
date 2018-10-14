@@ -69,7 +69,7 @@ namespace LoginModule.cs
             {
                 if (tbnewpass.Text == "" || tbconfirmnewpass.Text == "")
                 {
-                    MessageBox.Show("Don't leave fields");
+                    MessageBox.Show("Password entered ");
                 }
                 else if (tbnewpass.Text != "" || tbconfirmnewpass.Text == "")
                 {
@@ -140,7 +140,7 @@ namespace LoginModule.cs
                 string.IsNullOrWhiteSpace(tbnewpass.Text)||
                 string.IsNullOrWhiteSpace(tbconfirmnewpass.Text))
             {
-            MessageBox.Show("Missing fields");
+            MessageBox.Show("Dont leave blank fields");
             }
             else
 
