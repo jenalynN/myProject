@@ -259,11 +259,19 @@ namespace LoginModule.cs
         {
             try
             {
-                int data = 0;
-                ListViewItem list = materialListView1.SelectedItems[data];
-                String id = list.SubItems[0].Text;
-                label6.Text = id.ToString();
-                materialListView1.Columns[0].Width = 0;
+                if (materialListView1.SelectedItems.Count > 0)
+                {
+                    int data = 0;
+                    ListViewItem list = materialListView1.SelectedItems[data];
+                    String id = list.SubItems[0].Text;
+                    label6.Text = id.ToString();
+                    //materialListView1.Columns[0].Width = 0;
+                }
+                else
+                {
+                    defaultFaultSelectID();
+                }
+                
             }
             catch (Exception e) 
             {

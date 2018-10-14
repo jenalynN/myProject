@@ -201,11 +201,15 @@ namespace LoginModule.cs
         {
             try
             {
-                int data = 0;
-                ListViewItem list = materialListView2.SelectedItems[data];
-                String id = list.SubItems[0].Text;
-                tbProductCode.Text = id.ToString();
+                if (materialListView2.SelectedItems.Count > 0)
+                {
+                    int data = 0;
+                    ListViewItem list = materialListView2.SelectedItems[data];
+                    String id = list.SubItems[0].Text;
+                    tbProductCode.Text = id.ToString();
                 }
+                
+            }
             catch (Exception e)
             {
                 MessageBox.Show("Select only one Product at a time");
@@ -246,10 +250,14 @@ namespace LoginModule.cs
         {
             try
             {
-                int data = 0;
-                ListViewItem list = materialListView1.SelectedItems[data];
-                String id = list.SubItems[0].Text;
-                tbOrderId.Text = id.ToString();
+                if (materialListView1.SelectedItems.Count > 0)
+                {
+                    int data = 0;
+                    ListViewItem list = materialListView1.SelectedItems[data];
+                    String id = list.SubItems[0].Text;
+                    tbOrderId.Text = id.ToString();
+                }
+                
             }
             catch (Exception e) 
             {
@@ -1013,9 +1021,13 @@ namespace LoginModule.cs
             int data = 0;
             try
             {
-                ListViewItem list = materialListView4.SelectedItems[data];
-                String id = list.SubItems[0].Text;
-                textBox2.Text = id.ToString();
+                if (materialListView4.SelectedItems.Count > 0)
+                {
+                    ListViewItem list = materialListView4.SelectedItems[data];
+                    String id = list.SubItems[0].Text;
+                    textBox2.Text = id.ToString();
+                }
+                
             }
             catch (Exception e)
             {
