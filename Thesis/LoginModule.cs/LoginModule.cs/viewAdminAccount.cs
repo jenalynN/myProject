@@ -142,6 +142,11 @@ namespace LoginModule.cs
             new DataHandling().stringOnly_TextChanged(sender, e);
         }
 
+        private void genericTextBoxTrim_Leave(object sender, EventArgs e)
+        {
+            new DataHandling().genericTextBoxTrim_Leave(sender, e);
+        }
+
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
             new DataHandling().numbersOnlyTrap_TextChanged(sender, e);

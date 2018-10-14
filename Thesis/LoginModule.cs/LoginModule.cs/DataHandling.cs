@@ -22,7 +22,7 @@ namespace LoginModule.cs
         {
             var textboxSender = (TextBox)sender;
             var cursorPosition = textboxSender.SelectionStart;
-            textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^a-zA-Z]", "");
+            textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^a-zA-Z ]|([ ]{2})", "");
             textboxSender.SelectionStart = cursorPosition;
         }
 
@@ -33,6 +33,11 @@ namespace LoginModule.cs
             textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^0-9a-zA-Z\\.@]|(\\.\\.)|(@.*@)|(@.*\\..*\\.com)", "");
             textboxSender.SelectionStart = cursorPosition;
             //textboxSender.Text = textboxSender.Text.Remove(textboxSender.Text.Length - 1);
+        }
+        public void genericTextBoxTrim_Leave(object sender, EventArgs e)
+        {
+            var textboxSender = (TextBox)sender;
+            textboxSender.Text = textboxSender.Text.Trim();
         }
 
         public void namingTrap_TextChanged(object sender, EventArgs e)

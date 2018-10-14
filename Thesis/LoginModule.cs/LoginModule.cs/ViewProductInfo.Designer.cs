@@ -86,6 +86,7 @@
             this.txtProductName.Size = new System.Drawing.Size(222, 32);
             this.txtProductName.TabIndex = 73;
             this.txtProductName.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
+            this.txtProductName.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label5
             // 

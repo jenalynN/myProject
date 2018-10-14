@@ -171,6 +171,7 @@
             this.textBox11.Size = new System.Drawing.Size(222, 32);
             this.textBox11.TabIndex = 7;
             this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            this.textBox11.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // chkChangePassword
             // 
@@ -199,6 +200,7 @@
             this.txtConfirmPass.TabIndex = 13;
             this.txtConfirmPass.UseSystemPasswordChar = true;
             this.txtConfirmPass.TextChanged += new System.EventHandler(this.txtConfirmPass_TextChanged);
+            this.txtConfirmPass.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label15
             // 
@@ -264,6 +266,7 @@
             this.textBox10.TabIndex = 12;
             this.textBox10.UseSystemPasswordChar = true;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            this.textBox10.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // textBox9
             // 
@@ -313,6 +316,7 @@
             this.textBox8.Size = new System.Drawing.Size(222, 32);
             this.textBox8.TabIndex = 10;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.textBox8.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // textBox7
             // 
@@ -322,6 +326,7 @@
             this.textBox7.Size = new System.Drawing.Size(222, 32);
             this.textBox7.TabIndex = 9;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBox7.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label11
             // 
@@ -371,15 +376,17 @@
             this.textBox6.Size = new System.Drawing.Size(222, 32);
             this.textBox6.TabIndex = 6;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBox6.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(210, 266);
-            this.textBox5.MaxLength = 30;
+            this.textBox5.MaxLength = 50;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(222, 32);
             this.textBox5.TabIndex = 5;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBox5.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label7
             // 
@@ -439,6 +446,7 @@
             this.textBox3.Size = new System.Drawing.Size(222, 32);
             this.textBox3.TabIndex = 3;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // textBox2
             // 
@@ -448,6 +456,7 @@
             this.textBox2.Size = new System.Drawing.Size(222, 32);
             this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // materialDivider1
             // 
@@ -488,6 +497,7 @@
             this.textBox1.Size = new System.Drawing.Size(222, 32);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label1
             // 

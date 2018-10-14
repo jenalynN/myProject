@@ -799,7 +799,7 @@ namespace LoginModule.cs
              
         }
 
-        private void clearAllControlwithoutsearchtrans()
+        private void clearorderdetails()
         {
             textBox2.Clear();
             textBox3.Clear();
@@ -812,7 +812,6 @@ namespace LoginModule.cs
             comboBox1.Text = "";
             textBox12.Clear();
             textBox11.Clear();
-            materialListView4.Items.Clear();
             materialListView3.Items.Clear();
 
         }
@@ -984,10 +983,11 @@ namespace LoginModule.cs
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
-            clearAllControlwithoutsearchtrans();
+            //clearAllControlwithoutsearchtrans();
             if (textBox1.Text == "")
             {
                 materialListView3.Items.Clear();
+                clearorderdetails();
 
             }
             else
@@ -1034,6 +1034,7 @@ namespace LoginModule.cs
                 }
 
                 conn.Close();
+                clearorderdetails();
             }
         catch(Exception e)
     {
@@ -1056,6 +1057,7 @@ namespace LoginModule.cs
                 MessageBox.Show("Select only one transaction");
             }
         }
+        
         private void materialListView3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             printtransid();
@@ -1072,7 +1074,10 @@ namespace LoginModule.cs
                     String id = list.SubItems[0].Text;
                     textBox2.Text = id.ToString();
                 }
-                
+                else
+                {
+                clearorderdetails();
+                }
             }
             catch (Exception e)
             {
@@ -1291,6 +1296,17 @@ namespace LoginModule.cs
         private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             printorderid();
+        }
+
+        private void materialListView3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialListView4_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+            printorderdetails();
         }
         
     }

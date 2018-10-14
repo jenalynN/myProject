@@ -46,6 +46,8 @@
             this.tbcatname.Name = "tbcatname";
             this.tbcatname.Size = new System.Drawing.Size(222, 26);
             this.tbcatname.TabIndex = 86;
+            this.tbcatname.TextChanged += new System.EventHandler(this.tbcatname_TextChanged);
+            this.tbcatname.Leave += new System.EventHandler(this.tbcatname_Leave);
             // 
             // label4
             // 

@@ -210,5 +210,10 @@ namespace LoginModule.cs
             
         }
 
+        private void genericTextBoxTrim_Leave(object sender, EventArgs e)
+        {
+            new DataHandling().genericTextBoxTrim_Leave(sender, e);
+        }
+
     }
 }

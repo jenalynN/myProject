@@ -112,6 +112,7 @@
             this.textBox3.Size = new System.Drawing.Size(222, 32);
             this.textBox3.TabIndex = 71;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label4
             // 
@@ -193,6 +194,7 @@
             this.textBox1.Size = new System.Drawing.Size(222, 32);
             this.textBox1.TabIndex = 56;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label1
             // 

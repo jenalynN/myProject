@@ -221,6 +221,10 @@ namespace LoginModule.cs
         {
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
         }
+        private void genericTextBoxTrim_Leave(object sender, EventArgs e)
+        {
+            new DataHandling().genericTextBoxTrim_Leave(sender, e);
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

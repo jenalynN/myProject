@@ -1162,6 +1162,7 @@
             this.materialListView4.TabIndex = 2;
             this.materialListView4.UseCompatibleStateImageBehavior = false;
             this.materialListView4.View = System.Windows.Forms.View.Details;
+            this.materialListView4.SelectedIndexChanged += new System.EventHandler(this.materialListView4_SelectedIndexChanged_1);
             this.materialListView4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView4_MouseDoubleClick);
             // 
             // columnHeader13
@@ -1280,6 +1281,7 @@
             this.materialListView3.TabIndex = 22;
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
+            this.materialListView3.SelectedIndexChanged += new System.EventHandler(this.materialListView3_SelectedIndexChanged_1);
             this.materialListView3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView3_MouseDoubleClick);
             // 
             // columnHeader11

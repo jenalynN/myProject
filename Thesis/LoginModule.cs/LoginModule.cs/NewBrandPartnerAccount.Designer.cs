@@ -261,6 +261,7 @@
             this.textBox7.Size = new System.Drawing.Size(222, 32);
             this.textBox7.TabIndex = 9;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBox7.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label11
             // 
@@ -314,11 +315,12 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(210, 305);
-            this.textBox5.MaxLength = 30;
+            this.textBox5.MaxLength = 50;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(222, 32);
             this.textBox5.TabIndex = 5;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBox5.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label7
             // 
@@ -338,6 +340,7 @@
             this.textBox4.Size = new System.Drawing.Size(222, 32);
             this.textBox4.TabIndex = 8;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label6
             // 
@@ -377,6 +380,7 @@
             this.textBox3.Size = new System.Drawing.Size(222, 32);
             this.textBox3.TabIndex = 3;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // textBox2
             // 
@@ -386,6 +390,7 @@
             this.textBox2.Size = new System.Drawing.Size(222, 32);
             this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // materialDivider1
             // 
@@ -426,6 +431,7 @@
             this.textBox1.Size = new System.Drawing.Size(222, 32);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Leave += new System.EventHandler(this.genericTextBoxTrim_Leave);
             // 
             // label1
             // 

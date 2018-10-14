@@ -242,5 +242,13 @@ namespace LoginModule.cs
         {
             new DataHandling().emailAddressTrap_TextChanged(sender, e);
         }
+
+        private void genericTextBoxTrim_Leave(object sender, EventArgs e)
+        {
+            new DataHandling().genericTextBoxTrim_Leave(sender, e);
+        }
+
+       
+
     }
 }

@@ -111,5 +111,15 @@ namespace LoginModule.cs
             new Mainframe().Show();
             this.Hide();
         }
+
+        private void tbcatname_TextChanged(object sender, EventArgs e)
+        {
+            new DataHandling().alphanumericTrap_TextChanged(sender, e);
+        }
+
+        private void tbcatname_Leave(object sender, EventArgs e)
+        {
+            new DataHandling().genericTextBoxTrim_Leave(sender, e);
+        }
     }
 }
