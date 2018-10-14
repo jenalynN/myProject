@@ -121,7 +121,11 @@ namespace LoginModule.cs
             {
                 MessageBox.Show("Please don't leave any blank field(s).");
             }
-            else if (!(System.Text.RegularExpressions.Regex.IsMatch(textBox11.Text, ".+@.+\\.com$")))
+            else if ((System.Text.RegularExpressions.Regex.IsMatch(textBox11.Text, "^\\d")))
+            {   
+                MessageBox.Show("Invalid Email Address.");
+            }
+            else if (!(System.Text.RegularExpressions.Regex.IsMatch(textBox11.Text, "[a-zA-Z].+@.+\\.com$")))
             {
                 MessageBox.Show("Invalid Email Address.");
             }

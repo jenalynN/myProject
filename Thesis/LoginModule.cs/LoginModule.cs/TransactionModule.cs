@@ -620,10 +620,22 @@ namespace LoginModule.cs
                 viewOrder();
             }
         }
+        public void cleartextBoxes() 
+        {
+            tbAmount.Clear();
+            tbBrand.Clear();
+            tbCategory.Clear();
+            tbOrderId.Clear();
+            tbPrice.Clear();
+            tbProductCode.Clear();
+            tbProductName.Clear();
+            tbQuantity.Clear();
+            tbSubtotal.Clear();
+        }
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
             new DataHandling().alphanumericTrap_TextChanged(sender, e);
+            cleartextBoxes();
             if (tbSearchItem.Text == "")
             {
                 materialListView2.Items.Clear();
@@ -1231,6 +1243,16 @@ namespace LoginModule.cs
             labelChange.Text = "0.00";
             tbQuantity.Text = "";
             tbSearchItem.Text = "";
+        }
+
+        private void materialListView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialListView2_MouseClick(object sender, MouseEventArgs e)
+        {
+            printitemdetails();
         }
         
     }

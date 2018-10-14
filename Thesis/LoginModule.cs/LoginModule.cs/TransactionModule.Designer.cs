@@ -351,7 +351,6 @@
             this.tbOrderId.Name = "tbOrderId";
             this.tbOrderId.Size = new System.Drawing.Size(20, 26);
             this.tbOrderId.TabIndex = 75;
-            this.tbOrderId.Visible = false;
             // 
             // labelTransactionCode
             // 
@@ -373,7 +372,6 @@
             this.tbProductName.Name = "tbProductName";
             this.tbProductName.Size = new System.Drawing.Size(20, 26);
             this.tbProductName.TabIndex = 74;
-            this.tbProductName.Visible = false;
             // 
             // label14
             // 
@@ -395,7 +393,6 @@
             this.tbSubtotal.Name = "tbSubtotal";
             this.tbSubtotal.Size = new System.Drawing.Size(20, 26);
             this.tbSubtotal.TabIndex = 73;
-            this.tbSubtotal.Visible = false;
             // 
             // label13
             // 
@@ -417,7 +414,6 @@
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(20, 26);
             this.tbPrice.TabIndex = 72;
-            this.tbPrice.Visible = false;
             // 
             // label12
             // 
@@ -439,7 +435,6 @@
             this.tbCategory.Name = "tbCategory";
             this.tbCategory.Size = new System.Drawing.Size(20, 26);
             this.tbCategory.TabIndex = 71;
-            this.tbCategory.Visible = false;
             // 
             // label11
             // 
@@ -461,7 +456,6 @@
             this.tbBrand.Name = "tbBrand";
             this.tbBrand.Size = new System.Drawing.Size(20, 26);
             this.tbBrand.TabIndex = 70;
-            this.tbBrand.Visible = false;
             // 
             // labelChange
             // 
@@ -483,7 +477,6 @@
             this.tbProductCode.Name = "tbProductCode";
             this.tbProductCode.Size = new System.Drawing.Size(20, 26);
             this.tbProductCode.TabIndex = 68;
-            this.tbProductCode.Visible = false;
             // 
             // label4
             // 
@@ -694,6 +687,7 @@
             this.materialListView2.TabIndex = 22;
             this.materialListView2.UseCompatibleStateImageBehavior = false;
             this.materialListView2.View = System.Windows.Forms.View.Details;
+            this.materialListView2.SelectedIndexChanged += new System.EventHandler(this.materialListView2_SelectedIndexChanged);
             this.materialListView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView2_DoubleClick);
             // 
             // columnHeader8

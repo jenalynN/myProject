@@ -1949,7 +1949,6 @@ namespace LoginModule.cs
             {
                 ListViewItem item = materialListView1.SelectedItems[0];
                 label6.Text = item.SubItems[0].Text;
-                
             }
             else
             {

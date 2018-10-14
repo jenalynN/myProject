@@ -1281,6 +1281,7 @@
             // columnHeader15
             // 
             this.columnHeader15.Text = "Transaction Code";
+            this.columnHeader15.Width = 180;
             // 
             // columnHeader68
             // 
