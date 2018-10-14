@@ -32,7 +32,6 @@ namespace LoginModule.cs
             var cursorPosition = textboxSender.SelectionStart;
             textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^0-9a-zA-Z\\.@]|(\\.\\.)|(@.*@)|(@.*\\..*\\.com)", "");
             textboxSender.SelectionStart = cursorPosition;
-            //textboxSender.Text = textboxSender.Text.Remove(textboxSender.Text.Length - 1);
         }
         public void genericTextBoxTrim_Leave(object sender, EventArgs e)
         {
@@ -65,6 +64,15 @@ namespace LoginModule.cs
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+
+            var textboxSender = (TextBox)sender;
+            if (System.Text.RegularExpressions.Regex.IsMatch(textboxSender.Text, @"\.\d\d"))
+            {
+                //e.Handled = true;
+                var cursorPosition = textboxSender.SelectionStart;
+                textboxSender.Text = textboxSender.Text.Remove(textboxSender.Text.Length - 1);
+                textboxSender.SelectionStart = cursorPosition;
             }
         }
     }

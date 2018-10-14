@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace LoginModule.cs
 {
@@ -213,6 +214,11 @@ namespace LoginModule.cs
         private void genericTextBoxTrim_Leave(object sender, EventArgs e)
         {
             new DataHandling().genericTextBoxTrim_Leave(sender, e);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            
         }
 
     }

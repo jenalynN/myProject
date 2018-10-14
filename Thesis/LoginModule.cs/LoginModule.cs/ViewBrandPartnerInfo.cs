@@ -125,7 +125,7 @@ namespace LoginModule.cs
             {   
                 MessageBox.Show("Invalid Email Address.");
             }
-            else if (!(System.Text.RegularExpressions.Regex.IsMatch(textBox11.Text, "[a-zA-Z].+@.+\\.com$")))
+            else if (!(System.Text.RegularExpressions.Regex.IsMatch(textBox11.Text, ".+@.+\\.com$")))
             {
                 MessageBox.Show("Invalid Email Address.");
             }
