@@ -1980,5 +1980,13 @@ namespace LoginModule.cs
         {
             printcashieridarchived();
         }
+
+        private void tabOutsideListview_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                defaultFaultSelectID();
+            }
+        }
     }
 }

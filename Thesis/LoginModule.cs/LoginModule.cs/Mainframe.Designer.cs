@@ -624,6 +624,7 @@
             this.materialListView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
             this.materialListView1.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged);
             this.materialListView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView1_MouseDoubleClick);
+            this.materialListView1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.tabOutsideListview_PreviewKeyDown);
             // 
             // ActiveProductId
             // 
@@ -838,6 +839,7 @@
             this.materialListView2.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
             this.materialListView2.SelectedIndexChanged += new System.EventHandler(this.materialListView2_SelectedIndexChanged);
             this.materialListView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView2_MouseClick);
+            this.materialListView2.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.tabOutsideListview_PreviewKeyDown);
             // 
             // columnHeader6
             // 
@@ -1267,6 +1269,7 @@
             this.materialListView11.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
             this.materialListView11.SelectedIndexChanged += new System.EventHandler(this.materialListView11_SelectedIndexChanged);
             this.materialListView11.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView11_MouseDoubleClick);
+            this.materialListView11.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.tabOutsideListview_PreviewKeyDown);
             // 
             // columnHeader67
             // 
@@ -1629,6 +1632,7 @@
             this.materialListView3.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
             this.materialListView3.SelectedIndexChanged += new System.EventHandler(this.materialListView3_SelectedIndexChanged);
             this.materialListView3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView3_MouseDoubleClick);
+            this.materialListView3.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.tabOutsideListview_PreviewKeyDown);
             // 
             // BrandPartnerId
             // 
@@ -1927,6 +1931,7 @@
             this.materialListView6.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
             this.materialListView6.SelectedIndexChanged += new System.EventHandler(this.materialListView6_SelectedIndexChanged);
             this.materialListView6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView6_MouseDoubleClick);
+            this.materialListView6.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.tabOutsideListview_PreviewKeyDown);
             // 
             // columnHeader28
             // 
@@ -2217,6 +2222,7 @@
             this.materialListView5.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
             this.materialListView5.SelectedIndexChanged += new System.EventHandler(this.materialListView5_SelectedIndexChanged);
             this.materialListView5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView5_MouseDoubleClick);
+            this.materialListView5.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.tabOutsideListview_PreviewKeyDown);
             // 
             // cashier_useraccountsid
             // 
@@ -2477,6 +2483,7 @@
             this.materialListView4.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listviewHeader_Click);
             this.materialListView4.SelectedIndexChanged += new System.EventHandler(this.materialListView4_SelectedIndexChanged);
             this.materialListView4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialListView4_MouseDoubleClick);
+            this.materialListView4.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.tabOutsideListview_PreviewKeyDown);
             // 
             // arc_cashier_useraccountsid
             // 

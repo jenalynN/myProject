@@ -25,6 +25,7 @@ namespace LoginModule.cs
             textBox6.Visible = true;
             label25.Visible = true;
             viewcashier();
+            materialListView1.HeaderStyle = ColumnHeaderStyle.Clickable;
         }
         public void viewcashier()
         {
@@ -179,6 +180,25 @@ namespace LoginModule.cs
             label7.Text = DateTime.Now.ToLongTimeString();
 
         }
+        public void OrderDelete()
+        {
+            try
+            {
+
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
+                MySqlCommand command = conn.CreateCommand();
+
+                conn.Open();
+                command.CommandText = "Delete from tbl_order where col_orderstatus='unfinished'";
+                command.ExecuteScalar();
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No connection to host");
+            }
+        }
         public void TransactionDelete()
         {
             try
@@ -191,6 +211,7 @@ namespace LoginModule.cs
                 command.CommandText = "Delete from tbl_transaction where col_transactioncode='" + labelTransactionCode.Text + "'";
                 command.ExecuteScalar();
                 conn.Close();
+                
             }
             catch (Exception e) 
             {
@@ -199,6 +220,7 @@ namespace LoginModule.cs
         }
         public void printitemdetails()
         {
+            selectOrderIdClear();
             try
             {
                 if (materialListView2.SelectedItems.Count > 0)
@@ -410,6 +432,9 @@ namespace LoginModule.cs
         {
             try
             {
+                double tenderAmount, TotalSales;
+                double.TryParse(tbAmount.Text, out tenderAmount);
+                double.TryParse(labelTotalSales.Text, out TotalSales);
                 MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 if (labelTotalSales.Text == "0.00")
                 {
@@ -431,14 +456,12 @@ namespace LoginModule.cs
                 {
                     MessageBox.Show("Please enter tender amount.");
                 }
-                else if (double.Parse(tbAmount.Text) < double.Parse(labelTotalSales.Text))
+                else if (tenderAmount < TotalSales)
                 {
                     MessageBox.Show("Insufficient Tender amount.");
                 }
                 else
                 {
-                    double TotalSales = Double.Parse(labelTotalSales.Text);
-                    double tenderAmount = Double.Parse(tbAmount.Text);
                     double change = Double.Parse(labelChange.Text);
 
                     conn.Open();
@@ -549,17 +572,13 @@ namespace LoginModule.cs
         {
             try
             {
-            MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
-            MySqlCommand command = conn.CreateCommand();
-            conn.Close();
-            conn.Open();
-            if (tbOrderId.Text == "")
+                if (tbOrderId.Text == "" || materialListView1.SelectedIndices.Count <= 0)
             {
                 MessageBox.Show("Please select an item from the item list");
             }
             else
             {
-                conn.Close();
+                MySqlConnection conn = new MySqlConnection(ConnectionString.myConnection);
                 conn.Open();
                 MySqlCommand command2 = conn.CreateCommand();
                 command2.CommandText = "UPDATE tbl_order SET " +
@@ -567,8 +586,11 @@ namespace LoginModule.cs
                     " WHERE col_orderid='" + tbOrderId.Text + "'";
                 command2.ExecuteScalar();
                 conn.Close();
+
+                logvoidfromcart();
+                viewOrder();
             }
-            viewOrder();
+                
          
                 
             }
@@ -618,15 +640,7 @@ namespace LoginModule.cs
         }
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
-            if (tbQuantity.Text == "" || tbProductCode.Text == "" || tbBrand.Text == "" || tbCategory.Text == "" || tbPrice.Text == "")
-            {
-                MessageBox.Show("Please complete the form");
-            }
-            else
-            {
-                InsertOrder();
-                viewOrder();
-            }
+
         }
         public void cleartextBoxes() 
         {
@@ -819,7 +833,7 @@ namespace LoginModule.cs
         {
             if (string.IsNullOrWhiteSpace(tbAmount.Text))
             {
-                tbAmount.Text = "0.00";
+                //tbAmount.Text = "0.00";
                 labelChange.Text = "0.00";
             }
             //else if (System.Text.RegularExpressions.Regex.IsMatch(tbAmount.Text, "(\\..*\\.)|[^\\d+\\.\\d+]|[^\\.\\d+]"))
@@ -860,6 +874,7 @@ namespace LoginModule.cs
             // Login a = new Login();
             // a.Show();
             //this.Hide();
+            materialListView1.SelectedIndices.Clear();
             try {
                 if (materialListView1.Items.Count == 0)
                 {
@@ -876,7 +891,10 @@ namespace LoginModule.cs
                         labelTotalSales.Text = "0.00";
                         tbAmount.Text = "0.00";
                         labelChange.Text = "0.00";
+                        tbProductCode.Clear();
+                        tbSearchItem.Clear();
                         TransactionDelete();
+                        OrderDelete();
                         TransactionModule a = new TransactionModule(label17.Text);
                     }
                 }
@@ -897,11 +915,13 @@ namespace LoginModule.cs
         }
         private void btnPurchase_Click(object sender, EventArgs e)
         {
+            materialListView1.SelectedIndices.Clear();
             logpurchase();
             InsertTransactionTotalAmount();   
         }
         private void materialFlatButton4_Click(object sender, EventArgs e)
         {
+            materialListView1.SelectedIndices.Clear();
             ChangePassword a = new ChangePassword(label17.Text);
             a.Show();
         }
@@ -916,12 +936,19 @@ namespace LoginModule.cs
 
         private void materialListView2_DoubleClick(object sender, MouseEventArgs e)
         {
+            
             //tbQuantity.Text = "1";
             printitemdetails();
             
         }
+        private void selectOrderIdClear()
+        {
+            materialListView1.SelectedIndices.Clear();
+            tbOrderId.Clear();
+        }
         private void btnAddtoCart_Click(object sender, EventArgs e)
-        { 
+        {
+            selectOrderIdClear();
             if (string.IsNullOrWhiteSpace(tbProductCode.Text))
             {
                 MessageBox.Show("Select Product code");
@@ -944,7 +971,6 @@ namespace LoginModule.cs
         }
         private void btnRemovefromCart_Click(object sender, EventArgs e)
         {
-            logvoidfromcart();
             remove();
         }
         public void searchtransaction()
@@ -1036,21 +1062,27 @@ namespace LoginModule.cs
                 conn.Close();
                 clearorderdetails();
             }
-        catch(Exception e)
-    {
-    MessageBox.Show("No Connection to host");
-    }}
+            catch(Exception e)
+            {
+            MessageBox.Show("No Connection to host");
+            }
+        }
         public void printtransid() 
         {
             try
             {
-                int data = 0;
-                ListViewItem list = materialListView3.SelectedItems[data];
-                String id = list.SubItems[1].Text;
-                textBox8.Text = id.ToString();
-              
-                printorders();
-                textBox1.Clear();
+                if (materialListView3.SelectedItems.Count > 0)
+                {
+                    int data = 0;
+                    ListViewItem list = materialListView3.SelectedItems[data];
+                    String id = list.SubItems[1].Text;
+                    textBox8.Text = id.ToString();
+
+                    printorders();
+                    textBox1.Clear();
+
+                }
+
             }
             catch (Exception E) 
             {
@@ -1076,7 +1108,7 @@ namespace LoginModule.cs
                 }
                 else
                 {
-                clearorderdetails();
+                    clearorderdetails();
                 }
             }
             catch (Exception e)
@@ -1126,7 +1158,8 @@ namespace LoginModule.cs
 
         private void materialFlatButton5_Click(object sender, EventArgs e)
         {
-                DialogResult dialog = MessageBox.Show( "Are You sure you want to Log-out?", "Message", MessageBoxButtons.YesNo);
+            materialListView1.SelectedIndices.Clear();
+            DialogResult dialog = MessageBox.Show( "Are You sure you want to Log-out?", "Message", MessageBoxButtons.YesNo);
                 if (dialog == DialogResult.Yes)
                 {
                     TransactionDelete();
@@ -1177,20 +1210,7 @@ namespace LoginModule.cs
         {
             printorderdetails();
         }
-
-        private void materialTabSelector1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialListView3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
+        
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -1274,12 +1294,14 @@ namespace LoginModule.cs
         private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             clearAllControl();
+            OrderDelete();
             materialListView1.Items.Clear();
             materialListView2.Items.Clear();
             labelTotalSales.Text = "0.00";
             tbAmount.Text = "0.00";
             labelChange.Text = "0.00";
             tbQuantity.Text = "";
+            tbProductCode.Clear();
             tbSearchItem.Text = "";
         }
 
@@ -1297,17 +1319,51 @@ namespace LoginModule.cs
         {
             printorderid();
         }
-
-        private void materialListView3_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void materialListView4_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
             printorderdetails();
         }
-        
+
+        private void clickOutsideItemListview_Enter(object sender, EventArgs e)
+        {
+            selectOrderIdClear();
+        }
+
+        private void materialListView2_Enter(object sender, EventArgs e)
+        {
+            selectOrderIdClear();
+        }
+
+        private void materialListView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            selectOrderIdClear();
+        }
+
+        private void materialListView1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                selectOrderIdClear();
+            }
+        }
+
+        private void tbAmount_Enter(object sender, EventArgs e)
+        {
+            tbAmount.SelectionStart = 0;
+            tbAmount.SelectionLength = tbAmount.Text.Length;
+        }
+
+        private void textBox9_Leave(object sender, EventArgs e)
+        {
+            new DataHandling().genericTextBoxTrim_Leave(sender, e);
+        }
+
+        private void materialListView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
